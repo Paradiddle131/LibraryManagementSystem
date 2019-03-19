@@ -32,6 +32,15 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueUserControl));
 			this.pnlIssue = new System.Windows.Forms.Panel();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.studentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.bookNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.bookAuthorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.issueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.returnDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.bookIssueTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.libraryDBDataSet7 = new LibraryManagementSystem.libraryDBDataSet7();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.dateTimePickerReturnDate = new System.Windows.Forms.DateTimePicker();
 			this.dateTimePickerIssueDate = new System.Windows.Forms.DateTimePicker();
@@ -49,20 +58,12 @@
 			this.txtSurname = new System.Windows.Forms.TextBox();
 			this.txtName = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.libraryDBDataSet6 = new LibraryManagementSystem.libraryDBDataSet6();
-			this.libraryDBDataSet6BindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.bookIssueTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.bookIssueTableTableAdapter = new LibraryManagementSystem.libraryDBDataSet6TableAdapters.BookIssueTableTableAdapter();
-			this.libraryDB2DataSet = new LibraryManagementSystem.libraryDB2DataSet();
-			this.libraryDB2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.bookIssueTableTableAdapter1 = new LibraryManagementSystem.libraryDBDataSet7TableAdapters.BookIssueTableTableAdapter();
 			this.pnlIssue.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bookIssueTableBindingSource1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet7)).BeginInit();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet6)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet6BindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.bookIssueTableBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDB2DataSet)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDB2DataSetBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pnlIssue
@@ -77,13 +78,78 @@
 			// dataGridView1
 			// 
 			this.dataGridView1.AutoGenerateColumns = false;
+			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(174)))), ((int)(((byte)(252)))));
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.DataSource = this.libraryDB2DataSetBindingSource;
+			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.studentNameDataGridViewTextBoxColumn,
+            this.surnameDataGridViewTextBoxColumn,
+            this.bookNameDataGridViewTextBoxColumn,
+            this.bookAuthorDataGridViewTextBoxColumn,
+            this.issueDateDataGridViewTextBoxColumn,
+            this.returnDateDataGridViewTextBoxColumn});
+			this.dataGridView1.DataSource = this.bookIssueTableBindingSource1;
 			this.dataGridView1.Location = new System.Drawing.Point(0, 106);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(793, 211);
 			this.dataGridView1.TabIndex = 2;
+			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+			// 
+			// iDDataGridViewTextBoxColumn
+			// 
+			this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+			this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+			this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+			this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// studentNameDataGridViewTextBoxColumn
+			// 
+			this.studentNameDataGridViewTextBoxColumn.DataPropertyName = "StudentName";
+			this.studentNameDataGridViewTextBoxColumn.HeaderText = "StudentName";
+			this.studentNameDataGridViewTextBoxColumn.Name = "studentNameDataGridViewTextBoxColumn";
+			// 
+			// surnameDataGridViewTextBoxColumn
+			// 
+			this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
+			this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
+			this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+			// 
+			// bookNameDataGridViewTextBoxColumn
+			// 
+			this.bookNameDataGridViewTextBoxColumn.DataPropertyName = "BookName";
+			this.bookNameDataGridViewTextBoxColumn.HeaderText = "BookName";
+			this.bookNameDataGridViewTextBoxColumn.Name = "bookNameDataGridViewTextBoxColumn";
+			// 
+			// bookAuthorDataGridViewTextBoxColumn
+			// 
+			this.bookAuthorDataGridViewTextBoxColumn.DataPropertyName = "BookAuthor";
+			this.bookAuthorDataGridViewTextBoxColumn.HeaderText = "BookAuthor";
+			this.bookAuthorDataGridViewTextBoxColumn.Name = "bookAuthorDataGridViewTextBoxColumn";
+			// 
+			// issueDateDataGridViewTextBoxColumn
+			// 
+			this.issueDateDataGridViewTextBoxColumn.DataPropertyName = "IssueDate";
+			this.issueDateDataGridViewTextBoxColumn.HeaderText = "IssueDate";
+			this.issueDateDataGridViewTextBoxColumn.Name = "issueDateDataGridViewTextBoxColumn";
+			// 
+			// returnDateDataGridViewTextBoxColumn
+			// 
+			this.returnDateDataGridViewTextBoxColumn.DataPropertyName = "ReturnDate";
+			this.returnDateDataGridViewTextBoxColumn.HeaderText = "ReturnDate";
+			this.returnDateDataGridViewTextBoxColumn.Name = "returnDateDataGridViewTextBoxColumn";
+			// 
+			// bookIssueTableBindingSource1
+			// 
+			this.bookIssueTableBindingSource1.DataMember = "BookIssueTable";
+			this.bookIssueTableBindingSource1.DataSource = this.libraryDBDataSet7;
+			this.bookIssueTableBindingSource1.CurrentChanged += new System.EventHandler(this.bookIssueTableBindingSource1_CurrentChanged);
+			// 
+			// libraryDBDataSet7
+			// 
+			this.libraryDBDataSet7.DataSetName = "libraryDBDataSet7";
+			this.libraryDBDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// groupBox1
 			// 
@@ -134,6 +200,7 @@
 			this.btnDelete.Size = new System.Drawing.Size(75, 49);
 			this.btnDelete.TabIndex = 2;
 			this.btnDelete.UseVisualStyleBackColor = false;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// btnEdit
 			// 
@@ -144,6 +211,7 @@
 			this.btnEdit.Size = new System.Drawing.Size(75, 49);
 			this.btnEdit.TabIndex = 2;
 			this.btnEdit.UseVisualStyleBackColor = false;
+			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
 			// btnAdd
 			// 
@@ -154,6 +222,7 @@
 			this.btnAdd.Size = new System.Drawing.Size(75, 49);
 			this.btnAdd.TabIndex = 2;
 			this.btnAdd.UseVisualStyleBackColor = false;
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
 			// txtAuthor
 			// 
@@ -246,34 +315,9 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = " ";
 			// 
-			// libraryDBDataSet6
+			// bookIssueTableTableAdapter1
 			// 
-			this.libraryDBDataSet6.DataSetName = "libraryDBDataSet6";
-			this.libraryDBDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// libraryDBDataSet6BindingSource
-			// 
-			this.libraryDBDataSet6BindingSource.DataSource = this.libraryDBDataSet6;
-			this.libraryDBDataSet6BindingSource.Position = 0;
-			// 
-			// bookIssueTableBindingSource
-			// 
-			this.bookIssueTableBindingSource.DataMember = "BookIssueTable";
-			this.bookIssueTableBindingSource.DataSource = this.libraryDBDataSet6BindingSource;
-			// 
-			// bookIssueTableTableAdapter
-			// 
-			this.bookIssueTableTableAdapter.ClearBeforeFill = true;
-			// 
-			// libraryDB2DataSet
-			// 
-			this.libraryDB2DataSet.DataSetName = "libraryDB2DataSet";
-			this.libraryDB2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// libraryDB2DataSetBindingSource
-			// 
-			this.libraryDB2DataSetBindingSource.DataSource = this.libraryDB2DataSet;
-			this.libraryDB2DataSetBindingSource.Position = 0;
+			this.bookIssueTableTableAdapter1.ClearBeforeFill = true;
 			// 
 			// IssueUserControl
 			// 
@@ -284,13 +328,10 @@
 			this.Size = new System.Drawing.Size(792, 315);
 			this.pnlIssue.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bookIssueTableBindingSource1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet7)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet6)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet6BindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.bookIssueTableBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDB2DataSet)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDB2DataSetBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -316,11 +357,16 @@
 		private System.Windows.Forms.TextBox txtSurname;
 		private System.Windows.Forms.TextBox txtName;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.BindingSource libraryDBDataSet6BindingSource;
-		private libraryDBDataSet6 libraryDBDataSet6;
-		private System.Windows.Forms.BindingSource libraryDB2DataSetBindingSource;
-		private libraryDB2DataSet libraryDB2DataSet;
-		private System.Windows.Forms.BindingSource bookIssueTableBindingSource;
-		private libraryDBDataSet6TableAdapters.BookIssueTableTableAdapter bookIssueTableTableAdapter;
+		//private libraryDBDataSet6TableAdapters.BookIssueTableTableAdapter bookIssueTableTableAdapter;
+		private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn studentNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn bookNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn bookAuthorDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn issueDateDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn returnDateDataGridViewTextBoxColumn;
+		private System.Windows.Forms.BindingSource bookIssueTableBindingSource1;
+		private libraryDBDataSet7 libraryDBDataSet7;
+		private libraryDBDataSet7TableAdapters.BookIssueTableTableAdapter bookIssueTableTableAdapter1;
 	}
 }

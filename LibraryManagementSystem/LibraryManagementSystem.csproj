@@ -116,6 +116,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDBDataSet6.xsd</DependentUpon>
     </Compile>
+    <Compile Include="libraryDBDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>libraryDBDataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +268,17 @@
     </None>
     <None Include="libraryDBDataSet6.xss">
       <DependentUpon>libraryDBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="libraryDBDataSet7.xsc">
+      <DependentUpon>libraryDBDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="libraryDBDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>libraryDBDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="libraryDBDataSet7.xss">
+      <DependentUpon>libraryDBDataSet7.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

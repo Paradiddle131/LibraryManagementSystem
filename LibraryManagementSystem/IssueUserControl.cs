@@ -30,7 +30,7 @@ namespace LibraryManagementSystem
 			txtAuthor.Text = "";
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void btnAdd_Click(object sender, EventArgs e)
 		{
 			if (connection.State == ConnectionState.Closed)
 			{
@@ -45,12 +45,12 @@ namespace LibraryManagementSystem
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
 				connection.Close();
-				listing();
+				listing(); // must be called after the connection closed
 				MessageBox.Show("Added.");
 			}
 		}
 
-		void listing()
+		public void listing()
 		{
 			if (connection.State == ConnectionState.Closed)
 			{
@@ -62,17 +62,17 @@ namespace LibraryManagementSystem
 				DataSet ds = new DataSet();
 				adpr.Fill(ds, "BookIssueTable");
 				dataGridView1.DataSource = ds.Tables["BookIssueTable"];
-				//				dataGridView1.Columns[0].Visible = false; // hides ID column
+				//dataGridView1.Columns[0].Visible = false; // hides ID column
 				connection.Close();
 			}
 		}
 
-		private void Form1_Load(object sender, EventArgs e)
+		private void IssueUserControl_load(object sender, EventArgs e)
 		{
 			listing();
 		}
 
-		private void button3_Click(object sender, EventArgs e)
+		private void btnDelete_Click(object sender, EventArgs e)
 		{
 			if (MessageBox.Show("Are you sure you want to delete?", "Hold On!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 			{
@@ -92,7 +92,7 @@ namespace LibraryManagementSystem
 			}
 		}
 
-		private void button2_Click(object sender, EventArgs e)
+		private void btnEdit_Click(object sender, EventArgs e)
 		{
 			if (connection.State == ConnectionState.Closed)
 			{
@@ -128,5 +128,11 @@ namespace LibraryManagementSystem
 				return _instance;
 			}
 		}
+
+		private void bookIssueTableBindingSource1_CurrentChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 	}
 }
