@@ -28,7 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueUserControl));
+			this.pnlIssue = new System.Windows.Forms.Panel();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.dateTimePickerReturnDate = new System.Windows.Forms.DateTimePicker();
 			this.dateTimePickerIssueDate = new System.Windows.Forms.DateTimePicker();
@@ -46,10 +49,41 @@
 			this.txtSurname = new System.Windows.Forms.TextBox();
 			this.txtName = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.groupBox1.SuspendLayout();
+			this.libraryDBDataSet6 = new LibraryManagementSystem.libraryDBDataSet6();
+			this.libraryDBDataSet6BindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.bookIssueTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.bookIssueTableTableAdapter = new LibraryManagementSystem.libraryDBDataSet6TableAdapters.BookIssueTableTableAdapter();
+			this.libraryDB2DataSet = new LibraryManagementSystem.libraryDB2DataSet();
+			this.libraryDB2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.pnlIssue.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet6BindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bookIssueTableBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.libraryDB2DataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.libraryDB2DataSetBindingSource)).BeginInit();
 			this.SuspendLayout();
+			// 
+			// pnlIssue
+			// 
+			this.pnlIssue.Controls.Add(this.dataGridView1);
+			this.pnlIssue.Controls.Add(this.groupBox1);
+			this.pnlIssue.Location = new System.Drawing.Point(0, 0);
+			this.pnlIssue.Name = "pnlIssue";
+			this.pnlIssue.Size = new System.Drawing.Size(793, 317);
+			this.pnlIssue.TabIndex = 5;
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.AutoGenerateColumns = false;
+			this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(174)))), ((int)(((byte)(252)))));
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.DataSource = this.libraryDB2DataSetBindingSource;
+			this.dataGridView1.Location = new System.Drawing.Point(0, 106);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.Size = new System.Drawing.Size(793, 211);
+			this.dataGridView1.TabIndex = 2;
 			// 
 			// groupBox1
 			// 
@@ -70,10 +104,10 @@
 			this.groupBox1.Controls.Add(this.txtSurname);
 			this.groupBox1.Controls.Add(this.txtName);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Location = new System.Drawing.Point(0, 0);
+			this.groupBox1.Location = new System.Drawing.Point(-4, 8);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(808, 123);
-			this.groupBox1.TabIndex = 4;
+			this.groupBox1.Size = new System.Drawing.Size(797, 102);
+			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Information";
 			// 
@@ -212,32 +246,59 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = " ";
 			// 
-			// dataGridView1
+			// libraryDBDataSet6
 			// 
-			this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(174)))), ((int)(((byte)(252)))));
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(0, 124);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(808, 208);
-			this.dataGridView1.TabIndex = 5;
+			this.libraryDBDataSet6.DataSetName = "libraryDBDataSet6";
+			this.libraryDBDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// libraryDBDataSet6BindingSource
+			// 
+			this.libraryDBDataSet6BindingSource.DataSource = this.libraryDBDataSet6;
+			this.libraryDBDataSet6BindingSource.Position = 0;
+			// 
+			// bookIssueTableBindingSource
+			// 
+			this.bookIssueTableBindingSource.DataMember = "BookIssueTable";
+			this.bookIssueTableBindingSource.DataSource = this.libraryDBDataSet6BindingSource;
+			// 
+			// bookIssueTableTableAdapter
+			// 
+			this.bookIssueTableTableAdapter.ClearBeforeFill = true;
+			// 
+			// libraryDB2DataSet
+			// 
+			this.libraryDB2DataSet.DataSetName = "libraryDB2DataSet";
+			this.libraryDB2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// libraryDB2DataSetBindingSource
+			// 
+			this.libraryDB2DataSetBindingSource.DataSource = this.libraryDB2DataSet;
+			this.libraryDB2DataSetBindingSource.Position = 0;
 			// 
 			// IssueUserControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.groupBox1);
-			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.pnlIssue);
 			this.Name = "IssueUserControl";
-			this.Size = new System.Drawing.Size(808, 332);
+			this.Size = new System.Drawing.Size(792, 315);
+			this.pnlIssue.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet6BindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bookIssueTableBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.libraryDB2DataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.libraryDB2DataSetBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
+		private System.Windows.Forms.Panel pnlIssue;
+		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.DateTimePicker dateTimePickerReturnDate;
 		private System.Windows.Forms.DateTimePicker dateTimePickerIssueDate;
@@ -255,6 +316,11 @@
 		private System.Windows.Forms.TextBox txtSurname;
 		private System.Windows.Forms.TextBox txtName;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.BindingSource libraryDBDataSet6BindingSource;
+		private libraryDBDataSet6 libraryDBDataSet6;
+		private System.Windows.Forms.BindingSource libraryDB2DataSetBindingSource;
+		private libraryDB2DataSet libraryDB2DataSet;
+		private System.Windows.Forms.BindingSource bookIssueTableBindingSource;
+		private libraryDBDataSet6TableAdapters.BookIssueTableTableAdapter bookIssueTableTableAdapter;
 	}
 }

@@ -133,7 +133,9 @@
 			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.lblUsername);
 			this.Controls.Add(this.btnLogin);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximumSize = new System.Drawing.Size(379, 271);
 			this.Name = "Login";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Login";

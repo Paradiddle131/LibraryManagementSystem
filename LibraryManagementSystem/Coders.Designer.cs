@@ -61,7 +61,10 @@
 			this.ClientSize = new System.Drawing.Size(400, 396);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.pictureBox1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.MaximumSize = new System.Drawing.Size(400, 396);
 			this.Name = "Coders";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Coders";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
