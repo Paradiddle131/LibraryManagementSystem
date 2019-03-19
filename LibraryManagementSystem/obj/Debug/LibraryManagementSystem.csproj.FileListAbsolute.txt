@@ -48,3 +48,4 @@ D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManageme
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserUserControl1.resources
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.addAuthor.resources

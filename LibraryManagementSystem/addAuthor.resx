@@ -117,13 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="bookIssueTableBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>317, 15</value>
+  <metadata name="authorsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>152, 17</value>
   </metadata>
-  <metadata name="libraryDBDataSet7.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>398, 56</value>
+  <metadata name="authorsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>152, 17</value>
   </metadata>
-  <metadata name="bookIssueTableTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>771, 56</value>
+  <metadata name="libraryDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
+  <metadata name="libraryDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="authorsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>324, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE+SURBVFhHxZZB
+        ssIgEAWz9AwmC4/jcV16G6v0Eu6Qhz6LgYEAk1QWbf1gZrr1Z+HknMt4XC6n57LcXsty1d7vATuwCzu1
+        97ODID+f7895dp63JSLI/Y6wy+/UIsRFIidDEUJOlIj/HwU56YpQ5SSJCC8rctIUUZWTKKJVTqoRTXLy
+        i5jwhKo3lFEjuuTEu8cGkwjLDvMCyyzctq/we/+wXAQYInoQciACwI4RmRyIC7JDhCoH2QHZMKIoB+oh
+        2SCiKgfqYYwhYlUO1MOYQwMMcjL+L9hATvofwg3lpBiRHewgJ2qEuNhRTrIIqxz3d8/EESY55iyzIcC6
+        wPoBjv9JdviPUgw2RlTlpCniJ8f9/8GViCY5qUZEciAGCxFdcqJGJHIghkASMSQnIkKRA3FBQoR/Qi1y
+        EiL8Lk3unJs+OxxB/MDF9Z8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
+        ogAAB6IB4mhQIQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFgSURBVFhH7ZW7
+        SsNQHIeDDyH4Lu0jdOgLiCI+QEHo2jfQroKFFnHSWdCC6EkTBx0cpKGDxIKRNknpkEZKIafnFy/EEtBz
+        E4cM35Lzh+/jXIhBKf07Go21sLbdZAwnta0KvuUP6uBd3mLQD+aIMEJ/cKud8cCK+u2TsL4TZQLA0GCL
+        VC9OEntn5M1r0/jp6GEloqk5wEmCm7I1va/aLGCxEtHCsWgMYHJS7vkX6xRkI6J+5xhy3A1NAd/l2Yjo
+        9fSazVifl1NDQL48hZQI1nExNQX8Qo45PQFO4psl80c5UB/AIQdqAzjlQF0AkxNOOVATICgH8gESciAX
+        ICkH4gGpnEjJgViAIjkQCQjsSleJHPAGTMZOPHP33eByw5WWA96A6ci6S//lzwfeV4SoHPAGmFed85fH
+        wxEi0p1gxyEsB7wBm7t7PURgJ3AceTOc2FwByhF5BUopAoqAIuD/BFBjCR5Z3o/WKAi6AAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="btnAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
+        jAAACowBvcbP2AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADpSURBVFhH7ZdB
+        CoNADEU9QpcuBT2NMNJDeY5KPYlH6B30Di6n+eNYbPtJkWKz6CyeSEzmB9Qfknnvd1N0dV5d3aXs3QRw
+        jxjL/QQNahTd+VT2zSjC/plmxDNWo0GDGiLWvos/aFmNBg1qiMjwIrplYDUaNKhR9e5GhAN4xmo0aFAj
+        NZAaSA0c0sBir8HhBhyiITnzKkiYWc0WyYGRtatth8HCvf1oMDvqPItTjSQcD7Th7RipNOEHTPYNmL8C
+        84/Q/DfEZQ/xECaerDg1kBr4kwZEyHYxERHb1WyxbcPlFGCIxCn65XrusztpgTm/9CzTQwAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
 </root>

@@ -44,5 +44,16 @@ namespace LibraryManagementSystem.Properties {
                 return ((string)(this["libraryDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-VGI8J75\\SQLEXPRESS;Initial Catalog=library;Integrated Securit" +
+            "y=True")]
+        public string libraryConnectionString {
+            get {
+                return ((string)(this["libraryConnectionString"]));
+            }
+        }
     }
 }

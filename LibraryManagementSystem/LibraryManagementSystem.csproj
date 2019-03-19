@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addAuthor.Designer.cs">
+      <DependentUpon>addAuthor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,16 @@
     </Compile>
     <Compile Include="IssueUserControl.Designer.cs">
       <DependentUpon>IssueUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="libraryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>libraryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="libraryDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>libraryDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="libraryDB2DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -147,6 +163,9 @@
     <Compile Include="UserUserControl1.Designer.cs">
       <DependentUpon>UserUserControl1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="addAuthor.resx">
+      <DependentUpon>addAuthor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +200,28 @@
     <EmbeddedResource Include="UserUserControl1.resx">
       <DependentUpon>UserUserControl1.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="libraryDataSet.xsc">
+      <DependentUpon>libraryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="libraryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>libraryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="libraryDataSet.xss">
+      <DependentUpon>libraryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="libraryDataSet1.xsc">
+      <DependentUpon>libraryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="libraryDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>libraryDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="libraryDataSet1.xss">
+      <DependentUpon>libraryDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="libraryDB2DataSet.xsc">
       <DependentUpon>libraryDB2DataSet.xsd</DependentUpon>
     </None>
