@@ -49,11 +49,11 @@
 			// 
 			this.lollipopLabel1.AutoSize = true;
 			this.lollipopLabel1.BackColor = System.Drawing.Color.Transparent;
-			this.lollipopLabel1.Font = new System.Drawing.Font("Roboto Medium", 10F);
+			this.lollipopLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.lollipopLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
 			this.lollipopLabel1.Location = new System.Drawing.Point(27, 87);
 			this.lollipopLabel1.Name = "lollipopLabel1";
-			this.lollipopLabel1.Size = new System.Drawing.Size(118, 19);
+			this.lollipopLabel1.Size = new System.Drawing.Size(119, 17);
 			this.lollipopLabel1.TabIndex = 1;
 			this.lollipopLabel1.Text = "Search By Author";
 			// 
@@ -65,7 +65,7 @@
 			this.Controls.Add(this.lollipopLabel1);
 			this.Controls.Add(this.btnSearchByAuthor);
 			this.Name = "SearchUserControl";
-			this.Size = new System.Drawing.Size(800, 400);
+			this.Size = new System.Drawing.Size(800, 325);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

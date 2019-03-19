@@ -32,16 +32,16 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchByAuthor));
 			this.txtSearch = new LollipopTextBox();
 			this.dgvSearch = new System.Windows.Forms.DataGridView();
-			this.authorDataSet = new LibraryManagementSystem.libraryDataSet2();
-			this.authorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.authorsTableAdapter = new LibraryManagementSystem.libraryDataSet2TableAdapters.authorsTableAdapter();
 			this.authorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.authorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.authorDataSet = new LibraryManagementSystem.libraryDataSet2();
+			this.authorsTableAdapter = new LibraryManagementSystem.libraryDataSet2TableAdapters.authorsTableAdapter();
 			this.btnBack = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.authorDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.authorDataSet)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// txtSearch
@@ -59,6 +59,8 @@
 			this.txtSearch.Text = "Search for a book by its name, author or category";
 			this.txtSearch.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtSearch.UseSystemPasswordChar = false;
+			this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+			this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
 			// 
 			// dgvSearch
 			// 
@@ -75,20 +77,6 @@
 			this.dgvSearch.Name = "dgvSearch";
 			this.dgvSearch.Size = new System.Drawing.Size(742, 293);
 			this.dgvSearch.TabIndex = 2;
-			// 
-			// authorDataSet
-			// 
-			this.authorDataSet.DataSetName = "authorDataSet";
-			this.authorDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// authorsBindingSource
-			// 
-			this.authorsBindingSource.DataMember = "authors";
-			this.authorsBindingSource.DataSource = this.authorDataSet;
-			// 
-			// authorsTableAdapter
-			// 
-			this.authorsTableAdapter.ClearBeforeFill = true;
 			// 
 			// authorIdDataGridViewTextBoxColumn
 			// 
@@ -108,6 +96,20 @@
 			this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
 			this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
 			this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+			// 
+			// authorsBindingSource
+			// 
+			this.authorsBindingSource.DataMember = "authors";
+			this.authorsBindingSource.DataSource = this.authorDataSet;
+			// 
+			// authorDataSet
+			// 
+			this.authorDataSet.DataSetName = "authorDataSet";
+			this.authorDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// authorsTableAdapter
+			// 
+			this.authorsTableAdapter.ClearBeforeFill = true;
 			// 
 			// btnBack
 			// 
@@ -137,8 +139,8 @@
 			this.Text = "SearchByAuthor";
 			this.Load += new System.EventHandler(this.SearchByAuthor_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.authorDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.authorDataSet)).EndInit();
 			this.ResumeLayout(false);
 
 		}

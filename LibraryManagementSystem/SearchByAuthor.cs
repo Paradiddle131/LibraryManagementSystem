@@ -59,14 +59,14 @@ namespace LibraryManagementSystem
 
 	private void txtSearch_Enter(object sender, EventArgs e)
 	{
-		if (txtSearch.Text == "Search")
+		if (txtSearch.Text == "Search for a book by its name, author or category")
 			txtSearch.Text = "";
 	}
 
 	private void txtSearch_Leave(object sender, EventArgs e)
 	{
 		if (txtSearch.Text.Trim() == "")
-			txtSearch.Text = "Search";
+			txtSearch.Text = "Search for a book by its name, author or category";
 	}
 
 		private void SearchByAuthor_Load(object sender, EventArgs e)
