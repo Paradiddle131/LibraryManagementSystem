@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LibraryManagementSystem
 {
@@ -25,6 +26,13 @@ namespace LibraryManagementSystem
 		public SearchUserControl()
 		{
 			InitializeComponent();
+		}
+
+		private void btnSearchByAuthor_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			SearchByAuthor searchByAuthorForm = new SearchByAuthor();
+			searchByAuthorForm.Show();
 		}
 	}
 }

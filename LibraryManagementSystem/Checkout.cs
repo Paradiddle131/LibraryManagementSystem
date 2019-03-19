@@ -54,18 +54,8 @@ namespace dbForLMS
 		{
 			pnlGreen.Width = btnSearch.Width;
 			pnlGreen.Left = btnSearch.Left;
-			////searchUserControl1.Show();
-			//Search SearchScreen = new Search();
-			//SearchScreen.Show();
+			searchUserControl1.Instance.Show();
 
-			//if (!pnlIssue.Controls.Contains(searchUserControl1.Instance))
-			//{
-			//	pnlIssue.Controls.Add(searchUserControl1.Instance);
-			//	searchUserControl1.Instance.Dock = DockStyle.Fill;
-			//	searchUserControl1.Instance.BringToFront();
-			//}
-			//else
-			//	searchUserControl1.Instance.BringToFront();
 			if (!pnlIssue.Controls.Contains(searchUserControl1.Instance))
 			{
 				pnlIssue.Controls.Add(searchUserControl1.Instance);

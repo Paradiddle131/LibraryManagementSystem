@@ -40,7 +40,6 @@ D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManageme
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.IssueUserControl.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\dbForLMS.Login.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Properties.Resources.resources
-D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\dbForLMS.Search.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.SearchUserControl.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.GenerateResource.cache
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CoreCompileInputs.cache
@@ -50,3 +49,4 @@ D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManageme
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserUserControl1.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.addAuthor.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.addBook.resources
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.SearchByAuthor.resources

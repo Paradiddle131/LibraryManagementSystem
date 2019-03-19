@@ -28,20 +28,110 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserUserControl1));
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.borrowsDataSet = new LibraryManagementSystem.BorrowsDataSet();
+			this.borrowsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.borrowsTableAdapter = new LibraryManagementSystem.BorrowsDataSetTableAdapters.borrowsTableAdapter();
+			this.borrowIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.takenDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.broughtDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).BeginInit();
 			this.SuspendLayout();
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.AutoGenerateColumns = false;
+			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(224)))), ((int)(((byte)(237)))));
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.borrowIdDataGridViewTextBoxColumn,
+            this.studentIdDataGridViewTextBoxColumn,
+            this.bookIdDataGridViewTextBoxColumn,
+            this.takenDateDataGridViewTextBoxColumn,
+            this.broughtDateDataGridViewTextBoxColumn});
+			this.dataGridView1.DataSource = this.borrowsBindingSource;
+			this.dataGridView1.Location = new System.Drawing.Point(250, 46);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.Size = new System.Drawing.Size(547, 242);
+			this.dataGridView1.TabIndex = 0;
+			// 
+			// borrowsDataSet
+			// 
+			this.borrowsDataSet.DataSetName = "BorrowsDataSet";
+			this.borrowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// borrowsBindingSource
+			// 
+			this.borrowsBindingSource.DataMember = "borrows";
+			this.borrowsBindingSource.DataSource = this.borrowsDataSet;
+			// 
+			// borrowsTableAdapter
+			// 
+			this.borrowsTableAdapter.ClearBeforeFill = true;
+			// 
+			// borrowIdDataGridViewTextBoxColumn
+			// 
+			this.borrowIdDataGridViewTextBoxColumn.DataPropertyName = "borrowId";
+			this.borrowIdDataGridViewTextBoxColumn.HeaderText = "borrowId";
+			this.borrowIdDataGridViewTextBoxColumn.Name = "borrowIdDataGridViewTextBoxColumn";
+			this.borrowIdDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// studentIdDataGridViewTextBoxColumn
+			// 
+			this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "studentId";
+			this.studentIdDataGridViewTextBoxColumn.HeaderText = "studentId";
+			this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
+			// 
+			// bookIdDataGridViewTextBoxColumn
+			// 
+			this.bookIdDataGridViewTextBoxColumn.DataPropertyName = "bookId";
+			this.bookIdDataGridViewTextBoxColumn.HeaderText = "bookId";
+			this.bookIdDataGridViewTextBoxColumn.Name = "bookIdDataGridViewTextBoxColumn";
+			// 
+			// takenDateDataGridViewTextBoxColumn
+			// 
+			this.takenDateDataGridViewTextBoxColumn.DataPropertyName = "takenDate";
+			this.takenDateDataGridViewTextBoxColumn.HeaderText = "takenDate";
+			this.takenDateDataGridViewTextBoxColumn.Name = "takenDateDataGridViewTextBoxColumn";
+			// 
+			// broughtDateDataGridViewTextBoxColumn
+			// 
+			this.broughtDateDataGridViewTextBoxColumn.DataPropertyName = "broughtDate";
+			this.broughtDateDataGridViewTextBoxColumn.HeaderText = "broughtDate";
+			this.broughtDateDataGridViewTextBoxColumn.Name = "broughtDateDataGridViewTextBoxColumn";
 			// 
 			// UserUserControl1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+			this.Controls.Add(this.dataGridView1);
 			this.Name = "UserUserControl1";
 			this.Size = new System.Drawing.Size(800, 324);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
+
+		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn borrowIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn studentIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn bookIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn takenDateDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn broughtDateDataGridViewTextBoxColumn;
+		private System.Windows.Forms.BindingSource borrowsBindingSource;
+		private BorrowsDataSet borrowsDataSet;
+		private BorrowsDataSetTableAdapters.borrowsTableAdapter borrowsTableAdapter;
 	}
 }

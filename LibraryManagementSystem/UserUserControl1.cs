@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LibraryManagementSystem
 {
@@ -26,5 +27,8 @@ namespace LibraryManagementSystem
 		{
 			InitializeComponent();
 		}
+
+		private const string ConnectionString = @"Data Source=DESKTOP-VGI8J75\SQLEXPRESS;Initial Catalog=library;Integrated Security=True";
+		SqlConnection connection = new SqlConnection(ConnectionString);
 	}
 }

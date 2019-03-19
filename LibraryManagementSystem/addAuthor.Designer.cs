@@ -107,6 +107,8 @@
 			// dgvAuthor
 			// 
 			this.dgvAuthor.AutoGenerateColumns = false;
+			this.dgvAuthor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgvAuthor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(224)))), ((int)(((byte)(237)))));
 			this.dgvAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvAuthor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.authorIdDataGridViewTextBoxColumn,

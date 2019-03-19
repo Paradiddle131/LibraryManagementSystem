@@ -29,39 +29,53 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchUserControl));
-			this.txtSaerchUC = new LollipopTextBox();
+			this.btnSearchByAuthor = new LollipopButton();
+			this.lollipopLabel1 = new LollipopLabel();
 			this.SuspendLayout();
 			// 
-			// txtSaerchUC
+			// btnSearchByAuthor
 			// 
-			this.txtSaerchUC.FocusedColor = "#508ef5";
-			this.txtSaerchUC.FontColor = "#999999";
-			this.txtSaerchUC.IsEnabled = true;
-			this.txtSaerchUC.Location = new System.Drawing.Point(33, 25);
-			this.txtSaerchUC.MaxLength = 32767;
-			this.txtSaerchUC.Multiline = false;
-			this.txtSaerchUC.Name = "txtSaerchUC";
-			this.txtSaerchUC.ReadOnly = false;
-			this.txtSaerchUC.Size = new System.Drawing.Size(742, 24);
-			this.txtSaerchUC.TabIndex = 0;
-			this.txtSaerchUC.Text = "Search for a book with its name, author or category";
-			this.txtSaerchUC.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-			this.txtSaerchUC.UseSystemPasswordChar = false;
+			this.btnSearchByAuthor.BackColor = System.Drawing.Color.Transparent;
+			this.btnSearchByAuthor.BGColor = "#508ef5";
+			this.btnSearchByAuthor.FontColor = "#ffffff";
+			this.btnSearchByAuthor.Location = new System.Drawing.Point(31, 122);
+			this.btnSearchByAuthor.Name = "btnSearchByAuthor";
+			this.btnSearchByAuthor.Size = new System.Drawing.Size(143, 41);
+			this.btnSearchByAuthor.TabIndex = 0;
+			this.btnSearchByAuthor.Text = "lollipopButton1";
+			this.btnSearchByAuthor.Click += new System.EventHandler(this.btnSearchByAuthor_Click);
+			// 
+			// lollipopLabel1
+			// 
+			this.lollipopLabel1.AutoSize = true;
+			this.lollipopLabel1.BackColor = System.Drawing.Color.Transparent;
+			this.lollipopLabel1.Font = new System.Drawing.Font("Roboto Medium", 10F);
+			this.lollipopLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+			this.lollipopLabel1.Location = new System.Drawing.Point(27, 87);
+			this.lollipopLabel1.Name = "lollipopLabel1";
+			this.lollipopLabel1.Size = new System.Drawing.Size(118, 19);
+			this.lollipopLabel1.TabIndex = 1;
+			this.lollipopLabel1.Text = "Search By Author";
 			// 
 			// SearchUserControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-			this.Controls.Add(this.txtSaerchUC);
+			this.Controls.Add(this.lollipopLabel1);
+			this.Controls.Add(this.btnSearchByAuthor);
 			this.Name = "SearchUserControl";
 			this.Size = new System.Drawing.Size(800, 400);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private LollipopTextBox txtSaerchUC;
+		private System.Windows.Forms.BindingSource booksBindingSource;
+		private System.Windows.Forms.BindingSource searchDataSetBindingSource;
+		private SearchDataSet searchDataSet;
+		private LollipopButton btnSearchByAuthor;
+		private LollipopLabel lollipopLabel1;
 	}
 }

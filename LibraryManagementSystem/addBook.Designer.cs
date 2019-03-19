@@ -31,6 +31,12 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addBook));
 			this.dgvBook = new System.Windows.Forms.DataGridView();
+			this.bookId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.pagecount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.point = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.authorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.typeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.booksDataSet = new LibraryManagementSystem.BooksDataSet();
 			this.authorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -54,12 +60,6 @@
 			this.numAuthorID = new System.Windows.Forms.NumericUpDown();
 			this.numTypeID = new System.Windows.Forms.NumericUpDown();
 			this.booksTableAdapter1 = new LibraryManagementSystem.BooksDataSetTableAdapters.booksTableAdapter();
-			this.bookId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.pagecount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.point = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.authorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.typeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
@@ -77,20 +77,59 @@
 			// 
 			this.dgvBook.AutoGenerateColumns = false;
 			this.dgvBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgvBook.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(224)))), ((int)(((byte)(237)))));
 			this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.bookId,
-            this.nameDataGridViewTextBoxColumn,
-            this.pagecount,
-            this.point,
-            this.authorIdDataGridViewTextBoxColumn,
-            this.typeId});
+			this.bookId,
+			this.nameDataGridViewTextBoxColumn,
+			this.pagecount,
+			this.point,
+			this.authorIdDataGridViewTextBoxColumn,
+			this.typeId});
 			this.dgvBook.DataSource = this.booksBindingSource1;
 			this.dgvBook.Location = new System.Drawing.Point(14, 198);
 			this.dgvBook.Name = "dgvBook";
 			this.dgvBook.Size = new System.Drawing.Size(776, 310);
 			this.dgvBook.TabIndex = 11;
 			this.dgvBook.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBook_CellClick);
+			// 
+			// bookId
+			// 
+			this.bookId.DataPropertyName = "bookId";
+			this.bookId.HeaderText = "bookId";
+			this.bookId.Name = "bookId";
+			this.bookId.ReadOnly = true;
+			// 
+			// nameDataGridViewTextBoxColumn
+			// 
+			this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+			this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			// 
+			// pagecount
+			// 
+			this.pagecount.DataPropertyName = "pagecount";
+			this.pagecount.HeaderText = "pagecount";
+			this.pagecount.Name = "pagecount";
+			// 
+			// point
+			// 
+			this.point.DataPropertyName = "point";
+			this.point.HeaderText = "point";
+			this.point.Name = "point";
+			// 
+			// authorIdDataGridViewTextBoxColumn
+			// 
+			this.authorIdDataGridViewTextBoxColumn.DataPropertyName = "authorId";
+			this.authorIdDataGridViewTextBoxColumn.HeaderText = "authorId";
+			this.authorIdDataGridViewTextBoxColumn.Name = "authorIdDataGridViewTextBoxColumn";
+			this.authorIdDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// typeId
+			// 
+			this.typeId.DataPropertyName = "typeId";
+			this.typeId.HeaderText = "typeId";
+			this.typeId.Name = "typeId";
 			// 
 			// booksBindingSource1
 			// 
@@ -280,44 +319,6 @@
 			// booksTableAdapter1
 			// 
 			this.booksTableAdapter1.ClearBeforeFill = true;
-			// 
-			// bookId
-			// 
-			this.bookId.DataPropertyName = "bookId";
-			this.bookId.HeaderText = "bookId";
-			this.bookId.Name = "bookId";
-			this.bookId.ReadOnly = true;
-			// 
-			// nameDataGridViewTextBoxColumn
-			// 
-			this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-			this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			// 
-			// pagecount
-			// 
-			this.pagecount.DataPropertyName = "pagecount";
-			this.pagecount.HeaderText = "pagecount";
-			this.pagecount.Name = "pagecount";
-			// 
-			// point
-			// 
-			this.point.DataPropertyName = "point";
-			this.point.HeaderText = "point";
-			this.point.Name = "point";
-			// 
-			// authorIdDataGridViewTextBoxColumn
-			// 
-			this.authorIdDataGridViewTextBoxColumn.DataPropertyName = "authorId";
-			this.authorIdDataGridViewTextBoxColumn.HeaderText = "authorId";
-			this.authorIdDataGridViewTextBoxColumn.Name = "authorIdDataGridViewTextBoxColumn";
-			this.authorIdDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// typeId
-			// 
-			this.typeId.DataPropertyName = "typeId";
-			this.typeId.HeaderText = "typeId";
-			this.typeId.Name = "typeId";
 			// 
 			// addBook
 			// 
