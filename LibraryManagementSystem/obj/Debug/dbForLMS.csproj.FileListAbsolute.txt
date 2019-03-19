@@ -1,0 +1,13 @@
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\obj\Debug\dbForLMS.Properties.Resources.resources
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\obj\Debug\dbForLMS.csproj.GenerateResource.cache
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\obj\Debug\dbForLMS.csproj.CoreCompileInputs.cache
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\bin\Debug\dbForLMS.exe.config
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\bin\Debug\dbForLMS.exe
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\bin\Debug\dbForLMS.pdb
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\obj\Debug\dbForLMS.exe
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\obj\Debug\dbForLMS.pdb
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\obj\Debug\dbForLMS.csprojAssemblyReference.cache
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\obj\Debug\dbForLMS.Login.resources
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\obj\Debug\dbForLMS.Coders.resources
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\obj\Debug\dbForLMS.Checkout.resources
+C:\Users\SPACE\source\repos\dbForLMS\dbForLMS\obj\Debug\dbForLMS.Search.resources
