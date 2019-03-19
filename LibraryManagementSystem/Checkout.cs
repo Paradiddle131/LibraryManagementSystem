@@ -80,6 +80,7 @@ namespace dbForLMS
 		{
 			pnlGreen.Width = btnIssue.Width;
 			pnlGreen.Left = btnIssue.Left;
+			issueUserControl1.Instance.Show();
 
 			if (!pnlIssue.Controls.Contains(issueUserControl1.Instance))
 			{

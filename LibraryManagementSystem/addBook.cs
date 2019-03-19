@@ -11,10 +11,10 @@ using System.Data.SqlClient;
 
 namespace LibraryManagementSystem
 {
-	public partial class addAuthor : Form
+	public partial class addBook : Form
 	{
 		dbForLMS.Checkout checkout = new dbForLMS.Checkout();
-		public addAuthor()
+		public addBook()
 		{
 			InitializeComponent();
 		}
@@ -22,10 +22,12 @@ namespace LibraryManagementSystem
 		private const string ConnectionString = @"Data Source=DESKTOP-VGI8J75\SQLEXPRESS;Initial Catalog=library;Integrated Security=True";
 		SqlConnection connection = new SqlConnection(ConnectionString);
 
-		private void addAuthor_Load(object sender, EventArgs e)
+		private void addBook_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'libraryDataSet1.authors' table. You can move, or remove it, as needed.
-			this.authorsTableAdapter.Fill(this.libraryDataSet1.authors);
+			// TODO: This line of code loads data into the 'booksDataSet.books' table. You can move, or remove it, as needed.
+			this.booksTableAdapter1.Fill(this.booksDataSet.books);
+			// TODO: This line of code loads data into the 'books.books' table. You can move, or remove it, as needed.
+			this.booksTableAdapter.Fill(this.books.books);
 			listing();
 		}
 
@@ -36,20 +38,22 @@ namespace LibraryManagementSystem
 				connection.Open();
 				SqlCommand cmd = new SqlCommand();
 				cmd.Connection = connection;
-				cmd.CommandText = "SELECT * FROM authors";
+				cmd.CommandText = "SELECT * FROM books";
 				SqlDataAdapter adpr = new SqlDataAdapter(cmd);
 				DataSet ds = new DataSet();
-				adpr.Fill(ds, "authors");
-				dgvAuthor.DataSource = ds.Tables["authors"];
-				//dgvAuthor.Columns[0].Visible = false; // hides ID column
+				adpr.Fill(ds, "books");
+				dgvBook.DataSource = ds.Tables["books"];
 				connection.Close();
 			}
 		}
 
 		public void clear()
 		{
-			txtAuthorName.Text = "";
-			txtAuthorSurname.Text = "";
+			txtBookName.Text = "";
+			numPageCount.Value = 0;
+			numPoint.Value = 0;
+			numAuthorID.Value = 0;
+			numTypeID.Value = 0;
 		}
 
 		private void btnAdd_Click(object sender, EventArgs e)
@@ -59,7 +63,9 @@ namespace LibraryManagementSystem
 				connection.Open();
 				SqlCommand cmd = new SqlCommand();
 				cmd.Connection = connection;
-				cmd.CommandText = "INSERT INTO authors(name,surname) VALUES('" + txtAuthorName.Text + "','" + txtAuthorSurname.Text + "')";
+				cmd.CommandText = "INSERT INTO books(name,pagecount,point,authorId,typeId) " +
+					"VALUES('" + txtBookName.Text + "','" + numPageCount.Value + "','" + 
+					numPoint.Value + "','" + numAuthorID.Value + "','" + numTypeID.Value + "')";
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
 				connection.Close();
@@ -75,8 +81,11 @@ namespace LibraryManagementSystem
 				connection.Open();
 				SqlCommand cmd = new SqlCommand();
 				cmd.Connection = connection;
-				cmd.CommandText = "UPDATE authors SET name='" + txtAuthorName.Text + "',surname='" + txtAuthorSurname.Text + "'WHERE authorId=@number";
-				cmd.Parameters.AddWithValue("@number", dgvAuthor.CurrentRow.Cells[0].Value.ToString());
+				cmd.CommandText = "UPDATE books SET name='" + txtBookName.Text + 
+					"',pagecount='" + numPageCount.Value + "',point='" + numPoint.Value + 
+					"',authorId='" + numAuthorID.Value + "',typeId='" + numTypeID.Value + 
+					"'WHERE bookId=@number";
+				cmd.Parameters.AddWithValue("@number", dgvBook.CurrentRow.Cells[0].Value.ToString());
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
 				connection.Close();
@@ -95,8 +104,8 @@ namespace LibraryManagementSystem
 					connection.Open();
 					SqlCommand cmd = new SqlCommand();
 					cmd.Connection = connection;
-					cmd.CommandText = "DELETE FROM authors WHERE authorId=@number";
-					cmd.Parameters.AddWithValue("@number", dgvAuthor.CurrentRow.Cells[0].Value.ToString());
+					cmd.CommandText = "DELETE FROM books WHERE bookId=@number";
+					cmd.Parameters.AddWithValue("@number", dgvBook.CurrentRow.Cells[0].Value.ToString());
 					cmd.ExecuteNonQuery();
 					cmd.Dispose();
 					connection.Close();
@@ -106,10 +115,15 @@ namespace LibraryManagementSystem
 			}
 		}
 
-		private void dgvAuthor_CellClick(object sender, DataGridViewCellEventArgs e)
+		private void dgvBook_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			txtAuthorName.Text = dgvAuthor.CurrentRow.Cells[1].Value.ToString();
-			txtAuthorSurname.Text = dgvAuthor.CurrentRow.Cells[2].Value.ToString();
+			//int index = Int32.Parse(e.ToString());
+			txtBookName.Text = dgvBook.CurrentRow.Cells[1].Value.ToString();
+			//numPageCount.Value = (int)dgvBook.CurrentRow.Cells[2].Value.ToString();
+			numPageCount.Value = int.Parse(dgvBook.CurrentRow.Cells[2].Value.ToString());
+			numPoint.Value = int.Parse(dgvBook.CurrentRow.Cells[3].Value.ToString());
+			numAuthorID.Value = int.Parse(dgvBook.CurrentRow.Cells[4].Value.ToString());
+			numTypeID.Value = int.Parse(dgvBook.CurrentRow.Cells[5].Value.ToString());
 		}
 
 		private void btnBack_Click(object sender, EventArgs e)

@@ -19,11 +19,10 @@ namespace dbForLMS
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			/*
-			this.Hide();
-			Login backToLoginScreen = new Login();
-			backToLoginScreen.Show();
-			*/
+			//this.Hide();
+			//Login backToLoginScreen = new Login();
+			//backToLoginScreen.Show();
+			
 			this.Hide();
 		}
 	}

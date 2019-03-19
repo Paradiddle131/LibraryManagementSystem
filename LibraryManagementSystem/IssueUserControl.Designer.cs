@@ -30,10 +30,11 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.pnlIssue = new System.Windows.Forms.Panel();
+			this.btnAddAuthor = new LollipopButton();
 			this.bookIssueTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.libraryDBDataSet7 = new LibraryManagementSystem.libraryDBDataSet7();
 			this.bookIssueTableTableAdapter1 = new LibraryManagementSystem.libraryDBDataSet7TableAdapters.BookIssueTableTableAdapter();
-			this.btnAddAuthor = new LollipopButton();
+			this.btnAddBook = new LollipopButton();
 			this.pnlIssue.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bookIssueTableBindingSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet7)).BeginInit();
@@ -41,11 +42,24 @@
 			// 
 			// pnlIssue
 			// 
+			this.pnlIssue.Controls.Add(this.btnAddBook);
 			this.pnlIssue.Controls.Add(this.btnAddAuthor);
 			this.pnlIssue.Location = new System.Drawing.Point(0, 0);
 			this.pnlIssue.Name = "pnlIssue";
 			this.pnlIssue.Size = new System.Drawing.Size(793, 317);
 			this.pnlIssue.TabIndex = 5;
+			// 
+			// btnAddAuthor
+			// 
+			this.btnAddAuthor.BackColor = System.Drawing.Color.Transparent;
+			this.btnAddAuthor.BGColor = "#508ef5";
+			this.btnAddAuthor.FontColor = "#ffffff";
+			this.btnAddAuthor.Location = new System.Drawing.Point(42, 31);
+			this.btnAddAuthor.Name = "btnAddAuthor";
+			this.btnAddAuthor.Size = new System.Drawing.Size(143, 41);
+			this.btnAddAuthor.TabIndex = 0;
+			this.btnAddAuthor.Text = "Add Author";
+			this.btnAddAuthor.Click += new System.EventHandler(this.btnAddAuthor_Click);
 			// 
 			// bookIssueTableBindingSource1
 			// 
@@ -61,17 +75,17 @@
 			// 
 			this.bookIssueTableTableAdapter1.ClearBeforeFill = true;
 			// 
-			// btnAddAuthor
+			// btnAddBook
 			// 
-			this.btnAddAuthor.BackColor = System.Drawing.Color.Transparent;
-			this.btnAddAuthor.BGColor = "#508ef5";
-			this.btnAddAuthor.FontColor = "#ffffff";
-			this.btnAddAuthor.Location = new System.Drawing.Point(42, 31);
-			this.btnAddAuthor.Name = "btnAddAuthor";
-			this.btnAddAuthor.Size = new System.Drawing.Size(143, 41);
-			this.btnAddAuthor.TabIndex = 0;
-			this.btnAddAuthor.Text = "Add Author";
-			this.btnAddAuthor.Click += new System.EventHandler(this.btnAddAuthor_Click);
+			this.btnAddBook.BackColor = System.Drawing.Color.Transparent;
+			this.btnAddBook.BGColor = "#508ef5";
+			this.btnAddBook.FontColor = "#ffffff";
+			this.btnAddBook.Location = new System.Drawing.Point(206, 31);
+			this.btnAddBook.Name = "btnAddBook";
+			this.btnAddBook.Size = new System.Drawing.Size(143, 41);
+			this.btnAddBook.TabIndex = 0;
+			this.btnAddBook.Text = "Add Book";
+			this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
 			// 
 			// IssueUserControl
 			// 
@@ -94,5 +108,6 @@
 		private libraryDBDataSet7 libraryDBDataSet7;
 		private libraryDBDataSet7TableAdapters.BookIssueTableTableAdapter bookIssueTableTableAdapter1;
 		private LollipopButton btnAddAuthor;
+		private LollipopButton btnAddBook;
 	}
 }

@@ -32,8 +32,15 @@ namespace LibraryManagementSystem
 		private void btnAddAuthor_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			addAuthor AuthorForm = new addAuthor();
-			AuthorForm.Show();
+			addAuthor AddAuthorForm = new addAuthor();
+			AddAuthorForm.Show();
+		}
+
+		private void btnAddBook_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			addBook AddBookForm = new addBook();
+			AddBookForm.Show();
 		}
 	}
 	}

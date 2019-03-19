@@ -44,6 +44,7 @@
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.btnEdit = new System.Windows.Forms.Button();
 			this.btnAdd = new System.Windows.Forms.Button();
+			this.btnBack = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvAuthor)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
@@ -54,12 +55,12 @@
 			this.txtAuthorName.FocusedColor = "#508ef5";
 			this.txtAuthorName.FontColor = "#999999";
 			this.txtAuthorName.IsEnabled = true;
-			this.txtAuthorName.Location = new System.Drawing.Point(176, 51);
+			this.txtAuthorName.Location = new System.Drawing.Point(186, 63);
 			this.txtAuthorName.MaxLength = 32767;
 			this.txtAuthorName.Multiline = false;
 			this.txtAuthorName.Name = "txtAuthorName";
 			this.txtAuthorName.ReadOnly = false;
-			this.txtAuthorName.Size = new System.Drawing.Size(300, 24);
+			this.txtAuthorName.Size = new System.Drawing.Size(200, 24);
 			this.txtAuthorName.TabIndex = 0;
 			this.txtAuthorName.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtAuthorName.UseSystemPasswordChar = false;
@@ -67,24 +68,24 @@
 			// lollipopLabel1
 			// 
 			this.lollipopLabel1.AutoSize = true;
-			this.lollipopLabel1.BackColor = System.Drawing.Color.Transparent;
-			this.lollipopLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.lollipopLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-			this.lollipopLabel1.Location = new System.Drawing.Point(24, 51);
+			this.lollipopLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(224)))), ((int)(((byte)(237)))));
+			this.lollipopLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.lollipopLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+			this.lollipopLabel1.Location = new System.Drawing.Point(8, 63);
 			this.lollipopLabel1.Name = "lollipopLabel1";
-			this.lollipopLabel1.Size = new System.Drawing.Size(95, 17);
+			this.lollipopLabel1.Size = new System.Drawing.Size(139, 24);
 			this.lollipopLabel1.TabIndex = 1;
 			this.lollipopLabel1.Text = "Author Name:";
 			// 
 			// lollipopLabel2
 			// 
 			this.lollipopLabel2.AutoSize = true;
-			this.lollipopLabel2.BackColor = System.Drawing.Color.Transparent;
-			this.lollipopLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.lollipopLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-			this.lollipopLabel2.Location = new System.Drawing.Point(25, 95);
+			this.lollipopLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(224)))), ((int)(((byte)(237)))));
+			this.lollipopLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.lollipopLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+			this.lollipopLabel2.Location = new System.Drawing.Point(9, 101);
 			this.lollipopLabel2.Name = "lollipopLabel2";
-			this.lollipopLabel2.Size = new System.Drawing.Size(115, 17);
+			this.lollipopLabel2.Size = new System.Drawing.Size(168, 24);
 			this.lollipopLabel2.TabIndex = 1;
 			this.lollipopLabel2.Text = "Author Surname:";
 			// 
@@ -93,12 +94,12 @@
 			this.txtAuthorSurname.FocusedColor = "#508ef5";
 			this.txtAuthorSurname.FontColor = "#999999";
 			this.txtAuthorSurname.IsEnabled = true;
-			this.txtAuthorSurname.Location = new System.Drawing.Point(176, 95);
+			this.txtAuthorSurname.Location = new System.Drawing.Point(186, 101);
 			this.txtAuthorSurname.MaxLength = 32767;
 			this.txtAuthorSurname.Multiline = false;
 			this.txtAuthorSurname.Name = "txtAuthorSurname";
 			this.txtAuthorSurname.ReadOnly = false;
-			this.txtAuthorSurname.Size = new System.Drawing.Size(300, 24);
+			this.txtAuthorSurname.Size = new System.Drawing.Size(200, 24);
 			this.txtAuthorSurname.TabIndex = 0;
 			this.txtAuthorSurname.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtAuthorSurname.UseSystemPasswordChar = false;
@@ -112,9 +113,9 @@
             this.nameDataGridViewTextBoxColumn,
             this.surnameDataGridViewTextBoxColumn});
 			this.dgvAuthor.DataSource = this.authorsBindingSource;
-			this.dgvAuthor.Location = new System.Drawing.Point(28, 139);
+			this.dgvAuthor.Location = new System.Drawing.Point(12, 198);
 			this.dgvAuthor.Name = "dgvAuthor";
-			this.dgvAuthor.Size = new System.Drawing.Size(742, 299);
+			this.dgvAuthor.Size = new System.Drawing.Size(776, 310);
 			this.dgvAuthor.TabIndex = 2;
 			this.dgvAuthor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuthor_CellClick);
 			// 
@@ -155,7 +156,7 @@
 			// 
 			this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(224)))), ((int)(((byte)(237)))));
 			this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-			this.btnDelete.Location = new System.Drawing.Point(671, 63);
+			this.btnDelete.Location = new System.Drawing.Point(655, 63);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(75, 49);
 			this.btnDelete.TabIndex = 3;
@@ -166,7 +167,7 @@
 			// 
 			this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(224)))), ((int)(((byte)(237)))));
 			this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-			this.btnEdit.Location = new System.Drawing.Point(590, 63);
+			this.btnEdit.Location = new System.Drawing.Point(574, 63);
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Size = new System.Drawing.Size(75, 49);
 			this.btnEdit.TabIndex = 4;
@@ -177,18 +178,31 @@
 			// 
 			this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(224)))), ((int)(((byte)(237)))));
 			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-			this.btnAdd.Location = new System.Drawing.Point(509, 63);
+			this.btnAdd.Location = new System.Drawing.Point(493, 63);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(75, 49);
 			this.btnAdd.TabIndex = 5;
 			this.btnAdd.UseVisualStyleBackColor = false;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
+			// btnBack
+			// 
+			this.btnBack.BackColor = System.Drawing.Color.White;
+			this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+			this.btnBack.Location = new System.Drawing.Point(12, 12);
+			this.btnBack.Name = "btnBack";
+			this.btnBack.Size = new System.Drawing.Size(39, 38);
+			this.btnBack.TabIndex = 6;
+			this.btnBack.UseVisualStyleBackColor = false;
+			this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+			// 
 			// addAuthor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+			this.ClientSize = new System.Drawing.Size(800, 520);
+			this.Controls.Add(this.btnBack);
 			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.btnEdit);
 			this.Controls.Add(this.btnAdd);
@@ -197,7 +211,11 @@
 			this.Controls.Add(this.lollipopLabel1);
 			this.Controls.Add(this.txtAuthorSurname);
 			this.Controls.Add(this.txtAuthorName);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximumSize = new System.Drawing.Size(800, 520);
 			this.Name = "addAuthor";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "addAuthor";
 			this.Load += new System.EventHandler(this.addAuthor_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvAuthor)).EndInit();
@@ -224,5 +242,6 @@
 		private System.Windows.Forms.Button btnDelete;
 		private System.Windows.Forms.Button btnEdit;
 		private System.Windows.Forms.Button btnAdd;
+		private System.Windows.Forms.Button btnBack;
 	}
 }
