@@ -82,6 +82,24 @@
     <Compile Include="addBook.Designer.cs">
       <DependentUpon>addBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="addBorrow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addBorrow.Designer.cs">
+      <DependentUpon>addBorrow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addStudent.Designer.cs">
+      <DependentUpon>addStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addType.Designer.cs">
+      <DependentUpon>addType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Books.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -217,6 +235,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addBook.resx">
       <DependentUpon>addBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addBorrow.resx">
+      <DependentUpon>addBorrow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addStudent.resx">
+      <DependentUpon>addStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addType.resx">
+      <DependentUpon>addType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>

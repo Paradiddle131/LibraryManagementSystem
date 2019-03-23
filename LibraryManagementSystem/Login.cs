@@ -55,5 +55,10 @@ namespace dbForLMS
 			if (txtPassword.Text.Trim() == "")
 				txtPassword.Text = "<Enter your password>";
 		}
-	}
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
 }

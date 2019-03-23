@@ -1,0 +1,93 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+
+namespace LibraryManagementSystem
+{
+    public partial class addBorrow : Form
+    {
+        dbForLMS.Checkout checkout = new dbForLMS.Checkout();
+        public addBorrow()
+        {
+            InitializeComponent();
+        }
+
+        private const string ConnectionString = @"Data Source=DESKTOP-VGI8J75\SQLEXPRESS;Initial Catalog=library;Integrated Security=True";
+        SqlConnection connection = new SqlConnection(ConnectionString);
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            checkout.Show();
+        }
+        public void listing()
+        {
+            if (connection.State == ConnectionState.Closed)
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = "SELECT * FROM borrows";
+                SqlDataAdapter adpr = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adpr.Fill(ds, "borrows");
+                dgvBook.DataSource = ds.Tables["borrows"];
+                connection.Close();
+            }
+        }
+
+        public void clear()
+        {
+            nudStudentID.Value = 0;
+            nudBookID.Value = 0;
+            dtpTakenDate.Text = "01 / 01 / 1900";
+            dtpBroughtDate.Text = "01 / 01 / 1900";
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (connection.State == ConnectionState.Closed)
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = "INSERT INTO borrows(studentId,bookId,takenDate,broughtDate) " +
+                    "VALUES('" + nudStudentID.Value + "','" + nudBookID.Value + "','" +
+                    dtpTakenDate.Text + "','" + dtpBroughtDate.Text + "')";
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                connection.Close();
+                listing(); // must be called after the connection closed
+                MessageBox.Show("Added.");
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (connection.State == ConnectionState.Closed)
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = "UPDATE borrows SET studentId='" + nudStudentID.Value +
+                    "',bookId='" + nudBookID.Value + "',takenDate='" + dtpTakenDate.Text +
+                    "',broughtDate='" + dtpBroughtDate.Text +
+                    "'WHERE borrowId=@number";
+                cmd.Parameters.AddWithValue("@number", dgvBook.CurrentRow.Cells[0].Value.ToString());
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                connection.Close();
+                MessageBox.Show("Edited.");
+                clear();
+                listing();
+            }
+        }
+    }
+}
