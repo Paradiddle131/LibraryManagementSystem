@@ -110,10 +110,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BooksDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="borrowDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>borrowDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BorrowsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BorrowsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="borrowsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>borrowsDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Checkout.cs">
       <SubType>Form</SubType>
@@ -224,6 +234,16 @@
     <Compile Include="SearchUserControl.Designer.cs">
       <DependentUpon>SearchUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="typeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>typeDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UserUserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -301,6 +321,17 @@
     <None Include="BooksDataSet.xss">
       <DependentUpon>BooksDataSet.xsd</DependentUpon>
     </None>
+    <None Include="borrowDataSet.xsc">
+      <DependentUpon>borrowDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="borrowDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>borrowDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="borrowDataSet.xss">
+      <DependentUpon>borrowDataSet.xsd</DependentUpon>
+    </None>
     <None Include="BorrowsDataSet.xsc">
       <DependentUpon>BorrowsDataSet.xsd</DependentUpon>
     </None>
@@ -311,6 +342,17 @@
     </None>
     <None Include="BorrowsDataSet.xss">
       <DependentUpon>BorrowsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="borrowsDataSet1.xsc">
+      <DependentUpon>borrowsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="borrowsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>borrowsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="borrowsDataSet1.xss">
+      <DependentUpon>borrowsDataSet1.xsd</DependentUpon>
     </None>
     <None Include="libraryDataSet.xsc">
       <DependentUpon>libraryDataSet.xsd</DependentUpon>
@@ -464,6 +506,28 @@
     </None>
     <None Include="SearchDataSet.xss">
       <DependentUpon>SearchDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDataSet.xsc">
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StudentDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentDataSet.xss">
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="typeDataSet.xsc">
+      <DependentUpon>typeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="typeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>typeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="typeDataSet.xss">
+      <DependentUpon>typeDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

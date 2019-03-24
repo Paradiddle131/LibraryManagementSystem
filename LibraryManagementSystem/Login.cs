@@ -56,9 +56,9 @@ namespace dbForLMS
 				txtPassword.Text = "<Enter your password>";
 		}
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-    }
+		private void btnExit_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
+		}
+	}
 }

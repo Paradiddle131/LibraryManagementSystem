@@ -30,6 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Checkout));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.searchUserControl1 = new LibraryManagementSystem.SearchUserControl();
 			this.pnlGreen = new System.Windows.Forms.Panel();
 			this.btnExit = new System.Windows.Forms.Button();
 			this.btnAbout = new System.Windows.Forms.Button();
@@ -41,10 +42,9 @@
 			this.btnSearch = new System.Windows.Forms.Button();
 			this.btnIssue = new System.Windows.Forms.Button();
 			this.pnlIssue = new System.Windows.Forms.Panel();
+			this.homeUserControl1 = new LibraryManagementSystem.HomeUserControl();
 			this.issueUserControl1 = new LibraryManagementSystem.IssueUserControl();
 			this.userUserControl1 = new LibraryManagementSystem.UserUserControl1();
-			this.homeUserControl1 = new LibraryManagementSystem.HomeUserControl();
-			this.searchUserControl1 = new LibraryManagementSystem.SearchUserControl();
 			this.panel1.SuspendLayout();
 			this.pnlIssue.SuspendLayout();
 			this.SuspendLayout();
@@ -67,6 +67,14 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(800, 75);
 			this.panel1.TabIndex = 3;
+			// 
+			// searchUserControl1
+			// 
+			this.searchUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchUserControl1.BackgroundImage")));
+			this.searchUserControl1.Location = new System.Drawing.Point(7, 74);
+			this.searchUserControl1.Name = "searchUserControl1";
+			this.searchUserControl1.Size = new System.Drawing.Size(793, 296);
+			this.searchUserControl1.TabIndex = 4;
 			// 
 			// pnlGreen
 			// 
@@ -215,6 +223,14 @@
 			this.pnlIssue.Size = new System.Drawing.Size(793, 324);
 			this.pnlIssue.TabIndex = 5;
 			// 
+			// homeUserControl1
+			// 
+			this.homeUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeUserControl1.BackgroundImage")));
+			this.homeUserControl1.Location = new System.Drawing.Point(0, 0);
+			this.homeUserControl1.Name = "homeUserControl1";
+			this.homeUserControl1.Size = new System.Drawing.Size(793, 325);
+			this.homeUserControl1.TabIndex = 3;
+			// 
 			// issueUserControl1
 			// 
 			this.issueUserControl1.Location = new System.Drawing.Point(0, 3);
@@ -229,22 +245,6 @@
 			this.userUserControl1.Name = "userUserControl1";
 			this.userUserControl1.Size = new System.Drawing.Size(793, 321);
 			this.userUserControl1.TabIndex = 4;
-			// 
-			// homeUserControl1
-			// 
-			this.homeUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeUserControl1.BackgroundImage")));
-			this.homeUserControl1.Location = new System.Drawing.Point(0, 0);
-			this.homeUserControl1.Name = "homeUserControl1";
-			this.homeUserControl1.Size = new System.Drawing.Size(793, 325);
-			this.homeUserControl1.TabIndex = 3;
-			// 
-			// searchUserControl1
-			// 
-			this.searchUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchUserControl1.BackgroundImage")));
-			this.searchUserControl1.Location = new System.Drawing.Point(7, 74);
-			this.searchUserControl1.Name = "searchUserControl1";
-			this.searchUserControl1.Size = new System.Drawing.Size(793, 296);
-			this.searchUserControl1.TabIndex = 4;
 			// 
 			// Checkout
 			// 

@@ -117,5 +117,32 @@ namespace LibraryManagementSystem
 			this.Hide();
 			checkout.Show();
 		}
+
+		#region Focus
+		private void txtAuthorName_Enter(object sender, EventArgs e)
+		{
+			//when the textbox gains focus:
+			if (txtAuthorName.Text == "<Enter Author Name>")
+				txtAuthorName.Text = "";
+		}
+
+		private void txtAuthorName_Leave(object sender, EventArgs e)
+		{
+			if (txtAuthorName.Text.Trim() == "")
+				txtAuthorName.Text = "<Enter Author Name>";
+		}
+
+		private void txtAuthorSurname_Enter(object sender, EventArgs e)
+		{
+			if (txtAuthorSurname.Text == "<Enter Author Surname>")
+				txtAuthorSurname.Text = "";
+		}
+
+		private void txtAuthorSurname_Leave(object sender, EventArgs e)
+		{
+			if (txtAuthorSurname.Text.Trim() == "")
+				txtAuthorSurname.Text = "<Enter Author Surname>";
+		}
+		#endregion
 	}
 }

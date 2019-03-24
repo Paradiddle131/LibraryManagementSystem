@@ -92,9 +92,9 @@ namespace dbForLMS
 		{
 			pnlGreen.Width = btnSocialMedia.Width;
 			pnlGreen.Left = btnSocialMedia.Left;
-            Login loginScreen = new Login();
-            this.Hide();
-            loginScreen.Show();
+			Login loginScreen = new Login();
+			this.Hide();
+			loginScreen.Show();
 		}
 
 		private void btnAbout_Click(object sender, EventArgs e)

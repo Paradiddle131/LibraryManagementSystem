@@ -131,5 +131,18 @@ namespace LibraryManagementSystem
 			this.Hide();
 			checkout.Show();
 		}
+		#region Focus
+		private void txtBookName_Enter(object sender, EventArgs e)
+		{
+			if (txtBookName.Text == "<Enter Book Name>")
+				txtBookName.Text = "";
+		}
+
+		private void txtBookName_Leave(object sender, EventArgs e)
+		{
+			if (txtBookName.Text.Trim() == "")
+				txtBookName.Text = "<Enter Book Name>";
+		}
+		#endregion
 	}
 }
