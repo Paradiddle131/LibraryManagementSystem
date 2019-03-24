@@ -19,8 +19,7 @@ namespace LibraryManagementSystem
 			InitializeComponent();
 		}
 
-		private const string ConnectionString = @"Data Source=DESKTOP-VGI8J75\SQLEXPRESS;Initial Catalog=library;Integrated Security=True";
-		SqlConnection connection = new SqlConnection(ConnectionString);
+		SqlConnection connection = new SqlConnection(dbForLMS.Checkout.ConnectionString);
 
 		private void addBook_Load(object sender, EventArgs e)
 		{

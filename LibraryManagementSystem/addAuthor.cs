@@ -14,13 +14,24 @@ namespace LibraryManagementSystem
 	public partial class addAuthor : Form
 	{
 		dbForLMS.Checkout checkout = new dbForLMS.Checkout();
+		SqlConnection connection = new SqlConnection(dbForLMS.Checkout.ConnectionString);
 		public addAuthor()
 		{
 			InitializeComponent();
 		}
 
-		private const string ConnectionString = @"Data Source=DESKTOP-VGI8J75\SQLEXPRESS;Initial Catalog=library;Integrated Security=True";
-		SqlConnection connection = new SqlConnection(ConnectionString);
+		//public void SettingSQLConnection()
+		//{
+		//	const string ConnectionString = @"Data Source=DESKTOP-VGI8J75\SQLEXPRESS;Initial Catalog=library;Integrated Security=True";
+		//	SqlConnection connection = new SqlConnection(ConnectionString);
+		//}
+
+		//public MySQLConnection(SqlConnection cnctn)
+		//{
+		//	SqlConnection connection = new SqlConnection(checkout.ConnectionString);
+		//	return cnctn;
+		//}
+
 
 		private void addAuthor_Load(object sender, EventArgs e)
 		{

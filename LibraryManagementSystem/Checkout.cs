@@ -13,11 +13,26 @@ namespace dbForLMS
 {
 	public partial class Checkout : Form
 	{
+		//public static Checkout _instance;
+		//public Checkout Instance
+		//{
+		//	get
+		//	{
+		//		if (_instance == null)
+		//			_instance = new Checkout();
+		//		return _instance;
+		//	}
+		//}
+
 		public Checkout()
 		{
 			InitializeComponent();
 			//searchUserControl1.Show();
 		}
+
+		//public string ConnectionString { get; set; } = @"Data Source=DESKTOP-VGI8J75\SQLEXPRESS;Initial Catalog=library;Integrated Security=True";
+
+		public static string ConnectionString { get { return @"Data Source=DESKTOP-VGI8J75\SQLEXPRESS;Initial Catalog=library;Integrated Security=True"; } }
 
 		private void btnHome_Click(object sender, EventArgs e)
 		{
