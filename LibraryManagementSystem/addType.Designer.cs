@@ -189,6 +189,7 @@
 			this.dgvType.Name = "dgvType";
 			this.dgvType.Size = new System.Drawing.Size(776, 368);
 			this.dgvType.TabIndex = 19;
+			this.dgvType.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvType_CellClick);
 			// 
 			// typeIdDataGridViewTextBoxColumn
 			// 

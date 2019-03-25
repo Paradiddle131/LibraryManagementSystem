@@ -110,11 +110,6 @@ namespace LibraryManagementSystem
 			}
 		}
 
-		private void dgvAuthor_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			txtTypeName.Text = dgvType.CurrentRow.Cells[1].Value.ToString();
-		}
-
 		private void txtTypeName_Enter(object sender, EventArgs e)
 		{
 			if (txtTypeName.Text == "<Enter Type Name>")
@@ -125,6 +120,11 @@ namespace LibraryManagementSystem
 		{
 			if (txtTypeName.Text.Trim() == "")
 				txtTypeName.Text = "<Enter Type Name>";
+		}
+
+		private void dgvType_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			txtTypeName.Text = dgvType.CurrentRow.Cells[1].Value.ToString();
 		}
 	}
 }

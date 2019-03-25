@@ -109,19 +109,26 @@ namespace LibraryManagementSystem
 			}
 		}
 
-		private void dgvBook_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			nudStudentID.Value = int.Parse(dgvBorrow.CurrentRow.Cells[1].Value.ToString());
-			nudBookID.Value = int.Parse(dgvBorrow.CurrentRow.Cells[2].Value.ToString());
-			dtpTakenDate.Value = Convert.ToDateTime(dgvBorrow.CurrentRow.Cells[3].Value.ToString());
-			dtpBroughtDate.Value = Convert.ToDateTime(dgvBorrow.CurrentRow.Cells[4].Value.ToString());
-		}
-
 		private void addBorrow_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'borrowsDataSet.borrows' table. You can move, or remove it, as needed.
 			this.borrowsTableAdapter.Fill(this.borrowsDataSet.borrows);
 
+		}
+
+		private void dgvBorrow_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			//if (dgvBorrow.SelectedCells.Contains(null)) return;
+			if (dgvBorrow.CurrentCell.Value == null) return;
+			nudStudentID.Maximum = nudBookID.Maximum = 9999;
+			// Default range of the numeric up down properties is [0,100] and this causes an "ArgumentOutOfRangeException" 
+			// when the user clicks a cell which contains a value out of the range. 
+			// Therefore, we had to set the maximum value as higher like 9999.
+			nudStudentID.Value = int.Parse(dgvBorrow.CurrentRow.Cells[1].Value.ToString());
+			nudBookID.Value = int.Parse(dgvBorrow.CurrentRow.Cells[2].Value.ToString());
+			dtpTakenDate.Value = Convert.ToDateTime(dgvBorrow.CurrentRow.Cells[3].Value.ToString());
+			dtpBroughtDate.Value = Convert.ToDateTime(dgvBorrow.CurrentRow.Cells[4].Value.ToString());
+			dgvBorrow.PerformLayout();
 		}
 	}
 }

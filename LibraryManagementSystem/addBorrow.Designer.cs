@@ -48,18 +48,18 @@
 			this.booksDataSet = new LibraryManagementSystem.BooksDataSet();
 			this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.dgvBorrow = new System.Windows.Forms.DataGridView();
-			this.dtpTakenDate = new System.Windows.Forms.DateTimePicker();
-			this.dtpBroughtDate = new System.Windows.Forms.DateTimePicker();
-			this.nudStudentID = new System.Windows.Forms.NumericUpDown();
-			this.nudBookID = new System.Windows.Forms.NumericUpDown();
-			this.borrowsDataSet = new LibraryManagementSystem.borrowsDataSet();
-			this.borrowsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.borrowsTableAdapter = new LibraryManagementSystem.borrowsDataSetTableAdapters.borrowsTableAdapter();
 			this.borrowIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.takenDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.broughtDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.borrowsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.borrowsDataSet = new LibraryManagementSystem.borrowsDataSet();
+			this.dtpTakenDate = new System.Windows.Forms.DateTimePicker();
+			this.dtpBroughtDate = new System.Windows.Forms.DateTimePicker();
+			this.nudStudentID = new System.Windows.Forms.NumericUpDown();
+			this.nudBookID = new System.Windows.Forms.NumericUpDown();
+			this.borrowsTableAdapter = new LibraryManagementSystem.borrowsDataSetTableAdapters.borrowsTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.books)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
@@ -67,10 +67,10 @@
 			((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBorrow)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudStudentID)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudBookID)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// booksTableAdapter1
@@ -223,7 +223,48 @@
 			this.dgvBorrow.Name = "dgvBorrow";
 			this.dgvBorrow.Size = new System.Drawing.Size(776, 310);
 			this.dgvBorrow.TabIndex = 19;
-			this.dgvBorrow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBook_CellClick);
+			this.dgvBorrow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrow_CellClick);
+			// 
+			// borrowIdDataGridViewTextBoxColumn
+			// 
+			this.borrowIdDataGridViewTextBoxColumn.DataPropertyName = "borrowId";
+			this.borrowIdDataGridViewTextBoxColumn.HeaderText = "borrowId";
+			this.borrowIdDataGridViewTextBoxColumn.Name = "borrowIdDataGridViewTextBoxColumn";
+			this.borrowIdDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// studentIdDataGridViewTextBoxColumn
+			// 
+			this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "studentId";
+			this.studentIdDataGridViewTextBoxColumn.HeaderText = "studentId";
+			this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
+			// 
+			// bookIdDataGridViewTextBoxColumn
+			// 
+			this.bookIdDataGridViewTextBoxColumn.DataPropertyName = "bookId";
+			this.bookIdDataGridViewTextBoxColumn.HeaderText = "bookId";
+			this.bookIdDataGridViewTextBoxColumn.Name = "bookIdDataGridViewTextBoxColumn";
+			// 
+			// takenDateDataGridViewTextBoxColumn
+			// 
+			this.takenDateDataGridViewTextBoxColumn.DataPropertyName = "takenDate";
+			this.takenDateDataGridViewTextBoxColumn.HeaderText = "takenDate";
+			this.takenDateDataGridViewTextBoxColumn.Name = "takenDateDataGridViewTextBoxColumn";
+			// 
+			// broughtDateDataGridViewTextBoxColumn
+			// 
+			this.broughtDateDataGridViewTextBoxColumn.DataPropertyName = "broughtDate";
+			this.broughtDateDataGridViewTextBoxColumn.HeaderText = "broughtDate";
+			this.broughtDateDataGridViewTextBoxColumn.Name = "broughtDateDataGridViewTextBoxColumn";
+			// 
+			// borrowsBindingSource
+			// 
+			this.borrowsBindingSource.DataMember = "borrows";
+			this.borrowsBindingSource.DataSource = this.borrowsDataSet;
+			// 
+			// borrowsDataSet
+			// 
+			this.borrowsDataSet.DataSetName = "borrowsDataSet";
+			this.borrowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// dtpTakenDate
 			// 
@@ -256,50 +297,9 @@
 			this.nudBookID.Size = new System.Drawing.Size(120, 20);
 			this.nudBookID.TabIndex = 26;
 			// 
-			// borrowsDataSet
-			// 
-			this.borrowsDataSet.DataSetName = "borrowsDataSet";
-			this.borrowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// borrowsBindingSource
-			// 
-			this.borrowsBindingSource.DataMember = "borrows";
-			this.borrowsBindingSource.DataSource = this.borrowsDataSet;
-			// 
 			// borrowsTableAdapter
 			// 
 			this.borrowsTableAdapter.ClearBeforeFill = true;
-			// 
-			// borrowIdDataGridViewTextBoxColumn
-			// 
-			this.borrowIdDataGridViewTextBoxColumn.DataPropertyName = "borrowId";
-			this.borrowIdDataGridViewTextBoxColumn.HeaderText = "borrowId";
-			this.borrowIdDataGridViewTextBoxColumn.Name = "borrowIdDataGridViewTextBoxColumn";
-			this.borrowIdDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// studentIdDataGridViewTextBoxColumn
-			// 
-			this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "studentId";
-			this.studentIdDataGridViewTextBoxColumn.HeaderText = "studentId";
-			this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
-			// 
-			// bookIdDataGridViewTextBoxColumn
-			// 
-			this.bookIdDataGridViewTextBoxColumn.DataPropertyName = "bookId";
-			this.bookIdDataGridViewTextBoxColumn.HeaderText = "bookId";
-			this.bookIdDataGridViewTextBoxColumn.Name = "bookIdDataGridViewTextBoxColumn";
-			// 
-			// takenDateDataGridViewTextBoxColumn
-			// 
-			this.takenDateDataGridViewTextBoxColumn.DataPropertyName = "takenDate";
-			this.takenDateDataGridViewTextBoxColumn.HeaderText = "takenDate";
-			this.takenDateDataGridViewTextBoxColumn.Name = "takenDateDataGridViewTextBoxColumn";
-			// 
-			// broughtDateDataGridViewTextBoxColumn
-			// 
-			this.broughtDateDataGridViewTextBoxColumn.DataPropertyName = "broughtDate";
-			this.broughtDateDataGridViewTextBoxColumn.HeaderText = "broughtDate";
-			this.broughtDateDataGridViewTextBoxColumn.Name = "broughtDateDataGridViewTextBoxColumn";
 			// 
 			// addBorrow
 			// 
@@ -333,10 +333,10 @@
 			((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBorrow)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudStudentID)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudBookID)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
