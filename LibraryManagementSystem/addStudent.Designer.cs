@@ -68,6 +68,7 @@
 			this.dtpBirthdate = new System.Windows.Forms.DateTimePicker();
 			this.studentsTableAdapter = new LibraryManagementSystem.StudentDataSetTableAdapters.studentsTableAdapter();
 			this.lollipopLabel7 = new LollipopLabel();
+			this.cmbLetter = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.books)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
@@ -408,9 +409,17 @@
 			this.lollipopLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
 			this.lollipopLabel7.Location = new System.Drawing.Point(576, 125);
 			this.lollipopLabel7.Name = "lollipopLabel7";
-			this.lollipopLabel7.Size = new System.Drawing.Size(66, 24);
+			this.lollipopLabel7.Size = new System.Drawing.Size(68, 24);
 			this.lollipopLabel7.TabIndex = 25;
-			this.lollipopLabel7.Text = "Class:";
+			this.lollipopLabel7.Text = "Letter:";
+			// 
+			// cmbLetter
+			// 
+			this.cmbLetter.FormattingEnabled = true;
+			this.cmbLetter.Location = new System.Drawing.Point(657, 127);
+			this.cmbLetter.Name = "cmbLetter";
+			this.cmbLetter.Size = new System.Drawing.Size(121, 21);
+			this.cmbLetter.TabIndex = 28;
 			// 
 			// addStudent
 			// 
@@ -418,6 +427,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.ClientSize = new System.Drawing.Size(800, 520);
+			this.Controls.Add(this.cmbLetter);
 			this.Controls.Add(this.dtpBirthdate);
 			this.Controls.Add(this.rbFemale);
 			this.Controls.Add(this.rbMale);
@@ -499,5 +509,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn classDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn pointDataGridViewTextBoxColumn;
 		private LollipopLabel lollipopLabel7;
+		private System.Windows.Forms.ComboBox cmbLetter;
 	}
 }

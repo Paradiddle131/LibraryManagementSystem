@@ -34,10 +34,8 @@ D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManageme
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.pdb
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\MaterialSkin.dll
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csprojAssemblyReference.cache
-D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\dbForLMS.Checkout.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\dbForLMS.Coders.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.HomeUserControl.resources
-D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.IssueUserControl.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\dbForLMS.Login.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Properties.Resources.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.SearchUserControl.resources
@@ -107,3 +105,14 @@ D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\Lib
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\May.xml
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\Newtonsoft.Json.xml
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.ManageUserControl.resources
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\log4net.dll
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\Lollipop.dll
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\Lollipop.DTO.dll
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\May.dll
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\Newtonsoft.Json.dll
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\log4net.xml
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\May.xml
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\Newtonsoft.Json.xml
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.AdminForm.resources
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.ManageUserControl.resources
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserForm.resources

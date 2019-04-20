@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace LibraryManagementSystem
 {
@@ -17,6 +18,7 @@ namespace LibraryManagementSystem
 		public addStudent()
 		{
 			InitializeComponent();
+			for (char c = 'A'; c <= 'Z'; ++c) cmbLetter.Items.Add(c);
 		}
 
 		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
@@ -124,14 +126,14 @@ namespace LibraryManagementSystem
 		{
 			if (dgvStudent.CurrentRow.Cells[4].Value.ToString() == "M") rbMale.Checked = true;
 			else rbFemale.Checked = true;
-
+			nudClass.Value = int.Parse(Regex.Replace(dgvStudent.CurrentRow.Cells[5].Value.ToString(), "[^0-9]", ""));
+			cmbLetter.Text = Regex.Replace(dgvStudent.CurrentRow.Cells[5].Value.ToString(), "[^a-zA-Z]", "");
 			nudClass.Maximum = nudPoint.Maximum = Int32.MaxValue;
 			txtStudentName.Text = dgvStudent.CurrentRow.Cells[1].Value.ToString();
 			txtStudentSurname.Text = dgvStudent.CurrentRow.Cells[2].Value.ToString();
 			dtpBirthdate.Text = dgvStudent.CurrentRow.Cells[3].Value.ToString();
 			// if rbMale.checked = true, then gender is M, otherwise F
 			//rbMale.Checked = Convert.ToBoolean(dgvStudent.CurrentRow.Cells[4].Value.ToString());
-			nudClass.Value = int.Parse(dgvStudent.CurrentRow.Cells[5].Value.ToString());
 			nudPoint.Value = int.Parse(dgvStudent.CurrentRow.Cells[6].Value.ToString());
 		}
 		#region Focus

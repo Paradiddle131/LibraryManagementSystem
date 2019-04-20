@@ -72,7 +72,7 @@
 			this.btnAddBook.BackColor = System.Drawing.Color.Transparent;
 			this.btnAddBook.BGColor = "#508ef5";
 			this.btnAddBook.FontColor = "#ffffff";
-			this.btnAddBook.Location = new System.Drawing.Point(209, 45);
+			this.btnAddBook.Location = new System.Drawing.Point(284, 45);
 			this.btnAddBook.Name = "btnAddBook";
 			this.btnAddBook.Size = new System.Drawing.Size(143, 41);
 			this.btnAddBook.TabIndex = 0;
@@ -84,7 +84,7 @@
 			this.btnAddBorrow.BackColor = System.Drawing.Color.Transparent;
 			this.btnAddBorrow.BGColor = "#508ef5";
 			this.btnAddBorrow.FontColor = "#ffffff";
-			this.btnAddBorrow.Location = new System.Drawing.Point(383, 45);
+			this.btnAddBorrow.Location = new System.Drawing.Point(33, 123);
 			this.btnAddBorrow.Name = "btnAddBorrow";
 			this.btnAddBorrow.Size = new System.Drawing.Size(143, 41);
 			this.btnAddBorrow.TabIndex = 0;
@@ -96,7 +96,7 @@
 			this.bnAddStudent.BackColor = System.Drawing.Color.Transparent;
 			this.bnAddStudent.BGColor = "#508ef5";
 			this.bnAddStudent.FontColor = "#ffffff";
-			this.bnAddStudent.Location = new System.Drawing.Point(566, 45);
+			this.bnAddStudent.Location = new System.Drawing.Point(284, 123);
 			this.bnAddStudent.Name = "bnAddStudent";
 			this.bnAddStudent.Size = new System.Drawing.Size(143, 41);
 			this.bnAddStudent.TabIndex = 0;
@@ -108,7 +108,7 @@
 			this.btnAddType.BackColor = System.Drawing.Color.Transparent;
 			this.btnAddType.BGColor = "#508ef5";
 			this.btnAddType.FontColor = "#ffffff";
-			this.btnAddType.Location = new System.Drawing.Point(308, 137);
+			this.btnAddType.Location = new System.Drawing.Point(157, 209);
 			this.btnAddType.Name = "btnAddType";
 			this.btnAddType.Size = new System.Drawing.Size(143, 41);
 			this.btnAddType.TabIndex = 0;
