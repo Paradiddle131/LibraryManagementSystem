@@ -30,7 +30,6 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Checkout));
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.searchUserControl1 = new LibraryManagementSystem.SearchUserControl();
 			this.pnlGreen = new System.Windows.Forms.Panel();
 			this.btnExit = new System.Windows.Forms.Button();
 			this.btnAbout = new System.Windows.Forms.Button();
@@ -41,6 +40,7 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.btnSearch = new System.Windows.Forms.Button();
 			this.btnIssue = new System.Windows.Forms.Button();
+			this.searchUserControl1 = new LibraryManagementSystem.SearchUserControl();
 			this.pnlIssue = new System.Windows.Forms.Panel();
 			this.homeUserControl1 = new LibraryManagementSystem.HomeUserControl();
 			this.issueUserControl1 = new LibraryManagementSystem.IssueUserControl();
@@ -52,7 +52,6 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(203)))), ((int)(((byte)(174)))));
-			this.panel1.Controls.Add(this.searchUserControl1);
 			this.panel1.Controls.Add(this.pnlGreen);
 			this.panel1.Controls.Add(this.btnExit);
 			this.panel1.Controls.Add(this.btnAbout);
@@ -67,14 +66,6 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(800, 75);
 			this.panel1.TabIndex = 3;
-			// 
-			// searchUserControl1
-			// 
-			this.searchUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchUserControl1.BackgroundImage")));
-			this.searchUserControl1.Location = new System.Drawing.Point(7, 74);
-			this.searchUserControl1.Name = "searchUserControl1";
-			this.searchUserControl1.Size = new System.Drawing.Size(793, 296);
-			this.searchUserControl1.TabIndex = 4;
 			// 
 			// pnlGreen
 			// 
@@ -213,6 +204,14 @@
 			this.btnIssue.UseVisualStyleBackColor = false;
 			this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
 			// 
+			// searchUserControl1
+			// 
+			this.searchUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchUserControl1.BackgroundImage")));
+			this.searchUserControl1.Location = new System.Drawing.Point(7, 74);
+			this.searchUserControl1.Name = "searchUserControl1";
+			this.searchUserControl1.Size = new System.Drawing.Size(793, 296);
+			this.searchUserControl1.TabIndex = 4;
+			// 
 			// pnlIssue
 			// 
 			this.pnlIssue.Controls.Add(this.homeUserControl1);
@@ -256,7 +255,8 @@
 			this.Controls.Add(this.panel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.MaximumSize = new System.Drawing.Size(808, 437);
+			this.MaximumSize = new System.Drawing.Size(792, 398);
+			this.MinimumSize = new System.Drawing.Size(792, 398);
 			this.Name = "Checkout";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Library Management System";

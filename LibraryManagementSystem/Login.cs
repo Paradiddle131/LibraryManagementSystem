@@ -12,16 +12,32 @@ namespace dbForLMS
 {
 	public partial class Login : Form
 	{
+		private readonly LibraryManagementSystem.addAuthor au;
+		private readonly LibraryManagementSystem.AdminForm af;
+		public bool isAdmin = false;
 		public Login()
 		{
 			InitializeComponent();
+			au = new LibraryManagementSystem.addAuthor(isAdmin);
 		}
 
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
 			this.Hide(); // first closes the login screen
-			Checkout BookManagement = new Checkout();
-			BookManagement.Show(); // then opens the next screen which is BookManagement
+			//Checkout BookManagement = new Checkout();
+			//BookManagement.Show(); // then opens the next screen which is BookManagement
+
+			if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
+			{
+				isAdmin = true;
+				LibraryManagementSystem.AdminForm af = new LibraryManagementSystem.AdminForm();
+				af.Show();
+			}
+			else
+			{
+				LibraryManagementSystem.UserForm uf = new LibraryManagementSystem.UserForm();
+				uf.Show();
+			}
 		}
 
 		private void btnCoders_Click(object sender, EventArgs e)
@@ -60,5 +76,7 @@ namespace dbForLMS
 		{
 			Application.Exit();
 		}
+
+
 	}
 }

@@ -13,11 +13,14 @@ namespace LibraryManagementSystem
 {
 	public partial class addAuthor : Form
 	{
+		bool isAdm;
+		dbForLMS.Login l;
 		dbForLMS.Checkout checkout = new dbForLMS.Checkout();
 		SqlConnection connection = new SqlConnection(dbForLMS.Checkout.ConnectionString);
-		public addAuthor()
+		public addAuthor(bool isAdm)
 		{
 			InitializeComponent();
+			//dbForLMS.Login log = new dbForLMS.Login();
 		}
 
 		//public void SettingSQLConnection()
@@ -126,7 +129,22 @@ namespace LibraryManagementSystem
 		private void btnBack_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			checkout.Show();
+			//checkout.Show();
+			AdminForm af = new AdminForm();
+			af.Show();
+			//dbForLMS.Login l;
+			//l.isAdmin log;
+
+			//if (!isAdm)
+			//{
+			//	UserForm uf = new UserForm();
+			//	uf.Show();
+			//}
+			//else
+			//{
+			//	AdminForm af = new AdminForm();
+			//	af.Show();
+			//}
 		}
 
 		#region Focus

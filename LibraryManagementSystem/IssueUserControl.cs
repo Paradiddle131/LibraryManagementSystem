@@ -13,6 +13,7 @@ namespace LibraryManagementSystem
 {
 	public partial class IssueUserControl : UserControl
 	{
+		public bool isAdmin = false;
 		public IssueUserControl()
 		{
 			InitializeComponent();
@@ -32,7 +33,7 @@ namespace LibraryManagementSystem
 		private void btnAddAuthor_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			addAuthor AddAuthorForm = new addAuthor();
+			addAuthor AddAuthorForm = new addAuthor(isAdmin);
 			AddAuthorForm.Show();
 		}
 

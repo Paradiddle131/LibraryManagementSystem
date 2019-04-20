@@ -31,22 +31,22 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserUserControl1));
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.borrowsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.borrowsDataSet = new LibraryManagementSystem.BorrowsDataSet();
-			this.borrowsTableAdapter = new LibraryManagementSystem.BorrowsDataSetTableAdapters.borrowsTableAdapter();
-			this.borrowDataSet = new LibraryManagementSystem.borrowDataSet();
-			this.borrowsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-			this.borrowsTableAdapter1 = new LibraryManagementSystem.borrowDataSetTableAdapters.borrowsTableAdapter();
 			this.borrowIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.takenDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.broughtDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.borrowsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.borrowDataSet = new LibraryManagementSystem.borrowDataSet();
+			this.borrowsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.borrowsDataSet = new LibraryManagementSystem.BorrowsDataSet();
+			this.borrowsTableAdapter = new LibraryManagementSystem.BorrowsDataSetTableAdapters.borrowsTableAdapter();
+			this.borrowsTableAdapter1 = new LibraryManagementSystem.borrowDataSetTableAdapters.borrowsTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowDataSet)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dataGridView1
@@ -64,36 +64,8 @@
 			this.dataGridView1.DataSource = this.borrowsBindingSource1;
 			this.dataGridView1.Location = new System.Drawing.Point(250, 46);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(547, 242);
+			this.dataGridView1.Size = new System.Drawing.Size(531, 242);
 			this.dataGridView1.TabIndex = 0;
-			// 
-			// borrowsBindingSource
-			// 
-			this.borrowsBindingSource.DataMember = "borrows";
-			this.borrowsBindingSource.DataSource = this.borrowsDataSet;
-			// 
-			// borrowsDataSet
-			// 
-			this.borrowsDataSet.DataSetName = "BorrowsDataSet";
-			this.borrowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// borrowsTableAdapter
-			// 
-			this.borrowsTableAdapter.ClearBeforeFill = true;
-			// 
-			// borrowDataSet
-			// 
-			this.borrowDataSet.DataSetName = "borrowDataSet";
-			this.borrowDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// borrowsBindingSource1
-			// 
-			this.borrowsBindingSource1.DataMember = "borrows";
-			this.borrowsBindingSource1.DataSource = this.borrowDataSet;
-			// 
-			// borrowsTableAdapter1
-			// 
-			this.borrowsTableAdapter1.ClearBeforeFill = true;
 			// 
 			// borrowIdDataGridViewTextBoxColumn
 			// 
@@ -126,6 +98,34 @@
 			this.broughtDateDataGridViewTextBoxColumn.HeaderText = "broughtDate";
 			this.broughtDateDataGridViewTextBoxColumn.Name = "broughtDateDataGridViewTextBoxColumn";
 			// 
+			// borrowsBindingSource1
+			// 
+			this.borrowsBindingSource1.DataMember = "borrows";
+			this.borrowsBindingSource1.DataSource = this.borrowDataSet;
+			// 
+			// borrowDataSet
+			// 
+			this.borrowDataSet.DataSetName = "borrowDataSet";
+			this.borrowDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// borrowsBindingSource
+			// 
+			this.borrowsBindingSource.DataMember = "borrows";
+			this.borrowsBindingSource.DataSource = this.borrowsDataSet;
+			// 
+			// borrowsDataSet
+			// 
+			this.borrowsDataSet.DataSetName = "BorrowsDataSet";
+			this.borrowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// borrowsTableAdapter
+			// 
+			this.borrowsTableAdapter.ClearBeforeFill = true;
+			// 
+			// borrowsTableAdapter1
+			// 
+			this.borrowsTableAdapter1.ClearBeforeFill = true;
+			// 
 			// UserUserControl1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,12 +133,12 @@
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.Controls.Add(this.dataGridView1);
 			this.Name = "UserUserControl1";
-			this.Size = new System.Drawing.Size(800, 324);
+			this.Size = new System.Drawing.Size(792, 324);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowDataSet)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
