@@ -13,18 +13,19 @@ namespace LibraryManagementSystem
 {
 	public partial class addBorrow : Form
 	{
-		dbForLMS.Checkout checkout = new dbForLMS.Checkout();
+		AdminForm af;
 		public addBorrow()
 		{
 			InitializeComponent();
 		}
 
-		SqlConnection connection = new SqlConnection(dbForLMS.Checkout.ConnectionString);
+		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			checkout.Show();
+			//AdminForm af = new AdminForm();
+			//af.Show();
 		}
 		public void listing()
 		{
@@ -120,7 +121,8 @@ namespace LibraryManagementSystem
 		{
 			//if (dgvBorrow.SelectedCells.Contains(null)) return;
 			if (dgvBorrow.CurrentCell.Value == null) return;
-			nudStudentID.Maximum = nudBookID.Maximum = 9999;
+			//nudStudentID.Maximum = nudBookID.Maximum = 9999;
+			nudStudentID.Maximum = nudBookID.Maximum = Int32.MaxValue;
 			// Default range of the numeric up down properties is [0,100] and this causes an "ArgumentOutOfRangeException" 
 			// when the user clicks a cell which contains a value out of the range. 
 			// Therefore, we had to set the maximum value as higher like 9999.

@@ -13,28 +13,13 @@ namespace LibraryManagementSystem
 {
 	public partial class addAuthor : Form
 	{
+		AdminForm af;
 		bool isAdm;
-		dbForLMS.Login l;
-		dbForLMS.Checkout checkout = new dbForLMS.Checkout();
-		SqlConnection connection = new SqlConnection(dbForLMS.Checkout.ConnectionString);
+		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 		public addAuthor(bool isAdm)
 		{
 			InitializeComponent();
-			//dbForLMS.Login log = new dbForLMS.Login();
 		}
-
-		//public void SettingSQLConnection()
-		//{
-		//	const string ConnectionString = @"Data Source=DESKTOP-VGI8J75\SQLEXPRESS;Initial Catalog=library;Integrated Security=True";
-		//	SqlConnection connection = new SqlConnection(ConnectionString);
-		//}
-
-		//public MySQLConnection(SqlConnection cnctn)
-		//{
-		//	SqlConnection connection = new SqlConnection(checkout.ConnectionString);
-		//	return cnctn;
-		//}
-
 
 		private void addAuthor_Load(object sender, EventArgs e)
 		{
@@ -129,22 +114,8 @@ namespace LibraryManagementSystem
 		private void btnBack_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			//checkout.Show();
-			AdminForm af = new AdminForm();
-			af.Show();
-			//dbForLMS.Login l;
-			//l.isAdmin log;
-
-			//if (!isAdm)
-			//{
-			//	UserForm uf = new UserForm();
-			//	uf.Show();
-			//}
-			//else
-			//{
-			//	AdminForm af = new AdminForm();
-			//	af.Show();
-			//}
+			//AdminForm af = new AdminForm();
+			//af.Show();
 		}
 
 		#region Focus

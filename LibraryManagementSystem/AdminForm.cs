@@ -12,79 +12,51 @@ namespace LibraryManagementSystem
 {
 	public partial class AdminForm : Form
 	{
+		AdminForm af;
 		public AdminForm()
 		{
 			InitializeComponent();
-
 		}
+
+		public static string ConnectionString { get; set; } = @"Data Source=DESKTOP-VGI8J75\SQLEXPRESS;Initial Catalog=library;Integrated Security=True";
 
 		private void BtnHome_Click(object sender, EventArgs e)
 		{
+			AdminForm af = new AdminForm();
 			pnlGreen.Width = btnHome.Width;
 			pnlGreen.Left = btnHome.Left;
-			//searchUserControl1.Hide();
-			if (!pnlIssue.Controls.Contains(homeUserControl1.Instance))
+			if (!pnlUserControls.Controls.Contains(homeUserControl.Instance))
 			{
-				pnlIssue.Controls.Add(homeUserControl1.Instance);
-				homeUserControl1.Instance.Dock = DockStyle.Fill; //sets the control's size and borders
-				homeUserControl1.Instance.BringToFront();
+				pnlUserControls.Controls.Add(homeUserControl.Instance);
+				homeUserControl.Instance.Dock = DockStyle.Fill; //sets the control's size and borders
+				homeUserControl.Instance.BringToFront();
 			}
 			else
-				homeUserControl1.Instance.BringToFront();
-		}
-
-		private void btnUser_Click(object sender, EventArgs e)
-		{
-			pnlGreen.Width = btnUser.Width;
-			pnlGreen.Left = btnUser.Left;
-			pnlIssue.Controls.Clear();
-
-			if (!pnlIssue.Controls.Contains(userUserControl1.Instance))
-			{
-				pnlIssue.Controls.Add(userUserControl1.Instance);
-				userUserControl1.Instance.Dock = DockStyle.Fill;
-				userUserControl1.Instance.BringToFront();
-			}
-			else
-				userUserControl1.Instance.BringToFront();
+				homeUserControl.Instance.BringToFront();
 		}
 
 		private void btnSearch_Click(object sender, EventArgs e)
 		{
+			AdminForm af = new AdminForm();
 			pnlGreen.Width = btnSearch.Width;
 			pnlGreen.Left = btnSearch.Left;
-			searchUserControl1.Instance.Show();
+			searchUserControl.Instance.Show();
 
-			if (!pnlIssue.Controls.Contains(searchUserControl1.Instance))
+			if (!pnlUserControls.Controls.Contains(searchUserControl.Instance))
 			{
-				pnlIssue.Controls.Add(searchUserControl1.Instance);
-				searchUserControl1.Instance.Dock = DockStyle.Fill;
-				searchUserControl1.Instance.BringToFront();
+				pnlUserControls.Controls.Add(searchUserControl.Instance);
+				searchUserControl.Instance.Dock = DockStyle.Fill;
+				searchUserControl.Instance.BringToFront();
 			}
 			else
-				searchUserControl1.Instance.BringToFront();
-		}
-
-		private void btnIssue_Click(object sender, EventArgs e)
-		{
-			pnlGreen.Width = btnIssue.Width;
-			pnlGreen.Left = btnIssue.Left;
-			issueUserControl1.Instance.Show();
-
-			if (!pnlIssue.Controls.Contains(issueUserControl1.Instance))
-			{
-				pnlIssue.Controls.Add(issueUserControl1.Instance);
-				issueUserControl1.Instance.Dock = DockStyle.Fill;
-				issueUserControl1.Instance.BringToFront();
-			}
-			else
-				issueUserControl1.Instance.BringToFront();
+				searchUserControl.Instance.BringToFront();
 		}
 
 		private void btnSocialMedia_Click(object sender, EventArgs e)
 		{
-			pnlGreen.Width = btnSocialMedia.Width;
-			pnlGreen.Left = btnSocialMedia.Left;
+			AdminForm af = new AdminForm();
+			pnlGreen.Width = btnLogout.Width;
+			pnlGreen.Left = btnLogout.Left;
 			dbForLMS.Login loginScreen = new dbForLMS.Login();
 			this.Hide();
 			loginScreen.Show();
@@ -92,6 +64,7 @@ namespace LibraryManagementSystem
 
 		private void btnAbout_Click(object sender, EventArgs e)
 		{
+			AdminForm af = new AdminForm();
 			pnlGreen.Width = btnAbout.Width;
 			pnlGreen.Left = btnAbout.Left;
 			dbForLMS.Coders codersScreen = new dbForLMS.Coders();
@@ -101,11 +74,27 @@ namespace LibraryManagementSystem
 		private void btnExit_Click(object sender, EventArgs e)
 		{
 			pnlGreen.Width = btnExit.Width;
-			//pnlGreen.Left = btnExit.Left;
+			//pnlGreen.Left = btnExit.Left; pnlIssue.Width = af.Width; pnlIssue.Height = af.Height - btnHome.Height;
 			//this.Hide();
 			//Login backToLoginScreen = new Login();
 			//backToLoginScreen.Show();
 			Application.Exit();
+		}
+		
+		private void BtnManage_Click(object sender, EventArgs e)
+		{
+			AdminForm af = new AdminForm();
+			pnlGreen.Width = btnManage.Width;
+			pnlGreen.Left = btnManage.Left;
+			
+			if (!pnlUserControls.Controls.Contains(manageUserControl.Instance))
+			{
+				pnlUserControls.Controls.Add(manageUserControl.Instance);
+				manageUserControl.Instance.Dock = DockStyle.Fill;
+				manageUserControl.Instance.BringToFront();
+			}
+			else
+				manageUserControl.Instance.BringToFront();
 		}
 	}
 }

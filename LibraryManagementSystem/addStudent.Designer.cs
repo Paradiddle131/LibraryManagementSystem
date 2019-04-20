@@ -67,6 +67,7 @@
 			this.txtStudentSurname = new LollipopTextBox();
 			this.dtpBirthdate = new System.Windows.Forms.DateTimePicker();
 			this.studentsTableAdapter = new LibraryManagementSystem.StudentDataSetTableAdapters.studentsTableAdapter();
+			this.lollipopLabel7 = new LollipopLabel();
 			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.books)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
@@ -399,6 +400,18 @@
 			// 
 			this.studentsTableAdapter.ClearBeforeFill = true;
 			// 
+			// lollipopLabel7
+			// 
+			this.lollipopLabel7.AutoSize = true;
+			this.lollipopLabel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+			this.lollipopLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.lollipopLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+			this.lollipopLabel7.Location = new System.Drawing.Point(576, 125);
+			this.lollipopLabel7.Name = "lollipopLabel7";
+			this.lollipopLabel7.Size = new System.Drawing.Size(66, 24);
+			this.lollipopLabel7.TabIndex = 25;
+			this.lollipopLabel7.Text = "Class:";
+			// 
 			// addStudent
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,6 +423,7 @@
 			this.Controls.Add(this.rbMale);
 			this.Controls.Add(this.lollipopLabel4);
 			this.Controls.Add(this.lollipopLabel6);
+			this.Controls.Add(this.lollipopLabel7);
 			this.Controls.Add(this.lollipopLabel5);
 			this.Controls.Add(this.lollipopLabel3);
 			this.Controls.Add(this.btnBack);
@@ -484,5 +498,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn classDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn pointDataGridViewTextBoxColumn;
+		private LollipopLabel lollipopLabel7;
 	}
 }

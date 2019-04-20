@@ -146,11 +146,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>borrowsDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Checkout.cs">
-      <SubType>Form</SubType>
+    <Compile Include="BorrowUserControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Checkout.Designer.cs">
-      <DependentUpon>Checkout.cs</DependentUpon>
+    <Compile Include="BorrowUserControl.Designer.cs">
+      <DependentUpon>BorrowUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Coders.cs">
       <SubType>Form</SubType>
@@ -164,11 +164,11 @@
     <Compile Include="HomeUserControl.Designer.cs">
       <DependentUpon>HomeUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="IssueUserControl.cs">
+    <Compile Include="ManageUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="IssueUserControl.Designer.cs">
-      <DependentUpon>IssueUserControl.cs</DependentUpon>
+    <Compile Include="ManageUserControl.Designer.cs">
+      <DependentUpon>ManageUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="libraryDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -295,17 +295,14 @@
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Checkout.resx">
-      <DependentUpon>Checkout.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Coders.resx">
       <DependentUpon>Coders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeUserControl.resx">
       <DependentUpon>HomeUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IssueUserControl.resx">
-      <DependentUpon>IssueUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="ManageUserControl.resx">
+      <DependentUpon>ManageUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

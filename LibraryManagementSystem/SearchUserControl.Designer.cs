@@ -62,8 +62,10 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.Controls.Add(this.lollipopLabel1);
 			this.Controls.Add(this.btnSearchByAuthor);
+			this.Margin = new System.Windows.Forms.Padding(0);
 			this.Name = "SearchUserControl";
 			this.Size = new System.Drawing.Size(800, 325);
 			this.ResumeLayout(false);

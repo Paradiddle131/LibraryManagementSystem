@@ -84,10 +84,8 @@ D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\Lib
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.addBorrow.resources
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.addStudent.resources
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.addType.resources
-D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\dbForLMS.Checkout.resources
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\dbForLMS.Coders.resources
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.HomeUserControl.resources
-D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.IssueUserControl.resources
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\dbForLMS.Login.resources
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Properties.Resources.resources
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.SearchByAuthor.resources
@@ -100,7 +98,6 @@ D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\Lib
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.AdminForm.resources
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserForm.resources
-D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csprojAssemblyReference.cache
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\log4net.dll
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\Lollipop.dll
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\Lollipop.DTO.dll
@@ -109,3 +106,4 @@ D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\Lib
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\log4net.xml
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\May.xml
 D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\Newtonsoft.Json.xml
+D:\Downloads_D\LibraryManagementSystem-master\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.ManageUserControl.resources

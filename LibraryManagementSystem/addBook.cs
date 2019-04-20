@@ -13,13 +13,13 @@ namespace LibraryManagementSystem
 {
 	public partial class addBook : Form
 	{
-		dbForLMS.Checkout checkout = new dbForLMS.Checkout();
+		AdminForm af;
 		public addBook()
 		{
 			InitializeComponent();
 		}
 
-		SqlConnection connection = new SqlConnection(dbForLMS.Checkout.ConnectionString);
+		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 
 		private void addBook_Load(object sender, EventArgs e)
 		{
@@ -116,6 +116,8 @@ namespace LibraryManagementSystem
 
 		private void dgvBook_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
+			numPageCount.Maximum = numPageCount.Maximum = numPageCount.Maximum = 
+				numPoint.Maximum = numAuthorID.Maximum = numTypeID.Maximum = int.MaxValue;
 			//int index = Int32.Parse(e.ToString());
 			txtBookName.Text = dgvBook.CurrentRow.Cells[1].Value.ToString();
 			//numPageCount.Value = (int)dgvBook.CurrentRow.Cells[2].Value.ToString();
@@ -128,7 +130,8 @@ namespace LibraryManagementSystem
 		private void btnBack_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			checkout.Show();
+			//AdminForm af = new AdminForm();
+			//af.Show();
 		}
 		#region Focus
 		private void txtBookName_Enter(object sender, EventArgs e)

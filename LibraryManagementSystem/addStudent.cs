@@ -13,18 +13,19 @@ namespace LibraryManagementSystem
 {
 	public partial class addStudent : Form
 	{
-		dbForLMS.Checkout checkout = new dbForLMS.Checkout();
+		AdminForm af;
 		public addStudent()
 		{
 			InitializeComponent();
 		}
 
-		SqlConnection connection = new SqlConnection(dbForLMS.Checkout.ConnectionString);
+		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			checkout.Show();
+			//AdminForm af = new AdminForm();
+			//af.Show();
 		}
 
 		public void listing()
@@ -121,15 +122,19 @@ namespace LibraryManagementSystem
 
 		private void dgvStudent_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
+			if (dgvStudent.CurrentRow.Cells[4].Value.ToString() == "M") rbMale.Checked = true;
+			else rbFemale.Checked = true;
+
+			nudClass.Maximum = nudPoint.Maximum = Int32.MaxValue;
 			txtStudentName.Text = dgvStudent.CurrentRow.Cells[1].Value.ToString();
 			txtStudentSurname.Text = dgvStudent.CurrentRow.Cells[2].Value.ToString();
 			dtpBirthdate.Text = dgvStudent.CurrentRow.Cells[3].Value.ToString();
 			// if rbMale.checked = true, then gender is M, otherwise F
-			rbMale.Checked = Convert.ToBoolean(dgvStudent.CurrentRow.Cells[4].Value.ToString());
+			//rbMale.Checked = Convert.ToBoolean(dgvStudent.CurrentRow.Cells[4].Value.ToString());
 			nudClass.Value = int.Parse(dgvStudent.CurrentRow.Cells[5].Value.ToString());
 			nudPoint.Value = int.Parse(dgvStudent.CurrentRow.Cells[6].Value.ToString());
 		}
-
+		#region Focus
 		private void txtStudentName_Enter(object sender, EventArgs e)
 		{
 			if (txtStudentName.Text == "<Enter Student Name>")
@@ -153,5 +158,6 @@ namespace LibraryManagementSystem
 			if (txtStudentSurname.Text.Trim() == "")
 				txtStudentSurname.Text = "<Enter Student Name>";
 		}
+		#endregion
 	}
 }

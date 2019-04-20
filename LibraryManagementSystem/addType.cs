@@ -13,18 +13,20 @@ namespace LibraryManagementSystem
 {
 	public partial class addType : Form
 	{
-		dbForLMS.Checkout checkout = new dbForLMS.Checkout();
+
+		AdminForm af;
 		public addType()
 		{
 			InitializeComponent();
 		}
 
-		SqlConnection connection = new SqlConnection(dbForLMS.Checkout.ConnectionString);
+		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			checkout.Show();
+			//AdminForm af = new AdminForm();
+			//af.Show();
 		}
 
 		private void addType_Load(object sender, EventArgs e)

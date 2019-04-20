@@ -29,56 +29,43 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
-			this.homeUserControl1 = new LibraryManagementSystem.HomeUserControl();
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.pnlButtons = new System.Windows.Forms.Panel();
 			this.pnlGreen = new System.Windows.Forms.Panel();
 			this.btnExit = new System.Windows.Forms.Button();
 			this.btnAbout = new System.Windows.Forms.Button();
 			this.btnHome = new System.Windows.Forms.Button();
-			this.btnSocialMedia = new System.Windows.Forms.Button();
-			this.btnUser = new System.Windows.Forms.Button();
-			this.panel2 = new System.Windows.Forms.Panel();
+			this.btnLogout = new System.Windows.Forms.Button();
 			this.btnSearch = new System.Windows.Forms.Button();
-			this.btnIssue = new System.Windows.Forms.Button();
-			this.searchUserControl1 = new LibraryManagementSystem.SearchUserControl();
-			this.pnlIssue = new System.Windows.Forms.Panel();
-			this.issueUserControl1 = new LibraryManagementSystem.IssueUserControl();
-			this.userUserControl1 = new LibraryManagementSystem.UserUserControl1();
-			this.panel1.SuspendLayout();
-			this.pnlIssue.SuspendLayout();
+			this.btnManage = new System.Windows.Forms.Button();
+			this.pnlUserControls = new System.Windows.Forms.Panel();
+			this.homeUserControl = new LibraryManagementSystem.HomeUserControl();
+			this.searchUserControl = new LibraryManagementSystem.SearchUserControl();
+			this.manageUserControl = new LibraryManagementSystem.ManageUserControl();
+			this.pnlButtons.SuspendLayout();
+			this.pnlUserControls.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// homeUserControl1
+			// pnlButtons
 			// 
-			this.homeUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeUserControl1.BackgroundImage")));
-			this.homeUserControl1.Location = new System.Drawing.Point(0, 0);
-			this.homeUserControl1.Name = "homeUserControl1";
-			this.homeUserControl1.Size = new System.Drawing.Size(701, 325);
-			this.homeUserControl1.TabIndex = 3;
-			// 
-			// panel1
-			// 
-			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(203)))), ((int)(((byte)(174)))));
-			this.panel1.Controls.Add(this.pnlGreen);
-			this.panel1.Controls.Add(this.btnExit);
-			this.panel1.Controls.Add(this.btnAbout);
-			this.panel1.Controls.Add(this.btnHome);
-			this.panel1.Controls.Add(this.btnSocialMedia);
-			this.panel1.Controls.Add(this.btnUser);
-			this.panel1.Controls.Add(this.panel2);
-			this.panel1.Controls.Add(this.btnSearch);
-			this.panel1.Controls.Add(this.btnIssue);
-			this.panel1.Location = new System.Drawing.Point(-7, 0);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(708, 75);
-			this.panel1.TabIndex = 6;
+			this.pnlButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(203)))), ((int)(((byte)(174)))));
+			this.pnlButtons.Controls.Add(this.pnlGreen);
+			this.pnlButtons.Controls.Add(this.btnExit);
+			this.pnlButtons.Controls.Add(this.btnAbout);
+			this.pnlButtons.Controls.Add(this.btnHome);
+			this.pnlButtons.Controls.Add(this.btnLogout);
+			this.pnlButtons.Controls.Add(this.btnSearch);
+			this.pnlButtons.Controls.Add(this.btnManage);
+			this.pnlButtons.Location = new System.Drawing.Point(0, 0);
+			this.pnlButtons.Name = "pnlButtons";
+			this.pnlButtons.Size = new System.Drawing.Size(600, 75);
+			this.pnlButtons.TabIndex = 6;
 			// 
 			// pnlGreen
 			// 
 			this.pnlGreen.BackColor = System.Drawing.Color.Lime;
-			this.pnlGreen.Location = new System.Drawing.Point(7, 71);
+			this.pnlGreen.Location = new System.Drawing.Point(0, 70);
 			this.pnlGreen.Name = "pnlGreen";
-			this.pnlGreen.Size = new System.Drawing.Size(101, 12);
+			this.pnlGreen.Size = new System.Drawing.Size(100, 15);
 			this.pnlGreen.TabIndex = 4;
 			// 
 			// btnExit
@@ -87,11 +74,11 @@
 			this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
 			this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnExit.Location = new System.Drawing.Point(608, 0);
+			this.btnExit.Location = new System.Drawing.Point(500, 0);
 			this.btnExit.Margin = new System.Windows.Forms.Padding(0);
 			this.btnExit.Name = "btnExit";
 			this.btnExit.Size = new System.Drawing.Size(100, 75);
-			this.btnExit.TabIndex = 11;
+			this.btnExit.TabIndex = 6;
 			this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnExit.UseVisualStyleBackColor = false;
 			this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -102,11 +89,11 @@
 			this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
 			this.btnAbout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnAbout.Location = new System.Drawing.Point(508, 0);
+			this.btnAbout.Location = new System.Drawing.Point(400, 0);
 			this.btnAbout.Margin = new System.Windows.Forms.Padding(0);
 			this.btnAbout.Name = "btnAbout";
 			this.btnAbout.Size = new System.Drawing.Size(100, 75);
-			this.btnAbout.TabIndex = 10;
+			this.btnAbout.TabIndex = 5;
 			this.btnAbout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnAbout.UseVisualStyleBackColor = false;
 			this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
@@ -117,53 +104,29 @@
 			this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
 			this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnHome.Location = new System.Drawing.Point(8, 0);
+			this.btnHome.Location = new System.Drawing.Point(0, 0);
 			this.btnHome.Margin = new System.Windows.Forms.Padding(0);
 			this.btnHome.Name = "btnHome";
 			this.btnHome.Size = new System.Drawing.Size(100, 75);
-			this.btnHome.TabIndex = 4;
+			this.btnHome.TabIndex = 1;
 			this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnHome.UseVisualStyleBackColor = false;
 			this.btnHome.Click += new System.EventHandler(this.BtnHome_Click);
 			// 
-			// btnSocialMedia
+			// btnLogout
 			// 
-			this.btnSocialMedia.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.btnSocialMedia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.btnSocialMedia.Image = ((System.Drawing.Image)(resources.GetObject("btnSocialMedia.Image")));
-			this.btnSocialMedia.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnSocialMedia.Location = new System.Drawing.Point(408, 0);
-			this.btnSocialMedia.Margin = new System.Windows.Forms.Padding(0);
-			this.btnSocialMedia.Name = "btnSocialMedia";
-			this.btnSocialMedia.Size = new System.Drawing.Size(100, 75);
-			this.btnSocialMedia.TabIndex = 9;
-			this.btnSocialMedia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.btnSocialMedia.UseVisualStyleBackColor = false;
-			this.btnSocialMedia.Click += new System.EventHandler(this.btnSocialMedia_Click);
-			// 
-			// btnUser
-			// 
-			this.btnUser.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.btnUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
-			this.btnUser.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnUser.Location = new System.Drawing.Point(108, 0);
-			this.btnUser.Margin = new System.Windows.Forms.Padding(0);
-			this.btnUser.Name = "btnUser";
-			this.btnUser.Size = new System.Drawing.Size(100, 75);
-			this.btnUser.TabIndex = 5;
-			this.btnUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.btnUser.UseVisualStyleBackColor = false;
-			this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
-			// 
-			// panel2
-			// 
-			this.panel2.BackColor = System.Drawing.Color.Black;
-			this.panel2.ForeColor = System.Drawing.Color.Black;
-			this.panel2.Location = new System.Drawing.Point(100, 65);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(28, 21);
-			this.panel2.TabIndex = 12;
+			this.btnLogout.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+			this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnLogout.Location = new System.Drawing.Point(300, 0);
+			this.btnLogout.Margin = new System.Windows.Forms.Padding(0);
+			this.btnLogout.Name = "btnLogout";
+			this.btnLogout.Size = new System.Drawing.Size(100, 75);
+			this.btnLogout.TabIndex = 4;
+			this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnLogout.UseVisualStyleBackColor = false;
+			this.btnLogout.Click += new System.EventHandler(this.btnSocialMedia_Click);
 			// 
 			// btnSearch
 			// 
@@ -171,100 +134,102 @@
 			this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
 			this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnSearch.Location = new System.Drawing.Point(208, 0);
+			this.btnSearch.Location = new System.Drawing.Point(100, 0);
 			this.btnSearch.Margin = new System.Windows.Forms.Padding(0);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(100, 75);
-			this.btnSearch.TabIndex = 6;
+			this.btnSearch.TabIndex = 2;
 			this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnSearch.UseVisualStyleBackColor = false;
 			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 			// 
-			// btnIssue
+			// btnManage
 			// 
-			this.btnIssue.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.btnIssue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.btnIssue.Image = ((System.Drawing.Image)(resources.GetObject("btnIssue.Image")));
-			this.btnIssue.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnIssue.Location = new System.Drawing.Point(308, 0);
-			this.btnIssue.Margin = new System.Windows.Forms.Padding(0);
-			this.btnIssue.Name = "btnIssue";
-			this.btnIssue.Size = new System.Drawing.Size(100, 75);
-			this.btnIssue.TabIndex = 7;
-			this.btnIssue.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.btnIssue.UseVisualStyleBackColor = false;
-			this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
+			this.btnManage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnManage.Image = ((System.Drawing.Image)(resources.GetObject("btnManage.Image")));
+			this.btnManage.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnManage.Location = new System.Drawing.Point(200, 0);
+			this.btnManage.Margin = new System.Windows.Forms.Padding(0);
+			this.btnManage.Name = "btnManage";
+			this.btnManage.Size = new System.Drawing.Size(100, 75);
+			this.btnManage.TabIndex = 3;
+			this.btnManage.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnManage.UseVisualStyleBackColor = false;
+			this.btnManage.Click += new System.EventHandler(this.BtnManage_Click);
 			// 
-			// searchUserControl1
+			// pnlUserControls
 			// 
-			this.searchUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchUserControl1.BackgroundImage")));
-			this.searchUserControl1.Location = new System.Drawing.Point(7, 74);
-			this.searchUserControl1.Name = "searchUserControl1";
-			this.searchUserControl1.Size = new System.Drawing.Size(694, 296);
-			this.searchUserControl1.TabIndex = 7;
+			this.pnlUserControls.Controls.Add(this.homeUserControl);
+			this.pnlUserControls.Controls.Add(this.searchUserControl);
+			this.pnlUserControls.Controls.Add(this.manageUserControl);
+			this.pnlUserControls.Location = new System.Drawing.Point(0, 75);
+			this.pnlUserControls.Name = "pnlUserControls";
+			this.pnlUserControls.Size = new System.Drawing.Size(600, 325);
+			this.pnlUserControls.TabIndex = 8;
 			// 
-			// pnlIssue
+			// homeUserControl
 			// 
-			this.pnlIssue.Controls.Add(this.homeUserControl1);
-			this.pnlIssue.Controls.Add(this.issueUserControl1);
-			this.pnlIssue.Controls.Add(this.userUserControl1);
-			this.pnlIssue.Location = new System.Drawing.Point(0, 74);
-			this.pnlIssue.Name = "pnlIssue";
-			this.pnlIssue.Size = new System.Drawing.Size(701, 324);
-			this.pnlIssue.TabIndex = 8;
+			this.homeUserControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.homeUserControl.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeUserControl.BackgroundImage")));
+			this.homeUserControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.homeUserControl.Location = new System.Drawing.Point(0, 0);
+			this.homeUserControl.Margin = new System.Windows.Forms.Padding(0);
+			this.homeUserControl.Name = "homeUserControl";
+			this.homeUserControl.Size = new System.Drawing.Size(600, 325);
+			this.homeUserControl.TabIndex = 3;
 			// 
-			// issueUserControl1
+			// searchUserControl
 			// 
-			this.issueUserControl1.Location = new System.Drawing.Point(0, 3);
-			this.issueUserControl1.Name = "issueUserControl1";
-			this.issueUserControl1.Size = new System.Drawing.Size(701, 321);
-			this.issueUserControl1.TabIndex = 5;
+			this.searchUserControl.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchUserControl.BackgroundImage")));
+			this.searchUserControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.searchUserControl.Location = new System.Drawing.Point(0, 0);
+			this.searchUserControl.Margin = new System.Windows.Forms.Padding(0);
+			this.searchUserControl.Name = "searchUserControl";
+			this.searchUserControl.Size = new System.Drawing.Size(600, 325);
+			this.searchUserControl.TabIndex = 7;
 			// 
-			// userUserControl1
+			// manageUserControl
 			// 
-			this.userUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userUserControl1.BackgroundImage")));
-			this.userUserControl1.Location = new System.Drawing.Point(0, 3);
-			this.userUserControl1.Name = "userUserControl1";
-			this.userUserControl1.Size = new System.Drawing.Size(701, 321);
-			this.userUserControl1.TabIndex = 4;
+			this.manageUserControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.manageUserControl.Location = new System.Drawing.Point(0, 0);
+			this.manageUserControl.Margin = new System.Windows.Forms.Padding(0);
+			this.manageUserControl.Name = "manageUserControl";
+			this.manageUserControl.Size = new System.Drawing.Size(600, 325);
+			this.manageUserControl.TabIndex = 8;
 			// 
 			// AdminForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(700, 398);
-			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.pnlIssue);
-			this.Controls.Add(this.searchUserControl1);
+			this.ClientSize = new System.Drawing.Size(600, 400);
+			this.Controls.Add(this.pnlButtons);
+			this.Controls.Add(this.pnlUserControls);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.MaximumSize = new System.Drawing.Size(700, 398);
-			this.MinimumSize = new System.Drawing.Size(700, 398);
+			this.MinimumSize = new System.Drawing.Size(600, 400);
 			this.Name = "AdminForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "AdminForm";
-			this.panel1.ResumeLayout(false);
-			this.pnlIssue.ResumeLayout(false);
+			this.pnlButtons.ResumeLayout(false);
+			this.pnlUserControls.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private HomeUserControl homeUserControl1;
-		private System.Windows.Forms.Panel panel1;
+		private HomeUserControl homeUserControl;
+		private System.Windows.Forms.Panel pnlButtons;
 		private System.Windows.Forms.Panel pnlGreen;
 		private System.Windows.Forms.Button btnExit;
 		private System.Windows.Forms.Button btnAbout;
 		private System.Windows.Forms.Button btnHome;
-		private System.Windows.Forms.Button btnSocialMedia;
-		private System.Windows.Forms.Button btnUser;
-		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Button btnLogout;
 		private System.Windows.Forms.Button btnSearch;
-		private System.Windows.Forms.Button btnIssue;
-		private SearchUserControl searchUserControl1;
-		private System.Windows.Forms.Panel pnlIssue;
-		private IssueUserControl issueUserControl1;
-		private UserUserControl1 userUserControl1;
+		private System.Windows.Forms.Button btnManage;
+		private SearchUserControl searchUserControl;
+		private System.Windows.Forms.Panel pnlUserControls;
+		private ManageUserControl manageUserControl;
 	}
 }

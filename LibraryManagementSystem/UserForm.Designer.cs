@@ -29,8 +29,7 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserForm));
-			this.homeUserControl1 = new LibraryManagementSystem.HomeUserControl();
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.pnlButtons = new System.Windows.Forms.Panel();
 			this.pnlGreen = new System.Windows.Forms.Panel();
 			this.btnExit = new System.Windows.Forms.Button();
 			this.btnAbout = new System.Windows.Forms.Button();
@@ -38,49 +37,42 @@
 			this.btnReturn = new System.Windows.Forms.Button();
 			this.btnSocialMedia = new System.Windows.Forms.Button();
 			this.btnUser = new System.Windows.Forms.Button();
-			this.panel2 = new System.Windows.Forms.Panel();
 			this.btnSearch = new System.Windows.Forms.Button();
-			this.btnIssue = new System.Windows.Forms.Button();
-			this.searchUserControl1 = new LibraryManagementSystem.SearchUserControl();
-			this.pnlIssue = new System.Windows.Forms.Panel();
-			this.issueUserControl1 = new LibraryManagementSystem.IssueUserControl();
+			this.btnBorrow = new System.Windows.Forms.Button();
+			this.pnlUserControls = new System.Windows.Forms.Panel();
+			this.homeUserControl1 = new LibraryManagementSystem.HomeUserControl();
+			this.manageUserControl1 = new LibraryManagementSystem.ManageUserControl();
 			this.userUserControl1 = new LibraryManagementSystem.UserUserControl1();
-			this.panel1.SuspendLayout();
-			this.pnlIssue.SuspendLayout();
+			this.searchUserControl1 = new LibraryManagementSystem.SearchUserControl();
+			this.pnlButtons.SuspendLayout();
+			this.pnlUserControls.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// homeUserControl1
+			// pnlButtons
 			// 
-			this.homeUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeUserControl1.BackgroundImage")));
-			this.homeUserControl1.Location = new System.Drawing.Point(0, 0);
-			this.homeUserControl1.Name = "homeUserControl1";
-			this.homeUserControl1.Size = new System.Drawing.Size(793, 325);
-			this.homeUserControl1.TabIndex = 3;
-			// 
-			// panel1
-			// 
-			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(203)))), ((int)(((byte)(174)))));
-			this.panel1.Controls.Add(this.pnlGreen);
-			this.panel1.Controls.Add(this.btnExit);
-			this.panel1.Controls.Add(this.btnAbout);
-			this.panel1.Controls.Add(this.btnHome);
-			this.panel1.Controls.Add(this.btnReturn);
-			this.panel1.Controls.Add(this.btnSocialMedia);
-			this.panel1.Controls.Add(this.btnUser);
-			this.panel1.Controls.Add(this.panel2);
-			this.panel1.Controls.Add(this.btnSearch);
-			this.panel1.Controls.Add(this.btnIssue);
-			this.panel1.Location = new System.Drawing.Point(-7, 0);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(800, 75);
-			this.panel1.TabIndex = 6;
+			this.pnlButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(203)))), ((int)(((byte)(174)))));
+			this.pnlButtons.Controls.Add(this.pnlGreen);
+			this.pnlButtons.Controls.Add(this.btnExit);
+			this.pnlButtons.Controls.Add(this.btnAbout);
+			this.pnlButtons.Controls.Add(this.btnHome);
+			this.pnlButtons.Controls.Add(this.btnReturn);
+			this.pnlButtons.Controls.Add(this.btnSocialMedia);
+			this.pnlButtons.Controls.Add(this.btnUser);
+			this.pnlButtons.Controls.Add(this.btnSearch);
+			this.pnlButtons.Controls.Add(this.btnBorrow);
+			this.pnlButtons.Location = new System.Drawing.Point(0, 0);
+			this.pnlButtons.Margin = new System.Windows.Forms.Padding(0);
+			this.pnlButtons.Name = "pnlButtons";
+			this.pnlButtons.Size = new System.Drawing.Size(800, 75);
+			this.pnlButtons.TabIndex = 6;
 			// 
 			// pnlGreen
 			// 
 			this.pnlGreen.BackColor = System.Drawing.Color.Lime;
-			this.pnlGreen.Location = new System.Drawing.Point(7, 71);
+			this.pnlGreen.Location = new System.Drawing.Point(0, 70);
+			this.pnlGreen.Margin = new System.Windows.Forms.Padding(0);
 			this.pnlGreen.Name = "pnlGreen";
-			this.pnlGreen.Size = new System.Drawing.Size(90, 15);
+			this.pnlGreen.Size = new System.Drawing.Size(100, 15);
 			this.pnlGreen.TabIndex = 4;
 			// 
 			// btnExit
@@ -173,15 +165,6 @@
 			this.btnUser.UseVisualStyleBackColor = false;
 			this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
 			// 
-			// panel2
-			// 
-			this.panel2.BackColor = System.Drawing.Color.Black;
-			this.panel2.ForeColor = System.Drawing.Color.Black;
-			this.panel2.Location = new System.Drawing.Point(100, 65);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(93, 21);
-			this.panel2.TabIndex = 12;
-			// 
 			// btnSearch
 			// 
 			this.btnSearch.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -197,70 +180,85 @@
 			this.btnSearch.UseVisualStyleBackColor = false;
 			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 			// 
-			// btnIssue
+			// btnBorrow
 			// 
-			this.btnIssue.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.btnIssue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.btnIssue.Image = ((System.Drawing.Image)(resources.GetObject("btnIssue.Image")));
-			this.btnIssue.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnIssue.Location = new System.Drawing.Point(300, 0);
-			this.btnIssue.Margin = new System.Windows.Forms.Padding(0);
-			this.btnIssue.Name = "btnIssue";
-			this.btnIssue.Size = new System.Drawing.Size(100, 75);
-			this.btnIssue.TabIndex = 7;
-			this.btnIssue.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.btnIssue.UseVisualStyleBackColor = false;
+			this.btnBorrow.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.btnBorrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnBorrow.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrow.Image")));
+			this.btnBorrow.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnBorrow.Location = new System.Drawing.Point(300, 0);
+			this.btnBorrow.Margin = new System.Windows.Forms.Padding(0);
+			this.btnBorrow.Name = "btnBorrow";
+			this.btnBorrow.Size = new System.Drawing.Size(100, 75);
+			this.btnBorrow.TabIndex = 7;
+			this.btnBorrow.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnBorrow.UseVisualStyleBackColor = false;
+			this.btnBorrow.Click += new System.EventHandler(this.BtnBorrow_Click);
 			// 
-			// searchUserControl1
+			// pnlUserControls
 			// 
-			this.searchUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchUserControl1.BackgroundImage")));
-			this.searchUserControl1.Location = new System.Drawing.Point(7, 74);
-			this.searchUserControl1.Name = "searchUserControl1";
-			this.searchUserControl1.Size = new System.Drawing.Size(793, 296);
-			this.searchUserControl1.TabIndex = 7;
+			this.pnlUserControls.Controls.Add(this.homeUserControl1);
+			this.pnlUserControls.Controls.Add(this.manageUserControl1);
+			this.pnlUserControls.Controls.Add(this.userUserControl1);
+			this.pnlUserControls.Location = new System.Drawing.Point(0, 75);
+			this.pnlUserControls.Margin = new System.Windows.Forms.Padding(0);
+			this.pnlUserControls.Name = "pnlUserControls";
+			this.pnlUserControls.Size = new System.Drawing.Size(800, 325);
+			this.pnlUserControls.TabIndex = 8;
 			// 
-			// pnlIssue
+			// homeUserControl1
 			// 
-			this.pnlIssue.Controls.Add(this.homeUserControl1);
-			this.pnlIssue.Controls.Add(this.issueUserControl1);
-			this.pnlIssue.Controls.Add(this.userUserControl1);
-			this.pnlIssue.Location = new System.Drawing.Point(0, 74);
-			this.pnlIssue.Name = "pnlIssue";
-			this.pnlIssue.Size = new System.Drawing.Size(793, 324);
-			this.pnlIssue.TabIndex = 8;
+			this.homeUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeUserControl1.BackgroundImage")));
+			this.homeUserControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.homeUserControl1.Location = new System.Drawing.Point(0, 0);
+			this.homeUserControl1.Margin = new System.Windows.Forms.Padding(0);
+			this.homeUserControl1.Name = "homeUserControl1";
+			this.homeUserControl1.Size = new System.Drawing.Size(800, 325);
+			this.homeUserControl1.TabIndex = 3;
 			// 
-			// issueUserControl1
+			// manageUserControl1
 			// 
-			this.issueUserControl1.Location = new System.Drawing.Point(0, 3);
-			this.issueUserControl1.Name = "issueUserControl1";
-			this.issueUserControl1.Size = new System.Drawing.Size(793, 321);
-			this.issueUserControl1.TabIndex = 5;
+			this.manageUserControl1.Location = new System.Drawing.Point(0, 0);
+			this.manageUserControl1.Margin = new System.Windows.Forms.Padding(0);
+			this.manageUserControl1.Name = "manageUserControl1";
+			this.manageUserControl1.Size = new System.Drawing.Size(800, 325);
+			this.manageUserControl1.TabIndex = 5;
 			// 
 			// userUserControl1
 			// 
 			this.userUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userUserControl1.BackgroundImage")));
-			this.userUserControl1.Location = new System.Drawing.Point(0, 3);
+			this.userUserControl1.Location = new System.Drawing.Point(0, 0);
+			this.userUserControl1.Margin = new System.Windows.Forms.Padding(0);
 			this.userUserControl1.Name = "userUserControl1";
-			this.userUserControl1.Size = new System.Drawing.Size(793, 321);
+			this.userUserControl1.Size = new System.Drawing.Size(800, 325);
 			this.userUserControl1.TabIndex = 4;
+			// 
+			// searchUserControl1
+			// 
+			this.searchUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchUserControl1.BackgroundImage")));
+			this.searchUserControl1.Location = new System.Drawing.Point(0, 75);
+			this.searchUserControl1.Margin = new System.Windows.Forms.Padding(0);
+			this.searchUserControl1.Name = "searchUserControl1";
+			this.searchUserControl1.Size = new System.Drawing.Size(800, 325);
+			this.searchUserControl1.TabIndex = 7;
 			// 
 			// UserForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(792, 398);
-			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.pnlIssue);
+			this.ClientSize = new System.Drawing.Size(800, 400);
+			this.Controls.Add(this.pnlButtons);
+			this.Controls.Add(this.pnlUserControls);
 			this.Controls.Add(this.searchUserControl1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.MaximumSize = new System.Drawing.Size(792, 398);
-			this.MinimumSize = new System.Drawing.Size(792, 398);
+			this.MaximumSize = new System.Drawing.Size(800, 400);
+			this.MinimumSize = new System.Drawing.Size(800, 400);
 			this.Name = "UserForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "UserForm";
-			this.panel1.ResumeLayout(false);
-			this.pnlIssue.ResumeLayout(false);
+			this.pnlButtons.ResumeLayout(false);
+			this.pnlUserControls.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -268,7 +266,7 @@
 		#endregion
 
 		private HomeUserControl homeUserControl1;
-		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel pnlButtons;
 		private System.Windows.Forms.Panel pnlGreen;
 		private System.Windows.Forms.Button btnExit;
 		private System.Windows.Forms.Button btnAbout;
@@ -276,12 +274,11 @@
 		private System.Windows.Forms.Button btnReturn;
 		private System.Windows.Forms.Button btnSocialMedia;
 		private System.Windows.Forms.Button btnUser;
-		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Button btnSearch;
-		private System.Windows.Forms.Button btnIssue;
+		private System.Windows.Forms.Button btnBorrow;
 		private SearchUserControl searchUserControl1;
-		private System.Windows.Forms.Panel pnlIssue;
-		private IssueUserControl issueUserControl1;
+		private System.Windows.Forms.Panel pnlUserControls;
+		private ManageUserControl manageUserControl1;
 		private UserUserControl1 userUserControl1;
 	}
 }

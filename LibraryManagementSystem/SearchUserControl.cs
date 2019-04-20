@@ -13,6 +13,7 @@ namespace LibraryManagementSystem
 {
 	public partial class SearchUserControl : UserControl
 	{
+		bool isAdm;
 		private static SearchUserControl _instance;
 		public SearchUserControl Instance
 		{
@@ -30,8 +31,8 @@ namespace LibraryManagementSystem
 
 		private void btnSearchByAuthor_Click(object sender, EventArgs e)
 		{
-			this.Hide();
-			SearchByAuthor searchByAuthorForm = new SearchByAuthor();
+			//this.Hide();
+			SearchByAuthor searchByAuthorForm = new SearchByAuthor(isAdm);
 			searchByAuthorForm.Show();
 		}
 	}
