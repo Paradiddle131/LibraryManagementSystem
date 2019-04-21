@@ -36,6 +36,7 @@
 			this.txtPassword = new LollipopTextBox();
 			this.btnCoders = new LollipopButton();
 			this.btnExit = new LollipopButton();
+			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// btnLogin
@@ -134,12 +135,24 @@
 			this.btnExit.Text = "EXIT";
 			this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(49)))), ((int)(((byte)(33)))));
+			this.label1.Location = new System.Drawing.Point(12, 9);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(146, 23);
+			this.label1.TabIndex = 7;
+			this.label1.Text = "PROJECT ID: 55";
+			// 
 			// Login
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.ClientSize = new System.Drawing.Size(363, 232);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnExit);
 			this.Controls.Add(this.btnCoders);
 			this.Controls.Add(this.txtPassword);
@@ -166,5 +179,6 @@
 		private LollipopTextBox txtPassword;
 		private LollipopButton btnCoders;
 		private LollipopButton btnExit;
+		private System.Windows.Forms.Label label1;
 	}
 }

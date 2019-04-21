@@ -71,6 +71,8 @@ namespace LibraryManagementSystem
 		#endregion
 		private void SearchByAuthor_Load(object sender, EventArgs e)
 		{
+			// TODO: This line of code loads data into the 'searchDataSet.SearchView' table. You can move, or remove it, as needed.
+			this.searchViewTableAdapter.Fill(this.searchDataSet.SearchView);
 			// TODO: This line of code loads data into the 'libraryDataSet2.authors' table. You can move, or remove it, as needed.
 			authorsTableAdapter.Fill(authorDataSet.authors);
 

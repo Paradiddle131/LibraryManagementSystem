@@ -32,16 +32,24 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchByAuthor));
 			this.txtSearch = new LollipopTextBox();
 			this.dgvSearch = new System.Windows.Forms.DataGridView();
-			this.authorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.authorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.authorDataSet = new LibraryManagementSystem.libraryDataSet2();
 			this.authorsTableAdapter = new LibraryManagementSystem.libraryDataSet2TableAdapters.authorsTableAdapter();
 			this.btnBack = new System.Windows.Forms.Button();
+			this.searchDataSet = new LibraryManagementSystem.searchDataSet();
+			this.searchViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.searchViewTableAdapter = new LibraryManagementSystem.searchDataSetTableAdapters.SearchViewTableAdapter();
+			this.authorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.authorSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.bookNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.studentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.studentSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.authorDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.searchDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.searchViewBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// txtSearch
@@ -64,38 +72,25 @@
 			// 
 			// dgvSearch
 			// 
+			this.dgvSearch.AllowUserToAddRows = false;
+			this.dgvSearch.AllowUserToDeleteRows = false;
 			this.dgvSearch.AutoGenerateColumns = false;
 			this.dgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(224)))), ((int)(((byte)(237)))));
 			this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.authorIdDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.surnameDataGridViewTextBoxColumn});
-			this.dgvSearch.DataSource = this.authorsBindingSource;
+            this.authorNameDataGridViewTextBoxColumn,
+            this.authorSurnameDataGridViewTextBoxColumn,
+            this.bookNameDataGridViewTextBoxColumn,
+            this.categoryDataGridViewTextBoxColumn,
+            this.studentNameDataGridViewTextBoxColumn,
+            this.studentSurnameDataGridViewTextBoxColumn});
+			this.dgvSearch.DataSource = this.searchViewBindingSource;
 			this.dgvSearch.Location = new System.Drawing.Point(24, 95);
 			this.dgvSearch.Name = "dgvSearch";
+			this.dgvSearch.ReadOnly = true;
 			this.dgvSearch.Size = new System.Drawing.Size(742, 293);
 			this.dgvSearch.TabIndex = 2;
-			// 
-			// authorIdDataGridViewTextBoxColumn
-			// 
-			this.authorIdDataGridViewTextBoxColumn.DataPropertyName = "authorId";
-			this.authorIdDataGridViewTextBoxColumn.HeaderText = "authorId";
-			this.authorIdDataGridViewTextBoxColumn.Name = "authorIdDataGridViewTextBoxColumn";
-			this.authorIdDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// nameDataGridViewTextBoxColumn
-			// 
-			this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-			this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			// 
-			// surnameDataGridViewTextBoxColumn
-			// 
-			this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
-			this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
-			this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
 			// 
 			// authorsBindingSource
 			// 
@@ -122,6 +117,62 @@
 			this.btnBack.UseVisualStyleBackColor = false;
 			this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
 			// 
+			// searchDataSet
+			// 
+			this.searchDataSet.DataSetName = "searchDataSet";
+			this.searchDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// searchViewBindingSource
+			// 
+			this.searchViewBindingSource.DataMember = "SearchView";
+			this.searchViewBindingSource.DataSource = this.searchDataSet;
+			// 
+			// searchViewTableAdapter
+			// 
+			this.searchViewTableAdapter.ClearBeforeFill = true;
+			// 
+			// authorNameDataGridViewTextBoxColumn
+			// 
+			this.authorNameDataGridViewTextBoxColumn.DataPropertyName = "Author Name";
+			this.authorNameDataGridViewTextBoxColumn.HeaderText = "Author Name";
+			this.authorNameDataGridViewTextBoxColumn.Name = "authorNameDataGridViewTextBoxColumn";
+			this.authorNameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// authorSurnameDataGridViewTextBoxColumn
+			// 
+			this.authorSurnameDataGridViewTextBoxColumn.DataPropertyName = "Author Surname";
+			this.authorSurnameDataGridViewTextBoxColumn.HeaderText = "Author Surname";
+			this.authorSurnameDataGridViewTextBoxColumn.Name = "authorSurnameDataGridViewTextBoxColumn";
+			this.authorSurnameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// bookNameDataGridViewTextBoxColumn
+			// 
+			this.bookNameDataGridViewTextBoxColumn.DataPropertyName = "Book Name";
+			this.bookNameDataGridViewTextBoxColumn.HeaderText = "Book Name";
+			this.bookNameDataGridViewTextBoxColumn.Name = "bookNameDataGridViewTextBoxColumn";
+			this.bookNameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// categoryDataGridViewTextBoxColumn
+			// 
+			this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+			this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
+			this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+			this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// studentNameDataGridViewTextBoxColumn
+			// 
+			this.studentNameDataGridViewTextBoxColumn.DataPropertyName = "Student Name";
+			this.studentNameDataGridViewTextBoxColumn.HeaderText = "Student Name";
+			this.studentNameDataGridViewTextBoxColumn.Name = "studentNameDataGridViewTextBoxColumn";
+			this.studentNameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// studentSurnameDataGridViewTextBoxColumn
+			// 
+			this.studentSurnameDataGridViewTextBoxColumn.DataPropertyName = "Student Surname";
+			this.studentSurnameDataGridViewTextBoxColumn.HeaderText = "Student Surname";
+			this.studentSurnameDataGridViewTextBoxColumn.Name = "studentSurnameDataGridViewTextBoxColumn";
+			this.studentSurnameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
 			// SearchByAuthor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +192,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.authorDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.searchDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.searchViewBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -152,9 +205,15 @@
 		private libraryDataSet2 authorDataSet;
 		private System.Windows.Forms.BindingSource authorsBindingSource;
 		private libraryDataSet2TableAdapters.authorsTableAdapter authorsTableAdapter;
-		private System.Windows.Forms.DataGridViewTextBoxColumn authorIdDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.Button btnBack;
+		private searchDataSet searchDataSet;
+		private System.Windows.Forms.BindingSource searchViewBindingSource;
+		private searchDataSetTableAdapters.SearchViewTableAdapter searchViewTableAdapter;
+		private System.Windows.Forms.DataGridViewTextBoxColumn authorNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn authorSurnameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn bookNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn studentNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn studentSurnameDataGridViewTextBoxColumn;
 	}
 }

@@ -33,7 +33,6 @@ D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManageme
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.exe
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.pdb
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\bin\Debug\MaterialSkin.dll
-D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csprojAssemblyReference.cache
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\dbForLMS.Coders.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.HomeUserControl.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\dbForLMS.Login.resources
@@ -116,3 +115,6 @@ D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManageme
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.AdminForm.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.ManageUserControl.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserForm.resources
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.searchStudent.resources
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.searchBook.resources
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csprojAssemblyReference.cache

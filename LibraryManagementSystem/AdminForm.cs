@@ -38,18 +38,9 @@ namespace LibraryManagementSystem
 		private void btnSearch_Click(object sender, EventArgs e)
 		{
 			AdminForm af = new AdminForm();
-			pnlGreen.Width = btnSearch.Width;
-			pnlGreen.Left = btnSearch.Left;
-			searchUserControl.Instance.Show();
-
-			if (!pnlUserControls.Controls.Contains(searchUserControl.Instance))
-			{
-				pnlUserControls.Controls.Add(searchUserControl.Instance);
-				searchUserControl.Instance.Dock = DockStyle.Fill;
-				searchUserControl.Instance.BringToFront();
-			}
-			else
-				searchUserControl.Instance.BringToFront();
+			af.Hide();
+			searchStudent ss = new searchStudent();
+			ss.Show();
 		}
 
 		private void btnSocialMedia_Click(object sender, EventArgs e)

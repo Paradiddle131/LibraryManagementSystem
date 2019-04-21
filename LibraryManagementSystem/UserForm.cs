@@ -101,7 +101,9 @@ namespace LibraryManagementSystem
 
 		private void BtnBorrow_Click(object sender, EventArgs e)
 		{
-
+			this.Hide();
+			searchBook sb = new searchBook();
+			sb.Show();
 		}
 	}
 }

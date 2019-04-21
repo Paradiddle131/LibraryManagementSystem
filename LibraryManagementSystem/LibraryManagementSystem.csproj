@@ -121,6 +121,11 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="adminSearchViewDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>adminSearchViewDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Books.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -238,6 +243,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="searchBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchBook.Designer.cs">
+      <DependentUpon>searchBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchByAuthor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +259,17 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SearchDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="searchDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>searchDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="searchStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchStudent.Designer.cs">
+      <DependentUpon>searchStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchUserControl.cs">
       <SubType>UserControl</SubType>
@@ -270,6 +292,11 @@
     </Compile>
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userSearchViewDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>userSearchViewDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="UserUserControl1.cs">
       <SubType>UserControl</SubType>
@@ -317,8 +344,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="searchBook.resx">
+      <DependentUpon>searchBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchByAuthor.resx">
       <DependentUpon>SearchByAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchStudent.resx">
+      <DependentUpon>searchStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchUserControl.resx">
       <DependentUpon>SearchUserControl.cs</DependentUpon>
@@ -329,6 +362,17 @@
     <EmbeddedResource Include="UserUserControl1.resx">
       <DependentUpon>UserUserControl1.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="adminSearchViewDataSet.xsc">
+      <DependentUpon>adminSearchViewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="adminSearchViewDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>adminSearchViewDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="adminSearchViewDataSet.xss">
+      <DependentUpon>adminSearchViewDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Books.xsc">
       <DependentUpon>Books.xsd</DependentUpon>
     </None>
@@ -537,6 +581,17 @@
     <None Include="SearchDataSet.xss">
       <DependentUpon>SearchDataSet.xsd</DependentUpon>
     </None>
+    <None Include="searchDataSet1.xsc">
+      <DependentUpon>searchDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="searchDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>searchDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="searchDataSet1.xss">
+      <DependentUpon>searchDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="StudentDataSet.xsc">
       <DependentUpon>StudentDataSet.xsd</DependentUpon>
     </None>
@@ -558,6 +613,17 @@
     </None>
     <None Include="typeDataSet.xss">
       <DependentUpon>typeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="userSearchViewDataSet.xsc">
+      <DependentUpon>userSearchViewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="userSearchViewDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>userSearchViewDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="userSearchViewDataSet.xss">
+      <DependentUpon>userSearchViewDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

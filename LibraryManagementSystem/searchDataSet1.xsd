@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="searchDataSet" targetNamespace="http://tempuri.org/searchDataSet1.xsd" xmlns:mstns="http://tempuri.org/searchDataSet1.xsd" xmlns="http://tempuri.org/searchDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="libraryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="libraryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LibraryManagementSystem.Properties.Settings.GlobalReference.Default.libraryConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SearchViewTableAdapter" GeneratorDataComponentClassName="SearchViewTableAdapter" Name="SearchView" UserDataComponentName="SearchViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="libraryConnectionString (Settings)" DbObjectName="library.dbo.SearchView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [Author Name], [Author Surname], [Book Name], Category, [Student Name], [Student Surname] FROM dbo.SearchView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Author Name" DataSetColumn="Author Name" />
+              <Mapping SourceColumn="Author Surname" DataSetColumn="Author Surname" />
+              <Mapping SourceColumn="Book Name" DataSetColumn="Book Name" />
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="Student Name" DataSetColumn="Student Name" />
+              <Mapping SourceColumn="Student Surname" DataSetColumn="Student Surname" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="searchDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="searchDataSet" msprop:Generator_UserDSName="searchDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SearchView" msprop:Generator_TableClassName="SearchViewDataTable" msprop:Generator_TableVarName="tableSearchView" msprop:Generator_TablePropName="SearchView" msprop:Generator_RowDeletingName="SearchViewRowDeleting" msprop:Generator_RowChangingName="SearchViewRowChanging" msprop:Generator_RowEvHandlerName="SearchViewRowChangeEventHandler" msprop:Generator_RowDeletedName="SearchViewRowDeleted" msprop:Generator_UserTableName="SearchView" msprop:Generator_RowChangedName="SearchViewRowChanged" msprop:Generator_RowEvArgName="SearchViewRowChangeEvent" msprop:Generator_RowClassName="SearchViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Author_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnAuthor_Name" msprop:Generator_ColumnPropNameInRow="Author_Name" msprop:Generator_ColumnPropNameInTable="Author_NameColumn" msprop:Generator_UserColumnName="Author Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Author_x0020_Surname" msprop:Generator_ColumnVarNameInTable="columnAuthor_Surname" msprop:Generator_ColumnPropNameInRow="Author_Surname" msprop:Generator_ColumnPropNameInTable="Author_SurnameColumn" msprop:Generator_UserColumnName="Author Surname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Book_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnBook_Name" msprop:Generator_ColumnPropNameInRow="Book_Name" msprop:Generator_ColumnPropNameInTable="Book_NameColumn" msprop:Generator_UserColumnName="Book Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Student_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnStudent_Name" msprop:Generator_ColumnPropNameInRow="Student_Name" msprop:Generator_ColumnPropNameInTable="Student_NameColumn" msprop:Generator_UserColumnName="Student Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Student_x0020_Surname" msprop:Generator_ColumnVarNameInTable="columnStudent_Surname" msprop:Generator_ColumnPropNameInRow="Student_Surname" msprop:Generator_ColumnPropNameInTable="Student_SurnameColumn" msprop:Generator_UserColumnName="Student Surname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
