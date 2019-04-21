@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Ampeross-Smooth-Apple-Books-Border.ico</ApplicationIcon>
+    <ApplicationIcon>System\Ampeross-Smooth-Apple-Books-Border.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=1.2.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
@@ -85,256 +85,256 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addAuthor.cs">
+    <Compile Include="Admin\addAuthor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addAuthor.Designer.cs">
+    <Compile Include="Admin\addAuthor.Designer.cs">
       <DependentUpon>addAuthor.cs</DependentUpon>
     </Compile>
-    <Compile Include="addBook.cs">
+    <Compile Include="Admin\addBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addBook.Designer.cs">
+    <Compile Include="Admin\addBook.Designer.cs">
       <DependentUpon>addBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="addBorrow.cs">
+    <Compile Include="Admin\addBorrow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addBorrow.Designer.cs">
+    <Compile Include="Admin\addBorrow.Designer.cs">
       <DependentUpon>addBorrow.cs</DependentUpon>
     </Compile>
-    <Compile Include="addStudent.cs">
+    <Compile Include="Admin\addStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addStudent.Designer.cs">
+    <Compile Include="Admin\addStudent.Designer.cs">
       <DependentUpon>addStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="addType.cs">
+    <Compile Include="Admin\addType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addType.Designer.cs">
+    <Compile Include="Admin\addType.Designer.cs">
       <DependentUpon>addType.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminForm.cs">
+    <Compile Include="Admin\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForm.Designer.cs">
+    <Compile Include="Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="adminSearchViewDataSet.Designer.cs">
+    <Compile Include="Data\Datasets\Books.cs">
+      <DependentUpon>Books.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Datasets\borrowDataSet.cs">
+      <DependentUpon>borrowDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Views\adminSearchViewDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>adminSearchViewDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="bookForBorrow.Designer.cs">
+    <Compile Include="Data\Datasets\bookForBorrow.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>bookForBorrow.xsd</DependentUpon>
     </Compile>
-    <Compile Include="bookForBorrowView.Designer.cs">
+    <Compile Include="Data\Views\bookForBorrowView.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>bookForBorrowView.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Books.Designer.cs">
+    <Compile Include="Data\Datasets\Books.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Books.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BooksDataSet.Designer.cs">
+    <Compile Include="Data\Datasets\BooksDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BooksDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="borrowDataSet.Designer.cs">
+    <Compile Include="Data\Datasets\borrowDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>borrowDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BorrowsDataSet.Designer.cs">
+    <Compile Include="Data\Datasets\BorrowsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BorrowsDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="borrowsDataSet1.Designer.cs">
+    <Compile Include="Data\Datasets\borrowsDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>borrowsDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BorrowUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BorrowUserControl.Designer.cs">
-      <DependentUpon>BorrowUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Coders.cs">
+    <Compile Include="Common\Coders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Coders.Designer.cs">
+    <Compile Include="Common\Coders.Designer.cs">
       <DependentUpon>Coders.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeUserControl.cs">
+    <Compile Include="Common\HomeUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HomeUserControl.Designer.cs">
+    <Compile Include="Common\HomeUserControl.Designer.cs">
       <DependentUpon>HomeUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="libraryDataSet3.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDataSet3.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ManageUserControl.cs">
+    <Compile Include="Admin\ManageUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManageUserControl.Designer.cs">
+    <Compile Include="Admin\ManageUserControl.Designer.cs">
       <DependentUpon>ManageUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="libraryDataSet.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="libraryDataSet1.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="libraryDataSet2.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="libraryDB2DataSet.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDB2DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDB2DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="libraryDBDataSet.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="libraryDBDataSet1.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDBDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDBDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="libraryDBDataSet2.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDBDataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="libraryDBDataSet3.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDBDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDBDataSet3.xsd</DependentUpon>
     </Compile>
-    <Compile Include="libraryDBDataSet4.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDBDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDBDataSet4.xsd</DependentUpon>
     </Compile>
-    <Compile Include="libraryDBDataSet5.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDBDataSet5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDBDataSet5.xsd</DependentUpon>
     </Compile>
-    <Compile Include="libraryDBDataSet6.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDBDataSet6.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDBDataSet6.xsd</DependentUpon>
     </Compile>
-    <Compile Include="libraryDBDataSet7.Designer.cs">
+    <Compile Include="Data\Datasets\libraryDBDataSet7.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>libraryDBDataSet7.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Common\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Common\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="System\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="searchBook.cs">
+    <Compile Include="User\searchBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="searchBook.Designer.cs">
+    <Compile Include="User\searchBook.Designer.cs">
       <DependentUpon>searchBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchDataSet.Designer.cs">
+    <Compile Include="Data\Datasets\SearchDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SearchDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="searchDataSet1.Designer.cs">
+    <Compile Include="Data\Datasets\searchDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>searchDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="searchStudent.cs">
+    <Compile Include="Admin\searchStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="searchStudent.Designer.cs">
+    <Compile Include="Admin\searchStudent.Designer.cs">
       <DependentUpon>searchStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentDataSet.Designer.cs">
+    <Compile Include="Data\Datasets\StudentDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="typeDataSet.Designer.cs">
+    <Compile Include="Data\Datasets\typeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>typeDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="UserForm.cs">
+    <Compile Include="User\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm.Designer.cs">
+    <Compile Include="User\UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="userSearchViewDataSet.Designer.cs">
+    <Compile Include="Data\Views\userSearchViewDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>userSearchViewDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="UserUserControl1.cs">
+    <Compile Include="User\UserUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserUserControl1.Designer.cs">
-      <DependentUpon>UserUserControl1.cs</DependentUpon>
+    <Compile Include="User\UserUserControl.Designer.cs">
+      <DependentUpon>UserUserControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="addAuthor.resx">
+    <EmbeddedResource Include="Admin\addAuthor.resx">
       <DependentUpon>addAuthor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addBook.resx">
+    <EmbeddedResource Include="Admin\addBook.resx">
       <DependentUpon>addBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addBorrow.resx">
+    <EmbeddedResource Include="Admin\addBorrow.resx">
       <DependentUpon>addBorrow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addStudent.resx">
+    <EmbeddedResource Include="Admin\addStudent.resx">
       <DependentUpon>addStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addType.resx">
+    <EmbeddedResource Include="Admin\addType.resx">
       <DependentUpon>addType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminForm.resx">
+    <EmbeddedResource Include="Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Coders.resx">
+    <EmbeddedResource Include="Common\Coders.resx">
       <DependentUpon>Coders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeUserControl.resx">
+    <EmbeddedResource Include="Common\HomeUserControl.resx">
       <DependentUpon>HomeUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageUserControl.resx">
+    <EmbeddedResource Include="Admin\ManageUserControl.resx">
       <DependentUpon>ManageUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Common\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -347,250 +347,250 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="searchBook.resx">
+    <EmbeddedResource Include="User\searchBook.resx">
       <DependentUpon>searchBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="searchStudent.resx">
+    <EmbeddedResource Include="Admin\searchStudent.resx">
       <DependentUpon>searchStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm.resx">
+    <EmbeddedResource Include="User\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserUserControl1.resx">
-      <DependentUpon>UserUserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="User\UserUserControl.resx">
+      <DependentUpon>UserUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="adminSearchViewDataSet.xsc">
+    <None Include="Data\Views\adminSearchViewDataSet.xsc">
       <DependentUpon>adminSearchViewDataSet.xsd</DependentUpon>
     </None>
-    <None Include="adminSearchViewDataSet.xsd">
+    <None Include="Data\Views\adminSearchViewDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>adminSearchViewDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="adminSearchViewDataSet.xss">
+    <None Include="Data\Views\adminSearchViewDataSet.xss">
       <DependentUpon>adminSearchViewDataSet.xsd</DependentUpon>
     </None>
-    <None Include="bookForBorrow.xsc">
+    <None Include="Data\Datasets\bookForBorrow.xsc">
       <DependentUpon>bookForBorrow.xsd</DependentUpon>
     </None>
-    <None Include="bookForBorrow.xsd">
+    <None Include="Data\Datasets\bookForBorrow.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>bookForBorrow.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="bookForBorrow.xss">
+    <None Include="Data\Datasets\bookForBorrow.xss">
       <DependentUpon>bookForBorrow.xsd</DependentUpon>
     </None>
-    <None Include="bookForBorrowView.xsc">
+    <None Include="Data\Views\bookForBorrowView.xsc">
       <DependentUpon>bookForBorrowView.xsd</DependentUpon>
     </None>
-    <None Include="bookForBorrowView.xsd">
+    <None Include="Data\Views\bookForBorrowView.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>bookForBorrowView.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="bookForBorrowView.xss">
+    <None Include="Data\Views\bookForBorrowView.xss">
       <DependentUpon>bookForBorrowView.xsd</DependentUpon>
     </None>
-    <None Include="Books.xsc">
+    <None Include="Data\Datasets\Books.xsc">
       <DependentUpon>Books.xsd</DependentUpon>
     </None>
-    <None Include="Books.xsd">
+    <None Include="Data\Datasets\Books.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Books.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Books.xss">
+    <None Include="Data\Datasets\Books.xss">
       <DependentUpon>Books.xsd</DependentUpon>
     </None>
-    <None Include="BooksDataSet.xsc">
+    <None Include="Data\Datasets\BooksDataSet.xsc">
       <DependentUpon>BooksDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BooksDataSet.xsd">
+    <None Include="Data\Datasets\BooksDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>BooksDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BooksDataSet.xss">
+    <None Include="Data\Datasets\BooksDataSet.xss">
       <DependentUpon>BooksDataSet.xsd</DependentUpon>
     </None>
-    <None Include="borrowDataSet.xsc">
+    <None Include="Data\Datasets\borrowDataSet.xsc">
       <DependentUpon>borrowDataSet.xsd</DependentUpon>
     </None>
-    <None Include="borrowDataSet.xsd">
+    <None Include="Data\Datasets\borrowDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>borrowDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="borrowDataSet.xss">
+    <None Include="Data\Datasets\borrowDataSet.xss">
       <DependentUpon>borrowDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BorrowsDataSet.xsc">
+    <None Include="Data\Datasets\BorrowsDataSet.xsc">
       <DependentUpon>BorrowsDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BorrowsDataSet.xsd">
+    <None Include="Data\Datasets\BorrowsDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>BorrowsDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BorrowsDataSet.xss">
+    <None Include="Data\Datasets\BorrowsDataSet.xss">
       <DependentUpon>BorrowsDataSet.xsd</DependentUpon>
     </None>
-    <None Include="borrowsDataSet1.xsc">
+    <None Include="Data\Datasets\borrowsDataSet1.xsc">
       <DependentUpon>borrowsDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="borrowsDataSet1.xsd">
+    <None Include="Data\Datasets\borrowsDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>borrowsDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="borrowsDataSet1.xss">
+    <None Include="Data\Datasets\borrowsDataSet1.xss">
       <DependentUpon>borrowsDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="libraryDataSet.xsc">
+    <None Include="Data\Datasets\libraryDataSet.xsc">
       <DependentUpon>libraryDataSet.xsd</DependentUpon>
     </None>
-    <None Include="libraryDataSet.xsd">
+    <None Include="Data\Datasets\libraryDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDataSet.xss">
+    <None Include="Data\Datasets\libraryDataSet.xss">
       <DependentUpon>libraryDataSet.xsd</DependentUpon>
     </None>
-    <None Include="libraryDataSet1.xsc">
+    <None Include="Data\Datasets\libraryDataSet1.xsc">
       <DependentUpon>libraryDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="libraryDataSet1.xsd">
+    <None Include="Data\Datasets\libraryDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDataSet1.xss">
+    <None Include="Data\Datasets\libraryDataSet1.xss">
       <DependentUpon>libraryDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="libraryDataSet2.xsc">
+    <None Include="Data\Datasets\libraryDataSet2.xsc">
       <DependentUpon>libraryDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="libraryDataSet2.xsd">
+    <None Include="Data\Datasets\libraryDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDataSet2.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDataSet2.xss">
+    <None Include="Data\Datasets\libraryDataSet2.xss">
       <DependentUpon>libraryDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="libraryDataSet3.xsc">
+    <None Include="Data\Datasets\libraryDataSet3.xsc">
       <DependentUpon>libraryDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="libraryDataSet3.xsd">
+    <None Include="Data\Datasets\libraryDataSet3.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDataSet3.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDataSet3.xss">
+    <None Include="Data\Datasets\libraryDataSet3.xss">
       <DependentUpon>libraryDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="libraryDB2DataSet.xsc">
+    <None Include="Data\Datasets\libraryDB2DataSet.xsc">
       <DependentUpon>libraryDB2DataSet.xsd</DependentUpon>
     </None>
-    <None Include="libraryDB2DataSet.xsd">
+    <None Include="Data\Datasets\libraryDB2DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDB2DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDB2DataSet.xss">
+    <None Include="Data\Datasets\libraryDB2DataSet.xss">
       <DependentUpon>libraryDB2DataSet.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet.xsc">
+    <None Include="Data\Datasets\libraryDBDataSet.xsc">
       <DependentUpon>libraryDBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet.xsd">
+    <None Include="Data\Datasets\libraryDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDBDataSet.xss">
+    <None Include="Data\Datasets\libraryDBDataSet.xss">
       <DependentUpon>libraryDBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet1.xsc">
+    <None Include="Data\Datasets\libraryDBDataSet1.xsc">
       <DependentUpon>libraryDBDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet1.xsd">
+    <None Include="Data\Datasets\libraryDBDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDBDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDBDataSet1.xss">
+    <None Include="Data\Datasets\libraryDBDataSet1.xss">
       <DependentUpon>libraryDBDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet2.xsc">
+    <None Include="Data\Datasets\libraryDBDataSet2.xsc">
       <DependentUpon>libraryDBDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet2.xsd">
+    <None Include="Data\Datasets\libraryDBDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDBDataSet2.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDBDataSet2.xss">
+    <None Include="Data\Datasets\libraryDBDataSet2.xss">
       <DependentUpon>libraryDBDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet3.xsc">
+    <None Include="Data\Datasets\libraryDBDataSet3.xsc">
       <DependentUpon>libraryDBDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet3.xsd">
+    <None Include="Data\Datasets\libraryDBDataSet3.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDBDataSet3.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDBDataSet3.xss">
+    <None Include="Data\Datasets\libraryDBDataSet3.xss">
       <DependentUpon>libraryDBDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet4.xsc">
+    <None Include="Data\Datasets\libraryDBDataSet4.xsc">
       <DependentUpon>libraryDBDataSet4.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet4.xsd">
+    <None Include="Data\Datasets\libraryDBDataSet4.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDBDataSet4.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDBDataSet4.xss">
+    <None Include="Data\Datasets\libraryDBDataSet4.xss">
       <DependentUpon>libraryDBDataSet4.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet5.xsc">
+    <None Include="Data\Datasets\libraryDBDataSet5.xsc">
       <DependentUpon>libraryDBDataSet5.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet5.xsd">
+    <None Include="Data\Datasets\libraryDBDataSet5.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDBDataSet5.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDBDataSet5.xss">
+    <None Include="Data\Datasets\libraryDBDataSet5.xss">
       <DependentUpon>libraryDBDataSet5.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet6.xsc">
+    <None Include="Data\Datasets\libraryDBDataSet6.xsc">
       <DependentUpon>libraryDBDataSet6.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet6.xsd">
+    <None Include="Data\Datasets\libraryDBDataSet6.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDBDataSet6.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDBDataSet6.xss">
+    <None Include="Data\Datasets\libraryDBDataSet6.xss">
       <DependentUpon>libraryDBDataSet6.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet7.xsc">
+    <None Include="Data\Datasets\libraryDBDataSet7.xsc">
       <DependentUpon>libraryDBDataSet7.xsd</DependentUpon>
     </None>
-    <None Include="libraryDBDataSet7.xsd">
+    <None Include="Data\Datasets\libraryDBDataSet7.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>libraryDBDataSet7.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="libraryDBDataSet7.xss">
+    <None Include="Data\Datasets\libraryDBDataSet7.xss">
       <DependentUpon>libraryDBDataSet7.xsd</DependentUpon>
     </None>
-    <None Include="packages.config" />
+    <None Include="System\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -600,67 +600,67 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SearchDataSet.xsc">
+    <None Include="Data\Datasets\SearchDataSet.xsc">
       <DependentUpon>SearchDataSet.xsd</DependentUpon>
     </None>
-    <None Include="SearchDataSet.xsd">
+    <None Include="Data\Datasets\SearchDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>SearchDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="SearchDataSet.xss">
+    <None Include="Data\Datasets\SearchDataSet.xss">
       <DependentUpon>SearchDataSet.xsd</DependentUpon>
     </None>
-    <None Include="searchDataSet1.xsc">
+    <None Include="Data\Datasets\searchDataSet1.xsc">
       <DependentUpon>searchDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="searchDataSet1.xsd">
+    <None Include="Data\Datasets\searchDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>searchDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="searchDataSet1.xss">
+    <None Include="Data\Datasets\searchDataSet1.xss">
       <DependentUpon>searchDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="StudentDataSet.xsc">
+    <None Include="Data\Datasets\StudentDataSet.xsc">
       <DependentUpon>StudentDataSet.xsd</DependentUpon>
     </None>
-    <None Include="StudentDataSet.xsd">
+    <None Include="Data\Datasets\StudentDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>StudentDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="StudentDataSet.xss">
+    <None Include="Data\Datasets\StudentDataSet.xss">
       <DependentUpon>StudentDataSet.xsd</DependentUpon>
     </None>
-    <None Include="typeDataSet.xsc">
+    <None Include="Data\Datasets\typeDataSet.xsc">
       <DependentUpon>typeDataSet.xsd</DependentUpon>
     </None>
-    <None Include="typeDataSet.xsd">
+    <None Include="Data\Datasets\typeDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>typeDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="typeDataSet.xss">
+    <None Include="Data\Datasets\typeDataSet.xss">
       <DependentUpon>typeDataSet.xsd</DependentUpon>
     </None>
-    <None Include="userSearchViewDataSet.xsc">
+    <None Include="Data\Views\userSearchViewDataSet.xsc">
       <DependentUpon>userSearchViewDataSet.xsd</DependentUpon>
     </None>
-    <None Include="userSearchViewDataSet.xsd">
+    <None Include="Data\Views\userSearchViewDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>userSearchViewDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="userSearchViewDataSet.xss">
+    <None Include="Data\Views\userSearchViewDataSet.xss">
       <DependentUpon>userSearchViewDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="System\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Ampeross-Smooth-Apple-Books-Border.ico" />
+    <Content Include="System\Ampeross-Smooth-Apple-Books-Border.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -674,5 +674,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
