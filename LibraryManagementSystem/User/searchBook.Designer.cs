@@ -118,10 +118,10 @@ namespace LibraryManagementSystem
 			this.dgvSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.authorNameDataGridViewTextBoxColumn,
-            this.authorSurnameDataGridViewTextBoxColumn,
-            this.bookNameDataGridViewTextBoxColumn,
-            this.categoryDataGridViewTextBoxColumn});
+			this.authorNameDataGridViewTextBoxColumn,
+			this.authorSurnameDataGridViewTextBoxColumn,
+			this.bookNameDataGridViewTextBoxColumn,
+			this.categoryDataGridViewTextBoxColumn});
 			this.dgvSearch.DataSource = this.userSearchViewBindingSource;
 			this.dgvSearch.Location = new System.Drawing.Point(9, 198);
 			this.dgvSearch.Margin = new System.Windows.Forms.Padding(0);
@@ -176,9 +176,9 @@ namespace LibraryManagementSystem
 			this.searchAuthorNameToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.searchAuthorNameToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.searchAuthorNameToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.authorNameToolStripLabel,
-            this.authorNameToolStripTextBox,
-            this.searchAuthorNameToolStripButton});
+			this.authorNameToolStripLabel,
+			this.authorNameToolStripTextBox,
+			this.searchAuthorNameToolStripButton});
 			this.searchAuthorNameToolStrip.Location = new System.Drawing.Point(12, 91);
 			this.searchAuthorNameToolStrip.Name = "searchAuthorNameToolStrip";
 			this.searchAuthorNameToolStrip.Size = new System.Drawing.Size(364, 34);
@@ -216,9 +216,9 @@ namespace LibraryManagementSystem
 			this.searchAuthorSurnameToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.searchAuthorSurnameToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.searchAuthorSurnameToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.authorSurnameToolStripLabel,
-            this.authorSurnameToolStripTextBox,
-            this.searchAuthorSurnameToolStripButton});
+			this.authorSurnameToolStripLabel,
+			this.authorSurnameToolStripTextBox,
+			this.searchAuthorSurnameToolStripButton});
 			this.searchAuthorSurnameToolStrip.Location = new System.Drawing.Point(12, 146);
 			this.searchAuthorSurnameToolStrip.Name = "searchAuthorSurnameToolStrip";
 			this.searchAuthorSurnameToolStrip.Size = new System.Drawing.Size(364, 34);
@@ -254,9 +254,9 @@ namespace LibraryManagementSystem
 			this.searchBookNameToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.searchBookNameToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.searchBookNameToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bookNameToolStripLabel,
-            this.bookNameToolStripTextBox,
-            this.searchBookNameToolStripButton});
+			this.bookNameToolStripLabel,
+			this.bookNameToolStripTextBox,
+			this.searchBookNameToolStripButton});
 			this.searchBookNameToolStrip.Location = new System.Drawing.Point(424, 91);
 			this.searchBookNameToolStrip.Name = "searchBookNameToolStrip";
 			this.searchBookNameToolStrip.Size = new System.Drawing.Size(316, 34);
@@ -293,9 +293,9 @@ namespace LibraryManagementSystem
 			this.searchCategoryToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.searchCategoryToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.searchCategoryToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.categoryToolStripLabel,
-            this.categoryToolStripTextBox,
-            this.searchCategoryToolStripButton});
+			this.categoryToolStripLabel,
+			this.categoryToolStripTextBox,
+			this.searchCategoryToolStripButton});
 			this.searchCategoryToolStrip.Location = new System.Drawing.Point(424, 146);
 			this.searchCategoryToolStrip.Name = "searchCategoryToolStrip";
 			this.searchCategoryToolStrip.Size = new System.Drawing.Size(316, 34);
@@ -338,7 +338,7 @@ namespace LibraryManagementSystem
 			this.resetFilterToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.resetFilterToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.resetFilterToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.resetFilterToolStripButton});
+			this.resetFilterToolStripButton});
 			this.resetFilterToolStrip.Location = new System.Drawing.Point(164, 33);
 			this.resetFilterToolStrip.Name = "resetFilterToolStrip";
 			this.resetFilterToolStrip.Size = new System.Drawing.Size(212, 43);
@@ -392,12 +392,12 @@ namespace LibraryManagementSystem
 			this.dgvBookForBorrow.AutoGenerateColumns = false;
 			this.dgvBookForBorrow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvBookForBorrow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.bookIdDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.pagecountDataGridViewTextBoxColumn,
-            this.pointDataGridViewTextBoxColumn,
-            this.authorIdDataGridViewTextBoxColumn,
-            this.typeIdDataGridViewTextBoxColumn});
+			this.bookIdDataGridViewTextBoxColumn,
+			this.nameDataGridViewTextBoxColumn,
+			this.pagecountDataGridViewTextBoxColumn,
+			this.pointDataGridViewTextBoxColumn,
+			this.authorIdDataGridViewTextBoxColumn,
+			this.typeIdDataGridViewTextBoxColumn});
 			this.dgvBookForBorrow.DataSource = this.booksForBorrowBindingSource;
 			this.dgvBookForBorrow.Location = new System.Drawing.Point(111, 220);
 			this.dgvBookForBorrow.Name = "dgvBookForBorrow";

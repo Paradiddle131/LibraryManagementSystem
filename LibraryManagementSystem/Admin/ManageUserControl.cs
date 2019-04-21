@@ -44,25 +44,25 @@ namespace LibraryManagementSystem
 			AddBookForm.Show();
 		}
 
-        private void btnAddBorrow_Click(object sender, EventArgs e)
-        {
-            //this.Hide();
-            addBorrow AddBorrowForm = new addBorrow();
-            AddBorrowForm.Show();
-        }
+		private void btnAddBorrow_Click(object sender, EventArgs e)
+		{
+			//this.Hide();
+			addBorrow AddBorrowForm = new addBorrow();
+			AddBorrowForm.Show();
+		}
 
-        private void bnAddStudent_Click(object sender, EventArgs e)
-        {
-            //this.Hide();
-            addStudent AddStudentForm = new addStudent();
-            AddStudentForm.Show();
-        }
+		private void bnAddStudent_Click(object sender, EventArgs e)
+		{
+			//this.Hide();
+			addStudent AddStudentForm = new addStudent();
+			AddStudentForm.Show();
+		}
 
-        private void btnAddType_Click(object sender, EventArgs e)
-        {
-            //this.Hide();
-            addType AddTypeForm = new addType();
-            AddTypeForm.Show();
-        }
-    }
+		private void btnAddType_Click(object sender, EventArgs e)
+		{
+			//this.Hide();
+			addType AddTypeForm = new addType();
+			AddTypeForm.Show();
+		}
 	}
+}

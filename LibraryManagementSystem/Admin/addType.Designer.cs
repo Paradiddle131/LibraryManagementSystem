@@ -182,8 +182,8 @@
 			this.dgvType.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
 			this.dgvType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.typeIdDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn});
+			this.typeIdDataGridViewTextBoxColumn,
+			this.nameDataGridViewTextBoxColumn});
 			this.dgvType.DataSource = this.typesBindingSource;
 			this.dgvType.Location = new System.Drawing.Point(14, 140);
 			this.dgvType.Name = "dgvType";

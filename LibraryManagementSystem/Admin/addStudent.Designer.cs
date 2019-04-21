@@ -1,33 +1,33 @@
 ﻿namespace LibraryManagementSystem
 {
-    partial class addStudent
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class addStudent
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addStudent));
 			this.booksTableAdapter1 = new LibraryManagementSystem.Data.Datasets.BooksDataSetTableAdapters.booksTableAdapter();
@@ -258,13 +258,13 @@
 			this.dgvStudent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
 			this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.studentIdDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.surnameDataGridViewTextBoxColumn,
-            this.birthdateDataGridViewTextBoxColumn,
-            this.genderDataGridViewTextBoxColumn,
-            this.classDataGridViewTextBoxColumn,
-            this.pointDataGridViewTextBoxColumn});
+			this.studentIdDataGridViewTextBoxColumn,
+			this.nameDataGridViewTextBoxColumn,
+			this.surnameDataGridViewTextBoxColumn,
+			this.birthdateDataGridViewTextBoxColumn,
+			this.genderDataGridViewTextBoxColumn,
+			this.classDataGridViewTextBoxColumn,
+			this.pointDataGridViewTextBoxColumn});
 			this.dgvStudent.DataSource = this.studentsBindingSource;
 			this.dgvStudent.Location = new System.Drawing.Point(14, 198);
 			this.dgvStudent.Name = "dgvStudent";
@@ -467,37 +467,37 @@
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private Data.Datasets.BooksDataSetTableAdapters.booksTableAdapter booksTableAdapter1;
-        private LollipopLabel lollipopLabel4;
-        private LollipopLabel lollipopLabel5;
-        private LollipopLabel lollipopLabel3;
-        private Data.Datasets.BooksTableAdapters.booksTableAdapter booksTableAdapter;
-        private System.Windows.Forms.BindingSource booksBindingSource;
-        private Data.Datasets.Books books;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnAdd;
-        private Data.Datasets.libraryDataSet1TableAdapters.authorsTableAdapter authorsTableAdapter;
-        private LollipopLabel lollipopLabel2;
-        private LollipopLabel lollipopLabel1;
-        private LollipopTextBox txtStudentName;
-        private Data.Datasets.libraryDataSet1 libraryDataSet1;
-        private System.Windows.Forms.BindingSource authorsBindingSource;
-        private Data.Datasets.BooksDataSet booksDataSet;
-        private System.Windows.Forms.BindingSource booksBindingSource1;
-        private System.Windows.Forms.NumericUpDown nudClass;
-        private System.Windows.Forms.DataGridView dgvStudent;
-        private System.Windows.Forms.NumericUpDown nudPoint;
-        private LollipopLabel lollipopLabel6;
-        private System.Windows.Forms.RadioButton rbMale;
-        private System.Windows.Forms.RadioButton rbFemale;
-        private LollipopTextBox txtStudentSurname;
-        private System.Windows.Forms.DateTimePicker dtpBirthdate;
+		private Data.Datasets.BooksDataSetTableAdapters.booksTableAdapter booksTableAdapter1;
+		private LollipopLabel lollipopLabel4;
+		private LollipopLabel lollipopLabel5;
+		private LollipopLabel lollipopLabel3;
+		private Data.Datasets.BooksTableAdapters.booksTableAdapter booksTableAdapter;
+		private System.Windows.Forms.BindingSource booksBindingSource;
+		private Data.Datasets.Books books;
+		private System.Windows.Forms.Button btnBack;
+		private System.Windows.Forms.Button btnDelete;
+		private System.Windows.Forms.Button btnEdit;
+		private System.Windows.Forms.Button btnAdd;
+		private Data.Datasets.libraryDataSet1TableAdapters.authorsTableAdapter authorsTableAdapter;
+		private LollipopLabel lollipopLabel2;
+		private LollipopLabel lollipopLabel1;
+		private LollipopTextBox txtStudentName;
+		private Data.Datasets.libraryDataSet1 libraryDataSet1;
+		private System.Windows.Forms.BindingSource authorsBindingSource;
+		private Data.Datasets.BooksDataSet booksDataSet;
+		private System.Windows.Forms.BindingSource booksBindingSource1;
+		private System.Windows.Forms.NumericUpDown nudClass;
+		private System.Windows.Forms.DataGridView dgvStudent;
+		private System.Windows.Forms.NumericUpDown nudPoint;
+		private LollipopLabel lollipopLabel6;
+		private System.Windows.Forms.RadioButton rbMale;
+		private System.Windows.Forms.RadioButton rbFemale;
+		private LollipopTextBox txtStudentSurname;
+		private System.Windows.Forms.DateTimePicker dtpBirthdate;
 		private Data.Datasets.StudentDataSet studentDataSet;
 		private System.Windows.Forms.BindingSource studentsBindingSource;
 		private Data.Datasets.StudentDataSetTableAdapters.studentsTableAdapter studentsTableAdapter;

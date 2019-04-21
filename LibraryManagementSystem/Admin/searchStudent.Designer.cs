@@ -76,12 +76,12 @@ namespace LibraryManagementSystem
 			this.dgvSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.studentNameDataGridViewTextBoxColumn,
-            this.studentSurnameDataGridViewTextBoxColumn,
-            this.authorNameDataGridViewTextBoxColumn,
-            this.bookNameDataGridViewTextBoxColumn,
-            this.borrowDateDataGridViewTextBoxColumn,
-            this.returnDateDataGridViewTextBoxColumn});
+			this.studentNameDataGridViewTextBoxColumn,
+			this.studentSurnameDataGridViewTextBoxColumn,
+			this.authorNameDataGridViewTextBoxColumn,
+			this.bookNameDataGridViewTextBoxColumn,
+			this.borrowDateDataGridViewTextBoxColumn,
+			this.returnDateDataGridViewTextBoxColumn});
 			this.dgvSearch.DataSource = this.adminSearchViewBindingSource;
 			this.dgvSearch.Location = new System.Drawing.Point(12, 148);
 			this.dgvSearch.Margin = new System.Windows.Forms.Padding(0);
@@ -157,9 +157,9 @@ namespace LibraryManagementSystem
 			this.searchStudentNameToolStrip.Dock = System.Windows.Forms.DockStyle.None;
 			this.searchStudentNameToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.searchStudentNameToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentNameToolStripLabel,
-            this.studentNameToolStripTextBox,
-            this.searchStudentNameToolStripButton});
+			this.studentNameToolStripLabel,
+			this.studentNameToolStripTextBox,
+			this.searchStudentNameToolStripButton});
 			this.searchStudentNameToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
 			this.searchStudentNameToolStrip.Location = new System.Drawing.Point(12, 54);
 			this.searchStudentNameToolStrip.Name = "searchStudentNameToolStrip";
@@ -196,9 +196,9 @@ namespace LibraryManagementSystem
 			this.searchStudentSurnameToolStrip.Dock = System.Windows.Forms.DockStyle.None;
 			this.searchStudentSurnameToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.searchStudentSurnameToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.surnameToolStripLabel,
-            this.studentSurnameToolStripTextBox,
-            this.searchStudentSurnameToolStripButton});
+			this.surnameToolStripLabel,
+			this.studentSurnameToolStripTextBox,
+			this.searchStudentSurnameToolStripButton});
 			this.searchStudentSurnameToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
 			this.searchStudentSurnameToolStrip.Location = new System.Drawing.Point(12, 103);
 			this.searchStudentSurnameToolStrip.Name = "searchStudentSurnameToolStrip";
@@ -249,7 +249,7 @@ namespace LibraryManagementSystem
 			this.resetFiltersToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.resetFiltersToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.resetFiltersToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.resetFiltersToolStripButton});
+			this.resetFiltersToolStripButton});
 			this.resetFiltersToolStrip.Location = new System.Drawing.Point(327, 94);
 			this.resetFiltersToolStrip.Name = "resetFiltersToolStrip";
 			this.resetFiltersToolStrip.Size = new System.Drawing.Size(212, 43);

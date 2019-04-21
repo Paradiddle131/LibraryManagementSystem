@@ -72,13 +72,13 @@ namespace LibraryManagementSystem
 			//backToLoginScreen.Show();
 			Application.Exit();
 		}
-		
+
 		private void BtnManage_Click(object sender, EventArgs e)
 		{
 			AdminForm af = new AdminForm();
 			pnlGreen.Width = btnManage.Width;
 			pnlGreen.Left = btnManage.Left;
-			
+
 			if (!pnlUserControls.Controls.Contains(manageUserControl.Instance))
 			{
 				pnlUserControls.Controls.Add(manageUserControl.Instance);

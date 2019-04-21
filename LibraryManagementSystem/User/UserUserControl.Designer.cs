@@ -58,11 +58,11 @@ namespace LibraryManagementSystem
 			this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(224)))), ((int)(((byte)(237)))));
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.borrowIdDataGridViewTextBoxColumn,
-            this.studentIdDataGridViewTextBoxColumn,
-            this.bookIdDataGridViewTextBoxColumn,
-            this.takenDateDataGridViewTextBoxColumn,
-            this.broughtDateDataGridViewTextBoxColumn});
+			this.borrowIdDataGridViewTextBoxColumn,
+			this.studentIdDataGridViewTextBoxColumn,
+			this.bookIdDataGridViewTextBoxColumn,
+			this.takenDateDataGridViewTextBoxColumn,
+			this.broughtDateDataGridViewTextBoxColumn});
 			this.dataGridView1.DataSource = this.borrowsBindingSource1;
 			this.dataGridView1.Location = new System.Drawing.Point(250, 46);
 			this.dataGridView1.Name = "dataGridView1";

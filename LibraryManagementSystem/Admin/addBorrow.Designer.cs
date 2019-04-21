@@ -4,34 +4,34 @@ using LibraryManagementSystem.Data.Views;
 
 namespace LibraryManagementSystem
 {
-    partial class addBorrow
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class addBorrow
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addBorrow));
 			this.booksTableAdapter1 = new LibraryManagementSystem.Data.Datasets.BooksDataSetTableAdapters.booksTableAdapter();
@@ -217,11 +217,11 @@ namespace LibraryManagementSystem
 			this.dgvBorrow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
 			this.dgvBorrow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvBorrow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.borrowIdDataGridViewTextBoxColumn,
-            this.studentIdDataGridViewTextBoxColumn,
-            this.bookIdDataGridViewTextBoxColumn,
-            this.takenDateDataGridViewTextBoxColumn,
-            this.broughtDateDataGridViewTextBoxColumn});
+			this.borrowIdDataGridViewTextBoxColumn,
+			this.studentIdDataGridViewTextBoxColumn,
+			this.bookIdDataGridViewTextBoxColumn,
+			this.takenDateDataGridViewTextBoxColumn,
+			this.broughtDateDataGridViewTextBoxColumn});
 			this.dgvBorrow.DataSource = this.borrowsBindingSource;
 			this.dgvBorrow.Location = new System.Drawing.Point(14, 198);
 			this.dgvBorrow.Name = "dgvBorrow";
@@ -344,32 +344,32 @@ namespace LibraryManagementSystem
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private Data.Datasets.BooksDataSetTableAdapters.booksTableAdapter booksTableAdapter1;
-        private LollipopLabel lollipopLabel4;
-        private LollipopLabel lollipopLabel3;
-        private Data.Datasets.BooksTableAdapters.booksTableAdapter booksTableAdapter;
-        private System.Windows.Forms.BindingSource booksBindingSource;
-        private Data.Datasets.Books books;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnAdd;
-        private Data.Datasets.libraryDataSet1TableAdapters.authorsTableAdapter authorsTableAdapter;
-        private LollipopLabel lollipopLabel2;
-        private LollipopLabel lollipopLabel1;
-        private Data.Datasets.libraryDataSet1 libraryDataSet1;
-        private System.Windows.Forms.BindingSource authorsBindingSource;
-        private Data.Datasets.BooksDataSet booksDataSet;
-        private System.Windows.Forms.BindingSource booksBindingSource1;
-        private System.Windows.Forms.DataGridView dgvBorrow;
-        private System.Windows.Forms.DateTimePicker dtpTakenDate;
-        private System.Windows.Forms.DateTimePicker dtpBroughtDate;
-        private System.Windows.Forms.NumericUpDown nudStudentID;
-        private System.Windows.Forms.NumericUpDown nudBookID;
+		private Data.Datasets.BooksDataSetTableAdapters.booksTableAdapter booksTableAdapter1;
+		private LollipopLabel lollipopLabel4;
+		private LollipopLabel lollipopLabel3;
+		private Data.Datasets.BooksTableAdapters.booksTableAdapter booksTableAdapter;
+		private System.Windows.Forms.BindingSource booksBindingSource;
+		private Data.Datasets.Books books;
+		private System.Windows.Forms.Button btnBack;
+		private System.Windows.Forms.Button btnDelete;
+		private System.Windows.Forms.Button btnEdit;
+		private System.Windows.Forms.Button btnAdd;
+		private Data.Datasets.libraryDataSet1TableAdapters.authorsTableAdapter authorsTableAdapter;
+		private LollipopLabel lollipopLabel2;
+		private LollipopLabel lollipopLabel1;
+		private Data.Datasets.libraryDataSet1 libraryDataSet1;
+		private System.Windows.Forms.BindingSource authorsBindingSource;
+		private Data.Datasets.BooksDataSet booksDataSet;
+		private System.Windows.Forms.BindingSource booksBindingSource1;
+		private System.Windows.Forms.DataGridView dgvBorrow;
+		private System.Windows.Forms.DateTimePicker dtpTakenDate;
+		private System.Windows.Forms.DateTimePicker dtpBroughtDate;
+		private System.Windows.Forms.NumericUpDown nudStudentID;
+		private System.Windows.Forms.NumericUpDown nudBookID;
 		private Data.Datasets.borrowsDataSet borrowsDataSet;
 		private System.Windows.Forms.BindingSource borrowsBindingSource;
 		private Data.Datasets.borrowsDataSetTableAdapters.borrowsTableAdapter borrowsTableAdapter;

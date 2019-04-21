@@ -117,9 +117,9 @@
 			this.dgvAuthor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
 			this.dgvAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvAuthor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.authorIdDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.surnameDataGridViewTextBoxColumn});
+			this.authorIdDataGridViewTextBoxColumn,
+			this.nameDataGridViewTextBoxColumn,
+			this.surnameDataGridViewTextBoxColumn});
 			this.dgvAuthor.DataSource = this.authorsBindingSource;
 			this.dgvAuthor.Location = new System.Drawing.Point(12, 198);
 			this.dgvAuthor.Name = "dgvAuthor";

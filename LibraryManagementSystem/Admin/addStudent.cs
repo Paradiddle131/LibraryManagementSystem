@@ -75,7 +75,7 @@ namespace LibraryManagementSystem
 				cmd.Connection = connection;
 				cmd.CommandText = "INSERT INTO students(name,surname,birthdate,gender,class,point) " +
 					"VALUES('" + txtStudentName.Text + "','" + txtStudentSurname.Text + "','" +
-					dtpBirthdate.Text + "','" + rbMale.Checked + "','" + nudClass.Value + "','" + nudPoint.Value + "')";				cmd.ExecuteNonQuery();
+					dtpBirthdate.Text + "','" + rbMale.Checked + "','" + nudClass.Value + "','" + nudPoint.Value + "')"; cmd.ExecuteNonQuery();
 				cmd.Dispose();
 				connection.Close();
 				listing(); // must be called after the connection closed

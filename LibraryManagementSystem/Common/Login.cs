@@ -77,7 +77,5 @@ namespace dbForLMS
 		{
 			Application.Exit();
 		}
-
-
 	}
 }

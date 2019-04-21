@@ -65,7 +65,7 @@ namespace LibraryManagementSystem
 				SqlCommand cmd = new SqlCommand();
 				cmd.Connection = connection;
 				cmd.CommandText = "INSERT INTO books(name,pagecount,point,authorId,typeId) " +
-					"VALUES('" + txtBookName.Text + "','" + numPageCount.Value + "','" + 
+					"VALUES('" + txtBookName.Text + "','" + numPageCount.Value + "','" +
 					numPoint.Value + "','" + numAuthorID.Value + "','" + numTypeID.Value + "')";
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
@@ -82,9 +82,9 @@ namespace LibraryManagementSystem
 				connection.Open();
 				SqlCommand cmd = new SqlCommand();
 				cmd.Connection = connection;
-				cmd.CommandText = "UPDATE books SET name='" + txtBookName.Text + 
-					"',pagecount='" + numPageCount.Value + "',point='" + numPoint.Value + 
-					"',authorId='" + numAuthorID.Value + "',typeId='" + numTypeID.Value + 
+				cmd.CommandText = "UPDATE books SET name='" + txtBookName.Text +
+					"',pagecount='" + numPageCount.Value + "',point='" + numPoint.Value +
+					"',authorId='" + numAuthorID.Value + "',typeId='" + numTypeID.Value +
 					"'WHERE bookId=@number";
 				cmd.Parameters.AddWithValue("@number", dgvBook.CurrentRow.Cells[0].Value.ToString());
 				cmd.ExecuteNonQuery();
@@ -118,7 +118,7 @@ namespace LibraryManagementSystem
 
 		private void dgvBook_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			numPageCount.Maximum = numPageCount.Maximum = numPageCount.Maximum = 
+			numPageCount.Maximum = numPageCount.Maximum = numPageCount.Maximum =
 				numPoint.Maximum = numAuthorID.Maximum = numTypeID.Maximum = int.MaxValue;
 			//int index = Int32.Parse(e.ToString());
 			txtBookName.Text = dgvBook.CurrentRow.Cells[1].Value.ToString();

@@ -81,12 +81,12 @@
 			this.dgvBook.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
 			this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.bookId,
-            this.nameDataGridViewTextBoxColumn,
-            this.pagecount,
-            this.point,
-            this.authorIdDataGridViewTextBoxColumn,
-            this.typeId});
+			this.bookId,
+			this.nameDataGridViewTextBoxColumn,
+			this.pagecount,
+			this.point,
+			this.authorIdDataGridViewTextBoxColumn,
+			this.typeId});
 			this.dgvBook.DataSource = this.booksBindingSource1;
 			this.dgvBook.Location = new System.Drawing.Point(14, 198);
 			this.dgvBook.Name = "dgvBook";
