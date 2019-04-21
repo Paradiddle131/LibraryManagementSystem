@@ -37,31 +37,11 @@ namespace LibraryManagementSystem
 			//DataSet ds = new DataSet();
 			connection.Close();
 		}
-		/*
-		private void TxtSearch_TextChanged(object sender, EventArgs e)
-		{
-			connection.Open();
-			SqlCommand cmd = new SqlCommand
-			{
-				Connection = connection
-			};
-			//SqlDataAdapter adpr = new SqlDataAdapter("SELECT * FROM authors " +
-			//"WHERE name LIKE '" + txtSearch.Text + "'%'", connection);
-			//SqlDataAdapter adpr = new SqlDataAdapter(" SELECT * FROM [searchView]" + 
-			//	"WHERE name, surname LIKE" + txtSearch.Text + "'%'", connection);
-
-			SqlDataAdapter adpr = new SqlDataAdapter(
-				"SELECT name FROM authors WHERE name LIKE '@" + txtSearch.Text + "%' ORDER BY name ASC;", connection);
-			DataTable dt = new DataTable();
-			adpr.Fill(dt);
-			dgvSearch.DataSource = dt;
-			connection.Close();
-			listing();
-		}
-		*/
 		private void BtnBack_Click(object sender, EventArgs e)
 		{
 			this.Close();
+			AdminForm af = new AdminForm();
+			af.Show();
 		}
 
 		private void SearchStudentNameToolStripButton_Click(object sender, EventArgs e)
@@ -81,7 +61,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				this.adminSearchViewTableAdapter.SearchStudentSurname(this.adminSearchViewDataSet.adminSearchView, surnameToolStripTextBox.Text);
+				this.adminSearchViewTableAdapter.SearchStudentSurname(this.adminSearchViewDataSet.adminSearchView, studentSurnameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -100,7 +80,8 @@ namespace LibraryManagementSystem
 			{
 				System.Windows.Forms.MessageBox.Show(ex.Message);
 			}
-
+			studentNameToolStripTextBox.Text = "";
+			studentSurnameToolStripTextBox.Text = "";
 		}
 	}
 }

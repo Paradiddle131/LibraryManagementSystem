@@ -12,6 +12,7 @@ namespace LibraryManagementSystem
 {
 	public partial class UserForm : Form
 	{
+		DataGridView dgv;
 		public UserForm()
 		{
 			InitializeComponent();
@@ -49,33 +50,10 @@ namespace LibraryManagementSystem
 			else
 				userUserControl1.Instance.BringToFront();
 		}
-
-		private void btnSearch_Click(object sender, EventArgs e)
+		private void btnLogout_Click(object sender, EventArgs e)
 		{
-			pnlGreen.Width = btnSearch.Width;
-			pnlGreen.Left = btnSearch.Left;
-			searchUserControl1.Instance.Show();
-
-			if (!pnlUserControls.Controls.Contains(searchUserControl1.Instance))
-			{
-				pnlUserControls.Controls.Add(searchUserControl1.Instance);
-				searchUserControl1.Instance.Dock = DockStyle.Fill;
-				searchUserControl1.Instance.BringToFront();
-			}
-			else
-				searchUserControl1.Instance.BringToFront();
-		}
-
-		private void btnReturn_Click(object sender, EventArgs e)
-		{
-			pnlGreen.Width = btnReturn.Width;
-			pnlGreen.Left = btnReturn.Left;
-		}
-
-		private void btnSocialMedia_Click(object sender, EventArgs e)
-		{
-			pnlGreen.Width = btnSocialMedia.Width;
-			pnlGreen.Left = btnSocialMedia.Left;
+			pnlGreen.Width = btnLogout.Width;
+			pnlGreen.Left = btnLogout.Left;
 			dbForLMS.Login loginScreen = new dbForLMS.Login();
 			this.Hide();
 			loginScreen.Show();
@@ -101,8 +79,8 @@ namespace LibraryManagementSystem
 
 		private void BtnBorrow_Click(object sender, EventArgs e)
 		{
-			this.Hide();
-			searchBook sb = new searchBook();
+			//this.Hide();
+			searchBook sb = new searchBook(dgv);
 			sb.Show();
 		}
 	}

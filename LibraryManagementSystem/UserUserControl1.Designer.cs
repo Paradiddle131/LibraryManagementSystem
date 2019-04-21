@@ -64,7 +64,7 @@
 			this.dataGridView1.DataSource = this.borrowsBindingSource1;
 			this.dataGridView1.Location = new System.Drawing.Point(250, 46);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(531, 242);
+			this.dataGridView1.Size = new System.Drawing.Size(330, 242);
 			this.dataGridView1.TabIndex = 0;
 			// 
 			// borrowIdDataGridViewTextBoxColumn

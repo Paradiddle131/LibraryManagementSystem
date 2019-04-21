@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(searchStudent));
 			this.dgvSearch = new System.Windows.Forms.DataGridView();
 			this.studentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +48,7 @@
 			this.searchStudentNameToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.searchStudentSurnameToolStrip = new System.Windows.Forms.ToolStrip();
 			this.surnameToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-			this.surnameToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+			this.studentSurnameToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
 			this.searchStudentSurnameToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.resetFiltersToolStrip = new System.Windows.Forms.ToolStrip();
@@ -65,8 +65,8 @@
 			// dgvSearch
 			// 
 			this.dgvSearch.AllowUserToOrderColumns = true;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgvSearch.AutoGenerateColumns = false;
 			this.dgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
@@ -159,7 +159,7 @@
             this.studentNameToolStripTextBox,
             this.searchStudentNameToolStripButton});
 			this.searchStudentNameToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-			this.searchStudentNameToolStrip.Location = new System.Drawing.Point(12, 60);
+			this.searchStudentNameToolStrip.Location = new System.Drawing.Point(12, 54);
 			this.searchStudentNameToolStrip.Name = "searchStudentNameToolStrip";
 			this.searchStudentNameToolStrip.Size = new System.Drawing.Size(291, 34);
 			this.searchStudentNameToolStrip.TabIndex = 15;
@@ -183,7 +183,6 @@
 			this.searchStudentNameToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.searchStudentNameToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.searchStudentNameToolStripButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(252)))), ((int)(((byte)(45)))));
-			this.searchStudentNameToolStripButton.Margin = new System.Windows.Forms.Padding(27, 1, 0, 2);
 			this.searchStudentNameToolStripButton.Name = "searchStudentNameToolStripButton";
 			this.searchStudentNameToolStripButton.Size = new System.Drawing.Size(81, 31);
 			this.searchStudentNameToolStripButton.Text = "Search";
@@ -196,7 +195,7 @@
 			this.searchStudentSurnameToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.searchStudentSurnameToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.surnameToolStripLabel,
-            this.surnameToolStripTextBox,
+            this.studentSurnameToolStripTextBox,
             this.searchStudentSurnameToolStripButton});
 			this.searchStudentSurnameToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
 			this.searchStudentSurnameToolStrip.Location = new System.Drawing.Point(12, 103);
@@ -212,11 +211,11 @@
 			this.surnameToolStripLabel.Size = new System.Drawing.Size(107, 27);
 			this.surnameToolStripLabel.Text = "Surname: ";
 			// 
-			// surnameToolStripTextBox
+			// studentSurnameToolStripTextBox
 			// 
-			this.surnameToolStripTextBox.Margin = new System.Windows.Forms.Padding(1, 5, 1, 0);
-			this.surnameToolStripTextBox.Name = "surnameToolStripTextBox";
-			this.surnameToolStripTextBox.Size = new System.Drawing.Size(100, 23);
+			this.studentSurnameToolStripTextBox.Margin = new System.Windows.Forms.Padding(1, 5, 1, 0);
+			this.studentSurnameToolStripTextBox.Name = "studentSurnameToolStripTextBox";
+			this.studentSurnameToolStripTextBox.Size = new System.Drawing.Size(100, 23);
 			// 
 			// searchStudentSurnameToolStripButton
 			// 
@@ -231,7 +230,7 @@
 			// 
 			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(491, 94);
+			this.pictureBox1.Location = new System.Drawing.Point(474, 94);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(65, 43);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -249,7 +248,7 @@
 			this.resetFiltersToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.resetFiltersToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.resetFiltersToolStripButton});
-			this.resetFiltersToolStrip.Location = new System.Drawing.Point(344, 94);
+			this.resetFiltersToolStrip.Location = new System.Drawing.Point(327, 94);
 			this.resetFiltersToolStrip.Name = "resetFiltersToolStrip";
 			this.resetFiltersToolStrip.Size = new System.Drawing.Size(212, 43);
 			this.resetFiltersToolStrip.TabIndex = 22;
@@ -320,7 +319,7 @@
 		private System.Windows.Forms.ToolStripButton searchStudentNameToolStripButton;
 		private System.Windows.Forms.ToolStrip searchStudentSurnameToolStrip;
 		private System.Windows.Forms.ToolStripLabel surnameToolStripLabel;
-		private System.Windows.Forms.ToolStripTextBox surnameToolStripTextBox;
+		private System.Windows.Forms.ToolStripTextBox studentSurnameToolStripTextBox;
 		private System.Windows.Forms.ToolStripButton searchStudentSurnameToolStripButton;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.ToolStrip resetFiltersToolStrip;

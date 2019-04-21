@@ -39,7 +39,6 @@
 			this.btnManage = new System.Windows.Forms.Button();
 			this.pnlUserControls = new System.Windows.Forms.Panel();
 			this.homeUserControl = new LibraryManagementSystem.HomeUserControl();
-			this.searchUserControl = new LibraryManagementSystem.SearchUserControl();
 			this.manageUserControl = new LibraryManagementSystem.ManageUserControl();
 			this.pnlButtons.SuspendLayout();
 			this.pnlUserControls.SuspendLayout();
@@ -126,7 +125,7 @@
 			this.btnLogout.TabIndex = 4;
 			this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnLogout.UseVisualStyleBackColor = false;
-			this.btnLogout.Click += new System.EventHandler(this.btnSocialMedia_Click);
+			this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
 			// 
 			// btnSearch
 			// 
@@ -161,7 +160,6 @@
 			// pnlUserControls
 			// 
 			this.pnlUserControls.Controls.Add(this.homeUserControl);
-			this.pnlUserControls.Controls.Add(this.searchUserControl);
 			this.pnlUserControls.Controls.Add(this.manageUserControl);
 			this.pnlUserControls.Location = new System.Drawing.Point(0, 75);
 			this.pnlUserControls.Name = "pnlUserControls";
@@ -178,16 +176,6 @@
 			this.homeUserControl.Name = "homeUserControl";
 			this.homeUserControl.Size = new System.Drawing.Size(600, 325);
 			this.homeUserControl.TabIndex = 3;
-			// 
-			// searchUserControl
-			// 
-			this.searchUserControl.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchUserControl.BackgroundImage")));
-			this.searchUserControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.searchUserControl.Location = new System.Drawing.Point(0, 0);
-			this.searchUserControl.Margin = new System.Windows.Forms.Padding(0);
-			this.searchUserControl.Name = "searchUserControl";
-			this.searchUserControl.Size = new System.Drawing.Size(600, 325);
-			this.searchUserControl.TabIndex = 7;
 			// 
 			// manageUserControl
 			// 
@@ -228,7 +216,6 @@
 		private System.Windows.Forms.Button btnLogout;
 		private System.Windows.Forms.Button btnSearch;
 		private System.Windows.Forms.Button btnManage;
-		private SearchUserControl searchUserControl;
 		private System.Windows.Forms.Panel pnlUserControls;
 		private ManageUserControl manageUserControl;
 	}

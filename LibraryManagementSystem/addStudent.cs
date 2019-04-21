@@ -14,11 +14,13 @@ namespace LibraryManagementSystem
 {
 	public partial class addStudent : Form
 	{
+		searchBook sb;
 		AdminForm af;
 		public addStudent()
 		{
 			InitializeComponent();
 			for (char c = 'A'; c <= 'Z'; ++c) cmbLetter.Items.Add(c);
+			//sb = new searchBook(dgvStudent);
 		}
 
 		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);

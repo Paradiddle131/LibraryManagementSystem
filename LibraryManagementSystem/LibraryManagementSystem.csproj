@@ -271,12 +271,6 @@
     <Compile Include="searchStudent.Designer.cs">
       <DependentUpon>searchStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SearchUserControl.Designer.cs">
-      <DependentUpon>SearchUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -352,9 +346,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="searchStudent.resx">
       <DependentUpon>searchStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SearchUserControl.resx">
-      <DependentUpon>SearchUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>

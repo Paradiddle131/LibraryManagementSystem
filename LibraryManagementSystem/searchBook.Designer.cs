@@ -61,6 +61,7 @@
 			this.resetFilterToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btnBorrow = new LollipopButton();
+			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userSearchViewBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userSearchViewDataSetBindingSource)).BeginInit();
@@ -354,6 +355,16 @@
 			this.btnBorrow.Size = new System.Drawing.Size(143, 41);
 			this.btnBorrow.TabIndex = 21;
 			this.btnBorrow.Text = "BORROW";
+			this.btnBorrow.Click += new System.EventHandler(this.BtnBorrow_Click);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(601, 36);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(35, 13);
+			this.label1.TabIndex = 22;
+			this.label1.Text = "label1";
 			// 
 			// searchBook
 			// 
@@ -363,6 +374,7 @@
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(780, 500);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnBorrow);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.resetFilterToolStrip);
@@ -432,5 +444,6 @@
 		private System.Windows.Forms.ToolStripButton resetFilterToolStripButton;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private LollipopButton btnBorrow;
+		private System.Windows.Forms.Label label1;
 	}
 }

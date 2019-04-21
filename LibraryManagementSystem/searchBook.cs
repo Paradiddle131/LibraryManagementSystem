@@ -1,21 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LibraryManagementSystem
 {
 	public partial class searchBook : Form
 	{
-		public searchBook()
+		string bookid = "labeldefault";
+		private readonly addBook ab;
+		private readonly DataGridView dgv;
+		public searchBook(DataGridView dgv)
 		{
 			InitializeComponent();
+			this.dgv = dgv;
+			label1.Text = bookid;
 		}
 		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 
@@ -33,15 +32,15 @@ namespace LibraryManagementSystem
 		}
 		private void BtnBack_Click(object sender, EventArgs e)
 		{
-			this.Close();
-			UserForm uf = new UserForm();
-			uf.Show();
+			Hide();
+			//UserForm uf = new UserForm();
+			//uf.Show();
 		}
 
 		private void SearchBook_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'userSearchViewDataSet.userSearchView' table. You can move, or remove it, as needed.
-			this.userSearchViewTableAdapter.Fill(this.userSearchViewDataSet.userSearchView);
+			userSearchViewTableAdapter.Fill(userSearchViewDataSet.userSearchView);
 
 		}
 
@@ -49,7 +48,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				this.userSearchViewTableAdapter.SearchAuthorName(this.userSearchViewDataSet.userSearchView, authorNameToolStripTextBox.Text);
+				userSearchViewTableAdapter.SearchAuthorName(userSearchViewDataSet.userSearchView, authorNameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -62,7 +61,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				this.userSearchViewTableAdapter.SearchAuthorSurname(this.userSearchViewDataSet.userSearchView, authorSurnameToolStripTextBox.Text);
+				userSearchViewTableAdapter.SearchAuthorSurname(userSearchViewDataSet.userSearchView, authorSurnameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -75,7 +74,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				this.userSearchViewTableAdapter.SearchBookName(this.userSearchViewDataSet.userSearchView, bookNameToolStripTextBox.Text);
+				userSearchViewTableAdapter.SearchBookName(userSearchViewDataSet.userSearchView, bookNameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -88,26 +87,60 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				this.userSearchViewTableAdapter.SearchCategory(this.userSearchViewDataSet.userSearchView, categoryToolStripTextBox.Text);
+				userSearchViewTableAdapter.SearchCategory(userSearchViewDataSet.userSearchView, categoryToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
 				System.Windows.Forms.MessageBox.Show(ex.Message);
 			}
-
 		}
 
 		private void ResetFilterToolStripButton_Click(object sender, EventArgs e)
 		{
 			try
 			{
-				this.userSearchViewTableAdapter.ResetFilter(this.userSearchViewDataSet.userSearchView);
+				userSearchViewTableAdapter.ResetFilter(userSearchViewDataSet.userSearchView);
 			}
 			catch (System.Exception ex)
 			{
 				System.Windows.Forms.MessageBox.Show(ex.Message);
 			}
+			authorNameToolStripTextBox.Text = "";
+			authorSurnameToolStripTextBox.Text = "";
+			bookNameToolStripTextBox.Text = "";
+			categoryToolStripTextBox.Text = "";
+		}
 
+		private void BtnBorrow_Click(object sender, EventArgs e)
+		{
+			//DataGridView dgv = new DataGridView();
+			string studentid = "";
+			if (connection.State == ConnectionState.Closed)
+			{
+				if (dgv.CurrentRow.Cells[1].Value.ToString() ==
+					dgvSearch.CurrentRow.Cells[2].Value.ToString())
+				{
+					bookid = dgv.CurrentRow.Cells[0].Value.ToString();
+				}
+				//if (dgv.CurrentRow.Cells[0].Value.ToString() ==
+				//	dgv.CurrentRow.Cells[1].Value.ToString())
+				//{
+				//	studentid = dgv.CurrentRow.Cells[1].Value.ToString();
+				//}
+				connection.Open();
+				SqlCommand cmd = new SqlCommand
+				{
+					//Connection = connection,
+					//CommandText = "INSERT INTO borrows(studentId,bookId,takenDate,broughtDate) " +
+					//"VALUES('" +  + "','" + bookid + "','" +
+					//dtpTakenDate.Text + "','" + dtpBroughtDate.Text + "')"
+				};
+				cmd.ExecuteNonQuery();
+				cmd.Dispose();
+				connection.Close();
+				listing(); // must be called after the connection closed
+				MessageBox.Show("Added.");
+			}
 		}
 	}
 }

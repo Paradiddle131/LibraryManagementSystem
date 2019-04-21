@@ -13,10 +13,13 @@ namespace LibraryManagementSystem
 {
 	public partial class addBook : Form
 	{
+		searchBook sb;
 		AdminForm af;
+		//DataGridView dgv;
 		public addBook()
 		{
 			InitializeComponent();
+			sb = new searchBook(dgvBook);
 		}
 
 		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);

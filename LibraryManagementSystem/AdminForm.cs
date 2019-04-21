@@ -37,13 +37,14 @@ namespace LibraryManagementSystem
 
 		private void btnSearch_Click(object sender, EventArgs e)
 		{
-			AdminForm af = new AdminForm();
-			af.Hide();
+			//AdminForm af = new AdminForm();
+			//af.Hide();
+			this.Hide();
 			searchStudent ss = new searchStudent();
 			ss.Show();
 		}
 
-		private void btnSocialMedia_Click(object sender, EventArgs e)
+		private void btnLogout_Click(object sender, EventArgs e)
 		{
 			AdminForm af = new AdminForm();
 			pnlGreen.Width = btnLogout.Width;
