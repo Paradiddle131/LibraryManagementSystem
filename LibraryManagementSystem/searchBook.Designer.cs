@@ -30,7 +30,7 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(searchBook));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.btnBack = new System.Windows.Forms.Button();
 			this.dgvSearch = new System.Windows.Forms.DataGridView();
 			this.authorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +62,19 @@
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btnBorrow = new LollipopButton();
 			this.label1 = new System.Windows.Forms.Label();
+			this.dgvBookForBorrow = new System.Windows.Forms.DataGridView();
+			this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.pagecountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.pointDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.authorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.typeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.booksForBorrowBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.bookForBorrowView = new LibraryManagementSystem.bookForBorrowView();
+			this.bookForBorrow = new LibraryManagementSystem.bookForBorrow();
+			this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.libraryDataSet3 = new LibraryManagementSystem.libraryDataSet3();
+			this.booksForBorrowTableAdapter = new LibraryManagementSystem.bookForBorrowViewTableAdapters.booksForBorrowTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userSearchViewBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userSearchViewDataSetBindingSource)).BeginInit();
@@ -72,6 +85,12 @@
 			this.searchCategoryToolStrip.SuspendLayout();
 			this.resetFilterToolStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvBookForBorrow)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.booksForBorrowBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bookForBorrowView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bookForBorrow)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet3)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnBack
@@ -88,8 +107,8 @@
 			// dgvSearch
 			// 
 			this.dgvSearch.AllowUserToOrderColumns = true;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
 			this.dgvSearch.AutoGenerateColumns = false;
 			this.dgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
@@ -366,6 +385,90 @@
 			this.label1.TabIndex = 22;
 			this.label1.Text = "label1";
 			// 
+			// dgvBookForBorrow
+			// 
+			this.dgvBookForBorrow.AutoGenerateColumns = false;
+			this.dgvBookForBorrow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvBookForBorrow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bookIdDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.pagecountDataGridViewTextBoxColumn,
+            this.pointDataGridViewTextBoxColumn,
+            this.authorIdDataGridViewTextBoxColumn,
+            this.typeIdDataGridViewTextBoxColumn});
+			this.dgvBookForBorrow.DataSource = this.booksForBorrowBindingSource;
+			this.dgvBookForBorrow.Location = new System.Drawing.Point(111, 220);
+			this.dgvBookForBorrow.Name = "dgvBookForBorrow";
+			this.dgvBookForBorrow.Size = new System.Drawing.Size(657, 215);
+			this.dgvBookForBorrow.TabIndex = 23;
+			this.dgvBookForBorrow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvBookForBorrow_CellClick);
+			// 
+			// bookIdDataGridViewTextBoxColumn
+			// 
+			this.bookIdDataGridViewTextBoxColumn.DataPropertyName = "bookId";
+			this.bookIdDataGridViewTextBoxColumn.HeaderText = "bookId";
+			this.bookIdDataGridViewTextBoxColumn.Name = "bookIdDataGridViewTextBoxColumn";
+			this.bookIdDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// nameDataGridViewTextBoxColumn
+			// 
+			this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+			this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			// 
+			// pagecountDataGridViewTextBoxColumn
+			// 
+			this.pagecountDataGridViewTextBoxColumn.DataPropertyName = "pagecount";
+			this.pagecountDataGridViewTextBoxColumn.HeaderText = "pagecount";
+			this.pagecountDataGridViewTextBoxColumn.Name = "pagecountDataGridViewTextBoxColumn";
+			// 
+			// pointDataGridViewTextBoxColumn
+			// 
+			this.pointDataGridViewTextBoxColumn.DataPropertyName = "point";
+			this.pointDataGridViewTextBoxColumn.HeaderText = "point";
+			this.pointDataGridViewTextBoxColumn.Name = "pointDataGridViewTextBoxColumn";
+			// 
+			// authorIdDataGridViewTextBoxColumn
+			// 
+			this.authorIdDataGridViewTextBoxColumn.DataPropertyName = "authorId";
+			this.authorIdDataGridViewTextBoxColumn.HeaderText = "authorId";
+			this.authorIdDataGridViewTextBoxColumn.Name = "authorIdDataGridViewTextBoxColumn";
+			// 
+			// typeIdDataGridViewTextBoxColumn
+			// 
+			this.typeIdDataGridViewTextBoxColumn.DataPropertyName = "typeId";
+			this.typeIdDataGridViewTextBoxColumn.HeaderText = "typeId";
+			this.typeIdDataGridViewTextBoxColumn.Name = "typeIdDataGridViewTextBoxColumn";
+			// 
+			// booksForBorrowBindingSource
+			// 
+			this.booksForBorrowBindingSource.DataMember = "booksForBorrow";
+			this.booksForBorrowBindingSource.DataSource = this.bookForBorrowView;
+			// 
+			// bookForBorrowView
+			// 
+			this.bookForBorrowView.DataSetName = "bookForBorrowView";
+			this.bookForBorrowView.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// bookForBorrow
+			// 
+			this.bookForBorrow.DataSetName = "bookForBorrow";
+			this.bookForBorrow.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// booksBindingSource
+			// 
+			this.booksBindingSource.DataMember = "books";
+			this.booksBindingSource.DataSource = this.bookForBorrow;
+			// 
+			// libraryDataSet3
+			// 
+			this.libraryDataSet3.DataSetName = "libraryDataSet3";
+			this.libraryDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// booksForBorrowTableAdapter
+			// 
+			this.booksForBorrowTableAdapter.ClearBeforeFill = true;
+			// 
 			// searchBook
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,6 +477,8 @@
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(780, 500);
+			this.Controls.Add(this.dgvSearch);
+			this.Controls.Add(this.dgvBookForBorrow);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnBorrow);
 			this.Controls.Add(this.pictureBox1);
@@ -382,7 +487,6 @@
 			this.Controls.Add(this.searchBookNameToolStrip);
 			this.Controls.Add(this.searchAuthorSurnameToolStrip);
 			this.Controls.Add(this.searchAuthorNameToolStrip);
-			this.Controls.Add(this.dgvSearch);
 			this.Controls.Add(this.btnBack);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -407,6 +511,12 @@
 			this.resetFilterToolStrip.ResumeLayout(false);
 			this.resetFilterToolStrip.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvBookForBorrow)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.booksForBorrowBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bookForBorrowView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bookForBorrow)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet3)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -445,5 +555,18 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private LollipopButton btnBorrow;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.DataGridView dgvBookForBorrow;
+		private System.Windows.Forms.BindingSource booksBindingSource;
+		private bookForBorrow bookForBorrow;
+		private libraryDataSet3 libraryDataSet3;
+		private bookForBorrowView bookForBorrowView;
+		private System.Windows.Forms.BindingSource booksForBorrowBindingSource;
+		private bookForBorrowViewTableAdapters.booksForBorrowTableAdapter booksForBorrowTableAdapter;
+		private System.Windows.Forms.DataGridViewTextBoxColumn bookIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn pagecountDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn pointDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn authorIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn typeIdDataGridViewTextBoxColumn;
 	}
 }

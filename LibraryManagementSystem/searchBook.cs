@@ -7,14 +7,15 @@ namespace LibraryManagementSystem
 {
 	public partial class searchBook : Form
 	{
-		string bookid = "labeldefault";
 		private readonly addBook ab;
 		private readonly DataGridView dgv;
 		public searchBook(DataGridView dgv)
 		{
 			InitializeComponent();
 			this.dgv = dgv;
-			label1.Text = bookid;
+			label1.Visible = false;
+			//label1.Text = bookid;
+			//dgvBookForBorrow.Visible = false;
 		}
 		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 
@@ -24,7 +25,7 @@ namespace LibraryManagementSystem
 			SqlCommand cmd = new SqlCommand
 			{
 				Connection = connection,
-				CommandText = "SELECT * FROM library.dbo.adminSearchView"
+				CommandText = "SELECT * FROM library.dbo.userSearchView"
 			};
 			SqlDataAdapter adpr = new SqlDataAdapter(cmd);
 			//DataSet ds = new DataSet();
@@ -39,9 +40,10 @@ namespace LibraryManagementSystem
 
 		private void SearchBook_Load(object sender, EventArgs e)
 		{
+			// TODO: This line of code loads data into the 'bookForBorrowView.booksForBorrow' table. You can move, or remove it, as needed.
+			this.booksForBorrowTableAdapter.Fill(this.bookForBorrowView.booksForBorrow);
 			// TODO: This line of code loads data into the 'userSearchViewDataSet.userSearchView' table. You can move, or remove it, as needed.
 			userSearchViewTableAdapter.Fill(userSearchViewDataSet.userSearchView);
-
 		}
 
 		private void SearchAuthorNameToolStripButton_Click(object sender, EventArgs e)
@@ -110,23 +112,29 @@ namespace LibraryManagementSystem
 			bookNameToolStripTextBox.Text = "";
 			categoryToolStripTextBox.Text = "";
 		}
+		private void DgvBookForBorrow_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			string bookid = "labeldefault";
+			if (dgvBookForBorrow.CurrentRow.Cells[1].Value.ToString() ==
+				dgvSearch.CurrentRow.Cells[2].Value.ToString())
+			{
+				bookid = dgvBookForBorrow.CurrentRow.Cells[0].Value.ToString();
+			}
+			label1.Text = bookid;
+			//if (dgvBookForBorrow.CurrentRow.Cells[0].Value.ToString() ==
+			//	dgv.CurrentRow.Cells[1].Value.ToString())
+			//{
+			//	studentid = dgv.CurrentRow.Cells[1].Value.ToString();
+			//}
 
+		}
 		private void BtnBorrow_Click(object sender, EventArgs e)
 		{
 			//DataGridView dgv = new DataGridView();
 			string studentid = "";
 			if (connection.State == ConnectionState.Closed)
 			{
-				if (dgv.CurrentRow.Cells[1].Value.ToString() ==
-					dgvSearch.CurrentRow.Cells[2].Value.ToString())
-				{
-					bookid = dgv.CurrentRow.Cells[0].Value.ToString();
-				}
-				//if (dgv.CurrentRow.Cells[0].Value.ToString() ==
-				//	dgv.CurrentRow.Cells[1].Value.ToString())
-				//{
-				//	studentid = dgv.CurrentRow.Cells[1].Value.ToString();
-				//}
+
 				connection.Open();
 				SqlCommand cmd = new SqlCommand
 				{

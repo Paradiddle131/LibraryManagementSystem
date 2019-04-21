@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="bookForBorrowView" targetNamespace="http://tempuri.org/bookForBorrowView.xsd" xmlns:mstns="http://tempuri.org/bookForBorrowView.xsd" xmlns="http://tempuri.org/bookForBorrowView.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="libraryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="libraryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LibraryManagementSystem.Properties.Settings.GlobalReference.Default.libraryConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="booksForBorrowTableAdapter" GeneratorDataComponentClassName="booksForBorrowTableAdapter" Name="booksForBorrow" UserDataComponentName="booksForBorrowTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="libraryConnectionString (Settings)" DbObjectName="library.dbo.booksForBorrow" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT bookId, name, pagecount, point, authorId, typeId FROM dbo.booksForBorrow</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="bookId" DataSetColumn="bookId" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="pagecount" DataSetColumn="pagecount" />
+              <Mapping SourceColumn="point" DataSetColumn="point" />
+              <Mapping SourceColumn="authorId" DataSetColumn="authorId" />
+              <Mapping SourceColumn="typeId" DataSetColumn="typeId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="bookForBorrowView" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="bookForBorrowView" msprop:Generator_UserDSName="bookForBorrowView">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="booksForBorrow" msprop:Generator_TableClassName="booksForBorrowDataTable" msprop:Generator_TableVarName="tablebooksForBorrow" msprop:Generator_TablePropName="booksForBorrow" msprop:Generator_RowDeletingName="booksForBorrowRowDeleting" msprop:Generator_RowChangingName="booksForBorrowRowChanging" msprop:Generator_RowEvHandlerName="booksForBorrowRowChangeEventHandler" msprop:Generator_RowDeletedName="booksForBorrowRowDeleted" msprop:Generator_UserTableName="booksForBorrow" msprop:Generator_RowChangedName="booksForBorrowRowChanged" msprop:Generator_RowEvArgName="booksForBorrowRowChangeEvent" msprop:Generator_RowClassName="booksForBorrowRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bookId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnbookId" msprop:Generator_ColumnPropNameInRow="bookId" msprop:Generator_ColumnPropNameInTable="bookIdColumn" msprop:Generator_UserColumnName="bookId" type="xs:int" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pagecount" msprop:Generator_ColumnVarNameInTable="columnpagecount" msprop:Generator_ColumnPropNameInRow="pagecount" msprop:Generator_ColumnPropNameInTable="pagecountColumn" msprop:Generator_UserColumnName="pagecount" type="xs:int" minOccurs="0" />
+              <xs:element name="point" msprop:Generator_ColumnVarNameInTable="columnpoint" msprop:Generator_ColumnPropNameInRow="point" msprop:Generator_ColumnPropNameInTable="pointColumn" msprop:Generator_UserColumnName="point" type="xs:int" minOccurs="0" />
+              <xs:element name="authorId" msprop:Generator_ColumnVarNameInTable="columnauthorId" msprop:Generator_ColumnPropNameInRow="authorId" msprop:Generator_ColumnPropNameInTable="authorIdColumn" msprop:Generator_UserColumnName="authorId" type="xs:int" minOccurs="0" />
+              <xs:element name="typeId" msprop:Generator_ColumnVarNameInTable="columntypeId" msprop:Generator_ColumnPropNameInRow="typeId" msprop:Generator_ColumnPropNameInTable="typeIdColumn" msprop:Generator_UserColumnName="typeId" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:booksForBorrow" />
+      <xs:field xpath="mstns:bookId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

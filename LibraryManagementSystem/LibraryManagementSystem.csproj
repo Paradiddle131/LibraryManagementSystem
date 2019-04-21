@@ -126,6 +126,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>adminSearchViewDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="bookForBorrow.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bookForBorrow.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bookForBorrowView.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bookForBorrowView.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Books.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,6 +178,11 @@
     </Compile>
     <Compile Include="HomeUserControl.Designer.cs">
       <DependentUpon>HomeUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="libraryDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>libraryDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="ManageUserControl.cs">
       <SubType>UserControl</SubType>
@@ -248,12 +263,6 @@
     </Compile>
     <Compile Include="searchBook.Designer.cs">
       <DependentUpon>searchBook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SearchByAuthor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SearchByAuthor.Designer.cs">
-      <DependentUpon>SearchByAuthor.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -341,9 +350,6 @@
     <EmbeddedResource Include="searchBook.resx">
       <DependentUpon>searchBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchByAuthor.resx">
-      <DependentUpon>SearchByAuthor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="searchStudent.resx">
       <DependentUpon>searchStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +369,28 @@
     </None>
     <None Include="adminSearchViewDataSet.xss">
       <DependentUpon>adminSearchViewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bookForBorrow.xsc">
+      <DependentUpon>bookForBorrow.xsd</DependentUpon>
+    </None>
+    <None Include="bookForBorrow.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bookForBorrow.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bookForBorrow.xss">
+      <DependentUpon>bookForBorrow.xsd</DependentUpon>
+    </None>
+    <None Include="bookForBorrowView.xsc">
+      <DependentUpon>bookForBorrowView.xsd</DependentUpon>
+    </None>
+    <None Include="bookForBorrowView.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bookForBorrowView.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bookForBorrowView.xss">
+      <DependentUpon>bookForBorrowView.xsd</DependentUpon>
     </None>
     <None Include="Books.xsc">
       <DependentUpon>Books.xsd</DependentUpon>
@@ -451,6 +479,17 @@
     </None>
     <None Include="libraryDataSet2.xss">
       <DependentUpon>libraryDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="libraryDataSet3.xsc">
+      <DependentUpon>libraryDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="libraryDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>libraryDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="libraryDataSet3.xss">
+      <DependentUpon>libraryDataSet3.xsd</DependentUpon>
     </None>
     <None Include="libraryDB2DataSet.xsc">
       <DependentUpon>libraryDB2DataSet.xsd</DependentUpon>

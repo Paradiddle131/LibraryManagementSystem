@@ -60,6 +60,7 @@
 			this.numAuthorID = new System.Windows.Forms.NumericUpDown();
 			this.numTypeID = new System.Windows.Forms.NumericUpDown();
 			this.booksTableAdapter1 = new LibraryManagementSystem.BooksDataSetTableAdapters.booksTableAdapter();
+			this.booksTableAdapter2 = new LibraryManagementSystem.bookForBorrowTableAdapters.booksTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
@@ -327,6 +328,10 @@
 			// 
 			this.booksTableAdapter1.ClearBeforeFill = true;
 			// 
+			// booksTableAdapter2
+			// 
+			this.booksTableAdapter2.ClearBeforeFill = true;
+			// 
 			// addBook
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,5 +408,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn point;
 		private System.Windows.Forms.DataGridViewTextBoxColumn authorIdDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn typeId;
+		private bookForBorrowTableAdapters.booksTableAdapter booksTableAdapter2;
 	}
 }

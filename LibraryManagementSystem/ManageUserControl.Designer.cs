@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageUserControl));
 			this.bookIssueTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.libraryDBDataSet7 = new LibraryManagementSystem.libraryDBDataSet7();
 			this.bookIssueTableTableAdapter1 = new LibraryManagementSystem.libraryDBDataSet7TableAdapters.BookIssueTableTableAdapter();
@@ -60,7 +61,7 @@
 			this.btnAddAuthor.BackColor = System.Drawing.Color.Transparent;
 			this.btnAddAuthor.BGColor = "#508ef5";
 			this.btnAddAuthor.FontColor = "#ffffff";
-			this.btnAddAuthor.Location = new System.Drawing.Point(33, 45);
+			this.btnAddAuthor.Location = new System.Drawing.Point(52, 45);
 			this.btnAddAuthor.Name = "btnAddAuthor";
 			this.btnAddAuthor.Size = new System.Drawing.Size(143, 41);
 			this.btnAddAuthor.TabIndex = 0;
@@ -72,7 +73,7 @@
 			this.btnAddBook.BackColor = System.Drawing.Color.Transparent;
 			this.btnAddBook.BGColor = "#508ef5";
 			this.btnAddBook.FontColor = "#ffffff";
-			this.btnAddBook.Location = new System.Drawing.Point(284, 45);
+			this.btnAddBook.Location = new System.Drawing.Point(369, 45);
 			this.btnAddBook.Name = "btnAddBook";
 			this.btnAddBook.Size = new System.Drawing.Size(143, 41);
 			this.btnAddBook.TabIndex = 0;
@@ -84,7 +85,7 @@
 			this.btnAddBorrow.BackColor = System.Drawing.Color.Transparent;
 			this.btnAddBorrow.BGColor = "#508ef5";
 			this.btnAddBorrow.FontColor = "#ffffff";
-			this.btnAddBorrow.Location = new System.Drawing.Point(33, 123);
+			this.btnAddBorrow.Location = new System.Drawing.Point(52, 136);
 			this.btnAddBorrow.Name = "btnAddBorrow";
 			this.btnAddBorrow.Size = new System.Drawing.Size(143, 41);
 			this.btnAddBorrow.TabIndex = 0;
@@ -96,7 +97,7 @@
 			this.bnAddStudent.BackColor = System.Drawing.Color.Transparent;
 			this.bnAddStudent.BGColor = "#508ef5";
 			this.bnAddStudent.FontColor = "#ffffff";
-			this.bnAddStudent.Location = new System.Drawing.Point(284, 123);
+			this.bnAddStudent.Location = new System.Drawing.Point(369, 136);
 			this.bnAddStudent.Name = "bnAddStudent";
 			this.bnAddStudent.Size = new System.Drawing.Size(143, 41);
 			this.bnAddStudent.TabIndex = 0;
@@ -108,7 +109,7 @@
 			this.btnAddType.BackColor = System.Drawing.Color.Transparent;
 			this.btnAddType.BGColor = "#508ef5";
 			this.btnAddType.FontColor = "#ffffff";
-			this.btnAddType.Location = new System.Drawing.Point(157, 209);
+			this.btnAddType.Location = new System.Drawing.Point(220, 227);
 			this.btnAddType.Name = "btnAddType";
 			this.btnAddType.Size = new System.Drawing.Size(143, 41);
 			this.btnAddType.TabIndex = 0;
@@ -119,6 +120,8 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.Controls.Add(this.btnAddType);
 			this.Controls.Add(this.bnAddStudent);
 			this.Controls.Add(this.btnAddAuthor);
@@ -126,7 +129,7 @@
 			this.Controls.Add(this.btnAddBook);
 			this.Margin = new System.Windows.Forms.Padding(0);
 			this.Name = "ManageUserControl";
-			this.Size = new System.Drawing.Size(800, 325);
+			this.Size = new System.Drawing.Size(600, 325);
 			((System.ComponentModel.ISupportInitialize)(this.bookIssueTableBindingSource1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet7)).EndInit();
 			this.ResumeLayout(false);

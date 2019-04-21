@@ -27,7 +27,7 @@ namespace dbForLMS
 			//Checkout BookManagement = new Checkout();
 			//BookManagement.Show(); // then opens the next screen which is BookManagement
 
-			if (txtUsername.Text == "a" && txtPassword.Text == "a")
+			if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
 			{
 				isAdmin = true;
 				LibraryManagementSystem.AdminForm af = new LibraryManagementSystem.AdminForm();
