@@ -1,22 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace LibraryManagementSystem
 {
 	public partial class addAuthor : Form
 	{
-		AdminForm af;
-		bool isAdm;
-		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
-		public addAuthor(bool isAdm)
+		public DataGridView dAuthor => dgvAuthor;
+
+		private readonly AdminForm af;
+		//private readonly bool isAdm;
+		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
+		public addAuthor()
 		{
 			InitializeComponent();
 		}
@@ -24,7 +20,7 @@ namespace LibraryManagementSystem
 		private void addAuthor_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'libraryDataSet1.authors' table. You can move, or remove it, as needed.
-			this.authorsTableAdapter.Fill(this.libraryDataSet1.authors);
+			authorsTableAdapter.Fill(libraryDataSet1.authors);
 			listing();
 		}
 
@@ -33,9 +29,11 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "SELECT * FROM authors";
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "SELECT * FROM authors"
+				};
 				SqlDataAdapter adpr = new SqlDataAdapter(cmd);
 				DataSet ds = new DataSet();
 				adpr.Fill(ds, "authors");
@@ -56,9 +54,11 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "INSERT INTO authors(name,surname) VALUES('" + txtAuthorName.Text + "','" + txtAuthorSurname.Text + "')";
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "INSERT INTO authors(name,surname) VALUES('" + txtAuthorName.Text + "','" + txtAuthorSurname.Text + "')"
+				};
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
 				connection.Close();
@@ -72,9 +72,11 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "UPDATE authors SET name='" + txtAuthorName.Text + "',surname='" + txtAuthorSurname.Text + "'WHERE authorId=@number";
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "UPDATE authors SET name='" + txtAuthorName.Text + "',surname='" + txtAuthorSurname.Text + "'WHERE authorId=@number"
+				};
 				cmd.Parameters.AddWithValue("@number", dgvAuthor.CurrentRow.Cells[0].Value.ToString());
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
@@ -92,9 +94,11 @@ namespace LibraryManagementSystem
 				if (connection.State == ConnectionState.Closed)
 				{
 					connection.Open();
-					SqlCommand cmd = new SqlCommand();
-					cmd.Connection = connection;
-					cmd.CommandText = "DELETE FROM authors WHERE authorId=@number";
+					SqlCommand cmd = new SqlCommand
+					{
+						Connection = connection,
+						CommandText = "DELETE FROM authors WHERE authorId=@number"
+					};
 					cmd.Parameters.AddWithValue("@number", dgvAuthor.CurrentRow.Cells[0].Value.ToString());
 					cmd.ExecuteNonQuery();
 					cmd.Dispose();
@@ -113,7 +117,7 @@ namespace LibraryManagementSystem
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
-			this.Hide();
+			Hide();
 			//AdminForm af = new AdminForm();
 			//af.Show();
 		}
@@ -123,25 +127,33 @@ namespace LibraryManagementSystem
 		{
 			//when the textbox gains focus:
 			if (txtAuthorName.Text == "<Enter Author Name>")
+			{
 				txtAuthorName.Text = "";
+			}
 		}
 
 		private void txtAuthorName_Leave(object sender, EventArgs e)
 		{
 			if (txtAuthorName.Text.Trim() == "")
+			{
 				txtAuthorName.Text = "<Enter Author Name>";
+			}
 		}
 
 		private void txtAuthorSurname_Enter(object sender, EventArgs e)
 		{
 			if (txtAuthorSurname.Text == "<Enter Author Surname>")
+			{
 				txtAuthorSurname.Text = "";
+			}
 		}
 
 		private void txtAuthorSurname_Leave(object sender, EventArgs e)
 		{
 			if (txtAuthorSurname.Text.Trim() == "")
+			{
 				txtAuthorSurname.Text = "<Enter Author Surname>";
+			}
 		}
 		#endregion
 	}

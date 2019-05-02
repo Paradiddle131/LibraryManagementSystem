@@ -33,22 +33,19 @@ namespace LibraryManagementSystem
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserUserControl1));
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.borrowIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.takenDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.broughtDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.borrowsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-			this.borrowDataSet = new LibraryManagementSystem.Data.Datasets.borrowDataSet();
-			this.borrowsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.borrowsDataSet = new LibraryManagementSystem.Data.Datasets.BorrowsDataSet();
-			this.borrowsTableAdapter = new LibraryManagementSystem.Data.Datasets.BorrowsDataSetTableAdapters.borrowsTableAdapter();
-			this.borrowsTableAdapter1 = new LibraryManagementSystem.Data.Datasets.borrowDataSetTableAdapters.borrowsTableAdapter();
+			this.userBorrowViewDataSet = new LibraryManagementSystem.userBorrowViewDataSet();
+			this.userBorrowViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.userBorrowViewTableAdapter = new LibraryManagementSystem.userBorrowViewDataSetTableAdapters.userBorrowViewTableAdapter();
+			this.studentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.studentSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.bookNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.authorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.authorSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.borrowDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.returnDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowDataSet)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.userBorrowViewDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.userBorrowViewBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dataGridView1
@@ -58,75 +55,74 @@ namespace LibraryManagementSystem
 			this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(224)))), ((int)(((byte)(237)))));
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.borrowIdDataGridViewTextBoxColumn,
-			this.studentIdDataGridViewTextBoxColumn,
-			this.bookIdDataGridViewTextBoxColumn,
-			this.takenDateDataGridViewTextBoxColumn,
-			this.broughtDateDataGridViewTextBoxColumn});
-			this.dataGridView1.DataSource = this.borrowsBindingSource1;
-			this.dataGridView1.Location = new System.Drawing.Point(250, 46);
+            this.studentNameDataGridViewTextBoxColumn,
+            this.studentSurnameDataGridViewTextBoxColumn,
+            this.bookNameDataGridViewTextBoxColumn,
+            this.authorNameDataGridViewTextBoxColumn,
+            this.authorSurnameDataGridViewTextBoxColumn,
+            this.borrowDateDataGridViewTextBoxColumn,
+            this.returnDateDataGridViewTextBoxColumn});
+			this.dataGridView1.DataSource = this.userBorrowViewBindingSource;
+			this.dataGridView1.Location = new System.Drawing.Point(3, 52);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(330, 242);
+			this.dataGridView1.Size = new System.Drawing.Size(594, 270);
 			this.dataGridView1.TabIndex = 0;
 			// 
-			// borrowIdDataGridViewTextBoxColumn
+			// userBorrowViewDataSet
 			// 
-			this.borrowIdDataGridViewTextBoxColumn.DataPropertyName = "borrowId";
-			this.borrowIdDataGridViewTextBoxColumn.HeaderText = "borrowId";
-			this.borrowIdDataGridViewTextBoxColumn.Name = "borrowIdDataGridViewTextBoxColumn";
-			this.borrowIdDataGridViewTextBoxColumn.ReadOnly = true;
+			this.userBorrowViewDataSet.DataSetName = "userBorrowViewDataSet";
+			this.userBorrowViewDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
-			// studentIdDataGridViewTextBoxColumn
+			// userBorrowViewBindingSource
 			// 
-			this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "studentId";
-			this.studentIdDataGridViewTextBoxColumn.HeaderText = "studentId";
-			this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
+			this.userBorrowViewBindingSource.DataMember = "userBorrowView";
+			this.userBorrowViewBindingSource.DataSource = this.userBorrowViewDataSet;
 			// 
-			// bookIdDataGridViewTextBoxColumn
+			// userBorrowViewTableAdapter
 			// 
-			this.bookIdDataGridViewTextBoxColumn.DataPropertyName = "bookId";
-			this.bookIdDataGridViewTextBoxColumn.HeaderText = "bookId";
-			this.bookIdDataGridViewTextBoxColumn.Name = "bookIdDataGridViewTextBoxColumn";
+			this.userBorrowViewTableAdapter.ClearBeforeFill = true;
 			// 
-			// takenDateDataGridViewTextBoxColumn
+			// studentNameDataGridViewTextBoxColumn
 			// 
-			this.takenDateDataGridViewTextBoxColumn.DataPropertyName = "takenDate";
-			this.takenDateDataGridViewTextBoxColumn.HeaderText = "takenDate";
-			this.takenDateDataGridViewTextBoxColumn.Name = "takenDateDataGridViewTextBoxColumn";
+			this.studentNameDataGridViewTextBoxColumn.DataPropertyName = "Student Name";
+			this.studentNameDataGridViewTextBoxColumn.HeaderText = "Student Name";
+			this.studentNameDataGridViewTextBoxColumn.Name = "studentNameDataGridViewTextBoxColumn";
 			// 
-			// broughtDateDataGridViewTextBoxColumn
+			// studentSurnameDataGridViewTextBoxColumn
 			// 
-			this.broughtDateDataGridViewTextBoxColumn.DataPropertyName = "broughtDate";
-			this.broughtDateDataGridViewTextBoxColumn.HeaderText = "broughtDate";
-			this.broughtDateDataGridViewTextBoxColumn.Name = "broughtDateDataGridViewTextBoxColumn";
+			this.studentSurnameDataGridViewTextBoxColumn.DataPropertyName = "Student Surname";
+			this.studentSurnameDataGridViewTextBoxColumn.HeaderText = "Student Surname";
+			this.studentSurnameDataGridViewTextBoxColumn.Name = "studentSurnameDataGridViewTextBoxColumn";
 			// 
-			// borrowsBindingSource1
+			// bookNameDataGridViewTextBoxColumn
 			// 
-			this.borrowsBindingSource1.DataMember = "borrows";
-			this.borrowsBindingSource1.DataSource = this.borrowDataSet;
+			this.bookNameDataGridViewTextBoxColumn.DataPropertyName = "Book Name";
+			this.bookNameDataGridViewTextBoxColumn.HeaderText = "Book Name";
+			this.bookNameDataGridViewTextBoxColumn.Name = "bookNameDataGridViewTextBoxColumn";
 			// 
-			// borrowDataSet
+			// authorNameDataGridViewTextBoxColumn
 			// 
-			this.borrowDataSet.DataSetName = "borrowDataSet";
-			this.borrowDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			this.authorNameDataGridViewTextBoxColumn.DataPropertyName = "Author Name";
+			this.authorNameDataGridViewTextBoxColumn.HeaderText = "Author Name";
+			this.authorNameDataGridViewTextBoxColumn.Name = "authorNameDataGridViewTextBoxColumn";
 			// 
-			// borrowsBindingSource
+			// authorSurnameDataGridViewTextBoxColumn
 			// 
-			this.borrowsBindingSource.DataMember = "borrows";
-			this.borrowsBindingSource.DataSource = this.borrowsDataSet;
+			this.authorSurnameDataGridViewTextBoxColumn.DataPropertyName = "Author Surname";
+			this.authorSurnameDataGridViewTextBoxColumn.HeaderText = "Author Surname";
+			this.authorSurnameDataGridViewTextBoxColumn.Name = "authorSurnameDataGridViewTextBoxColumn";
 			// 
-			// borrowsDataSet
+			// borrowDateDataGridViewTextBoxColumn
 			// 
-			this.borrowsDataSet.DataSetName = "BorrowsDataSet";
-			this.borrowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			this.borrowDateDataGridViewTextBoxColumn.DataPropertyName = "Borrow Date";
+			this.borrowDateDataGridViewTextBoxColumn.HeaderText = "Borrow Date";
+			this.borrowDateDataGridViewTextBoxColumn.Name = "borrowDateDataGridViewTextBoxColumn";
 			// 
-			// borrowsTableAdapter
+			// returnDateDataGridViewTextBoxColumn
 			// 
-			this.borrowsTableAdapter.ClearBeforeFill = true;
-			// 
-			// borrowsTableAdapter1
-			// 
-			this.borrowsTableAdapter1.ClearBeforeFill = true;
+			this.returnDateDataGridViewTextBoxColumn.DataPropertyName = "Return Date";
+			this.returnDateDataGridViewTextBoxColumn.HeaderText = "Return Date";
+			this.returnDateDataGridViewTextBoxColumn.Name = "returnDateDataGridViewTextBoxColumn";
 			// 
 			// UserUserControl1
 			// 
@@ -135,12 +131,10 @@ namespace LibraryManagementSystem
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.Controls.Add(this.dataGridView1);
 			this.Name = "UserUserControl1";
-			this.Size = new System.Drawing.Size(792, 324);
+			this.Size = new System.Drawing.Size(600, 325);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowDataSet)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.userBorrowViewDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.userBorrowViewBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -148,16 +142,15 @@ namespace LibraryManagementSystem
 		#endregion
 
 		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.BindingSource borrowsBindingSource;
-		private BorrowsDataSet borrowsDataSet;
-		private Data.Datasets.BorrowsDataSetTableAdapters.borrowsTableAdapter borrowsTableAdapter;
-		private System.Windows.Forms.DataGridViewTextBoxColumn borrowIdDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn studentIdDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn bookIdDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn takenDateDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn broughtDateDataGridViewTextBoxColumn;
-		private System.Windows.Forms.BindingSource borrowsBindingSource1;
-		private borrowDataSet borrowDataSet;
-		private Data.Datasets.borrowDataSetTableAdapters.borrowsTableAdapter borrowsTableAdapter1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn studentNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn studentSurnameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn bookNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn authorNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn authorSurnameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn borrowDateDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn returnDateDataGridViewTextBoxColumn;
+		private System.Windows.Forms.BindingSource userBorrowViewBindingSource;
+		private userBorrowViewDataSet userBorrowViewDataSet;
+		private userBorrowViewDataSetTableAdapters.userBorrowViewTableAdapter userBorrowViewTableAdapter;
 	}
 }

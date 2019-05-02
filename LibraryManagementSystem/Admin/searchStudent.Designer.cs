@@ -55,6 +55,8 @@ namespace LibraryManagementSystem
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.resetFiltersToolStrip = new System.Windows.Forms.ToolStrip();
 			this.resetFiltersToolStripButton = new System.Windows.Forms.ToolStripButton();
+			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.adminSearchViewBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.adminSearchViewDataSet)).BeginInit();
@@ -62,6 +64,7 @@ namespace LibraryManagementSystem
 			this.searchStudentSurnameToolStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.resetFiltersToolStrip.SuspendLayout();
+			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// dgvSearch
@@ -76,12 +79,12 @@ namespace LibraryManagementSystem
 			this.dgvSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.studentNameDataGridViewTextBoxColumn,
-			this.studentSurnameDataGridViewTextBoxColumn,
-			this.authorNameDataGridViewTextBoxColumn,
-			this.bookNameDataGridViewTextBoxColumn,
-			this.borrowDateDataGridViewTextBoxColumn,
-			this.returnDateDataGridViewTextBoxColumn});
+            this.studentNameDataGridViewTextBoxColumn,
+            this.studentSurnameDataGridViewTextBoxColumn,
+            this.authorNameDataGridViewTextBoxColumn,
+            this.bookNameDataGridViewTextBoxColumn,
+            this.borrowDateDataGridViewTextBoxColumn,
+            this.returnDateDataGridViewTextBoxColumn});
 			this.dgvSearch.DataSource = this.adminSearchViewBindingSource;
 			this.dgvSearch.Location = new System.Drawing.Point(12, 148);
 			this.dgvSearch.Margin = new System.Windows.Forms.Padding(0);
@@ -157,9 +160,9 @@ namespace LibraryManagementSystem
 			this.searchStudentNameToolStrip.Dock = System.Windows.Forms.DockStyle.None;
 			this.searchStudentNameToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.searchStudentNameToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.studentNameToolStripLabel,
-			this.studentNameToolStripTextBox,
-			this.searchStudentNameToolStripButton});
+            this.studentNameToolStripLabel,
+            this.studentNameToolStripTextBox,
+            this.searchStudentNameToolStripButton});
 			this.searchStudentNameToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
 			this.searchStudentNameToolStrip.Location = new System.Drawing.Point(12, 54);
 			this.searchStudentNameToolStrip.Name = "searchStudentNameToolStrip";
@@ -196,9 +199,9 @@ namespace LibraryManagementSystem
 			this.searchStudentSurnameToolStrip.Dock = System.Windows.Forms.DockStyle.None;
 			this.searchStudentSurnameToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.searchStudentSurnameToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.surnameToolStripLabel,
-			this.studentSurnameToolStripTextBox,
-			this.searchStudentSurnameToolStripButton});
+            this.surnameToolStripLabel,
+            this.studentSurnameToolStripTextBox,
+            this.searchStudentSurnameToolStripButton});
 			this.searchStudentSurnameToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
 			this.searchStudentSurnameToolStrip.Location = new System.Drawing.Point(12, 103);
 			this.searchStudentSurnameToolStrip.Name = "searchStudentSurnameToolStrip";
@@ -249,7 +252,7 @@ namespace LibraryManagementSystem
 			this.resetFiltersToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.resetFiltersToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.resetFiltersToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.resetFiltersToolStripButton});
+            this.resetFiltersToolStripButton});
 			this.resetFiltersToolStrip.Location = new System.Drawing.Point(327, 94);
 			this.resetFiltersToolStrip.Name = "resetFiltersToolStrip";
 			this.resetFiltersToolStrip.Size = new System.Drawing.Size(212, 43);
@@ -265,6 +268,26 @@ namespace LibraryManagementSystem
 			this.resetFiltersToolStripButton.Text = "Reset Filters";
 			this.resetFiltersToolStripButton.Click += new System.EventHandler(this.ResetFiltersToolStripButton_Click);
 			// 
+			// toolStrip1
+			// 
+			this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+			this.toolStrip1.Location = new System.Drawing.Point(354, 54);
+			this.toolStrip1.Name = "toolStrip1";
+			this.toolStrip1.Size = new System.Drawing.Size(35, 25);
+			this.toolStrip1.TabIndex = 23;
+			this.toolStrip1.Text = "toolStrip1";
+			// 
+			// toolStripButton1
+			// 
+			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton1.Name = "toolStripButton1";
+			this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButton1.Text = "toolStripButton1";
+			// 
 			// searchStudent
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,6 +296,7 @@ namespace LibraryManagementSystem
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(700, 450);
+			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.searchStudentSurnameToolStrip);
 			this.Controls.Add(this.searchStudentNameToolStrip);
@@ -297,6 +321,8 @@ namespace LibraryManagementSystem
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.resetFiltersToolStrip.ResumeLayout(false);
 			this.resetFiltersToolStrip.PerformLayout();
+			this.toolStrip1.ResumeLayout(false);
+			this.toolStrip1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -326,5 +352,7 @@ namespace LibraryManagementSystem
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.ToolStrip resetFiltersToolStrip;
 		private System.Windows.Forms.ToolStripButton resetFiltersToolStripButton;
+		private System.Windows.Forms.ToolStrip toolStrip1;
+		private System.Windows.Forms.ToolStripButton toolStripButton1;
 	}
 }

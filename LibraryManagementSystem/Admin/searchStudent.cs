@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LibraryManagementSystem
@@ -22,7 +15,7 @@ namespace LibraryManagementSystem
 		private void SearchStudent_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'adminSearchViewDataSet.adminSearchView' table. You can move, or remove it, as needed.
-			this.adminSearchViewTableAdapter.Fill(this.adminSearchViewDataSet.adminSearchView);
+			adminSearchViewTableAdapter.Fill(adminSearchViewDataSet.adminSearchView);
 			listing();
 		}
 		private void listing()
@@ -39,7 +32,7 @@ namespace LibraryManagementSystem
 		}
 		private void BtnBack_Click(object sender, EventArgs e)
 		{
-			this.Close();
+			Close();
 			AdminForm af = new AdminForm();
 			af.Show();
 		}
@@ -48,7 +41,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				this.adminSearchViewTableAdapter.SearchStudentName(this.adminSearchViewDataSet.adminSearchView, studentNameToolStripTextBox.Text);
+				adminSearchViewTableAdapter.SearchStudentName(adminSearchViewDataSet.adminSearchView, studentNameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -61,7 +54,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				this.adminSearchViewTableAdapter.SearchStudentSurname(this.adminSearchViewDataSet.adminSearchView, studentSurnameToolStripTextBox.Text);
+				adminSearchViewTableAdapter.SearchStudentSurname(adminSearchViewDataSet.adminSearchView, studentSurnameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -74,7 +67,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				this.adminSearchViewTableAdapter.ResetFilters(this.adminSearchViewDataSet.adminSearchView);
+				adminSearchViewTableAdapter.ResetFilters(adminSearchViewDataSet.adminSearchView);
 			}
 			catch (System.Exception ex)
 			{

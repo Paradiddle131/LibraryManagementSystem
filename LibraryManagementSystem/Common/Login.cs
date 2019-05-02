@@ -11,7 +11,8 @@ namespace dbForLMS
 		public Login()
 		{
 			InitializeComponent();
-			au = new LibraryManagementSystem.addAuthor(isAdmin);
+			//au = new LibraryManagementSystem.addAuthor(isAdmin);
+			au = new LibraryManagementSystem.addAuthor();
 		}
 
 		private void btnLogin_Click(object sender, EventArgs e)

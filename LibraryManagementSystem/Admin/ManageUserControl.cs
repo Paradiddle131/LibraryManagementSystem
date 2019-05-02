@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace LibraryManagementSystem
 {
@@ -25,7 +17,10 @@ namespace LibraryManagementSystem
 			get
 			{
 				if (_instance == null)
+				{
 					_instance = new ManageUserControl();
+				}
+
 				return _instance;
 			}
 		}
@@ -33,7 +28,8 @@ namespace LibraryManagementSystem
 		private void btnAddAuthor_Click(object sender, EventArgs e)
 		{
 			//this.Hide();
-			addAuthor AddAuthorForm = new addAuthor(isAdmin);
+			//addAuthor AddAuthorForm = new addAuthor(isAdmin);
+			addAuthor AddAuthorForm = new addAuthor();
 			AddAuthorForm.Show();
 		}
 

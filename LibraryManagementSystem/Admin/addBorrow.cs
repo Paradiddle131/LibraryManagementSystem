@@ -1,29 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace LibraryManagementSystem
 {
 	public partial class addBorrow : Form
 	{
-		AdminForm af;
+		private readonly searchBook sb;
+		private readonly AdminForm af;
 		public addBorrow()
 		{
 			InitializeComponent();
+			sb = new searchBook(dgvBorrow);
 		}
 
-		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
+		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
-			this.Hide();
+			Hide();
 			//AdminForm af = new AdminForm();
 			//af.Show();
 		}
@@ -32,9 +28,11 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "SELECT * FROM borrows";
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "SELECT * FROM borrows"
+				};
 				SqlDataAdapter adpr = new SqlDataAdapter(cmd);
 				DataSet ds = new DataSet();
 				adpr.Fill(ds, "borrows");
@@ -56,11 +54,13 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "INSERT INTO borrows(studentId,bookId,takenDate,broughtDate) " +
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "INSERT INTO borrows(studentId,bookId,takenDate,broughtDate) " +
 					"VALUES('" + nudStudentID.Value + "','" + nudBookID.Value + "','" +
-					dtpTakenDate.Text + "','" + dtpBroughtDate.Text + "')";
+					dtpTakenDate.Text + "','" + dtpBroughtDate.Text + "')"
+				};
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
 				connection.Close();
@@ -74,12 +74,14 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "UPDATE borrows SET borrowId='" + nudStudentID.Value +
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "UPDATE borrows SET borrowId='" + nudStudentID.Value +
 					"',bookId='" + nudBookID.Value + "',takenDate='" + dtpTakenDate.Text +
 					"',broughtDate='" + dtpBroughtDate.Text +
-					"'WHERE borrowId=@number";
+					"'WHERE borrowId=@number"
+				};
 				cmd.Parameters.AddWithValue("@number", dgvBorrow.CurrentRow.Cells[0].Value.ToString());
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
@@ -97,9 +99,11 @@ namespace LibraryManagementSystem
 				if (connection.State == ConnectionState.Closed)
 				{
 					connection.Open();
-					SqlCommand cmd = new SqlCommand();
-					cmd.Connection = connection;
-					cmd.CommandText = "DELETE FROM borrows WHERE borrowId=@number";
+					SqlCommand cmd = new SqlCommand
+					{
+						Connection = connection,
+						CommandText = "DELETE FROM borrows WHERE borrowId=@number"
+					};
 					cmd.Parameters.AddWithValue("@number", dgvBorrow.CurrentRow.Cells[0].Value.ToString());
 					cmd.ExecuteNonQuery();
 					cmd.Dispose();
@@ -113,16 +117,19 @@ namespace LibraryManagementSystem
 		private void addBorrow_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'borrowsDataSet.borrows' table. You can move, or remove it, as needed.
-			this.borrowsTableAdapter.Fill(this.borrowsDataSet.borrows);
+			borrowsTableAdapter.Fill(borrowsDataSet.borrows);
 
 		}
 
 		private void dgvBorrow_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			//if (dgvBorrow.SelectedCells.Contains(null)) return;
-			if (dgvBorrow.CurrentCell.Value == null) return;
+			if (dgvBorrow.CurrentCell.Value == null)
+			{
+				return;
+			}
 			//nudStudentID.Maximum = nudBookID.Maximum = 9999;
-			nudStudentID.Maximum = nudBookID.Maximum = Int32.MaxValue;
+			nudStudentID.Maximum = nudBookID.Maximum = int.MaxValue;
 			// Default range of the numeric up down properties is [0,100] and this causes an "ArgumentOutOfRangeException" 
 			// when the user clicks a cell which contains a value out of the range. 
 			// Therefore, we had to set the maximum value as higher like 9999.

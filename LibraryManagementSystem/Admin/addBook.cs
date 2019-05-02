@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace LibraryManagementSystem
 {
 	public partial class addBook : Form
 	{
-		searchBook sb;
-		AdminForm af;
+		//public DataGridView dbook { get { return dgvBook; } } // used => instead
+		public DataGridView dbook => dgvBook;
+		public DataGridViewRow drbook => dgvBook.CurrentRow;
+
+		private readonly searchBook sb;
+		private readonly AdminForm af;
 		//DataGridView dgv;
 		public addBook()
 		{
@@ -22,14 +20,14 @@ namespace LibraryManagementSystem
 			sb = new searchBook(dgvBook);
 		}
 
-		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
+		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 
 		private void addBook_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'booksDataSet.books' table. You can move, or remove it, as needed.
-			this.booksTableAdapter1.Fill(this.booksDataSet.books);
+			booksTableAdapter1.Fill(booksDataSet.books);
 			// TODO: This line of code loads data into the 'books.books' table. You can move, or remove it, as needed.
-			this.booksTableAdapter.Fill(this.books.books);
+			booksTableAdapter.Fill(books.books);
 			listing();
 		}
 
@@ -38,9 +36,11 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "SELECT * FROM books";
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "SELECT * FROM books"
+				};
 				SqlDataAdapter adpr = new SqlDataAdapter(cmd);
 				DataSet ds = new DataSet();
 				adpr.Fill(ds, "books");
@@ -62,11 +62,13 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "INSERT INTO books(name,pagecount,point,authorId,typeId) " +
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "INSERT INTO books(name,pagecount,point,authorId,typeId) " +
 					"VALUES('" + txtBookName.Text + "','" + numPageCount.Value + "','" +
-					numPoint.Value + "','" + numAuthorID.Value + "','" + numTypeID.Value + "')";
+					numPoint.Value + "','" + numAuthorID.Value + "','" + numTypeID.Value + "')"
+				};
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
 				connection.Close();
@@ -80,12 +82,14 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "UPDATE books SET name='" + txtBookName.Text +
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "UPDATE books SET name='" + txtBookName.Text +
 					"',pagecount='" + numPageCount.Value + "',point='" + numPoint.Value +
 					"',authorId='" + numAuthorID.Value + "',typeId='" + numTypeID.Value +
-					"'WHERE bookId=@number";
+					"'WHERE bookId=@number"
+				};
 				cmd.Parameters.AddWithValue("@number", dgvBook.CurrentRow.Cells[0].Value.ToString());
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
@@ -103,9 +107,11 @@ namespace LibraryManagementSystem
 				if (connection.State == ConnectionState.Closed)
 				{
 					connection.Open();
-					SqlCommand cmd = new SqlCommand();
-					cmd.Connection = connection;
-					cmd.CommandText = "DELETE FROM books WHERE bookId=@number";
+					SqlCommand cmd = new SqlCommand
+					{
+						Connection = connection,
+						CommandText = "DELETE FROM books WHERE bookId=@number"
+					};
 					cmd.Parameters.AddWithValue("@number", dgvBook.CurrentRow.Cells[0].Value.ToString());
 					cmd.ExecuteNonQuery();
 					cmd.Dispose();
@@ -131,7 +137,7 @@ namespace LibraryManagementSystem
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
-			this.Hide();
+			Hide();
 			//AdminForm af = new AdminForm();
 			//af.Show();
 		}
@@ -139,13 +145,17 @@ namespace LibraryManagementSystem
 		private void txtBookName_Enter(object sender, EventArgs e)
 		{
 			if (txtBookName.Text == "<Enter Book Name>")
+			{
 				txtBookName.Text = "";
+			}
 		}
 
 		private void txtBookName_Leave(object sender, EventArgs e)
 		{
 			if (txtBookName.Text.Trim() == "")
+			{
 				txtBookName.Text = "<Enter Book Name>";
+			}
 		}
 		#endregion
 	}
