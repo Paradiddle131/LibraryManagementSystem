@@ -119,26 +119,37 @@ namespace LibraryManagementSystem
 		{
 			// TODO: This line of code loads data into the 'borrowsDataSet.borrows' table. You can move, or remove it, as needed.
 			borrowsTableAdapter.Fill(borrowsDataSet.borrows);
+			// TODO: This line of code loads data into the 'borrowsDataSet.borrows' table. You can move, or remove it, as needed.
+			borrowsTableAdapter.Fill(borrowsDataSet.borrows);
 
 		}
 
 		private void dgvBorrow_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			//if (dgvBorrow.SelectedCells.Contains(null)) return;
-			if (dgvBorrow.CurrentCell.Value == null)
+			//if (dgvBorrow.CurrentCell.Value != DBNull.Value)
+			if (dgvBorrow.CurrentCell.Value != DBNull.Value && dgvBorrow.CurrentRow.Cells[0].Value != DBNull.Value &&
+					dgvBorrow.CurrentRow.Cells[1].Value != DBNull.Value && dgvBorrow.CurrentRow.Cells[2].Value != DBNull.Value &&
+					dgvBorrow.CurrentRow.Cells[3].Value != DBNull.Value && dgvBorrow.CurrentRow.Cells[4].Value != DBNull.Value)
 			{
-				return;
+				//nudStudentID.Maximum = nudBookID.Maximum = 9999;
+				nudStudentID.Maximum = nudBookID.Maximum = int.MaxValue;
+				// Default range of the numeric up down properties is [0,100] and this causes an "ArgumentOutOfRangeException" 
+				// when the user clicks a cell which contains a value out of the range. 
+				// Therefore, we had to set the maximum value as higher like 9999.
+				nudStudentID.Value = int.Parse(dgvBorrow.CurrentRow.Cells[1].Value.ToString());
+				nudBookID.Value = int.Parse(dgvBorrow.CurrentRow.Cells[2].Value.ToString());
+				dtpTakenDate.Value = Convert.ToDateTime(dgvBorrow.CurrentRow.Cells[3].Value.ToString());
+				dtpBroughtDate.Value = Convert.ToDateTime(dgvBorrow.CurrentRow.Cells[4].Value.ToString());
+				dgvBorrow.PerformLayout();
 			}
-			//nudStudentID.Maximum = nudBookID.Maximum = 9999;
-			nudStudentID.Maximum = nudBookID.Maximum = int.MaxValue;
-			// Default range of the numeric up down properties is [0,100] and this causes an "ArgumentOutOfRangeException" 
-			// when the user clicks a cell which contains a value out of the range. 
-			// Therefore, we had to set the maximum value as higher like 9999.
-			nudStudentID.Value = int.Parse(dgvBorrow.CurrentRow.Cells[1].Value.ToString());
-			nudBookID.Value = int.Parse(dgvBorrow.CurrentRow.Cells[2].Value.ToString());
-			dtpTakenDate.Value = Convert.ToDateTime(dgvBorrow.CurrentRow.Cells[3].Value.ToString());
-			dtpBroughtDate.Value = Convert.ToDateTime(dgvBorrow.CurrentRow.Cells[4].Value.ToString());
-			dgvBorrow.PerformLayout();
+			//if (dgvBorrow.SelectedCells.Contains(null)) return;
+			//if (dgvBorrow.CurrentCell.Value == null || dgvBorrow.CurrentRow.Cells[0] == null ||
+			//	dgvBorrow.CurrentRow.Cells[1] == null || dgvBorrow.CurrentRow.Cells[2] == null ||
+			//	dgvBorrow.CurrentRow.Cells[3] == null || dgvBorrow.CurrentRow.Cells[4] == null)
+			//{
+			//	return;
+			//}
+
 		}
 	}
 }

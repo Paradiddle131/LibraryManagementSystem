@@ -2,37 +2,36 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace LibraryManagementSystem
 {
 	public partial class addType : Form
 	{
-
-		AdminForm af;
+		private readonly AdminForm af;
 		public addType()
 		{
 			InitializeComponent();
 		}
 
-		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
+		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
-			this.Hide();
+			Hide();
 			//AdminForm af = new AdminForm();
 			//af.Show();
 		}
 
 		private void addType_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'typeDataSet.types' table. You can move, or remove it, as needed.
-			this.typesTableAdapter.Fill(this.typeDataSet.types);
+			// TODO: This line of code loads data into the 'typesDataSet.types' table. You can move, or remove it, as needed.
+			typesTableAdapter.Fill(typesDataSet.types);
 
 		}
 
@@ -41,9 +40,11 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "SELECT * FROM types";
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "SELECT * FROM types"
+				};
 				SqlDataAdapter adpr = new SqlDataAdapter(cmd);
 				DataSet ds = new DataSet();
 				adpr.Fill(ds, "types");
@@ -63,9 +64,11 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "INSERT INTO types(name) VALUES('" + txtTypeName.Text + "')";
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "INSERT INTO types(name) VALUES('" + txtTypeName.Text + "')"
+				};
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
 				connection.Close();
@@ -79,9 +82,11 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "UPDATE types SET name='" + txtTypeName.Text + "'WHERE typeId=@number";
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "UPDATE types SET name='" + txtTypeName.Text + "'WHERE typeId=@number"
+				};
 				cmd.Parameters.AddWithValue("@number", dgvType.CurrentRow.Cells[0].Value.ToString());
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
@@ -99,9 +104,11 @@ namespace LibraryManagementSystem
 				if (connection.State == ConnectionState.Closed)
 				{
 					connection.Open();
-					SqlCommand cmd = new SqlCommand();
-					cmd.Connection = connection;
-					cmd.CommandText = "DELETE FROM types WHERE typeId=@number";
+					SqlCommand cmd = new SqlCommand
+					{
+						Connection = connection,
+						CommandText = "DELETE FROM types WHERE typeId=@number"
+					};
 					cmd.Parameters.AddWithValue("@number", dgvType.CurrentRow.Cells[0].Value.ToString());
 					cmd.ExecuteNonQuery();
 					cmd.Dispose();
@@ -115,13 +122,17 @@ namespace LibraryManagementSystem
 		private void txtTypeName_Enter(object sender, EventArgs e)
 		{
 			if (txtTypeName.Text == "<Enter Type Name>")
+			{
 				txtTypeName.Text = "";
+			}
 		}
 
 		private void txtTypeName_Leave(object sender, EventArgs e)
 		{
 			if (txtTypeName.Text.Trim() == "")
+			{
 				txtTypeName.Text = "<Enter Type Name>";
+			}
 		}
 
 		private void dgvType_CellClick(object sender, DataGridViewCellEventArgs e)

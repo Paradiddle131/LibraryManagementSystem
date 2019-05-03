@@ -35,19 +35,19 @@
 			this.lollipopLabel2 = new LollipopLabel();
 			this.txtAuthorSurname = new LollipopTextBox();
 			this.dgvAuthor = new System.Windows.Forms.DataGridView();
-			this.authorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.authorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.libraryDataSet1 = new LibraryManagementSystem.Data.Datasets.libraryDataSet1();
-			this.authorsTableAdapter = new LibraryManagementSystem.Data.Datasets.libraryDataSet1TableAdapters.authorsTableAdapter();
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.btnEdit = new System.Windows.Forms.Button();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.btnBack = new System.Windows.Forms.Button();
+			this.authorsDataSet = new LibraryManagementSystem.authorsDataSet();
+			this.authorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.authorsTableAdapter = new LibraryManagementSystem.authorsDataSetTableAdapters.authorsTableAdapter();
+			this.authorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.authorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.authorSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvAuthor)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.authorsDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// txtAuthorName
@@ -117,48 +117,15 @@
 			this.dgvAuthor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
 			this.dgvAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvAuthor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.authorIdDataGridViewTextBoxColumn,
-			this.nameDataGridViewTextBoxColumn,
-			this.surnameDataGridViewTextBoxColumn});
+            this.authorIdDataGridViewTextBoxColumn,
+            this.authorNameDataGridViewTextBoxColumn,
+            this.authorSurnameDataGridViewTextBoxColumn});
 			this.dgvAuthor.DataSource = this.authorsBindingSource;
 			this.dgvAuthor.Location = new System.Drawing.Point(12, 198);
 			this.dgvAuthor.Name = "dgvAuthor";
 			this.dgvAuthor.Size = new System.Drawing.Size(776, 310);
 			this.dgvAuthor.TabIndex = 6;
 			this.dgvAuthor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuthor_CellClick);
-			// 
-			// authorIdDataGridViewTextBoxColumn
-			// 
-			this.authorIdDataGridViewTextBoxColumn.DataPropertyName = "authorId";
-			this.authorIdDataGridViewTextBoxColumn.HeaderText = "authorId";
-			this.authorIdDataGridViewTextBoxColumn.Name = "authorIdDataGridViewTextBoxColumn";
-			this.authorIdDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// nameDataGridViewTextBoxColumn
-			// 
-			this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-			this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			// 
-			// surnameDataGridViewTextBoxColumn
-			// 
-			this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
-			this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
-			this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-			// 
-			// authorsBindingSource
-			// 
-			this.authorsBindingSource.DataMember = "authors";
-			this.authorsBindingSource.DataSource = this.libraryDataSet1;
-			// 
-			// libraryDataSet1
-			// 
-			this.libraryDataSet1.DataSetName = "libraryDataSet1";
-			this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// authorsTableAdapter
-			// 
-			this.authorsTableAdapter.ClearBeforeFill = true;
 			// 
 			// btnDelete
 			// 
@@ -204,6 +171,39 @@
 			this.btnBack.UseVisualStyleBackColor = false;
 			this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
 			// 
+			// authorsDataSet
+			// 
+			this.authorsDataSet.DataSetName = "authorsDataSet";
+			this.authorsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// authorsBindingSource
+			// 
+			this.authorsBindingSource.DataMember = "authors";
+			this.authorsBindingSource.DataSource = this.authorsDataSet;
+			// 
+			// authorsTableAdapter
+			// 
+			this.authorsTableAdapter.ClearBeforeFill = true;
+			// 
+			// authorIdDataGridViewTextBoxColumn
+			// 
+			this.authorIdDataGridViewTextBoxColumn.DataPropertyName = "authorId";
+			this.authorIdDataGridViewTextBoxColumn.HeaderText = "authorId";
+			this.authorIdDataGridViewTextBoxColumn.Name = "authorIdDataGridViewTextBoxColumn";
+			this.authorIdDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// authorNameDataGridViewTextBoxColumn
+			// 
+			this.authorNameDataGridViewTextBoxColumn.DataPropertyName = "authorName";
+			this.authorNameDataGridViewTextBoxColumn.HeaderText = "authorName";
+			this.authorNameDataGridViewTextBoxColumn.Name = "authorNameDataGridViewTextBoxColumn";
+			// 
+			// authorSurnameDataGridViewTextBoxColumn
+			// 
+			this.authorSurnameDataGridViewTextBoxColumn.DataPropertyName = "authorSurname";
+			this.authorSurnameDataGridViewTextBoxColumn.HeaderText = "authorSurname";
+			this.authorSurnameDataGridViewTextBoxColumn.Name = "authorSurnameDataGridViewTextBoxColumn";
+			// 
 			// addAuthor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,8 +227,8 @@
 			this.Text = "addAuthor";
 			this.Load += new System.EventHandler(this.addAuthor_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvAuthor)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.authorsDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -241,15 +241,15 @@
 		private LollipopLabel lollipopLabel2;
 		private LollipopTextBox txtAuthorSurname;
 		private System.Windows.Forms.DataGridView dgvAuthor;
-		private Data.Datasets.libraryDataSet1 libraryDataSet1;
-		private System.Windows.Forms.BindingSource authorsBindingSource;
-		private Data.Datasets.libraryDataSet1TableAdapters.authorsTableAdapter authorsTableAdapter;
-		private System.Windows.Forms.DataGridViewTextBoxColumn authorIdDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.Button btnDelete;
 		private System.Windows.Forms.Button btnEdit;
 		private System.Windows.Forms.Button btnAdd;
 		private System.Windows.Forms.Button btnBack;
+		private authorsDataSet authorsDataSet;
+		private System.Windows.Forms.BindingSource authorsBindingSource;
+		private authorsDataSetTableAdapters.authorsTableAdapter authorsTableAdapter;
+		private System.Windows.Forms.DataGridViewTextBoxColumn authorIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn authorNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn authorSurnameDataGridViewTextBoxColumn;
 	}
 }

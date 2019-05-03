@@ -85,6 +85,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminSearchDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>adminSearchDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Admin\addAuthor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +125,21 @@
     </Compile>
     <Compile Include="Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="authorsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>authorsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="booksDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>booksDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="borrowsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>borrowsDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\Datasets\Books.cs">
       <DependentUpon>Books.xsd</DependentUpon>
@@ -256,8 +276,18 @@
     <Compile Include="Common\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="studentsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>studentsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="System\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="typesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>typesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="userBorrowDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -379,6 +409,50 @@
     <EmbeddedResource Include="User\UserProfile.resx">
       <DependentUpon>UserProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="adminSearchDataSet.xsc">
+      <DependentUpon>adminSearchDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="adminSearchDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>adminSearchDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="adminSearchDataSet.xss">
+      <DependentUpon>adminSearchDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="authorsDataSet.xsc">
+      <DependentUpon>authorsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="authorsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>authorsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="authorsDataSet.xss">
+      <DependentUpon>authorsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="booksDataSet.xsc">
+      <DependentUpon>booksDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="booksDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>booksDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="booksDataSet.xss">
+      <DependentUpon>booksDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="borrowsDataSet.xsc">
+      <DependentUpon>borrowsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="borrowsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>borrowsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="borrowsDataSet.xss">
+      <DependentUpon>borrowsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Data\Views\adminSearchViewDataSet.xsc">
       <DependentUpon>adminSearchViewDataSet.xsd</DependentUpon>
     </None>
@@ -610,6 +684,17 @@
     <None Include="Data\Datasets\libraryDBDataSet7.xss">
       <DependentUpon>libraryDBDataSet7.xsd</DependentUpon>
     </None>
+    <None Include="studentsDataSet.xsc">
+      <DependentUpon>studentsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="studentsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>studentsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="studentsDataSet.xss">
+      <DependentUpon>studentsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="System\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -674,6 +759,17 @@
     </None>
     <None Include="Data\Views\userSearchViewDataSet.xss">
       <DependentUpon>userSearchViewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="typesDataSet.xsc">
+      <DependentUpon>typesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="typesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>typesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="typesDataSet.xss">
+      <DependentUpon>typesDataSet.xsd</DependentUpon>
     </None>
     <None Include="userBorrowDataSet.xsc">
       <DependentUpon>userBorrowDataSet.xsd</DependentUpon>

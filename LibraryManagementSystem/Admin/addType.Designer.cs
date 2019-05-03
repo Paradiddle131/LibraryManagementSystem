@@ -30,55 +30,22 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addType));
-			this.booksTableAdapter1 = new LibraryManagementSystem.Data.Datasets.BooksDataSetTableAdapters.booksTableAdapter();
-			this.booksTableAdapter = new LibraryManagementSystem.Data.Datasets.BooksTableAdapters.booksTableAdapter();
-			this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.books = new LibraryManagementSystem.Data.Datasets.Books();
 			this.btnBack = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.btnEdit = new System.Windows.Forms.Button();
 			this.btnAdd = new System.Windows.Forms.Button();
-			this.authorsTableAdapter = new LibraryManagementSystem.Data.Datasets.libraryDataSet1TableAdapters.authorsTableAdapter();
 			this.lollipopLabel1 = new LollipopLabel();
 			this.txtTypeName = new LollipopTextBox();
-			this.libraryDataSet1 = new LibraryManagementSystem.Data.Datasets.libraryDataSet1();
-			this.authorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.booksDataSet = new LibraryManagementSystem.Data.Datasets.BooksDataSet();
-			this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.dgvType = new System.Windows.Forms.DataGridView();
-			this.typeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.typesDataSet = new LibraryManagementSystem.typesDataSet();
 			this.typesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.typeDataSet = new LibraryManagementSystem.Data.Datasets.typeDataSet();
-			this.typesTableAdapter = new LibraryManagementSystem.Data.Datasets.typeDataSetTableAdapters.typesTableAdapter();
-			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.books)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
+			this.typesTableAdapter = new LibraryManagementSystem.typesDataSetTableAdapters.typesTableAdapter();
+			this.typeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvType)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.typesDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.typesBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.typeDataSet)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// booksTableAdapter1
-			// 
-			this.booksTableAdapter1.ClearBeforeFill = true;
-			// 
-			// booksTableAdapter
-			// 
-			this.booksTableAdapter.ClearBeforeFill = true;
-			// 
-			// booksBindingSource
-			// 
-			this.booksBindingSource.DataMember = "books";
-			this.booksBindingSource.DataSource = this.books;
-			// 
-			// books
-			// 
-			this.books.DataSetName = "Books";
-			this.books.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// btnBack
 			// 
@@ -121,10 +88,6 @@
 			this.btnAdd.TabIndex = 16;
 			this.btnAdd.UseVisualStyleBackColor = false;
 			// 
-			// authorsTableAdapter
-			// 
-			this.authorsTableAdapter.ClearBeforeFill = true;
-			// 
 			// lollipopLabel1
 			// 
 			this.lollipopLabel1.AutoSize = true;
@@ -155,26 +118,6 @@
 			this.txtTypeName.Enter += new System.EventHandler(this.txtTypeName_Enter);
 			this.txtTypeName.Leave += new System.EventHandler(this.txtTypeName_Leave);
 			// 
-			// libraryDataSet1
-			// 
-			this.libraryDataSet1.DataSetName = "libraryDataSet1";
-			this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// authorsBindingSource
-			// 
-			this.authorsBindingSource.DataMember = "authors";
-			this.authorsBindingSource.DataSource = this.libraryDataSet1;
-			// 
-			// booksDataSet
-			// 
-			this.booksDataSet.DataSetName = "BooksDataSet";
-			this.booksDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// booksBindingSource1
-			// 
-			this.booksBindingSource1.DataMember = "books";
-			this.booksBindingSource1.DataSource = this.booksDataSet;
-			// 
 			// dgvType
 			// 
 			this.dgvType.AutoGenerateColumns = false;
@@ -182,14 +125,28 @@
 			this.dgvType.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
 			this.dgvType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.typeIdDataGridViewTextBoxColumn,
-			this.nameDataGridViewTextBoxColumn});
+            this.typeIdDataGridViewTextBoxColumn,
+            this.categoryNameDataGridViewTextBoxColumn});
 			this.dgvType.DataSource = this.typesBindingSource;
 			this.dgvType.Location = new System.Drawing.Point(14, 140);
 			this.dgvType.Name = "dgvType";
 			this.dgvType.Size = new System.Drawing.Size(776, 368);
 			this.dgvType.TabIndex = 19;
 			this.dgvType.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvType_CellClick);
+			// 
+			// typesDataSet
+			// 
+			this.typesDataSet.DataSetName = "typesDataSet";
+			this.typesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// typesBindingSource
+			// 
+			this.typesBindingSource.DataMember = "types";
+			this.typesBindingSource.DataSource = this.typesDataSet;
+			// 
+			// typesTableAdapter
+			// 
+			this.typesTableAdapter.ClearBeforeFill = true;
 			// 
 			// typeIdDataGridViewTextBoxColumn
 			// 
@@ -198,25 +155,11 @@
 			this.typeIdDataGridViewTextBoxColumn.Name = "typeIdDataGridViewTextBoxColumn";
 			this.typeIdDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
-			// nameDataGridViewTextBoxColumn
+			// categoryNameDataGridViewTextBoxColumn
 			// 
-			this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-			this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			// 
-			// typesBindingSource
-			// 
-			this.typesBindingSource.DataMember = "types";
-			this.typesBindingSource.DataSource = this.typeDataSet;
-			// 
-			// typeDataSet
-			// 
-			this.typeDataSet.DataSetName = "typeDataSet";
-			this.typeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// typesTableAdapter
-			// 
-			this.typesTableAdapter.ClearBeforeFill = true;
+			this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "categoryName";
+			this.categoryNameDataGridViewTextBoxColumn.HeaderText = "categoryName";
+			this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
 			// 
 			// addType
 			// 
@@ -237,42 +180,26 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "addType";
 			this.Load += new System.EventHandler(this.addType_Load);
-			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.books)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvType)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.typesDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.typesBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.typeDataSet)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private Data.Datasets.BooksDataSetTableAdapters.booksTableAdapter booksTableAdapter1;
-		private Data.Datasets.BooksTableAdapters.booksTableAdapter booksTableAdapter;
-		private System.Windows.Forms.BindingSource booksBindingSource;
-		private Data.Datasets.Books books;
 		private System.Windows.Forms.Button btnBack;
 		private System.Windows.Forms.Button btnDelete;
 		private System.Windows.Forms.Button btnEdit;
 		private System.Windows.Forms.Button btnAdd;
-		private Data.Datasets.libraryDataSet1TableAdapters.authorsTableAdapter authorsTableAdapter;
 		private LollipopLabel lollipopLabel1;
 		private LollipopTextBox txtTypeName;
-		private Data.Datasets.libraryDataSet1 libraryDataSet1;
-		private System.Windows.Forms.BindingSource authorsBindingSource;
-		private Data.Datasets.BooksDataSet booksDataSet;
-		private System.Windows.Forms.BindingSource booksBindingSource1;
 		private System.Windows.Forms.DataGridView dgvType;
-		private Data.Datasets.typeDataSet typeDataSet;
+		private typesDataSet typesDataSet;
 		private System.Windows.Forms.BindingSource typesBindingSource;
-		private Data.Datasets.typeDataSetTableAdapters.typesTableAdapter typesTableAdapter;
+		private typesDataSetTableAdapters.typesTableAdapter typesTableAdapter;
 		private System.Windows.Forms.DataGridViewTextBoxColumn typeIdDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
 	}
 }

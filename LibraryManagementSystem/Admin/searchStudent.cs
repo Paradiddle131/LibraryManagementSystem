@@ -14,8 +14,8 @@ namespace LibraryManagementSystem
 
 		private void SearchStudent_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'adminSearchViewDataSet.adminSearchView' table. You can move, or remove it, as needed.
-			adminSearchViewTableAdapter.Fill(adminSearchViewDataSet.adminSearchView);
+			// TODO: This line of code loads data into the 'adminSearchDataSet.adminSearchView' table. You can move, or remove it, as needed.
+			adminSearchViewTableAdapter.Fill(adminSearchDataSet.adminSearchView);
 			listing();
 		}
 		private void listing()
@@ -41,7 +41,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				adminSearchViewTableAdapter.SearchStudentName(adminSearchViewDataSet.adminSearchView, studentNameToolStripTextBox.Text);
+				adminSearchViewTableAdapter.SearchStudentName(adminSearchDataSet.adminSearchView, studentNameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -54,7 +54,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				adminSearchViewTableAdapter.SearchStudentSurname(adminSearchViewDataSet.adminSearchView, studentSurnameToolStripTextBox.Text);
+				adminSearchViewTableAdapter.SearchStudentSurname(adminSearchDataSet.adminSearchView, studentSurnameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -67,7 +67,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				adminSearchViewTableAdapter.ResetFilters(adminSearchViewDataSet.adminSearchView);
+				adminSearchViewTableAdapter.ResetFilters(adminSearchDataSet.adminSearchView);
 			}
 			catch (System.Exception ex)
 			{

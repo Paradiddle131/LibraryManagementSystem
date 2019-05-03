@@ -26,9 +26,9 @@ namespace LibraryManagementSystem
 		public void addBook_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'booksDataSet.books' table. You can move, or remove it, as needed.
-			booksTableAdapter1.Fill(booksDataSet.books);
-			// TODO: This line of code loads data into the 'books.books' table. You can move, or remove it, as needed.
-			booksTableAdapter.Fill(books.books);
+			booksTableAdapter.Fill(booksDataSet.books);
+			// TODO: This line of code loads data into the 'booksDataSet.books' table. You can move, or remove it, as needed.
+			booksTableAdapter.Fill(booksDataSet.books);
 			listing();
 		}
 
@@ -40,7 +40,7 @@ namespace LibraryManagementSystem
 				SqlCommand cmd = new SqlCommand
 				{
 					Connection = connection,
-					CommandText = "SELECT * FROM books"
+					CommandText = "SELECT DISTINCT * FROM books"
 				};
 				SqlDataAdapter adpr = new SqlDataAdapter(cmd);
 				DataSet ds = new DataSet();
@@ -66,7 +66,7 @@ namespace LibraryManagementSystem
 				SqlCommand cmd = new SqlCommand
 				{
 					Connection = connection,
-					CommandText = "INSERT INTO books(name,pagecount,point,authorId,typeId) " +
+					CommandText = "INSERT INTO books(bookName,pagecount,point,authorId,typeId) " +
 					"VALUES('" + txtBookName.Text + "','" + numPageCount.Value + "','" +
 					numPoint.Value + "','" + numAuthorID.Value + "','" + numTypeID.Value + "')"
 				};
@@ -86,7 +86,7 @@ namespace LibraryManagementSystem
 				SqlCommand cmd = new SqlCommand
 				{
 					Connection = connection,
-					CommandText = "UPDATE books SET name='" + txtBookName.Text +
+					CommandText = "UPDATE books SET bookName='" + txtBookName.Text +
 					"',pagecount='" + numPageCount.Value + "',point='" + numPoint.Value +
 					"',authorId='" + numAuthorID.Value + "',typeId='" + numTypeID.Value +
 					"'WHERE bookId=@number"
@@ -131,7 +131,7 @@ namespace LibraryManagementSystem
 				if (row.Cells[1].Value.ToString().Equals(bookname))
 				{
 					rowIndex = row.Index;
-					MessageBox.Show(int.Parse(row.Cells[0].Value.ToString()).ToString());
+					//MessageBox.Show(int.Parse(row.Cells[0].Value.ToString()).ToString());
 					return int.Parse(dgvBook.Rows[rowIndex].Cells[2].Value.ToString());
 				}
 			}
@@ -155,15 +155,21 @@ namespace LibraryManagementSystem
 
 		private void dgvBook_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			numPageCount.Maximum = numPageCount.Maximum = numPageCount.Maximum =
-				numPoint.Maximum = numAuthorID.Maximum = numTypeID.Maximum = int.MaxValue;
-			//int index = Int32.Parse(e.ToString());
-			txtBookName.Text = dgvBook.CurrentRow.Cells[1].Value.ToString();
-			//numPageCount.Value = (int)dgvBook.CurrentRow.Cells[2].Value.ToString();
-			numPageCount.Value = int.Parse(dgvBook.CurrentRow.Cells[2].Value.ToString());
-			numPoint.Value = int.Parse(dgvBook.CurrentRow.Cells[3].Value.ToString());
-			numAuthorID.Value = int.Parse(dgvBook.CurrentRow.Cells[4].Value.ToString());
-			numTypeID.Value = int.Parse(dgvBook.CurrentRow.Cells[5].Value.ToString());
+			if (dgvBook.CurrentCell.Value != DBNull.Value && dgvBook.CurrentRow.Cells[0].Value != DBNull.Value &&
+					dgvBook.CurrentRow.Cells[1].Value != DBNull.Value && dgvBook.CurrentRow.Cells[2].Value != DBNull.Value &&
+					dgvBook.CurrentRow.Cells[3].Value != DBNull.Value && dgvBook.CurrentRow.Cells[4].Value != DBNull.Value &&
+					dgvBook.CurrentRow.Cells[5].Value != DBNull.Value)
+			{
+				numPageCount.Maximum = numPageCount.Maximum = numPageCount.Maximum =
+					numPoint.Maximum = numAuthorID.Maximum = numTypeID.Maximum = int.MaxValue;
+				//int index = Int32.Parse(e.ToString());
+				txtBookName.Text = dgvBook.CurrentRow.Cells[1].Value.ToString();
+				//numPageCount.Value = (int)dgvBook.CurrentRow.Cells[2].Value.ToString();
+				numPageCount.Value = int.Parse(dgvBook.CurrentRow.Cells[2].Value.ToString());
+				numPoint.Value = int.Parse(dgvBook.CurrentRow.Cells[3].Value.ToString());
+				numAuthorID.Value = int.Parse(dgvBook.CurrentRow.Cells[4].Value.ToString());
+				numTypeID.Value = int.Parse(dgvBook.CurrentRow.Cells[5].Value.ToString());
+			}
 		}
 
 		private void btnBack_Click(object sender, EventArgs e)

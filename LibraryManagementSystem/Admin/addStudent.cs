@@ -2,32 +2,35 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Text.RegularExpressions;
 
 namespace LibraryManagementSystem
 {
 	public partial class addStudent : Form
 	{
-		searchBook sb;
-		AdminForm af;
+		private readonly searchBook sb;
+		private readonly AdminForm af;
 		public addStudent()
 		{
 			InitializeComponent();
-			for (char c = 'A'; c <= 'Z'; ++c) cmbLetter.Items.Add(c);
+			for (char c = 'A'; c <= 'Z'; ++c)
+			{
+				cmbLetter.Items.Add(c);
+			}
 			//sb = new searchBook(dgvStudent);
 		}
 
-		SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
+		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
-			this.Hide();
+			Hide();
 			//AdminForm af = new AdminForm();
 			//af.Show();
 		}
@@ -37,9 +40,11 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "SELECT * FROM students";
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "SELECT * FROM students"
+				};
 				SqlDataAdapter adpr = new SqlDataAdapter(cmd);
 				DataSet ds = new DataSet();
 				adpr.Fill(ds, "students");
@@ -61,8 +66,8 @@ namespace LibraryManagementSystem
 
 		private void addStudent_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'studentDataSet.students' table. You can move, or remove it, as needed.
-			this.studentsTableAdapter.Fill(this.studentDataSet.students);
+			// TODO: This line of code loads data into the 'studentsDataSet.students' table. You can move, or remove it, as needed.
+			studentsTableAdapter.Fill(studentsDataSet.students);
 
 		}
 
@@ -71,11 +76,14 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "INSERT INTO students(name,surname,birthdate,gender,class,point) " +
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "INSERT INTO students(name,surname,birthdate,gender,class,point) " +
 					"VALUES('" + txtStudentName.Text + "','" + txtStudentSurname.Text + "','" +
-					dtpBirthdate.Text + "','" + rbMale.Checked + "','" + nudClass.Value + "','" + nudPoint.Value + "')"; cmd.ExecuteNonQuery();
+					dtpBirthdate.Text + "','" + rbMale.Checked + "','" + nudClass.Value + "','" + nudPoint.Value + "')"
+				};
+				cmd.ExecuteNonQuery();
 				cmd.Dispose();
 				connection.Close();
 				listing(); // must be called after the connection closed
@@ -88,12 +96,14 @@ namespace LibraryManagementSystem
 			if (connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
-				SqlCommand cmd = new SqlCommand();
-				cmd.Connection = connection;
-				cmd.CommandText = "UPDATE students SET name='" + txtStudentName.Text +
+				SqlCommand cmd = new SqlCommand
+				{
+					Connection = connection,
+					CommandText = "UPDATE students SET name='" + txtStudentName.Text +
 					"',surname='" + txtStudentSurname.Text + "',birthdate='" + dtpBirthdate.Text +
 					"',gender='" + rbMale.Checked + "',class='" + nudClass.Value + "','" + nudPoint.Value +
-					"'WHERE studentId=@number";
+					"'WHERE studentId=@number"
+				};
 				cmd.Parameters.AddWithValue("@number", dgvStudent.CurrentRow.Cells[0].Value.ToString());
 				cmd.ExecuteNonQuery();
 				cmd.Dispose();
@@ -111,9 +121,11 @@ namespace LibraryManagementSystem
 				if (connection.State == ConnectionState.Closed)
 				{
 					connection.Open();
-					SqlCommand cmd = new SqlCommand();
-					cmd.Connection = connection;
-					cmd.CommandText = "DELETE FROM students WHERE studentId=@number";
+					SqlCommand cmd = new SqlCommand
+					{
+						Connection = connection,
+						CommandText = "DELETE FROM students WHERE studentId=@number"
+					};
 					cmd.Parameters.AddWithValue("@number", dgvStudent.CurrentRow.Cells[0].Value.ToString());
 					cmd.ExecuteNonQuery();
 					cmd.Dispose();
@@ -126,41 +138,62 @@ namespace LibraryManagementSystem
 
 		private void dgvStudent_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (dgvStudent.CurrentRow.Cells[4].Value.ToString() == "M") rbMale.Checked = true;
-			else rbFemale.Checked = true;
-			nudClass.Value = int.Parse(Regex.Replace(dgvStudent.CurrentRow.Cells[5].Value.ToString(), "[^0-9]", ""));
-			cmbLetter.Text = Regex.Replace(dgvStudent.CurrentRow.Cells[5].Value.ToString(), "[^a-zA-Z]", "");
-			nudClass.Maximum = nudPoint.Maximum = Int32.MaxValue;
-			txtStudentName.Text = dgvStudent.CurrentRow.Cells[1].Value.ToString();
-			txtStudentSurname.Text = dgvStudent.CurrentRow.Cells[2].Value.ToString();
-			dtpBirthdate.Text = dgvStudent.CurrentRow.Cells[3].Value.ToString();
-			// if rbMale.checked = true, then gender is M, otherwise F
-			//rbMale.Checked = Convert.ToBoolean(dgvStudent.CurrentRow.Cells[4].Value.ToString());
-			nudPoint.Value = int.Parse(dgvStudent.CurrentRow.Cells[6].Value.ToString());
+			if (dgvStudent.CurrentCell.Value != DBNull.Value && dgvStudent.CurrentRow.Cells[0].Value != DBNull.Value &&
+					dgvStudent.CurrentRow.Cells[1].Value != DBNull.Value && dgvStudent.CurrentRow.Cells[2].Value != DBNull.Value &&
+					dgvStudent.CurrentRow.Cells[3].Value != DBNull.Value && dgvStudent.CurrentRow.Cells[4].Value != DBNull.Value &&
+					dgvStudent.CurrentRow.Cells[5].Value != DBNull.Value && dgvStudent.CurrentRow.Cells[6].Value != DBNull.Value)
+			{
+				if (dgvStudent.CurrentRow.Cells[4].Value.ToString() == "M")
+				{
+					rbMale.Checked = true;
+				}
+				else
+				{
+					rbFemale.Checked = true;
+				}
+
+				nudClass.Value = int.Parse(Regex.Replace(dgvStudent.CurrentRow.Cells[5].Value.ToString(), "[^0-9]", ""));
+				cmbLetter.Text = Regex.Replace(dgvStudent.CurrentRow.Cells[5].Value.ToString(), "[^a-zA-Z]", "");
+				nudClass.Maximum = nudPoint.Maximum = int.MaxValue;
+				txtStudentName.Text = dgvStudent.CurrentRow.Cells[1].Value.ToString();
+				txtStudentSurname.Text = dgvStudent.CurrentRow.Cells[2].Value.ToString();
+				dtpBirthdate.Text = dgvStudent.CurrentRow.Cells[3].Value.ToString();
+				// if rbMale.checked = true, then gender is M, otherwise F
+				//rbMale.Checked = Convert.ToBoolean(dgvStudent.CurrentRow.Cells[4].Value.ToString());
+				nudPoint.Value = int.Parse(dgvStudent.CurrentRow.Cells[6].Value.ToString());
+			}
 		}
 		#region Focus
 		private void txtStudentName_Enter(object sender, EventArgs e)
 		{
 			if (txtStudentName.Text == "<Enter Student Name>")
+			{
 				txtStudentName.Text = "";
+			}
 		}
 
 		private void txtStudentName_Leave(object sender, EventArgs e)
 		{
 			if (txtStudentName.Text.Trim() == "")
+			{
 				txtStudentName.Text = "<Enter Student Name>";
+			}
 		}
 
 		private void txtStudentSurname_Enter(object sender, EventArgs e)
 		{
 			if (txtStudentSurname.Text == "<Enter Student Name>")
+			{
 				txtStudentSurname.Text = "";
+			}
 		}
 
 		private void txtStudentSurname_Leave(object sender, EventArgs e)
 		{
 			if (txtStudentSurname.Text.Trim() == "")
+			{
 				txtStudentSurname.Text = "<Enter Student Name>";
+			}
 		}
 		#endregion
 	}

@@ -30,61 +30,42 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addStudent));
-			this.booksTableAdapter1 = new LibraryManagementSystem.Data.Datasets.BooksDataSetTableAdapters.booksTableAdapter();
 			this.lollipopLabel4 = new LollipopLabel();
 			this.lollipopLabel5 = new LollipopLabel();
 			this.lollipopLabel3 = new LollipopLabel();
-			this.booksTableAdapter = new LibraryManagementSystem.Data.Datasets.BooksTableAdapters.booksTableAdapter();
-			this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.books = new LibraryManagementSystem.Data.Datasets.Books();
 			this.btnBack = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.btnEdit = new System.Windows.Forms.Button();
 			this.btnAdd = new System.Windows.Forms.Button();
-			this.authorsTableAdapter = new LibraryManagementSystem.Data.Datasets.libraryDataSet1TableAdapters.authorsTableAdapter();
 			this.lollipopLabel2 = new LollipopLabel();
 			this.lollipopLabel1 = new LollipopLabel();
 			this.txtStudentName = new LollipopTextBox();
-			this.libraryDataSet1 = new LibraryManagementSystem.Data.Datasets.libraryDataSet1();
-			this.authorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.booksDataSet = new LibraryManagementSystem.Data.Datasets.BooksDataSet();
-			this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.nudClass = new System.Windows.Forms.NumericUpDown();
 			this.dgvStudent = new System.Windows.Forms.DataGridView();
-			this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.pointDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.studentDataSet = new LibraryManagementSystem.Data.Datasets.StudentDataSet();
 			this.nudPoint = new System.Windows.Forms.NumericUpDown();
 			this.lollipopLabel6 = new LollipopLabel();
 			this.rbMale = new System.Windows.Forms.RadioButton();
 			this.rbFemale = new System.Windows.Forms.RadioButton();
 			this.txtStudentSurname = new LollipopTextBox();
 			this.dtpBirthdate = new System.Windows.Forms.DateTimePicker();
-			this.studentsTableAdapter = new LibraryManagementSystem.Data.Datasets.StudentDataSetTableAdapters.studentsTableAdapter();
 			this.lollipopLabel7 = new LollipopLabel();
 			this.cmbLetter = new System.Windows.Forms.ComboBox();
-			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.books)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
+			this.studentsDataSet = new LibraryManagementSystem.studentsDataSet();
+			this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.studentsTableAdapter = new LibraryManagementSystem.studentsDataSetTableAdapters.studentsTableAdapter();
+			this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.studentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.studentSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.pointDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.nudClass)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudPoint)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.studentsDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// booksTableAdapter1
-			// 
-			this.booksTableAdapter1.ClearBeforeFill = true;
 			// 
 			// lollipopLabel4
 			// 
@@ -121,20 +102,6 @@
 			this.lollipopLabel3.Size = new System.Drawing.Size(98, 24);
 			this.lollipopLabel3.TabIndex = 24;
 			this.lollipopLabel3.Text = "Birthdate:";
-			// 
-			// booksTableAdapter
-			// 
-			this.booksTableAdapter.ClearBeforeFill = true;
-			// 
-			// booksBindingSource
-			// 
-			this.booksBindingSource.DataMember = "books";
-			this.booksBindingSource.DataSource = this.books;
-			// 
-			// books
-			// 
-			this.books.DataSetName = "Books";
-			this.books.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// btnBack
 			// 
@@ -176,10 +143,6 @@
 			this.btnAdd.Size = new System.Drawing.Size(75, 49);
 			this.btnAdd.TabIndex = 16;
 			this.btnAdd.UseVisualStyleBackColor = false;
-			// 
-			// authorsTableAdapter
-			// 
-			this.authorsTableAdapter.ClearBeforeFill = true;
 			// 
 			// lollipopLabel2
 			// 
@@ -223,26 +186,6 @@
 			this.txtStudentName.Enter += new System.EventHandler(this.txtStudentName_Enter);
 			this.txtStudentName.Leave += new System.EventHandler(this.txtStudentName_Leave);
 			// 
-			// libraryDataSet1
-			// 
-			this.libraryDataSet1.DataSetName = "libraryDataSet1";
-			this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// authorsBindingSource
-			// 
-			this.authorsBindingSource.DataMember = "authors";
-			this.authorsBindingSource.DataSource = this.libraryDataSet1;
-			// 
-			// booksDataSet
-			// 
-			this.booksDataSet.DataSetName = "BooksDataSet";
-			this.booksDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// booksBindingSource1
-			// 
-			this.booksBindingSource1.DataMember = "books";
-			this.booksBindingSource1.DataSource = this.booksDataSet;
-			// 
 			// nudClass
 			// 
 			this.nudClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -258,72 +201,19 @@
 			this.dgvStudent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
 			this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.studentIdDataGridViewTextBoxColumn,
-			this.nameDataGridViewTextBoxColumn,
-			this.surnameDataGridViewTextBoxColumn,
-			this.birthdateDataGridViewTextBoxColumn,
-			this.genderDataGridViewTextBoxColumn,
-			this.classDataGridViewTextBoxColumn,
-			this.pointDataGridViewTextBoxColumn});
+            this.studentIdDataGridViewTextBoxColumn,
+            this.studentNameDataGridViewTextBoxColumn,
+            this.studentSurnameDataGridViewTextBoxColumn,
+            this.birthdateDataGridViewTextBoxColumn,
+            this.genderDataGridViewTextBoxColumn,
+            this.classDataGridViewTextBoxColumn,
+            this.pointDataGridViewTextBoxColumn});
 			this.dgvStudent.DataSource = this.studentsBindingSource;
 			this.dgvStudent.Location = new System.Drawing.Point(14, 198);
 			this.dgvStudent.Name = "dgvStudent";
 			this.dgvStudent.Size = new System.Drawing.Size(776, 310);
 			this.dgvStudent.TabIndex = 19;
 			this.dgvStudent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudent_CellClick);
-			// 
-			// studentIdDataGridViewTextBoxColumn
-			// 
-			this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "studentId";
-			this.studentIdDataGridViewTextBoxColumn.HeaderText = "studentId";
-			this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
-			this.studentIdDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// nameDataGridViewTextBoxColumn
-			// 
-			this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-			this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			// 
-			// surnameDataGridViewTextBoxColumn
-			// 
-			this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
-			this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
-			this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-			// 
-			// birthdateDataGridViewTextBoxColumn
-			// 
-			this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "birthdate";
-			this.birthdateDataGridViewTextBoxColumn.HeaderText = "birthdate";
-			this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
-			// 
-			// genderDataGridViewTextBoxColumn
-			// 
-			this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
-			this.genderDataGridViewTextBoxColumn.HeaderText = "gender";
-			this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-			// 
-			// classDataGridViewTextBoxColumn
-			// 
-			this.classDataGridViewTextBoxColumn.DataPropertyName = "class";
-			this.classDataGridViewTextBoxColumn.HeaderText = "class";
-			this.classDataGridViewTextBoxColumn.Name = "classDataGridViewTextBoxColumn";
-			// 
-			// pointDataGridViewTextBoxColumn
-			// 
-			this.pointDataGridViewTextBoxColumn.DataPropertyName = "point";
-			this.pointDataGridViewTextBoxColumn.HeaderText = "point";
-			this.pointDataGridViewTextBoxColumn.Name = "pointDataGridViewTextBoxColumn";
-			// 
-			// studentsBindingSource
-			// 
-			this.studentsBindingSource.DataMember = "students";
-			this.studentsBindingSource.DataSource = this.studentDataSet;
-			// 
-			// studentDataSet
-			// 
-			this.studentDataSet.DataSetName = "StudentDataSet";
-			this.studentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// nudPoint
 			// 
@@ -397,10 +287,6 @@
 			this.dtpBirthdate.Size = new System.Drawing.Size(200, 20);
 			this.dtpBirthdate.TabIndex = 27;
 			// 
-			// studentsTableAdapter
-			// 
-			this.studentsTableAdapter.ClearBeforeFill = true;
-			// 
 			// lollipopLabel7
 			// 
 			this.lollipopLabel7.AutoSize = true;
@@ -420,6 +306,63 @@
 			this.cmbLetter.Name = "cmbLetter";
 			this.cmbLetter.Size = new System.Drawing.Size(121, 21);
 			this.cmbLetter.TabIndex = 28;
+			// 
+			// studentsDataSet
+			// 
+			this.studentsDataSet.DataSetName = "studentsDataSet";
+			this.studentsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// studentsBindingSource
+			// 
+			this.studentsBindingSource.DataMember = "students";
+			this.studentsBindingSource.DataSource = this.studentsDataSet;
+			// 
+			// studentsTableAdapter
+			// 
+			this.studentsTableAdapter.ClearBeforeFill = true;
+			// 
+			// studentIdDataGridViewTextBoxColumn
+			// 
+			this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "studentId";
+			this.studentIdDataGridViewTextBoxColumn.HeaderText = "studentId";
+			this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
+			this.studentIdDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// studentNameDataGridViewTextBoxColumn
+			// 
+			this.studentNameDataGridViewTextBoxColumn.DataPropertyName = "studentName";
+			this.studentNameDataGridViewTextBoxColumn.HeaderText = "studentName";
+			this.studentNameDataGridViewTextBoxColumn.Name = "studentNameDataGridViewTextBoxColumn";
+			// 
+			// studentSurnameDataGridViewTextBoxColumn
+			// 
+			this.studentSurnameDataGridViewTextBoxColumn.DataPropertyName = "studentSurname";
+			this.studentSurnameDataGridViewTextBoxColumn.HeaderText = "studentSurname";
+			this.studentSurnameDataGridViewTextBoxColumn.Name = "studentSurnameDataGridViewTextBoxColumn";
+			// 
+			// birthdateDataGridViewTextBoxColumn
+			// 
+			this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "birthdate";
+			this.birthdateDataGridViewTextBoxColumn.HeaderText = "birthdate";
+			this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
+			// 
+			// genderDataGridViewTextBoxColumn
+			// 
+			this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
+			this.genderDataGridViewTextBoxColumn.HeaderText = "gender";
+			this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+			// 
+			// classDataGridViewTextBoxColumn
+			// 
+			this.classDataGridViewTextBoxColumn.DataPropertyName = "class";
+			this.classDataGridViewTextBoxColumn.HeaderText = "class";
+			this.classDataGridViewTextBoxColumn.Name = "classDataGridViewTextBoxColumn";
+			// 
+			// pointDataGridViewTextBoxColumn
+			// 
+			this.pointDataGridViewTextBoxColumn.DataPropertyName = "point";
+			this.pointDataGridViewTextBoxColumn.HeaderText = "point";
+			this.pointDataGridViewTextBoxColumn.Name = "pointDataGridViewTextBoxColumn";
 			// 
 			// addStudent
 			// 
@@ -453,43 +396,27 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "addStudent";
 			this.Load += new System.EventHandler(this.addStudent_Load);
-			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.books)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudClass)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudPoint)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.studentsDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private Data.Datasets.BooksDataSetTableAdapters.booksTableAdapter booksTableAdapter1;
 		private LollipopLabel lollipopLabel4;
 		private LollipopLabel lollipopLabel5;
 		private LollipopLabel lollipopLabel3;
-		private Data.Datasets.BooksTableAdapters.booksTableAdapter booksTableAdapter;
-		private System.Windows.Forms.BindingSource booksBindingSource;
-		private Data.Datasets.Books books;
 		private System.Windows.Forms.Button btnBack;
 		private System.Windows.Forms.Button btnDelete;
 		private System.Windows.Forms.Button btnEdit;
 		private System.Windows.Forms.Button btnAdd;
-		private Data.Datasets.libraryDataSet1TableAdapters.authorsTableAdapter authorsTableAdapter;
 		private LollipopLabel lollipopLabel2;
 		private LollipopLabel lollipopLabel1;
 		private LollipopTextBox txtStudentName;
-		private Data.Datasets.libraryDataSet1 libraryDataSet1;
-		private System.Windows.Forms.BindingSource authorsBindingSource;
-		private Data.Datasets.BooksDataSet booksDataSet;
-		private System.Windows.Forms.BindingSource booksBindingSource1;
 		private System.Windows.Forms.NumericUpDown nudClass;
 		private System.Windows.Forms.DataGridView dgvStudent;
 		private System.Windows.Forms.NumericUpDown nudPoint;
@@ -498,17 +425,17 @@
 		private System.Windows.Forms.RadioButton rbFemale;
 		private LollipopTextBox txtStudentSurname;
 		private System.Windows.Forms.DateTimePicker dtpBirthdate;
-		private Data.Datasets.StudentDataSet studentDataSet;
+		private LollipopLabel lollipopLabel7;
+		private System.Windows.Forms.ComboBox cmbLetter;
+		private studentsDataSet studentsDataSet;
 		private System.Windows.Forms.BindingSource studentsBindingSource;
-		private Data.Datasets.StudentDataSetTableAdapters.studentsTableAdapter studentsTableAdapter;
+		private studentsDataSetTableAdapters.studentsTableAdapter studentsTableAdapter;
 		private System.Windows.Forms.DataGridViewTextBoxColumn studentIdDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn studentNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn studentSurnameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn classDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn pointDataGridViewTextBoxColumn;
-		private LollipopLabel lollipopLabel7;
-		private System.Windows.Forms.ComboBox cmbLetter;
 	}
 }

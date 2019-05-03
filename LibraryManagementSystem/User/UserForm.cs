@@ -7,11 +7,14 @@ namespace LibraryManagementSystem
 {
 	public partial class UserForm : Form
 	{
-		private readonly DataGridView dgv;
+		public Label nameLabel;
+		public Label surnameLabel;
+		private readonly searchBook sb;
 		public UserForm()
 		{
 			InitializeComponent();
 			Login login = new Login();
+			sb = new searchBook(nameLabel, surnameLabel);
 			//lblName.Text = login.currentUserName;
 			//lblSurname.Text = login.currentUserSurname;
 		}
@@ -33,6 +36,9 @@ namespace LibraryManagementSystem
 			{
 				homeUserControl1.Instance.BringToFront();
 			}
+			lblLoginedAs.BringToFront();
+			lblName.BringToFront();
+			lblSurname.BringToFront();
 		}
 
 		private void btnUser_Click(object sender, EventArgs e)
@@ -59,7 +65,7 @@ namespace LibraryManagementSystem
 		{
 			pnlGreen.Width = btnLogout.Width;
 			pnlGreen.Left = btnLogout.Left;
-			dbForLMS.Login loginScreen = new dbForLMS.Login();
+			Login loginScreen = new Login();
 			Hide();
 			loginScreen.Show();
 		}
@@ -68,7 +74,7 @@ namespace LibraryManagementSystem
 		{
 			pnlGreen.Width = btnAbout.Width;
 			pnlGreen.Left = btnAbout.Left;
-			dbForLMS.Coders codersScreen = new dbForLMS.Coders();
+			Coders codersScreen = new Coders();
 			codersScreen.Show();
 		}
 

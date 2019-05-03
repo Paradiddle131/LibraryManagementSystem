@@ -31,27 +31,13 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addBook));
 			this.dgvBook = new System.Windows.Forms.DataGridView();
-			this.bookId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.pagecount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.point = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.authorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.typeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-			this.booksDataSet = new LibraryManagementSystem.Data.Datasets.BooksDataSet();
-			this.authorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.libraryDataSet1 = new LibraryManagementSystem.Data.Datasets.libraryDataSet1();
 			this.lollipopLabel2 = new LollipopLabel();
 			this.lollipopLabel1 = new LollipopLabel();
 			this.txtBookName = new LollipopTextBox();
-			this.authorsTableAdapter = new LibraryManagementSystem.Data.Datasets.libraryDataSet1TableAdapters.authorsTableAdapter();
 			this.btnBack = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.btnEdit = new System.Windows.Forms.Button();
 			this.btnAdd = new System.Windows.Forms.Button();
-			this.books = new LibraryManagementSystem.Data.Datasets.Books();
-			this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.booksTableAdapter = new LibraryManagementSystem.Data.Datasets.BooksTableAdapters.booksTableAdapter();
 			this.lollipopLabel3 = new LollipopLabel();
 			this.lollipopLabel4 = new LollipopLabel();
 			this.lollipopLabel5 = new LollipopLabel();
@@ -59,19 +45,22 @@
 			this.numPoint = new System.Windows.Forms.NumericUpDown();
 			this.numAuthorID = new System.Windows.Forms.NumericUpDown();
 			this.numTypeID = new System.Windows.Forms.NumericUpDown();
-			this.booksTableAdapter1 = new LibraryManagementSystem.Data.Datasets.BooksDataSetTableAdapters.booksTableAdapter();
-			this.booksTableAdapter2 = new LibraryManagementSystem.Data.Datasets.bookForBorrowTableAdapters.booksTableAdapter();
+			this.booksDataSet = new LibraryManagementSystem.booksDataSet();
+			this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.booksTableAdapter = new LibraryManagementSystem.booksDataSetTableAdapters.booksTableAdapter();
+			this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.bookNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.pagecountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.pointDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.authorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.typeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.books)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numPageCount)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numPoint)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numAuthorID)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numTypeID)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dgvBook
@@ -81,76 +70,18 @@
 			this.dgvBook.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
 			this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.bookId,
-            this.nameDataGridViewTextBoxColumn,
-            this.pagecount,
-            this.point,
+            this.bookIdDataGridViewTextBoxColumn,
+            this.bookNameDataGridViewTextBoxColumn,
+            this.pagecountDataGridViewTextBoxColumn,
+            this.pointDataGridViewTextBoxColumn,
             this.authorIdDataGridViewTextBoxColumn,
-            this.typeId});
-			this.dgvBook.DataSource = this.booksBindingSource1;
+            this.typeIdDataGridViewTextBoxColumn});
+			this.dgvBook.DataSource = this.booksBindingSource;
 			this.dgvBook.Location = new System.Drawing.Point(14, 198);
 			this.dgvBook.Name = "dgvBook";
 			this.dgvBook.Size = new System.Drawing.Size(776, 310);
 			this.dgvBook.TabIndex = 8;
 			this.dgvBook.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBook_CellClick);
-			// 
-			// bookId
-			// 
-			this.bookId.DataPropertyName = "bookId";
-			this.bookId.HeaderText = "bookId";
-			this.bookId.Name = "bookId";
-			this.bookId.ReadOnly = true;
-			// 
-			// nameDataGridViewTextBoxColumn
-			// 
-			this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-			this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			// 
-			// pagecount
-			// 
-			this.pagecount.DataPropertyName = "pagecount";
-			this.pagecount.HeaderText = "pagecount";
-			this.pagecount.Name = "pagecount";
-			// 
-			// point
-			// 
-			this.point.DataPropertyName = "point";
-			this.point.HeaderText = "point";
-			this.point.Name = "point";
-			// 
-			// authorIdDataGridViewTextBoxColumn
-			// 
-			this.authorIdDataGridViewTextBoxColumn.DataPropertyName = "authorId";
-			this.authorIdDataGridViewTextBoxColumn.HeaderText = "authorId";
-			this.authorIdDataGridViewTextBoxColumn.Name = "authorIdDataGridViewTextBoxColumn";
-			this.authorIdDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// typeId
-			// 
-			this.typeId.DataPropertyName = "typeId";
-			this.typeId.HeaderText = "typeId";
-			this.typeId.Name = "typeId";
-			// 
-			// booksBindingSource1
-			// 
-			this.booksBindingSource1.DataMember = "books";
-			this.booksBindingSource1.DataSource = this.booksDataSet;
-			// 
-			// booksDataSet
-			// 
-			this.booksDataSet.DataSetName = "BooksDataSet";
-			this.booksDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// authorsBindingSource
-			// 
-			this.authorsBindingSource.DataMember = "authors";
-			this.authorsBindingSource.DataSource = this.libraryDataSet1;
-			// 
-			// libraryDataSet1
-			// 
-			this.libraryDataSet1.DataSetName = "libraryDataSet1";
-			this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// lollipopLabel2
 			// 
@@ -193,10 +124,6 @@
 			this.txtBookName.UseSystemPasswordChar = false;
 			this.txtBookName.Enter += new System.EventHandler(this.txtBookName_Enter);
 			this.txtBookName.Leave += new System.EventHandler(this.txtBookName_Leave);
-			// 
-			// authorsTableAdapter
-			// 
-			this.authorsTableAdapter.ClearBeforeFill = true;
 			// 
 			// btnBack
 			// 
@@ -241,20 +168,6 @@
 			this.btnAdd.TabIndex = 5;
 			this.btnAdd.UseVisualStyleBackColor = false;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-			// 
-			// books
-			// 
-			this.books.DataSetName = "Books";
-			this.books.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// booksBindingSource
-			// 
-			this.booksBindingSource.DataMember = "books";
-			this.booksBindingSource.DataSource = this.books;
-			// 
-			// booksTableAdapter
-			// 
-			this.booksTableAdapter.ClearBeforeFill = true;
 			// 
 			// lollipopLabel3
 			// 
@@ -324,13 +237,56 @@
 			this.numTypeID.Size = new System.Drawing.Size(60, 20);
 			this.numTypeID.TabIndex = 4;
 			// 
-			// booksTableAdapter1
+			// booksDataSet
 			// 
-			this.booksTableAdapter1.ClearBeforeFill = true;
+			this.booksDataSet.DataSetName = "booksDataSet";
+			this.booksDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
-			// booksTableAdapter2
+			// booksBindingSource
 			// 
-			this.booksTableAdapter2.ClearBeforeFill = true;
+			this.booksBindingSource.DataMember = "books";
+			this.booksBindingSource.DataSource = this.booksDataSet;
+			// 
+			// booksTableAdapter
+			// 
+			this.booksTableAdapter.ClearBeforeFill = true;
+			// 
+			// bookIdDataGridViewTextBoxColumn
+			// 
+			this.bookIdDataGridViewTextBoxColumn.DataPropertyName = "bookId";
+			this.bookIdDataGridViewTextBoxColumn.HeaderText = "bookId";
+			this.bookIdDataGridViewTextBoxColumn.Name = "bookIdDataGridViewTextBoxColumn";
+			this.bookIdDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// bookNameDataGridViewTextBoxColumn
+			// 
+			this.bookNameDataGridViewTextBoxColumn.DataPropertyName = "bookName";
+			this.bookNameDataGridViewTextBoxColumn.HeaderText = "bookName";
+			this.bookNameDataGridViewTextBoxColumn.Name = "bookNameDataGridViewTextBoxColumn";
+			// 
+			// pagecountDataGridViewTextBoxColumn
+			// 
+			this.pagecountDataGridViewTextBoxColumn.DataPropertyName = "pagecount";
+			this.pagecountDataGridViewTextBoxColumn.HeaderText = "pagecount";
+			this.pagecountDataGridViewTextBoxColumn.Name = "pagecountDataGridViewTextBoxColumn";
+			// 
+			// pointDataGridViewTextBoxColumn
+			// 
+			this.pointDataGridViewTextBoxColumn.DataPropertyName = "point";
+			this.pointDataGridViewTextBoxColumn.HeaderText = "point";
+			this.pointDataGridViewTextBoxColumn.Name = "pointDataGridViewTextBoxColumn";
+			// 
+			// authorIdDataGridViewTextBoxColumn
+			// 
+			this.authorIdDataGridViewTextBoxColumn.DataPropertyName = "authorId";
+			this.authorIdDataGridViewTextBoxColumn.HeaderText = "authorId";
+			this.authorIdDataGridViewTextBoxColumn.Name = "authorIdDataGridViewTextBoxColumn";
+			// 
+			// typeIdDataGridViewTextBoxColumn
+			// 
+			this.typeIdDataGridViewTextBoxColumn.DataPropertyName = "typeId";
+			this.typeIdDataGridViewTextBoxColumn.HeaderText = "typeId";
+			this.typeIdDataGridViewTextBoxColumn.Name = "typeIdDataGridViewTextBoxColumn";
 			// 
 			// addBook
 			// 
@@ -361,35 +317,25 @@
 			this.Text = "addBook";
 			this.Load += new System.EventHandler(this.addBook_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.authorsBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.books)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numPageCount)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numPoint)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numAuthorID)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numTypeID)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-		private System.Windows.Forms.BindingSource authorsBindingSource;
-		private Data.Datasets.libraryDataSet1 libraryDataSet1;
 		private LollipopLabel lollipopLabel2;
 		private LollipopLabel lollipopLabel1;
 		private LollipopTextBox txtBookName;
-		private Data.Datasets.libraryDataSet1TableAdapters.authorsTableAdapter authorsTableAdapter;
 		private System.Windows.Forms.Button btnBack;
 		private System.Windows.Forms.Button btnDelete;
 		private System.Windows.Forms.Button btnEdit;
 		private System.Windows.Forms.Button btnAdd;
-		private Data.Datasets.Books books;
-		private System.Windows.Forms.BindingSource booksBindingSource;
-		private Data.Datasets.BooksTableAdapters.booksTableAdapter booksTableAdapter;
 		private LollipopLabel lollipopLabel3;
 		private LollipopLabel lollipopLabel4;
 		private LollipopLabel lollipopLabel5;
@@ -397,16 +343,15 @@
 		private System.Windows.Forms.NumericUpDown numPoint;
 		private System.Windows.Forms.NumericUpDown numAuthorID;
 		private System.Windows.Forms.NumericUpDown numTypeID;
-		private Data.Datasets.BooksDataSet booksDataSet;
-		private System.Windows.Forms.BindingSource booksBindingSource1;
-		private Data.Datasets.BooksDataSetTableAdapters.booksTableAdapter booksTableAdapter1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn bookId;
-		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn pagecount;
-		private System.Windows.Forms.DataGridViewTextBoxColumn point;
-		private System.Windows.Forms.DataGridViewTextBoxColumn authorIdDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn typeId;
-		private Data.Datasets.bookForBorrowTableAdapters.booksTableAdapter booksTableAdapter2;
 		public System.Windows.Forms.DataGridView dgvBook;
+		private booksDataSet booksDataSet;
+		private System.Windows.Forms.BindingSource booksBindingSource;
+		private booksDataSetTableAdapters.booksTableAdapter booksTableAdapter;
+		private System.Windows.Forms.DataGridViewTextBoxColumn bookIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn bookNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn pagecountDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn pointDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn authorIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn typeIdDataGridViewTextBoxColumn;
 	}
 }

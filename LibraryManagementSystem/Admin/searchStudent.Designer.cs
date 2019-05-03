@@ -34,37 +34,35 @@ namespace LibraryManagementSystem
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(searchStudent));
 			this.dgvSearch = new System.Windows.Forms.DataGridView();
+			this.btnBack = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.resetFiltersToolStripButton = new System.Windows.Forms.ToolStripButton();
+			this.resetFiltersToolStrip = new System.Windows.Forms.ToolStrip();
+			this.surnameToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+			this.studentSurnameToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+			this.searchStudentSurnameToolStripButton = new System.Windows.Forms.ToolStripButton();
+			this.searchStudentSurnameToolStrip = new System.Windows.Forms.ToolStrip();
+			this.studentNameToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+			this.studentNameToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+			this.searchStudentNameToolStripButton = new System.Windows.Forms.ToolStripButton();
+			this.searchStudentNameToolStrip = new System.Windows.Forms.ToolStrip();
 			this.studentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.studentSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.authorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.authorSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.bookNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.borrowDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.returnDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.adminSearchViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.adminSearchViewDataSet = new LibraryManagementSystem.Data.Views.adminSearchViewDataSet();
-			this.btnBack = new System.Windows.Forms.Button();
-			this.adminSearchViewTableAdapter = new LibraryManagementSystem.Data.Views.adminSearchViewDataSetTableAdapters.adminSearchViewTableAdapter();
-			this.searchStudentNameToolStrip = new System.Windows.Forms.ToolStrip();
-			this.studentNameToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-			this.studentNameToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-			this.searchStudentNameToolStripButton = new System.Windows.Forms.ToolStripButton();
-			this.searchStudentSurnameToolStrip = new System.Windows.Forms.ToolStrip();
-			this.surnameToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-			this.studentSurnameToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-			this.searchStudentSurnameToolStripButton = new System.Windows.Forms.ToolStripButton();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.resetFiltersToolStrip = new System.Windows.Forms.ToolStrip();
-			this.resetFiltersToolStripButton = new System.Windows.Forms.ToolStripButton();
-			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+			this.adminSearchDataSet = new LibraryManagementSystem.adminSearchDataSet();
+			this.adminSearchViewTableAdapter = new LibraryManagementSystem.adminSearchDataSetTableAdapters.adminSearchViewTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.adminSearchViewBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.adminSearchViewDataSet)).BeginInit();
-			this.searchStudentNameToolStrip.SuspendLayout();
-			this.searchStudentSurnameToolStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.resetFiltersToolStrip.SuspendLayout();
-			this.toolStrip1.SuspendLayout();
+			this.searchStudentSurnameToolStrip.SuspendLayout();
+			this.searchStudentNameToolStrip.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.adminSearchViewBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.adminSearchDataSet)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dgvSearch
@@ -82,6 +80,7 @@ namespace LibraryManagementSystem
             this.studentNameDataGridViewTextBoxColumn,
             this.studentSurnameDataGridViewTextBoxColumn,
             this.authorNameDataGridViewTextBoxColumn,
+            this.authorSurnameDataGridViewTextBoxColumn,
             this.bookNameDataGridViewTextBoxColumn,
             this.borrowDateDataGridViewTextBoxColumn,
             this.returnDateDataGridViewTextBoxColumn});
@@ -91,52 +90,6 @@ namespace LibraryManagementSystem
 			this.dgvSearch.Name = "dgvSearch";
 			this.dgvSearch.Size = new System.Drawing.Size(679, 293);
 			this.dgvSearch.TabIndex = 11;
-			// 
-			// studentNameDataGridViewTextBoxColumn
-			// 
-			this.studentNameDataGridViewTextBoxColumn.DataPropertyName = "Student Name";
-			this.studentNameDataGridViewTextBoxColumn.HeaderText = "Student Name";
-			this.studentNameDataGridViewTextBoxColumn.Name = "studentNameDataGridViewTextBoxColumn";
-			// 
-			// studentSurnameDataGridViewTextBoxColumn
-			// 
-			this.studentSurnameDataGridViewTextBoxColumn.DataPropertyName = "Student Surname";
-			this.studentSurnameDataGridViewTextBoxColumn.HeaderText = "Student Surname";
-			this.studentSurnameDataGridViewTextBoxColumn.Name = "studentSurnameDataGridViewTextBoxColumn";
-			// 
-			// authorNameDataGridViewTextBoxColumn
-			// 
-			this.authorNameDataGridViewTextBoxColumn.DataPropertyName = "Author Name";
-			this.authorNameDataGridViewTextBoxColumn.HeaderText = "Author Name";
-			this.authorNameDataGridViewTextBoxColumn.Name = "authorNameDataGridViewTextBoxColumn";
-			// 
-			// bookNameDataGridViewTextBoxColumn
-			// 
-			this.bookNameDataGridViewTextBoxColumn.DataPropertyName = "Book Name";
-			this.bookNameDataGridViewTextBoxColumn.HeaderText = "Book Name";
-			this.bookNameDataGridViewTextBoxColumn.Name = "bookNameDataGridViewTextBoxColumn";
-			// 
-			// borrowDateDataGridViewTextBoxColumn
-			// 
-			this.borrowDateDataGridViewTextBoxColumn.DataPropertyName = "Borrow Date";
-			this.borrowDateDataGridViewTextBoxColumn.HeaderText = "Borrow Date";
-			this.borrowDateDataGridViewTextBoxColumn.Name = "borrowDateDataGridViewTextBoxColumn";
-			// 
-			// returnDateDataGridViewTextBoxColumn
-			// 
-			this.returnDateDataGridViewTextBoxColumn.DataPropertyName = "Return Date";
-			this.returnDateDataGridViewTextBoxColumn.HeaderText = "Return Date";
-			this.returnDateDataGridViewTextBoxColumn.Name = "returnDateDataGridViewTextBoxColumn";
-			// 
-			// adminSearchViewBindingSource
-			// 
-			this.adminSearchViewBindingSource.DataMember = "adminSearchView";
-			this.adminSearchViewBindingSource.DataSource = this.adminSearchViewDataSet;
-			// 
-			// adminSearchViewDataSet
-			// 
-			this.adminSearchViewDataSet.DataSetName = "adminSearchViewDataSet";
-			this.adminSearchViewDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// btnBack
 			// 
@@ -149,26 +102,80 @@ namespace LibraryManagementSystem
 			this.btnBack.UseVisualStyleBackColor = false;
 			this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
 			// 
-			// adminSearchViewTableAdapter
+			// pictureBox1
 			// 
-			this.adminSearchViewTableAdapter.ClearBeforeFill = true;
+			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(474, 94);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(65, 43);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 21;
+			this.pictureBox1.TabStop = false;
+			this.pictureBox1.Click += new System.EventHandler(this.ResetFiltersToolStripButton_Click);
 			// 
-			// searchStudentNameToolStrip
+			// resetFiltersToolStripButton
 			// 
-			this.searchStudentNameToolStrip.AutoSize = false;
-			this.searchStudentNameToolStrip.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchStudentNameToolStrip.BackgroundImage")));
-			this.searchStudentNameToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-			this.searchStudentNameToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
-			this.searchStudentNameToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentNameToolStripLabel,
-            this.studentNameToolStripTextBox,
-            this.searchStudentNameToolStripButton});
-			this.searchStudentNameToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-			this.searchStudentNameToolStrip.Location = new System.Drawing.Point(12, 54);
-			this.searchStudentNameToolStrip.Name = "searchStudentNameToolStrip";
-			this.searchStudentNameToolStrip.Size = new System.Drawing.Size(291, 34);
-			this.searchStudentNameToolStrip.TabIndex = 15;
-			this.searchStudentNameToolStrip.Text = "searchStudentNameToolStrip";
+			this.resetFiltersToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.resetFiltersToolStripButton.ForeColor = System.Drawing.Color.MediumSpringGreen;
+			this.resetFiltersToolStripButton.Name = "resetFiltersToolStripButton";
+			this.resetFiltersToolStripButton.Size = new System.Drawing.Size(136, 40);
+			this.resetFiltersToolStripButton.Text = "Reset Filters";
+			this.resetFiltersToolStripButton.Click += new System.EventHandler(this.ResetFiltersToolStripButton_Click);
+			// 
+			// resetFiltersToolStrip
+			// 
+			this.resetFiltersToolStrip.AutoSize = false;
+			this.resetFiltersToolStrip.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resetFiltersToolStrip.BackgroundImage")));
+			this.resetFiltersToolStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.resetFiltersToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+			this.resetFiltersToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.resetFiltersToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+			this.resetFiltersToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resetFiltersToolStripButton});
+			this.resetFiltersToolStrip.Location = new System.Drawing.Point(327, 94);
+			this.resetFiltersToolStrip.Name = "resetFiltersToolStrip";
+			this.resetFiltersToolStrip.Size = new System.Drawing.Size(212, 43);
+			this.resetFiltersToolStrip.TabIndex = 22;
+			this.resetFiltersToolStrip.Text = "resetFiltersToolStrip";
+			// 
+			// surnameToolStripLabel
+			// 
+			this.surnameToolStripLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(252)))), ((int)(((byte)(45)))));
+			this.surnameToolStripLabel.Name = "surnameToolStripLabel";
+			this.surnameToolStripLabel.Size = new System.Drawing.Size(107, 27);
+			this.surnameToolStripLabel.Text = "Surname: ";
+			// 
+			// studentSurnameToolStripTextBox
+			// 
+			this.studentSurnameToolStripTextBox.Margin = new System.Windows.Forms.Padding(1, 5, 1, 0);
+			this.studentSurnameToolStripTextBox.Name = "studentSurnameToolStripTextBox";
+			this.studentSurnameToolStripTextBox.Size = new System.Drawing.Size(100, 23);
+			// 
+			// searchStudentSurnameToolStripButton
+			// 
+			this.searchStudentSurnameToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.searchStudentSurnameToolStripButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(252)))), ((int)(((byte)(45)))));
+			this.searchStudentSurnameToolStripButton.Name = "searchStudentSurnameToolStripButton";
+			this.searchStudentSurnameToolStripButton.Size = new System.Drawing.Size(81, 31);
+			this.searchStudentSurnameToolStripButton.Text = "Search";
+			this.searchStudentSurnameToolStripButton.Click += new System.EventHandler(this.SearchStudentSurnameToolStripButton_Click);
+			// 
+			// searchStudentSurnameToolStrip
+			// 
+			this.searchStudentSurnameToolStrip.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchStudentSurnameToolStrip.BackgroundImage")));
+			this.searchStudentSurnameToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+			this.searchStudentSurnameToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.searchStudentSurnameToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.surnameToolStripLabel,
+            this.studentSurnameToolStripTextBox,
+            this.searchStudentSurnameToolStripButton});
+			this.searchStudentSurnameToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+			this.searchStudentSurnameToolStrip.Location = new System.Drawing.Point(12, 103);
+			this.searchStudentSurnameToolStrip.Name = "searchStudentSurnameToolStrip";
+			this.searchStudentSurnameToolStrip.Size = new System.Drawing.Size(291, 34);
+			this.searchStudentSurnameToolStrip.TabIndex = 16;
+			this.searchStudentSurnameToolStrip.Text = "searchStudentSurnameToolStrip";
 			// 
 			// studentNameToolStripLabel
 			// 
@@ -193,100 +200,78 @@ namespace LibraryManagementSystem
 			this.searchStudentNameToolStripButton.Text = "Search";
 			this.searchStudentNameToolStripButton.Click += new System.EventHandler(this.SearchStudentNameToolStripButton_Click);
 			// 
-			// searchStudentSurnameToolStrip
+			// searchStudentNameToolStrip
 			// 
-			this.searchStudentSurnameToolStrip.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchStudentSurnameToolStrip.BackgroundImage")));
-			this.searchStudentSurnameToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-			this.searchStudentSurnameToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
-			this.searchStudentSurnameToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.surnameToolStripLabel,
-            this.studentSurnameToolStripTextBox,
-            this.searchStudentSurnameToolStripButton});
-			this.searchStudentSurnameToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-			this.searchStudentSurnameToolStrip.Location = new System.Drawing.Point(12, 103);
-			this.searchStudentSurnameToolStrip.Name = "searchStudentSurnameToolStrip";
-			this.searchStudentSurnameToolStrip.Size = new System.Drawing.Size(291, 34);
-			this.searchStudentSurnameToolStrip.TabIndex = 16;
-			this.searchStudentSurnameToolStrip.Text = "searchStudentSurnameToolStrip";
+			this.searchStudentNameToolStrip.AutoSize = false;
+			this.searchStudentNameToolStrip.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchStudentNameToolStrip.BackgroundImage")));
+			this.searchStudentNameToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+			this.searchStudentNameToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.searchStudentNameToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.studentNameToolStripLabel,
+            this.studentNameToolStripTextBox,
+            this.searchStudentNameToolStripButton});
+			this.searchStudentNameToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+			this.searchStudentNameToolStrip.Location = new System.Drawing.Point(12, 54);
+			this.searchStudentNameToolStrip.Name = "searchStudentNameToolStrip";
+			this.searchStudentNameToolStrip.Size = new System.Drawing.Size(291, 34);
+			this.searchStudentNameToolStrip.TabIndex = 15;
+			this.searchStudentNameToolStrip.Text = "searchStudentNameToolStrip";
 			// 
-			// surnameToolStripLabel
+			// studentNameDataGridViewTextBoxColumn
 			// 
-			this.surnameToolStripLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(252)))), ((int)(((byte)(45)))));
-			this.surnameToolStripLabel.Name = "surnameToolStripLabel";
-			this.surnameToolStripLabel.Size = new System.Drawing.Size(107, 27);
-			this.surnameToolStripLabel.Text = "Surname: ";
+			this.studentNameDataGridViewTextBoxColumn.DataPropertyName = "studentName";
+			this.studentNameDataGridViewTextBoxColumn.HeaderText = "studentName";
+			this.studentNameDataGridViewTextBoxColumn.Name = "studentNameDataGridViewTextBoxColumn";
 			// 
-			// studentSurnameToolStripTextBox
+			// studentSurnameDataGridViewTextBoxColumn
 			// 
-			this.studentSurnameToolStripTextBox.Margin = new System.Windows.Forms.Padding(1, 5, 1, 0);
-			this.studentSurnameToolStripTextBox.Name = "studentSurnameToolStripTextBox";
-			this.studentSurnameToolStripTextBox.Size = new System.Drawing.Size(100, 23);
+			this.studentSurnameDataGridViewTextBoxColumn.DataPropertyName = "studentSurname";
+			this.studentSurnameDataGridViewTextBoxColumn.HeaderText = "studentSurname";
+			this.studentSurnameDataGridViewTextBoxColumn.Name = "studentSurnameDataGridViewTextBoxColumn";
 			// 
-			// searchStudentSurnameToolStripButton
+			// authorNameDataGridViewTextBoxColumn
 			// 
-			this.searchStudentSurnameToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.searchStudentSurnameToolStripButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(252)))), ((int)(((byte)(45)))));
-			this.searchStudentSurnameToolStripButton.Name = "searchStudentSurnameToolStripButton";
-			this.searchStudentSurnameToolStripButton.Size = new System.Drawing.Size(81, 31);
-			this.searchStudentSurnameToolStripButton.Text = "Search";
-			this.searchStudentSurnameToolStripButton.Click += new System.EventHandler(this.SearchStudentSurnameToolStripButton_Click);
+			this.authorNameDataGridViewTextBoxColumn.DataPropertyName = "authorName";
+			this.authorNameDataGridViewTextBoxColumn.HeaderText = "authorName";
+			this.authorNameDataGridViewTextBoxColumn.Name = "authorNameDataGridViewTextBoxColumn";
 			// 
-			// pictureBox1
+			// authorSurnameDataGridViewTextBoxColumn
 			// 
-			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(474, 94);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(65, 43);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 21;
-			this.pictureBox1.TabStop = false;
-			this.pictureBox1.Click += new System.EventHandler(this.ResetFiltersToolStripButton_Click);
+			this.authorSurnameDataGridViewTextBoxColumn.DataPropertyName = "authorSurname";
+			this.authorSurnameDataGridViewTextBoxColumn.HeaderText = "authorSurname";
+			this.authorSurnameDataGridViewTextBoxColumn.Name = "authorSurnameDataGridViewTextBoxColumn";
 			// 
-			// resetFiltersToolStrip
+			// bookNameDataGridViewTextBoxColumn
 			// 
-			this.resetFiltersToolStrip.AutoSize = false;
-			this.resetFiltersToolStrip.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resetFiltersToolStrip.BackgroundImage")));
-			this.resetFiltersToolStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.resetFiltersToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-			this.resetFiltersToolStrip.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
-			this.resetFiltersToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-			this.resetFiltersToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.resetFiltersToolStripButton});
-			this.resetFiltersToolStrip.Location = new System.Drawing.Point(327, 94);
-			this.resetFiltersToolStrip.Name = "resetFiltersToolStrip";
-			this.resetFiltersToolStrip.Size = new System.Drawing.Size(212, 43);
-			this.resetFiltersToolStrip.TabIndex = 22;
-			this.resetFiltersToolStrip.Text = "resetFiltersToolStrip";
+			this.bookNameDataGridViewTextBoxColumn.DataPropertyName = "bookName";
+			this.bookNameDataGridViewTextBoxColumn.HeaderText = "bookName";
+			this.bookNameDataGridViewTextBoxColumn.Name = "bookNameDataGridViewTextBoxColumn";
 			// 
-			// resetFiltersToolStripButton
+			// borrowDateDataGridViewTextBoxColumn
 			// 
-			this.resetFiltersToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.resetFiltersToolStripButton.ForeColor = System.Drawing.Color.MediumSpringGreen;
-			this.resetFiltersToolStripButton.Name = "resetFiltersToolStripButton";
-			this.resetFiltersToolStripButton.Size = new System.Drawing.Size(136, 40);
-			this.resetFiltersToolStripButton.Text = "Reset Filters";
-			this.resetFiltersToolStripButton.Click += new System.EventHandler(this.ResetFiltersToolStripButton_Click);
+			this.borrowDateDataGridViewTextBoxColumn.DataPropertyName = "Borrow Date";
+			this.borrowDateDataGridViewTextBoxColumn.HeaderText = "Borrow Date";
+			this.borrowDateDataGridViewTextBoxColumn.Name = "borrowDateDataGridViewTextBoxColumn";
 			// 
-			// toolStrip1
+			// returnDateDataGridViewTextBoxColumn
 			// 
-			this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-			this.toolStrip1.Location = new System.Drawing.Point(354, 54);
-			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(35, 25);
-			this.toolStrip1.TabIndex = 23;
-			this.toolStrip1.Text = "toolStrip1";
+			this.returnDateDataGridViewTextBoxColumn.DataPropertyName = "Return Date";
+			this.returnDateDataGridViewTextBoxColumn.HeaderText = "Return Date";
+			this.returnDateDataGridViewTextBoxColumn.Name = "returnDateDataGridViewTextBoxColumn";
 			// 
-			// toolStripButton1
+			// adminSearchViewBindingSource
 			// 
-			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton1.Name = "toolStripButton1";
-			this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButton1.Text = "toolStripButton1";
+			this.adminSearchViewBindingSource.DataMember = "adminSearchView";
+			this.adminSearchViewBindingSource.DataSource = this.adminSearchDataSet;
+			// 
+			// adminSearchDataSet
+			// 
+			this.adminSearchDataSet.DataSetName = "adminSearchDataSet";
+			this.adminSearchDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// adminSearchViewTableAdapter
+			// 
+			this.adminSearchViewTableAdapter.ClearBeforeFill = true;
 			// 
 			// searchStudent
 			// 
@@ -296,7 +281,6 @@ namespace LibraryManagementSystem
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(700, 450);
-			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.searchStudentSurnameToolStrip);
 			this.Controls.Add(this.searchStudentNameToolStrip);
@@ -312,17 +296,15 @@ namespace LibraryManagementSystem
 			this.Text = "searchStudent";
 			this.Load += new System.EventHandler(this.SearchStudent_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.adminSearchViewBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.adminSearchViewDataSet)).EndInit();
-			this.searchStudentNameToolStrip.ResumeLayout(false);
-			this.searchStudentNameToolStrip.PerformLayout();
-			this.searchStudentSurnameToolStrip.ResumeLayout(false);
-			this.searchStudentSurnameToolStrip.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.resetFiltersToolStrip.ResumeLayout(false);
 			this.resetFiltersToolStrip.PerformLayout();
-			this.toolStrip1.ResumeLayout(false);
-			this.toolStrip1.PerformLayout();
+			this.searchStudentSurnameToolStrip.ResumeLayout(false);
+			this.searchStudentSurnameToolStrip.PerformLayout();
+			this.searchStudentNameToolStrip.ResumeLayout(false);
+			this.searchStudentNameToolStrip.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.adminSearchViewBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.adminSearchDataSet)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -332,27 +314,26 @@ namespace LibraryManagementSystem
 
 		private System.Windows.Forms.DataGridView dgvSearch;
 		private System.Windows.Forms.Button btnBack;
-		private adminSearchViewDataSet adminSearchViewDataSet;
-		private System.Windows.Forms.BindingSource adminSearchViewBindingSource;
-		private Data.Views.adminSearchViewDataSetTableAdapters.adminSearchViewTableAdapter adminSearchViewTableAdapter;
-		private System.Windows.Forms.DataGridViewTextBoxColumn studentNameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn studentSurnameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn authorNameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn bookNameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn borrowDateDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn returnDateDataGridViewTextBoxColumn;
-		private System.Windows.Forms.ToolStrip searchStudentNameToolStrip;
-		private System.Windows.Forms.ToolStripLabel studentNameToolStripLabel;
-		private System.Windows.Forms.ToolStripTextBox studentNameToolStripTextBox;
-		private System.Windows.Forms.ToolStripButton searchStudentNameToolStripButton;
-		private System.Windows.Forms.ToolStrip searchStudentSurnameToolStrip;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.ToolStripButton resetFiltersToolStripButton;
+		private System.Windows.Forms.ToolStrip resetFiltersToolStrip;
 		private System.Windows.Forms.ToolStripLabel surnameToolStripLabel;
 		private System.Windows.Forms.ToolStripTextBox studentSurnameToolStripTextBox;
 		private System.Windows.Forms.ToolStripButton searchStudentSurnameToolStripButton;
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.ToolStrip resetFiltersToolStrip;
-		private System.Windows.Forms.ToolStripButton resetFiltersToolStripButton;
-		private System.Windows.Forms.ToolStrip toolStrip1;
-		private System.Windows.Forms.ToolStripButton toolStripButton1;
+		private System.Windows.Forms.ToolStrip searchStudentSurnameToolStrip;
+		private System.Windows.Forms.ToolStripLabel studentNameToolStripLabel;
+		private System.Windows.Forms.ToolStripTextBox studentNameToolStripTextBox;
+		private System.Windows.Forms.ToolStripButton searchStudentNameToolStripButton;
+		private System.Windows.Forms.ToolStrip searchStudentNameToolStrip;
+		private adminSearchDataSet adminSearchDataSet;
+		private System.Windows.Forms.BindingSource adminSearchViewBindingSource;
+		private adminSearchDataSetTableAdapters.adminSearchViewTableAdapter adminSearchViewTableAdapter;
+		private System.Windows.Forms.DataGridViewTextBoxColumn studentNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn studentSurnameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn authorNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn authorSurnameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn bookNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn borrowDateDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn returnDateDataGridViewTextBoxColumn;
 	}
 }

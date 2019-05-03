@@ -1,4 +1,6 @@
-﻿using System;
+﻿using dbForLMS;
+using LibraryManagementSystem;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +15,13 @@ namespace LibraryManagementSystem.User
 {
 	public partial class UserProfile : Form
 	{
+		private readonly Login login;
 		public UserProfile()
 		{
 			InitializeComponent();
+			login = new Login();
+			lblName.Text = login.txtName.Text;
+			lblSurname.Text = login.txtSurname.Text;
 		}
 
 		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);

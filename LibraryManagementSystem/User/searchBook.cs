@@ -9,18 +9,24 @@ namespace LibraryManagementSystem
 {
 	public partial class searchBook : Form
 	{
-		//private readonly addBook abook;
-		private readonly addBorrow aborrow;
-		private readonly DataGridView dgv;
+		private readonly LollipopTextBox stuName;
+		private readonly LollipopTextBox stuSurname;
+		private readonly Label nameLabel;
+		private readonly Label surnameLabel;
+		public searchBook(LollipopTextBox stuName, LollipopTextBox stuSurname)
+		{
+			InitializeComponent();
+		}
+		public searchBook(Label nameLabel, Label surnameLabel)
+		{
+			InitializeComponent();
+		}
+
 		public searchBook()
 		{
 			InitializeComponent();
-			dgv = dgv;
-
-			label1.Visible = false;
-			//label1.Text = bookid;
-			//dgvBookForBorrow.Visible = false;
 		}
+
 		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 
 		private void listing()
@@ -47,7 +53,7 @@ namespace LibraryManagementSystem
 			// TODO: This line of code loads data into the 'userSearchDataSet.userSearchView' table. You can move, or remove it, as needed.
 			userSearchViewTableAdapter.Fill(userSearchDataSet.userSearchView);
 		}
-
+		#region Search ToolStrip Buttons
 		private void SearchAuthorNameToolStripButton_Click(object sender, EventArgs e)
 		{
 			try
@@ -65,7 +71,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				userSearchViewTableAdapter.SearchAuthorSurname(userSearchDataSet.userSearchView, authorSurnameToolStripTextBox.Text);
+				userSearchViewTableAdapter.SearchAuthorSurname1(userSearchDataSet.userSearchView, authorSurnameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -78,7 +84,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				userSearchViewTableAdapter.SearchBookName(userSearchDataSet.userSearchView, bookNameToolStripTextBox.Text);
+				userSearchViewTableAdapter.SearchBookName1(userSearchDataSet.userSearchView, bookNameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -103,7 +109,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				userSearchViewTableAdapter.ResetFilter(userSearchDataSet.userSearchView);
+				userSearchViewTableAdapter.ResetFilters(userSearchDataSet.userSearchView);
 			}
 			catch (System.Exception ex)
 			{
@@ -114,6 +120,7 @@ namespace LibraryManagementSystem
 			bookNameToolStripTextBox.Text = "";
 			categoryToolStripTextBox.Text = "";
 		}
+		#endregion
 		private void DgvBookForBorrow_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			//string bookid = "labeldefault";
@@ -131,7 +138,10 @@ namespace LibraryManagementSystem
 
 		}
 
-
+		public string[] getNames()
+		{
+			return new string
+		}
 
 		private void BtnBorrow_Click(object sender, EventArgs e)
 		{
@@ -147,6 +157,8 @@ namespace LibraryManagementSystem
 
 			UserProfile up = new UserProfile();
 			Login login = new Login();
+			UserForm uf = new UserForm();
+
 
 			foreach (DataGridViewRow searchRow in dgvSearch.Rows)
 			{
@@ -171,53 +183,16 @@ namespace LibraryManagementSystem
 					SqlCommand cmd = new SqlCommand
 					{
 						Connection = connection,
-						CommandText = "USE [library] GO " +
-						"Create Trigger userBorrowView on userBorrowView " +
-						"Instead Of Insert " +
-						"as " +
-						"begin " +
-						"INSERT INTO students(studentName)" +
-						"SELECT studentName " +
-						"FROM inserted  " +
-
-						"INSERT INTO students(studentSurname)" +
-						"SELECT studentSurname " +
-						"FROM inserted  " +
-
-						"INSERT INTO books(bookName)" +
-						"SELECT bookName " +
-						"FROM inserted  " +
-
-						"INSERT INTO authors(authorName)" +
-						"SELECT authorName " +
-						"FROM inserted  " +
-
-						"INSERT INTO authors(authorSurname)" +
-						"SELECT authorSurname " +
-						"FROM inserted  " +
-
-						"INSERT INTO borrows(takenDate)" +
-						"SELECT takenDate " +
-						"FROM inserted  " +
-
-						"INSERT INTO borrows(broughtDate)" +
-						"SELECT broughtDate " +
-						"FROM inserted  " +
-
-						"end " +
-
-						"Insert Into userBorrowView( " +
+						CommandText =
+						"Insert Into userBorrowView(" +
 						"studentName, studentSurname, bookName, authorName, authorSurname, " +
-						"takenDate, broughtDate " +
+						"takenDate, broughtDate" +
 						") " +
-						"values( " +
-						"'addedName','addedSurname','addedBookName','addedAuthorName','addedAuthorSurname', " +
-						"'2019-01-01','2019-01-22' " +
-						") " +
+						"values('" + login.GetNameAndSurname() + "','" + surnameLabel.Text + "','" + thisBookName + "','" +
+						thisAuthorName + "','" + thisAuthorSurname + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.AddDays(21).ToString("yyyy/MM/dd") +
+						"') " +
 						"OPTION (QUERYTRACEON 460); " +
-						"GO " +
-						"DBCC TRACEOFF(460, -1); " +
-						"GO "
+						"DBCC TRACEOFF(460, -1); "
 					};
 					count++;
 					cmd.ExecuteNonQuery();
@@ -241,9 +216,7 @@ namespace LibraryManagementSystem
 						"'2019-01-01','2019-01-22' " +
 						") " +
 						"OPTION (QUERYTRACEON 460); " +
-						"GO " +
-						"DBCC TRACEOFF(460, -1); " +
-						"GO "
+						"DBCC TRACEOFF(460, -1); "
 					};
 					cmd.ExecuteNonQuery();
 					cmd.Dispose();
@@ -253,6 +226,5 @@ namespace LibraryManagementSystem
 				}
 			}
 		}
-
 	}
 }

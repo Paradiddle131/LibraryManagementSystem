@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="adminSearchDataSet" targetNamespace="http://tempuri.org/adminSearchDataSet.xsd" xmlns:mstns="http://tempuri.org/adminSearchDataSet.xsd" xmlns="http://tempuri.org/adminSearchDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="libraryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="libraryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LibraryManagementSystem.Properties.Settings.GlobalReference.Default.libraryConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="adminSearchViewTableAdapter" GeneratorDataComponentClassName="adminSearchViewTableAdapter" Name="adminSearchView" UserDataComponentName="adminSearchViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="libraryConnectionString (Settings)" DbObjectName="library.dbo.adminSearchView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT studentName, studentSurname, authorName, authorSurname, bookName, [Borrow Date], [Return Date] FROM dbo.adminSearchView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="studentName" DataSetColumn="studentName" />
+              <Mapping SourceColumn="studentSurname" DataSetColumn="studentSurname" />
+              <Mapping SourceColumn="authorName" DataSetColumn="authorName" />
+              <Mapping SourceColumn="authorSurname" DataSetColumn="authorSurname" />
+              <Mapping SourceColumn="bookName" DataSetColumn="bookName" />
+              <Mapping SourceColumn="Borrow Date" DataSetColumn="Borrow Date" />
+              <Mapping SourceColumn="Return Date" DataSetColumn="Return Date" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="libraryConnectionString (Settings)" DbObjectName="library.dbo.adminSearchView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="ResetFilters" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="ResetFilters" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ResetFilters">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        studentName, studentSurname, authorName, authorSurname, bookName, [Borrow Date], [Return Date]
+FROM            adminSearchView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="libraryConnectionString (Settings)" DbObjectName="library.dbo.adminSearchView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="SearchStudentName" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="SearchStudentName" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SearchStudentName">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        studentName, studentSurname, authorName, authorSurname, bookName, [Borrow Date], [Return Date]
+FROM            adminSearchView
+WHERE        (studentName LIKE @studentName + '%')
+ORDER BY studentName</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="studentName" ColumnName="studentName" DataSourceName="library.dbo.adminSearchView" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@studentName" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="studentName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="libraryConnectionString (Settings)" DbObjectName="library.dbo.adminSearchView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="SearchStudentSurname" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="SearchStudentSurname" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="SearchStudentSurname">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        studentName, studentSurname, authorName, authorSurname, bookName, [Borrow Date], [Return Date]
+FROM            adminSearchView
+WHERE        (studentSurname LIKE @studentSurname + '%')
+ORDER BY studentSurname</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="studentSurname" ColumnName="studentSurname" DataSourceName="library.dbo.adminSearchView" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@studentSurname" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="studentSurname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="adminSearchDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="adminSearchDataSet" msprop:Generator_UserDSName="adminSearchDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="adminSearchView" msprop:Generator_TableClassName="adminSearchViewDataTable" msprop:Generator_TableVarName="tableadminSearchView" msprop:Generator_RowChangedName="adminSearchViewRowChanged" msprop:Generator_TablePropName="adminSearchView" msprop:Generator_RowDeletingName="adminSearchViewRowDeleting" msprop:Generator_RowChangingName="adminSearchViewRowChanging" msprop:Generator_RowEvHandlerName="adminSearchViewRowChangeEventHandler" msprop:Generator_RowDeletedName="adminSearchViewRowDeleted" msprop:Generator_RowClassName="adminSearchViewRow" msprop:Generator_UserTableName="adminSearchView" msprop:Generator_RowEvArgName="adminSearchViewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="studentName" msprop:Generator_ColumnVarNameInTable="columnstudentName" msprop:Generator_ColumnPropNameInRow="studentName" msprop:Generator_ColumnPropNameInTable="studentNameColumn" msprop:Generator_UserColumnName="studentName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="studentSurname" msprop:Generator_ColumnVarNameInTable="columnstudentSurname" msprop:Generator_ColumnPropNameInRow="studentSurname" msprop:Generator_ColumnPropNameInTable="studentSurnameColumn" msprop:Generator_UserColumnName="studentSurname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="authorName" msprop:Generator_ColumnVarNameInTable="columnauthorName" msprop:Generator_ColumnPropNameInRow="authorName" msprop:Generator_ColumnPropNameInTable="authorNameColumn" msprop:Generator_UserColumnName="authorName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="authorSurname" msprop:Generator_ColumnVarNameInTable="columnauthorSurname" msprop:Generator_ColumnPropNameInRow="authorSurname" msprop:Generator_ColumnPropNameInTable="authorSurnameColumn" msprop:Generator_UserColumnName="authorSurname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bookName" msprop:Generator_ColumnVarNameInTable="columnbookName" msprop:Generator_ColumnPropNameInRow="bookName" msprop:Generator_ColumnPropNameInTable="bookNameColumn" msprop:Generator_UserColumnName="bookName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Borrow_x0020_Date" msprop:Generator_ColumnVarNameInTable="columnBorrow_Date" msprop:Generator_ColumnPropNameInRow="Borrow_Date" msprop:Generator_ColumnPropNameInTable="Borrow_DateColumn" msprop:Generator_UserColumnName="Borrow Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Return_x0020_Date" msprop:Generator_ColumnVarNameInTable="columnReturn_Date" msprop:Generator_ColumnPropNameInRow="Return_Date" msprop:Generator_ColumnPropNameInTable="Return_DateColumn" msprop:Generator_UserColumnName="Return Date" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

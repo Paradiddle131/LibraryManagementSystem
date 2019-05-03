@@ -38,10 +38,10 @@
 			this.btnUser = new System.Windows.Forms.Button();
 			this.btnBorrow = new System.Windows.Forms.Button();
 			this.pnlUserControls = new System.Windows.Forms.Panel();
-			this.lblName = new System.Windows.Forms.Label();
 			this.lblSurname = new System.Windows.Forms.Label();
-			this.homeUserControl1 = new LibraryManagementSystem.HomeUserControl();
 			this.lblLoginedAs = new System.Windows.Forms.Label();
+			this.lblName = new System.Windows.Forms.Label();
+			this.homeUserControl1 = new LibraryManagementSystem.HomeUserControl();
 			this.pnlButtons.SuspendLayout();
 			this.pnlUserControls.SuspendLayout();
 			this.SuspendLayout();
@@ -179,18 +179,6 @@
 			this.pnlUserControls.Size = new System.Drawing.Size(600, 325);
 			this.pnlUserControls.TabIndex = 8;
 			// 
-			// lblName
-			// 
-			this.lblName.AutoSize = true;
-			this.lblName.BackColor = System.Drawing.Color.Transparent;
-			this.lblName.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
-			this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
-			this.lblName.Location = new System.Drawing.Point(12, 58);
-			this.lblName.Name = "lblName";
-			this.lblName.Size = new System.Drawing.Size(59, 27);
-			this.lblName.TabIndex = 4;
-			this.lblName.Text = "name";
-			// 
 			// lblSurname
 			// 
 			this.lblSurname.AutoSize = true;
@@ -203,16 +191,6 @@
 			this.lblSurname.TabIndex = 4;
 			this.lblSurname.Text = "surname";
 			// 
-			// homeUserControl1
-			// 
-			this.homeUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeUserControl1.BackgroundImage")));
-			this.homeUserControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.homeUserControl1.Location = new System.Drawing.Point(0, 0);
-			this.homeUserControl1.Margin = new System.Windows.Forms.Padding(0);
-			this.homeUserControl1.Name = "homeUserControl1";
-			this.homeUserControl1.Size = new System.Drawing.Size(600, 325);
-			this.homeUserControl1.TabIndex = 3;
-			// 
 			// lblLoginedAs
 			// 
 			this.lblLoginedAs.AutoSize = true;
@@ -224,6 +202,28 @@
 			this.lblLoginedAs.Size = new System.Drawing.Size(118, 27);
 			this.lblLoginedAs.TabIndex = 4;
 			this.lblLoginedAs.Text = "Logined As:";
+			// 
+			// lblName
+			// 
+			this.lblName.AutoSize = true;
+			this.lblName.BackColor = System.Drawing.Color.Transparent;
+			this.lblName.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
+			this.lblName.Location = new System.Drawing.Point(12, 58);
+			this.lblName.Name = "lblName";
+			this.lblName.Size = new System.Drawing.Size(59, 27);
+			this.lblName.TabIndex = 4;
+			this.lblName.Text = "name";
+			// 
+			// homeUserControl1
+			// 
+			this.homeUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeUserControl1.BackgroundImage")));
+			this.homeUserControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.homeUserControl1.Location = new System.Drawing.Point(0, 0);
+			this.homeUserControl1.Margin = new System.Windows.Forms.Padding(0);
+			this.homeUserControl1.Name = "homeUserControl1";
+			this.homeUserControl1.Size = new System.Drawing.Size(600, 325);
+			this.homeUserControl1.TabIndex = 3;
 			// 
 			// UserForm
 			// 

@@ -61,9 +61,10 @@ namespace LibraryManagementSystem
 			this.resetFilterToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btnBorrow = new LollipopButton();
-			this.label1 = new System.Windows.Forms.Label();
 			this.dgvBookForBorrow = new System.Windows.Forms.DataGridView();
 			this.userSearchViewTableAdapter = new LibraryManagementSystem.userSearchDataSetTableAdapters.userSearchViewTableAdapter();
+			this.lblNameGot = new System.Windows.Forms.Label();
+			this.lblSurnameGot = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userSearchViewBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userSearchDataSet)).BeginInit();
@@ -182,6 +183,7 @@ namespace LibraryManagementSystem
 			this.searchAuthorNameToolStripButton.Name = "searchAuthorNameToolStripButton";
 			this.searchAuthorNameToolStripButton.Size = new System.Drawing.Size(81, 31);
 			this.searchAuthorNameToolStripButton.Text = "Search";
+			this.searchAuthorNameToolStripButton.Click += new System.EventHandler(this.SearchAuthorNameToolStripButton_Click);
 			// 
 			// searchAuthorSurnameToolStrip
 			// 
@@ -349,15 +351,6 @@ namespace LibraryManagementSystem
 			this.btnBorrow.Text = "BORROW";
 			this.btnBorrow.Click += new System.EventHandler(this.BtnBorrow_Click);
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(601, 36);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(35, 13);
-			this.label1.TabIndex = 22;
-			this.label1.Text = "label1";
-			// 
 			// dgvBookForBorrow
 			// 
 			this.dgvBookForBorrow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -371,6 +364,24 @@ namespace LibraryManagementSystem
 			// 
 			this.userSearchViewTableAdapter.ClearBeforeFill = true;
 			// 
+			// lblNameGot
+			// 
+			this.lblNameGot.AutoSize = true;
+			this.lblNameGot.Location = new System.Drawing.Point(624, 12);
+			this.lblNameGot.Name = "lblNameGot";
+			this.lblNameGot.Size = new System.Drawing.Size(35, 13);
+			this.lblNameGot.TabIndex = 24;
+			this.lblNameGot.Text = "label1";
+			// 
+			// lblSurnameGot
+			// 
+			this.lblSurnameGot.AutoSize = true;
+			this.lblSurnameGot.Location = new System.Drawing.Point(624, 37);
+			this.lblSurnameGot.Name = "lblSurnameGot";
+			this.lblSurnameGot.Size = new System.Drawing.Size(35, 13);
+			this.lblSurnameGot.TabIndex = 24;
+			this.lblSurnameGot.Text = "label1";
+			// 
 			// searchBook
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,9 +390,10 @@ namespace LibraryManagementSystem
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(780, 500);
+			this.Controls.Add(this.lblSurnameGot);
+			this.Controls.Add(this.lblNameGot);
 			this.Controls.Add(this.dgvSearch);
 			this.Controls.Add(this.dgvBookForBorrow);
-			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnBorrow);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.resetFilterToolStrip);
@@ -424,7 +436,6 @@ namespace LibraryManagementSystem
 		private System.Windows.Forms.ToolStrip searchAuthorNameToolStrip;
 		private System.Windows.Forms.ToolStripLabel authorNameToolStripLabel;
 		private System.Windows.Forms.ToolStripTextBox authorNameToolStripTextBox;
-		private System.Windows.Forms.ToolStripButton searchAuthorNameToolStripButton;
 		private System.Windows.Forms.ToolStrip searchAuthorSurnameToolStrip;
 		private System.Windows.Forms.ToolStripLabel authorSurnameToolStripLabel;
 		private System.Windows.Forms.ToolStripTextBox authorSurnameToolStripTextBox;
@@ -441,7 +452,6 @@ namespace LibraryManagementSystem
 		private System.Windows.Forms.ToolStripButton resetFilterToolStripButton;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private LollipopButton btnBorrow;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.DataGridView dgvBookForBorrow;
 		public System.Windows.Forms.DataGridView dgvSearch;
 		private userSearchDataSet userSearchDataSet;
@@ -451,5 +461,8 @@ namespace LibraryManagementSystem
 		private System.Windows.Forms.DataGridViewTextBoxColumn authorSurnameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn bookNameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.ToolStripButton searchAuthorNameToolStripButton;
+		public System.Windows.Forms.Label lblNameGot;
+		public System.Windows.Forms.Label lblSurnameGot;
 	}
 }

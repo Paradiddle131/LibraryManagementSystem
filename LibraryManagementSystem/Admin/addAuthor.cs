@@ -19,8 +19,8 @@ namespace LibraryManagementSystem
 
 		private void addAuthor_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'libraryDataSet1.authors' table. You can move, or remove it, as needed.
-			authorsTableAdapter.Fill(libraryDataSet1.authors);
+			// TODO: This line of code loads data into the 'authorsDataSet.authors' table. You can move, or remove it, as needed.
+			authorsTableAdapter.Fill(authorsDataSet.authors);
 			listing();
 		}
 
