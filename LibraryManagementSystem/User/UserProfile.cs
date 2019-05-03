@@ -22,8 +22,8 @@ namespace LibraryManagementSystem.User
 
 		private void UserProfile_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'userBorrowsView.userBorrowView' table. You can move, or remove it, as needed.
-			userBorrowViewTableAdapter.Fill(userBorrowsView.userBorrowView);
+			// TODO: This line of code loads data into the 'userBorrowDataSet.userBorrowView' table. You can move, or remove it, as needed.
+			userBorrowViewTableAdapter.Fill(userBorrowDataSet.userBorrowView);
 		}
 
 		private void BtnBack_Click(object sender, EventArgs e)

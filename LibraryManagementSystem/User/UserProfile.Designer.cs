@@ -31,19 +31,19 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserProfile));
 			this.dgvBorrowDisplay = new System.Windows.Forms.DataGridView();
-			this.userBorrowsView = new LibraryManagementSystem.userBorrowsView();
+			this.btnBack = new System.Windows.Forms.Button();
+			this.userBorrowDataSet = new LibraryManagementSystem.userBorrowDataSet();
 			this.userBorrowViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.userBorrowViewTableAdapter = new LibraryManagementSystem.userBorrowsViewTableAdapters.userBorrowViewTableAdapter();
+			this.userBorrowViewTableAdapter = new LibraryManagementSystem.userBorrowDataSetTableAdapters.userBorrowViewTableAdapter();
 			this.studentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.studentSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.bookNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.authorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.authorSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.borrowDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.returnDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.btnBack = new System.Windows.Forms.Button();
+			this.takenDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.broughtDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBorrowDisplay)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.userBorrowsView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.userBorrowDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userBorrowViewBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -59,69 +59,13 @@
             this.bookNameDataGridViewTextBoxColumn,
             this.authorNameDataGridViewTextBoxColumn,
             this.authorSurnameDataGridViewTextBoxColumn,
-            this.borrowDateDataGridViewTextBoxColumn,
-            this.returnDateDataGridViewTextBoxColumn});
+            this.takenDateDataGridViewTextBoxColumn,
+            this.broughtDateDataGridViewTextBoxColumn});
 			this.dgvBorrowDisplay.DataSource = this.userBorrowViewBindingSource;
 			this.dgvBorrowDisplay.Location = new System.Drawing.Point(12, 96);
 			this.dgvBorrowDisplay.Name = "dgvBorrowDisplay";
 			this.dgvBorrowDisplay.Size = new System.Drawing.Size(756, 292);
 			this.dgvBorrowDisplay.TabIndex = 1;
-			// 
-			// userBorrowsView
-			// 
-			this.userBorrowsView.DataSetName = "userBorrowsView";
-			this.userBorrowsView.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// userBorrowViewBindingSource
-			// 
-			this.userBorrowViewBindingSource.DataMember = "userBorrowView";
-			this.userBorrowViewBindingSource.DataSource = this.userBorrowsView;
-			// 
-			// userBorrowViewTableAdapter
-			// 
-			this.userBorrowViewTableAdapter.ClearBeforeFill = true;
-			// 
-			// studentNameDataGridViewTextBoxColumn
-			// 
-			this.studentNameDataGridViewTextBoxColumn.DataPropertyName = "Student Name";
-			this.studentNameDataGridViewTextBoxColumn.HeaderText = "Student Name";
-			this.studentNameDataGridViewTextBoxColumn.Name = "studentNameDataGridViewTextBoxColumn";
-			// 
-			// studentSurnameDataGridViewTextBoxColumn
-			// 
-			this.studentSurnameDataGridViewTextBoxColumn.DataPropertyName = "Student Surname";
-			this.studentSurnameDataGridViewTextBoxColumn.HeaderText = "Student Surname";
-			this.studentSurnameDataGridViewTextBoxColumn.Name = "studentSurnameDataGridViewTextBoxColumn";
-			// 
-			// bookNameDataGridViewTextBoxColumn
-			// 
-			this.bookNameDataGridViewTextBoxColumn.DataPropertyName = "Book Name";
-			this.bookNameDataGridViewTextBoxColumn.HeaderText = "Book Name";
-			this.bookNameDataGridViewTextBoxColumn.Name = "bookNameDataGridViewTextBoxColumn";
-			// 
-			// authorNameDataGridViewTextBoxColumn
-			// 
-			this.authorNameDataGridViewTextBoxColumn.DataPropertyName = "Author Name";
-			this.authorNameDataGridViewTextBoxColumn.HeaderText = "Author Name";
-			this.authorNameDataGridViewTextBoxColumn.Name = "authorNameDataGridViewTextBoxColumn";
-			// 
-			// authorSurnameDataGridViewTextBoxColumn
-			// 
-			this.authorSurnameDataGridViewTextBoxColumn.DataPropertyName = "Author Surname";
-			this.authorSurnameDataGridViewTextBoxColumn.HeaderText = "Author Surname";
-			this.authorSurnameDataGridViewTextBoxColumn.Name = "authorSurnameDataGridViewTextBoxColumn";
-			// 
-			// borrowDateDataGridViewTextBoxColumn
-			// 
-			this.borrowDateDataGridViewTextBoxColumn.DataPropertyName = "Borrow Date";
-			this.borrowDateDataGridViewTextBoxColumn.HeaderText = "Borrow Date";
-			this.borrowDateDataGridViewTextBoxColumn.Name = "borrowDateDataGridViewTextBoxColumn";
-			// 
-			// returnDateDataGridViewTextBoxColumn
-			// 
-			this.returnDateDataGridViewTextBoxColumn.DataPropertyName = "Return Date";
-			this.returnDateDataGridViewTextBoxColumn.HeaderText = "Return Date";
-			this.returnDateDataGridViewTextBoxColumn.Name = "returnDateDataGridViewTextBoxColumn";
 			// 
 			// btnBack
 			// 
@@ -133,6 +77,62 @@
 			this.btnBack.TabIndex = 14;
 			this.btnBack.UseVisualStyleBackColor = false;
 			this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
+			// 
+			// userBorrowDataSet
+			// 
+			this.userBorrowDataSet.DataSetName = "userBorrowDataSet";
+			this.userBorrowDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// userBorrowViewBindingSource
+			// 
+			this.userBorrowViewBindingSource.DataMember = "userBorrowView";
+			this.userBorrowViewBindingSource.DataSource = this.userBorrowDataSet;
+			// 
+			// userBorrowViewTableAdapter
+			// 
+			this.userBorrowViewTableAdapter.ClearBeforeFill = true;
+			// 
+			// studentNameDataGridViewTextBoxColumn
+			// 
+			this.studentNameDataGridViewTextBoxColumn.DataPropertyName = "studentName";
+			this.studentNameDataGridViewTextBoxColumn.HeaderText = "studentName";
+			this.studentNameDataGridViewTextBoxColumn.Name = "studentNameDataGridViewTextBoxColumn";
+			// 
+			// studentSurnameDataGridViewTextBoxColumn
+			// 
+			this.studentSurnameDataGridViewTextBoxColumn.DataPropertyName = "studentSurname";
+			this.studentSurnameDataGridViewTextBoxColumn.HeaderText = "studentSurname";
+			this.studentSurnameDataGridViewTextBoxColumn.Name = "studentSurnameDataGridViewTextBoxColumn";
+			// 
+			// bookNameDataGridViewTextBoxColumn
+			// 
+			this.bookNameDataGridViewTextBoxColumn.DataPropertyName = "bookName";
+			this.bookNameDataGridViewTextBoxColumn.HeaderText = "bookName";
+			this.bookNameDataGridViewTextBoxColumn.Name = "bookNameDataGridViewTextBoxColumn";
+			// 
+			// authorNameDataGridViewTextBoxColumn
+			// 
+			this.authorNameDataGridViewTextBoxColumn.DataPropertyName = "authorName";
+			this.authorNameDataGridViewTextBoxColumn.HeaderText = "authorName";
+			this.authorNameDataGridViewTextBoxColumn.Name = "authorNameDataGridViewTextBoxColumn";
+			// 
+			// authorSurnameDataGridViewTextBoxColumn
+			// 
+			this.authorSurnameDataGridViewTextBoxColumn.DataPropertyName = "authorSurname";
+			this.authorSurnameDataGridViewTextBoxColumn.HeaderText = "authorSurname";
+			this.authorSurnameDataGridViewTextBoxColumn.Name = "authorSurnameDataGridViewTextBoxColumn";
+			// 
+			// takenDateDataGridViewTextBoxColumn
+			// 
+			this.takenDateDataGridViewTextBoxColumn.DataPropertyName = "takenDate";
+			this.takenDateDataGridViewTextBoxColumn.HeaderText = "takenDate";
+			this.takenDateDataGridViewTextBoxColumn.Name = "takenDateDataGridViewTextBoxColumn";
+			// 
+			// broughtDateDataGridViewTextBoxColumn
+			// 
+			this.broughtDateDataGridViewTextBoxColumn.DataPropertyName = "broughtDate";
+			this.broughtDateDataGridViewTextBoxColumn.HeaderText = "broughtDate";
+			this.broughtDateDataGridViewTextBoxColumn.Name = "broughtDateDataGridViewTextBoxColumn";
 			// 
 			// UserProfile
 			// 
@@ -153,25 +153,24 @@
 			this.Text = "UserProfile";
 			this.Load += new System.EventHandler(this.UserProfile_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvBorrowDisplay)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.userBorrowsView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.userBorrowDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.userBorrowViewBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.DataGridView dgvBorrowDisplay;
-		private userBorrowsView userBorrowsView;
+		private System.Windows.Forms.Button btnBack;
+		public System.Windows.Forms.DataGridView dgvBorrowDisplay;
+		private userBorrowDataSet userBorrowDataSet;
 		private System.Windows.Forms.BindingSource userBorrowViewBindingSource;
-		private userBorrowsViewTableAdapters.userBorrowViewTableAdapter userBorrowViewTableAdapter;
+		private userBorrowDataSetTableAdapters.userBorrowViewTableAdapter userBorrowViewTableAdapter;
 		private System.Windows.Forms.DataGridViewTextBoxColumn studentNameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn studentSurnameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn bookNameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn authorNameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn authorSurnameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn borrowDateDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn returnDateDataGridViewTextBoxColumn;
-		private System.Windows.Forms.Button btnBack;
+		private System.Windows.Forms.DataGridViewTextBoxColumn takenDateDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn broughtDateDataGridViewTextBoxColumn;
 	}
 }

@@ -30,10 +30,10 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
 			this.btnLogin = new LollipopButton();
-			this.lblUsername = new LollipopLabel();
-			this.lblPassword = new LollipopLabel();
-			this.txtUsername = new LollipopTextBox();
-			this.txtPassword = new LollipopTextBox();
+			this.lblName = new LollipopLabel();
+			this.lblSurname = new LollipopLabel();
+			this.txtName = new LollipopTextBox();
+			this.txtSurname = new LollipopTextBox();
 			this.btnCoders = new LollipopButton();
 			this.btnExit = new LollipopButton();
 			this.label1 = new System.Windows.Forms.Label();
@@ -44,79 +44,79 @@
 			this.btnLogin.BackColor = System.Drawing.Color.Transparent;
 			this.btnLogin.BGColor = "#508ef5";
 			this.btnLogin.FontColor = "#ffffff";
-			this.btnLogin.Location = new System.Drawing.Point(108, 160);
+			this.btnLogin.Location = new System.Drawing.Point(142, 158);
 			this.btnLogin.Name = "btnLogin";
 			this.btnLogin.Size = new System.Drawing.Size(143, 41);
 			this.btnLogin.TabIndex = 2;
 			this.btnLogin.Text = "LOGIN";
 			this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
 			// 
-			// lblUsername
+			// lblName
 			// 
-			this.lblUsername.AutoSize = true;
-			this.lblUsername.BackColor = System.Drawing.Color.Transparent;
-			this.lblUsername.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(49)))), ((int)(((byte)(33)))));
-			this.lblUsername.Location = new System.Drawing.Point(12, 52);
-			this.lblUsername.Name = "lblUsername";
-			this.lblUsername.Size = new System.Drawing.Size(110, 27);
-			this.lblUsername.TabIndex = 4;
-			this.lblUsername.Text = "Username:";
+			this.lblName.AutoSize = true;
+			this.lblName.BackColor = System.Drawing.Color.Transparent;
+			this.lblName.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(49)))), ((int)(((byte)(33)))));
+			this.lblName.Location = new System.Drawing.Point(12, 52);
+			this.lblName.Name = "lblName";
+			this.lblName.Size = new System.Drawing.Size(121, 27);
+			this.lblName.TabIndex = 4;
+			this.lblName.Text = "Your Name:";
 			// 
-			// lblPassword
+			// lblSurname
 			// 
-			this.lblPassword.AutoSize = true;
-			this.lblPassword.BackColor = System.Drawing.Color.Transparent;
-			this.lblPassword.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
-			this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(49)))), ((int)(((byte)(33)))));
-			this.lblPassword.Location = new System.Drawing.Point(12, 102);
-			this.lblPassword.Name = "lblPassword";
-			this.lblPassword.Size = new System.Drawing.Size(102, 27);
-			this.lblPassword.TabIndex = 5;
-			this.lblPassword.Text = "Password:";
+			this.lblSurname.AutoSize = true;
+			this.lblSurname.BackColor = System.Drawing.Color.Transparent;
+			this.lblSurname.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(49)))), ((int)(((byte)(33)))));
+			this.lblSurname.Location = new System.Drawing.Point(12, 102);
+			this.lblSurname.Name = "lblSurname";
+			this.lblSurname.Size = new System.Drawing.Size(156, 27);
+			this.lblSurname.TabIndex = 5;
+			this.lblSurname.Text = "Your Surname: ";
 			// 
-			// txtUsername
+			// txtName
 			// 
-			this.txtUsername.FocusedColor = "#508ef5";
-			this.txtUsername.FontColor = "#999999";
-			this.txtUsername.IsEnabled = true;
-			this.txtUsername.Location = new System.Drawing.Point(142, 55);
-			this.txtUsername.MaxLength = 32767;
-			this.txtUsername.Multiline = false;
-			this.txtUsername.Name = "txtUsername";
-			this.txtUsername.ReadOnly = false;
-			this.txtUsername.Size = new System.Drawing.Size(209, 24);
-			this.txtUsername.TabIndex = 0;
-			this.txtUsername.Text = "<Enter your username>";
-			this.txtUsername.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-			this.txtUsername.UseSystemPasswordChar = false;
-			this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
-			this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
+			this.txtName.FocusedColor = "#508ef5";
+			this.txtName.FontColor = "#999999";
+			this.txtName.IsEnabled = true;
+			this.txtName.Location = new System.Drawing.Point(178, 55);
+			this.txtName.MaxLength = 32767;
+			this.txtName.Multiline = false;
+			this.txtName.Name = "txtName";
+			this.txtName.ReadOnly = false;
+			this.txtName.Size = new System.Drawing.Size(209, 24);
+			this.txtName.TabIndex = 0;
+			this.txtName.Text = "<Enter your name>";
+			this.txtName.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+			this.txtName.UseSystemPasswordChar = false;
+			this.txtName.Enter += new System.EventHandler(this.TxtName_Enter);
+			this.txtName.Leave += new System.EventHandler(this.TxtName_Leave);
 			// 
-			// txtPassword
+			// txtSurname
 			// 
-			this.txtPassword.FocusedColor = "#508ef5";
-			this.txtPassword.FontColor = "#999999";
-			this.txtPassword.IsEnabled = true;
-			this.txtPassword.Location = new System.Drawing.Point(142, 105);
-			this.txtPassword.MaxLength = 32767;
-			this.txtPassword.Multiline = false;
-			this.txtPassword.Name = "txtPassword";
-			this.txtPassword.ReadOnly = false;
-			this.txtPassword.Size = new System.Drawing.Size(209, 24);
-			this.txtPassword.TabIndex = 1;
-			this.txtPassword.Text = "<Enter your password>";
-			this.txtPassword.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-			this.txtPassword.UseSystemPasswordChar = false;
-			this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
-			this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
+			this.txtSurname.FocusedColor = "#508ef5";
+			this.txtSurname.FontColor = "#999999";
+			this.txtSurname.IsEnabled = true;
+			this.txtSurname.Location = new System.Drawing.Point(178, 105);
+			this.txtSurname.MaxLength = 32767;
+			this.txtSurname.Multiline = false;
+			this.txtSurname.Name = "txtSurname";
+			this.txtSurname.ReadOnly = false;
+			this.txtSurname.Size = new System.Drawing.Size(209, 24);
+			this.txtSurname.TabIndex = 1;
+			this.txtSurname.Text = "<Enter your surname>";
+			this.txtSurname.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+			this.txtSurname.UseSystemPasswordChar = false;
+			this.txtSurname.Enter += new System.EventHandler(this.TxtSurname_Enter);
+			this.txtSurname.Leave += new System.EventHandler(this.TxtSurname_Leave);
 			// 
 			// btnCoders
 			// 
 			this.btnCoders.BackColor = System.Drawing.Color.Transparent;
 			this.btnCoders.BGColor = "#ffa61d";
 			this.btnCoders.FontColor = "#ffffff";
-			this.btnCoders.Location = new System.Drawing.Point(277, 194);
+			this.btnCoders.Location = new System.Drawing.Point(313, 192);
 			this.btnCoders.Name = "btnCoders";
 			this.btnCoders.Size = new System.Drawing.Size(74, 26);
 			this.btnCoders.TabIndex = 3;
@@ -128,7 +128,7 @@
 			this.btnExit.BackColor = System.Drawing.Color.Transparent;
 			this.btnExit.BGColor = "#ff0000";
 			this.btnExit.FontColor = "#ffffff";
-			this.btnExit.Location = new System.Drawing.Point(313, 10);
+			this.btnExit.Location = new System.Drawing.Point(349, 9);
 			this.btnExit.Name = "btnExit";
 			this.btnExit.Size = new System.Drawing.Size(38, 24);
 			this.btnExit.TabIndex = 6;
@@ -151,18 +151,19 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-			this.ClientSize = new System.Drawing.Size(363, 232);
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.ClientSize = new System.Drawing.Size(400, 230);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnExit);
 			this.Controls.Add(this.btnCoders);
-			this.Controls.Add(this.txtPassword);
-			this.Controls.Add(this.txtUsername);
-			this.Controls.Add(this.lblPassword);
-			this.Controls.Add(this.lblUsername);
+			this.Controls.Add(this.txtSurname);
+			this.Controls.Add(this.txtName);
+			this.Controls.Add(this.lblSurname);
+			this.Controls.Add(this.lblName);
 			this.Controls.Add(this.btnLogin);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.MaximumSize = new System.Drawing.Size(379, 271);
+			this.MaximumSize = new System.Drawing.Size(400, 230);
 			this.Name = "Login";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Login";
@@ -173,12 +174,12 @@
 
 		#endregion
 		private LollipopButton btnLogin;
-		private LollipopLabel lblUsername;
-		private LollipopLabel lblPassword;
-		private LollipopTextBox txtUsername;
-		private LollipopTextBox txtPassword;
+		private LollipopLabel lblName;
+		private LollipopLabel lblSurname;
 		private LollipopButton btnCoders;
 		private LollipopButton btnExit;
 		private System.Windows.Forms.Label label1;
+		public LollipopTextBox txtName;
+		public LollipopTextBox txtSurname;
 	}
 }

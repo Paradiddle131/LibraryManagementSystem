@@ -38,8 +38,10 @@
 			this.btnUser = new System.Windows.Forms.Button();
 			this.btnBorrow = new System.Windows.Forms.Button();
 			this.pnlUserControls = new System.Windows.Forms.Panel();
+			this.lblName = new System.Windows.Forms.Label();
+			this.lblSurname = new System.Windows.Forms.Label();
 			this.homeUserControl1 = new LibraryManagementSystem.HomeUserControl();
-			this.userUserControl1 = new LibraryManagementSystem.UserUserControl1();
+			this.lblLoginedAs = new System.Windows.Forms.Label();
 			this.pnlButtons.SuspendLayout();
 			this.pnlUserControls.SuspendLayout();
 			this.SuspendLayout();
@@ -73,6 +75,7 @@
 			// 
 			this.btnExit.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnExit.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
 			this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.btnExit.Location = new System.Drawing.Point(500, 0);
@@ -88,6 +91,7 @@
 			// 
 			this.btnAbout.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnAbout.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
 			this.btnAbout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.btnAbout.Location = new System.Drawing.Point(400, 0);
@@ -103,6 +107,7 @@
 			// 
 			this.btnHome.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnHome.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
 			this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.btnHome.Location = new System.Drawing.Point(0, 0);
@@ -118,6 +123,7 @@
 			// 
 			this.btnLogout.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnLogout.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
 			this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.btnLogout.Location = new System.Drawing.Point(300, 0);
@@ -133,6 +139,7 @@
 			// 
 			this.btnUser.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.btnUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnUser.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
 			this.btnUser.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.btnUser.Location = new System.Drawing.Point(100, 0);
@@ -148,6 +155,7 @@
 			// 
 			this.btnBorrow.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.btnBorrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnBorrow.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.btnBorrow.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrow.Image")));
 			this.btnBorrow.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.btnBorrow.Location = new System.Drawing.Point(200, 0);
@@ -161,13 +169,39 @@
 			// 
 			// pnlUserControls
 			// 
+			this.pnlUserControls.Controls.Add(this.lblSurname);
+			this.pnlUserControls.Controls.Add(this.lblLoginedAs);
+			this.pnlUserControls.Controls.Add(this.lblName);
 			this.pnlUserControls.Controls.Add(this.homeUserControl1);
-			this.pnlUserControls.Controls.Add(this.userUserControl1);
 			this.pnlUserControls.Location = new System.Drawing.Point(0, 75);
 			this.pnlUserControls.Margin = new System.Windows.Forms.Padding(0);
 			this.pnlUserControls.Name = "pnlUserControls";
 			this.pnlUserControls.Size = new System.Drawing.Size(600, 325);
 			this.pnlUserControls.TabIndex = 8;
+			// 
+			// lblName
+			// 
+			this.lblName.AutoSize = true;
+			this.lblName.BackColor = System.Drawing.Color.Transparent;
+			this.lblName.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
+			this.lblName.Location = new System.Drawing.Point(12, 58);
+			this.lblName.Name = "lblName";
+			this.lblName.Size = new System.Drawing.Size(59, 27);
+			this.lblName.TabIndex = 4;
+			this.lblName.Text = "name";
+			// 
+			// lblSurname
+			// 
+			this.lblSurname.AutoSize = true;
+			this.lblSurname.BackColor = System.Drawing.Color.Transparent;
+			this.lblSurname.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
+			this.lblSurname.Location = new System.Drawing.Point(12, 94);
+			this.lblSurname.Name = "lblSurname";
+			this.lblSurname.Size = new System.Drawing.Size(87, 27);
+			this.lblSurname.TabIndex = 4;
+			this.lblSurname.Text = "surname";
 			// 
 			// homeUserControl1
 			// 
@@ -179,14 +213,17 @@
 			this.homeUserControl1.Size = new System.Drawing.Size(600, 325);
 			this.homeUserControl1.TabIndex = 3;
 			// 
-			// userUserControl1
+			// lblLoginedAs
 			// 
-			this.userUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userUserControl1.BackgroundImage")));
-			this.userUserControl1.Location = new System.Drawing.Point(0, 0);
-			this.userUserControl1.Margin = new System.Windows.Forms.Padding(0);
-			this.userUserControl1.Name = "userUserControl1";
-			this.userUserControl1.Size = new System.Drawing.Size(600, 325);
-			this.userUserControl1.TabIndex = 4;
+			this.lblLoginedAs.AutoSize = true;
+			this.lblLoginedAs.BackColor = System.Drawing.Color.Transparent;
+			this.lblLoginedAs.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblLoginedAs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(32)))), ((int)(((byte)(225)))));
+			this.lblLoginedAs.Location = new System.Drawing.Point(12, 21);
+			this.lblLoginedAs.Name = "lblLoginedAs";
+			this.lblLoginedAs.Size = new System.Drawing.Size(118, 27);
+			this.lblLoginedAs.TabIndex = 4;
+			this.lblLoginedAs.Text = "Logined As:";
 			// 
 			// UserForm
 			// 
@@ -204,6 +241,7 @@
 			this.Text = "UserForm";
 			this.pnlButtons.ResumeLayout(false);
 			this.pnlUserControls.ResumeLayout(false);
+			this.pnlUserControls.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -220,6 +258,8 @@
 		private System.Windows.Forms.Button btnUser;
 		private System.Windows.Forms.Button btnBorrow;
 		private System.Windows.Forms.Panel pnlUserControls;
-		private UserUserControl1 userUserControl1;
+		public System.Windows.Forms.Label lblSurname;
+		public System.Windows.Forms.Label lblName;
+		public System.Windows.Forms.Label lblLoginedAs;
 	}
 }

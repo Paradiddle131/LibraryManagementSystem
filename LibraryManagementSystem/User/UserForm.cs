@@ -1,4 +1,5 @@
-﻿using LibraryManagementSystem.User;
+﻿using dbForLMS;
+using LibraryManagementSystem.User;
 using System;
 using System.Windows.Forms;
 
@@ -10,6 +11,9 @@ namespace LibraryManagementSystem
 		public UserForm()
 		{
 			InitializeComponent();
+			Login login = new Login();
+			//lblName.Text = login.currentUserName;
+			//lblSurname.Text = login.currentUserSurname;
 		}
 
 		public string ConnectionString { get; set; } = @"Data Source=DESKTOP-VGI8J75\SQLEXPRESS;Initial Catalog=library;Integrated Security=True";

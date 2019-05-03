@@ -1,4 +1,6 @@
-﻿using System;
+﻿using dbForLMS;
+using LibraryManagementSystem.User;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -42,17 +44,15 @@ namespace LibraryManagementSystem
 
 		private void SearchBook_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'bookForBorrowView.booksForBorrow' table. You can move, or remove it, as needed.
-			booksForBorrowTableAdapter.Fill(bookForBorrowView.booksForBorrow);
-			// TODO: This line of code loads data into the 'userSearchViewDataSet.userSearchView' table. You can move, or remove it, as needed.
-			userSearchViewTableAdapter.Fill(userSearchViewDataSet.userSearchView);
+			// TODO: This line of code loads data into the 'userSearchDataSet.userSearchView' table. You can move, or remove it, as needed.
+			userSearchViewTableAdapter.Fill(userSearchDataSet.userSearchView);
 		}
 
 		private void SearchAuthorNameToolStripButton_Click(object sender, EventArgs e)
 		{
 			try
 			{
-				userSearchViewTableAdapter.SearchAuthorName(userSearchViewDataSet.userSearchView, authorNameToolStripTextBox.Text);
+				userSearchViewTableAdapter.SearchAuthorName(userSearchDataSet.userSearchView, authorNameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -65,7 +65,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				userSearchViewTableAdapter.SearchAuthorSurname(userSearchViewDataSet.userSearchView, authorSurnameToolStripTextBox.Text);
+				userSearchViewTableAdapter.SearchAuthorSurname(userSearchDataSet.userSearchView, authorSurnameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -78,7 +78,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				userSearchViewTableAdapter.SearchBookName(userSearchViewDataSet.userSearchView, bookNameToolStripTextBox.Text);
+				userSearchViewTableAdapter.SearchBookName(userSearchDataSet.userSearchView, bookNameToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -91,7 +91,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				userSearchViewTableAdapter.SearchCategory(userSearchViewDataSet.userSearchView, categoryToolStripTextBox.Text);
+				userSearchViewTableAdapter.SearchCategory(userSearchDataSet.userSearchView, categoryToolStripTextBox.Text);
 			}
 			catch (System.Exception ex)
 			{
@@ -103,7 +103,7 @@ namespace LibraryManagementSystem
 		{
 			try
 			{
-				userSearchViewTableAdapter.ResetFilter(userSearchViewDataSet.userSearchView);
+				userSearchViewTableAdapter.ResetFilter(userSearchDataSet.userSearchView);
 			}
 			catch (System.Exception ex)
 			{
@@ -130,6 +130,9 @@ namespace LibraryManagementSystem
 			//}
 
 		}
+
+
+
 		private void BtnBorrow_Click(object sender, EventArgs e)
 		{
 			addBook abook = new addBook();
@@ -138,32 +141,118 @@ namespace LibraryManagementSystem
 			string thisAuthorName = dgvSearch.CurrentRow.Cells[0].Value.ToString();
 			string thisAuthorSurname = dgvSearch.CurrentRow.Cells[1].Value.ToString();
 			string thisBookName = dgvSearch.CurrentRow.Cells[2].Value.ToString();
+			string thisCategory = dgvSearch.CurrentRow.Cells[3].Value.ToString();
 
 			int bookId = abook.getBookId(thisBookName);
-			string authorname = dgvSearch.CurrentRow.Cells[0].Value.ToString();
-			string authorsurname = dgvSearch.CurrentRow.Cells[1].Value.ToString();
-			string bookname = dgvSearch.CurrentRow.Cells[2].Value.ToString();
 
+			UserProfile up = new UserProfile();
+			Login login = new Login();
 
-			//if (connection.State == ConnectionState.Closed)
-			//{
-			//	connection.Open();
-			//	SqlCommand cmd = new SqlCommand
-			//	{/*
-			//		Connection = connection,
-			//		CommandText = "INSERT INTO borrows(studentId,bookId,takenDate,broughtDate) " +
-			//					"VALUES('" + +"','" + bookid + "','" +
-			//					dtpTakenDate.Text + "','" + dtpBroughtDate.Text +
-			//					dgv.CurrentRow.Cells[0].Value.ToString() +
-			//					bookObject.dgv + "')"*/
-			//	};
-			//	cmd.ExecuteNonQuery();
-			//	cmd.Dispose();
-			//	connection.Close();
-			//	//MessageBox.Show("Borrowed", "Borrow Successful");
-			//	listing(); // must be called after the connection closed
-			//}
+			foreach (DataGridViewRow searchRow in dgvSearch.Rows)
+			{
+				foreach (DataGridViewRow userRow in up.dgvBorrowDisplay.Rows)
+				{
+					userRow.Cells[0].Value = login.txtName.Text; // Student Name
+					userRow.Cells[1].Value = login.txtSurname.Text; // Student Surname
+					userRow.Cells[2].Value = thisBookName; // Book Name
+					userRow.Cells[3].Value = thisAuthorName; // Author Name
+					userRow.Cells[4].Value = thisAuthorSurname; // Author Surname
+					userRow.Cells[5].Value = DateTime.Now; // Borrow Date
+					userRow.Cells[6].Value = DateTime.Now.AddDays(21); // Return Date
+				}
+			}
 
+			if (connection.State == ConnectionState.Closed)
+			{
+				int count = 0; // Trigger should be created only once.
+				connection.Open();
+				if (count == 0)
+				{
+					SqlCommand cmd = new SqlCommand
+					{
+						Connection = connection,
+						CommandText = "USE [library] GO " +
+						"Create Trigger userBorrowView on userBorrowView " +
+						"Instead Of Insert " +
+						"as " +
+						"begin " +
+						"INSERT INTO students(studentName)" +
+						"SELECT studentName " +
+						"FROM inserted  " +
+
+						"INSERT INTO students(studentSurname)" +
+						"SELECT studentSurname " +
+						"FROM inserted  " +
+
+						"INSERT INTO books(bookName)" +
+						"SELECT bookName " +
+						"FROM inserted  " +
+
+						"INSERT INTO authors(authorName)" +
+						"SELECT authorName " +
+						"FROM inserted  " +
+
+						"INSERT INTO authors(authorSurname)" +
+						"SELECT authorSurname " +
+						"FROM inserted  " +
+
+						"INSERT INTO borrows(takenDate)" +
+						"SELECT takenDate " +
+						"FROM inserted  " +
+
+						"INSERT INTO borrows(broughtDate)" +
+						"SELECT broughtDate " +
+						"FROM inserted  " +
+
+						"end " +
+
+						"Insert Into userBorrowView( " +
+						"studentName, studentSurname, bookName, authorName, authorSurname, " +
+						"takenDate, broughtDate " +
+						") " +
+						"values( " +
+						"'addedName','addedSurname','addedBookName','addedAuthorName','addedAuthorSurname', " +
+						"'2019-01-01','2019-01-22' " +
+						") " +
+						"OPTION (QUERYTRACEON 460); " +
+						"GO " +
+						"DBCC TRACEOFF(460, -1); " +
+						"GO "
+					};
+					count++;
+					cmd.ExecuteNonQuery();
+					cmd.Dispose();
+					connection.Close();
+					//MessageBox.Show("Borrowed", "Borrow Successful");
+					listing(); // must be called after the connection closed
+				}
+				else
+				{
+					SqlCommand cmd = new SqlCommand
+					{
+						Connection = connection,
+						CommandText =
+						"Insert Into userBorrowView( " +
+						"studentName, studentSurname, bookName, authorName, authorSurname, " +
+						"takenDate, broughtDate " +
+						") " +
+						"values( " +
+						"'addedName','addedSurname','addedBookName','addedAuthorName','addedAuthorSurname', " +
+						"'2019-01-01','2019-01-22' " +
+						") " +
+						"OPTION (QUERYTRACEON 460); " +
+						"GO " +
+						"DBCC TRACEOFF(460, -1); " +
+						"GO "
+					};
+					cmd.ExecuteNonQuery();
+					cmd.Dispose();
+					connection.Close();
+					//MessageBox.Show("Borrowed", "Borrow Successful");
+					listing(); // must be called after the connection closed
+				}
+			}
 		}
+
 	}
 }

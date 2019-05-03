@@ -258,6 +258,11 @@
     </Compile>
     <Compile Include="System\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userBorrowDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>userBorrowDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="userBorrowsView.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -267,6 +272,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>userBorrowViewDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="userSearchDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>userSearchDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="User\searchBook.cs">
       <SubType>Form</SubType>
@@ -316,12 +326,6 @@
     </Compile>
     <Compile Include="User\UserProfile.Designer.cs">
       <DependentUpon>UserProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User\UserUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User\UserUserControl.Designer.cs">
-      <DependentUpon>UserUserControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin\addAuthor.resx">
       <DependentUpon>addAuthor.cs</DependentUpon>
@@ -374,9 +378,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User\UserProfile.resx">
       <DependentUpon>UserProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User\UserUserControl.resx">
-      <DependentUpon>UserUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Data\Views\adminSearchViewDataSet.xsc">
       <DependentUpon>adminSearchViewDataSet.xsd</DependentUpon>
@@ -674,6 +675,17 @@
     <None Include="Data\Views\userSearchViewDataSet.xss">
       <DependentUpon>userSearchViewDataSet.xsd</DependentUpon>
     </None>
+    <None Include="userBorrowDataSet.xsc">
+      <DependentUpon>userBorrowDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="userBorrowDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>userBorrowDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="userBorrowDataSet.xss">
+      <DependentUpon>userBorrowDataSet.xsd</DependentUpon>
+    </None>
     <None Include="userBorrowsView.xsc">
       <DependentUpon>userBorrowsView.xsd</DependentUpon>
     </None>
@@ -695,6 +707,17 @@
     </None>
     <None Include="userBorrowViewDataSet.xss">
       <DependentUpon>userBorrowViewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="userSearchDataSet.xsc">
+      <DependentUpon>userSearchDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="userSearchDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>userSearchDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="userSearchDataSet.xss">
+      <DependentUpon>userSearchDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

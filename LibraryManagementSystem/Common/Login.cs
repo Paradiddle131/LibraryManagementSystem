@@ -1,35 +1,41 @@
-﻿using System;
+﻿using LibraryManagementSystem;
+using System;
 using System.Windows.Forms;
 
 namespace dbForLMS
 {
 	public partial class Login : Form
 	{
-		private readonly LibraryManagementSystem.addAuthor au;
-		private readonly LibraryManagementSystem.AdminForm af;
+		private readonly addAuthor au;
+		private readonly AdminForm af;
+		private readonly UserForm uf;
 		public bool isAdmin = false;
+		public string currentUserName;
+		public string currentUserSurname;
 		public Login()
 		{
 			InitializeComponent();
-			//au = new LibraryManagementSystem.addAuthor(isAdmin);
-			au = new LibraryManagementSystem.addAuthor();
+			//au = new .addAuthor(isAdmin);
+			au = new addAuthor();
 		}
 
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
-			Hide(); // first closes the login screen
-					//Checkout BookManagement = new Checkout();
-					//BookManagement.Show(); // then opens the next screen which is BookManagement
+			UserForm uf = new UserForm();
+			Hide();
+			currentUserName = txtName.Text;
+			currentUserSurname = txtSurname.Text;
+			uf.lblName.Text = currentUserName;
+			uf.lblSurname.Text = currentUserSurname;
 
-			if (txtUsername.Text == "a" && txtPassword.Text == "a")
+			if (txtName.Text == "a" && txtSurname.Text == "a")
 			{
 				isAdmin = true;
-				LibraryManagementSystem.AdminForm af = new LibraryManagementSystem.AdminForm();
+				AdminForm af = new AdminForm();
 				af.Show();
 			}
 			else
 			{
-				LibraryManagementSystem.UserForm uf = new LibraryManagementSystem.UserForm();
 				uf.Show();
 			}
 		}
@@ -41,39 +47,38 @@ namespace dbForLMS
 			codersScreen.ShowDialog();
 		}
 
-		private void txtUsername_Enter(object sender, EventArgs e)
+		private void TxtName_Enter(object sender, EventArgs e)
 		{
 			//when the textbox gains focus:
-			if (txtUsername.Text == "<Enter your username>")
+			if (txtName.Text == "<Enter your name>")
 			{
-				txtUsername.Text = "";
+				txtName.Text = "";
 			}
 		}
 
-		private void txtUsername_Leave(object sender, EventArgs e)
+		private void TxtName_Leave(object sender, EventArgs e)
 		{
-			if (txtUsername.Text.Trim() == "")
+			if (txtName.Text.Trim() == "")
 			{
-				txtUsername.Text = "<Enter your username>";
+				txtName.Text = "<Enter your name>";
 			}
 		}
 
-		private void txtPassword_Enter(object sender, EventArgs e)
+		private void TxtSurname_Enter(object sender, EventArgs e)
 		{
-			if (txtPassword.Text == "<Enter your password>")
+			if (txtSurname.Text == "<Enter your surname>")
 			{
-				txtPassword.Text = "";
+				txtSurname.Text = "";
 			}
 		}
 
-		private void txtPassword_Leave(object sender, EventArgs e)
+		private void TxtSurname_Leave(object sender, EventArgs e)
 		{
-			if (txtPassword.Text.Trim() == "")
+			if (txtSurname.Text.Trim() == "")
 			{
-				txtPassword.Text = "<Enter your password>";
+				txtSurname.Text = "<Enter your surname>";
 			}
 		}
-
 		private void btnExit_Click(object sender, EventArgs e)
 		{
 			Application.Exit();
