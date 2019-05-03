@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LibraryManagementSystem.User;
+using System;
 using System.Windows.Forms;
 
 namespace LibraryManagementSystem
 {
 	public partial class UserForm : Form
 	{
-		DataGridView dgv;
+		private readonly DataGridView dgv;
 		public UserForm()
 		{
 			InitializeComponent();
@@ -32,11 +26,16 @@ namespace LibraryManagementSystem
 				homeUserControl1.Instance.BringToFront();
 			}
 			else
+			{
 				homeUserControl1.Instance.BringToFront();
+			}
 		}
 
 		private void btnUser_Click(object sender, EventArgs e)
 		{
+			UserProfile up = new UserProfile();
+			up.Show();
+			/*
 			pnlGreen.Width = btnUser.Width;
 			pnlGreen.Left = btnUser.Left;
 			pnlUserControls.Controls.Clear();
@@ -48,14 +47,16 @@ namespace LibraryManagementSystem
 				userUserControl1.Instance.BringToFront();
 			}
 			else
+			{
 				userUserControl1.Instance.BringToFront();
+			}*/
 		}
 		private void btnLogout_Click(object sender, EventArgs e)
 		{
 			pnlGreen.Width = btnLogout.Width;
 			pnlGreen.Left = btnLogout.Left;
 			dbForLMS.Login loginScreen = new dbForLMS.Login();
-			this.Hide();
+			Hide();
 			loginScreen.Show();
 		}
 
@@ -80,7 +81,8 @@ namespace LibraryManagementSystem
 		private void BtnBorrow_Click(object sender, EventArgs e)
 		{
 			//this.Hide();
-			searchBook sb = new searchBook(dgv);
+			//searchBook sb = new searchBook(dgv);
+			searchBook sb = new searchBook();
 			sb.Show();
 		}
 	}

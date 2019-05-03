@@ -115,4 +115,4 @@ D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManageme
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserForm.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.searchStudent.resources
 D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.searchBook.resources
-D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csprojAssemblyReference.cache
+D:\PROJECTS\C# LMS\githubUCCommit\LibraryManagementSystem-master\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.User.UserProfile.resources

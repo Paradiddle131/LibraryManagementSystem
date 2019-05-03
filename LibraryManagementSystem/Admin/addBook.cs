@@ -17,12 +17,13 @@ namespace LibraryManagementSystem
 		public addBook()
 		{
 			InitializeComponent();
-			sb = new searchBook(dgvBook);
+			//sb = new searchBook(dgvBook);
+			sb = new searchBook();
 		}
 
 		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
 
-		private void addBook_Load(object sender, EventArgs e)
+		public void addBook_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'booksDataSet.books' table. You can move, or remove it, as needed.
 			booksTableAdapter1.Fill(booksDataSet.books);
@@ -120,6 +121,36 @@ namespace LibraryManagementSystem
 					MessageBox.Show("Deleted.");
 				}
 			}
+		}
+
+		public int getBookId(string bookname)
+		{
+			int rowIndex = -1;
+			foreach (DataGridViewRow row in dgvBook.Rows)
+			{
+				if (row.Cells[1].Value.ToString().Equals(bookname))
+				{
+					rowIndex = row.Index;
+					MessageBox.Show(int.Parse(row.Cells[0].Value.ToString()).ToString());
+					return int.Parse(dgvBook.Rows[rowIndex].Cells[2].Value.ToString());
+				}
+			}
+
+			MessageBox.Show("Couldn't return the authorname correctly.", "Error");
+			return -1;
+
+			//searchBook sb = new searchBook();
+			////if (bookname == dgvBook.CurrentRow.Cells[1].Value.ToString())
+			//if ()
+			//{
+			//	MessageBox.Show(int.Parse(dgvBook.CurrentRow.Cells[0].Value.ToString()).ToString());
+			//	return int.Parse(dgvBook.CurrentRow.Cells[0].Value.ToString());
+			//}
+			//else
+			//{
+			//	MessageBox.Show("Couldn't return the authorname correctly.", "Error");
+			//	return -1;
+			//}
 		}
 
 		private void dgvBook_CellClick(object sender, DataGridViewCellEventArgs e)

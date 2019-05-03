@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace LibraryManagementSystem
 {
@@ -19,7 +19,10 @@ namespace LibraryManagementSystem
 			get
 			{
 				if (_instance == null)
+				{
 					_instance = new UserUserControl1();
+				}
+
 				return _instance;
 			}
 		}
@@ -29,6 +32,6 @@ namespace LibraryManagementSystem
 		}
 
 		private const string ConnectionString = @"Data Source=DESKTOP-VGI8J75\SQLEXPRESS;Initial Catalog=library;Integrated Security=True";
-		SqlConnection connection = new SqlConnection(ConnectionString);
+		private readonly SqlConnection connection = new SqlConnection(ConnectionString);
 	}
 }

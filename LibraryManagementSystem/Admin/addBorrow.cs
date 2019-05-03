@@ -12,7 +12,8 @@ namespace LibraryManagementSystem
 		public addBorrow()
 		{
 			InitializeComponent();
-			sb = new searchBook(dgvBorrow);
+			//sb = new searchBook(dgvBorrow);
+			sb = new searchBook();
 		}
 
 		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);

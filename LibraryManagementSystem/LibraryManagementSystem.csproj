@@ -258,6 +258,11 @@
     </Compile>
     <Compile Include="System\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userBorrowsView.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>userBorrowsView.xsd</DependentUpon>
+    </Compile>
     <Compile Include="userBorrowViewDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -305,6 +310,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>userSearchViewDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserProfile.Designer.cs">
+      <DependentUpon>UserProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="User\UserUserControl.cs">
       <SubType>UserControl</SubType>
@@ -360,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserProfile.resx">
+      <DependentUpon>UserProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\UserUserControl.resx">
       <DependentUpon>UserUserControl.cs</DependentUpon>
@@ -659,6 +673,17 @@
     </None>
     <None Include="Data\Views\userSearchViewDataSet.xss">
       <DependentUpon>userSearchViewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="userBorrowsView.xsc">
+      <DependentUpon>userBorrowsView.xsd</DependentUpon>
+    </None>
+    <None Include="userBorrowsView.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>userBorrowsView.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="userBorrowsView.xss">
+      <DependentUpon>userBorrowsView.xsd</DependentUpon>
     </None>
     <None Include="userBorrowViewDataSet.xsc">
       <DependentUpon>userBorrowViewDataSet.xsd</DependentUpon>
