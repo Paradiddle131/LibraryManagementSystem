@@ -1,6 +1,8 @@
 ﻿using dbForLMS;
 using LibraryManagementSystem.User;
+using Microsoft.VisualBasic;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -9,6 +11,8 @@ namespace LibraryManagementSystem
 {
 	public partial class searchBook : Form
 	{
+		public string firstname = "";
+		public string surname = "";
 		private readonly LollipopTextBox stuName;
 		private readonly LollipopTextBox stuSurname;
 		private readonly Label nameLabel;
@@ -138,13 +142,32 @@ namespace LibraryManagementSystem
 
 		}
 
-		public string[] getNames()
-		{
-			return new string
-		}
-
 		private void BtnBorrow_Click(object sender, EventArgs e)
 		{
+			string fullNameInput = Interaction.InputBox("Enter your full name please:", "Your Full Name.", "");
+			StartPosition = FormStartPosition.CenterScreen;
+			//MessageBox.Show("Full Name is: " + fullNameInput);
+			string[] splitted = fullNameInput.Split(' ');
+			List<string> firstnameL = new List<string>();
+			for (int i = 0; i < splitted.Length; i++)
+			{
+				if (i < splitted.Length - 1)
+				{
+					firstname += splitted[i] + " ";
+					//firstnameL.Add(splitted[i]);
+				}
+				else
+				{
+					surname = splitted[splitted.Length - 1];
+				}
+			}
+			//string fname = "";
+			//foreach (string item in firstnameL)
+			//{
+			//	fname = item;
+			//}
+			//MessageBox.Show("Name: " + firstname + "Surname:" + surname);
+
 			addBook abook = new addBook();
 			abook.addBook_Load(sender, e);
 
@@ -158,7 +181,6 @@ namespace LibraryManagementSystem
 			UserProfile up = new UserProfile();
 			Login login = new Login();
 			UserForm uf = new UserForm();
-
 
 			foreach (DataGridViewRow searchRow in dgvSearch.Rows)
 			{
@@ -188,7 +210,7 @@ namespace LibraryManagementSystem
 						"studentName, studentSurname, bookName, authorName, authorSurname, " +
 						"takenDate, broughtDate" +
 						") " +
-						"values('" + login.GetNameAndSurname() + "','" + surnameLabel.Text + "','" + thisBookName + "','" +
+						"values('" + firstname + "','" + surname + "','" + thisBookName + "','" +
 						thisAuthorName + "','" + thisAuthorSurname + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.AddDays(21).ToString("yyyy/MM/dd") +
 						"') " +
 						"OPTION (QUERYTRACEON 460); " +
@@ -200,7 +222,7 @@ namespace LibraryManagementSystem
 					connection.Close();
 					//MessageBox.Show("Borrowed", "Borrow Successful");
 					listing(); // must be called after the connection closed
-				}
+				}/*
 				else
 				{
 					SqlCommand cmd = new SqlCommand
@@ -223,7 +245,7 @@ namespace LibraryManagementSystem
 					connection.Close();
 					//MessageBox.Show("Borrowed", "Borrow Successful");
 					listing(); // must be called after the connection closed
-				}
+				}*/
 			}
 		}
 	}

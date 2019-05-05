@@ -1,6 +1,8 @@
 ﻿using dbForLMS;
 using LibraryManagementSystem.User;
+using Microsoft.VisualBasic;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace LibraryManagementSystem
@@ -41,26 +43,62 @@ namespace LibraryManagementSystem
 			lblSurname.BringToFront();
 		}
 
-		private void btnUser_Click(object sender, EventArgs e)
+		public string GetName()
 		{
 			UserProfile up = new UserProfile();
-			up.Show();
-			/*
-			pnlGreen.Width = btnUser.Width;
-			pnlGreen.Left = btnUser.Left;
-			pnlUserControls.Controls.Clear();
-
-			if (!pnlUserControls.Controls.Contains(userUserControl1.Instance))
+			string firstname = "";
+			string fullNameInput = "";
+			if (fullNameInput == "")
 			{
-				pnlUserControls.Controls.Add(userUserControl1.Instance);
-				userUserControl1.Instance.Dock = DockStyle.Fill;
-				userUserControl1.Instance.BringToFront();
+				fullNameInput = Interaction.InputBox("Enter your full name please:", "Your Full Name.", "");
+				StartPosition = FormStartPosition.CenterScreen;
+			}
+			string[] splitted = fullNameInput.Split(' ');
+			for (int i = 0; i < splitted.Length; i++)
+			{
+				if (splitted.Length == 2 && firstname == "")
+				{
+					firstname = splitted[i];
+				}
+				else if (splitted.Length > 2 && i != splitted.Length - 1)
+				{
+					firstname += splitted[i] + " ";
+					//firstnameL.Add(splitted[i]);
+				}
+			}
+			return firstname;
+		}
+
+		public string GetSurname()
+		{
+			UserProfile up = new UserProfile();
+			string surname = "";
+			string fullNameInput = "";
+			if (fullNameInput == "")
+			{
+				fullNameInput = Interaction.InputBox("Enter your full name please:", "Your Full Name.", "");
+				StartPosition = FormStartPosition.CenterScreen;
+			}
+
+			string[] splitted = fullNameInput.Split(' ');
+			surname = splitted[splitted.Length - 1];
+			return surname;
+		}
+
+		public void btnUser_Click(object sender, EventArgs e)
+		{
+			UserProfile up = new UserProfile();
+			if (GetName() == "TERMINATE")
+			{
+				MessageBox.Show("Please enter your full name", "Cannot Be Empty");
+				up.Hide();
 			}
 			else
 			{
-				userUserControl1.Instance.BringToFront();
-			}*/
+				up.Show();
+			}
 		}
+
 		private void btnLogout_Click(object sender, EventArgs e)
 		{
 			pnlGreen.Width = btnLogout.Width;

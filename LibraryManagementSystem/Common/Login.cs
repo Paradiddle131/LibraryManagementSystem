@@ -37,8 +37,6 @@ namespace dbForLMS
 			currentUserSurname = txtSurname.Text;
 			uf.lblName.Text = currentUserName;
 			uf.lblSurname.Text = currentUserSurname;
-			sb.lblNameGot.Text = currentUserName;
-			sb.lblSurnameGot.Text = currentUserSurname;
 			up.lblName.Text = currentUserName;
 			up.lblSurname.Text = currentUserSurname;
 			if (txtName.Text == "a" && txtSurname.Text == "a")

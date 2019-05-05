@@ -32,7 +32,7 @@ namespace LibraryManagementSystem
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(searchBook));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.btnBack = new System.Windows.Forms.Button();
 			this.dgvSearch = new System.Windows.Forms.DataGridView();
 			this.authorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,8 +63,8 @@ namespace LibraryManagementSystem
 			this.btnBorrow = new LollipopButton();
 			this.dgvBookForBorrow = new System.Windows.Forms.DataGridView();
 			this.userSearchViewTableAdapter = new LibraryManagementSystem.userSearchDataSetTableAdapters.userSearchViewTableAdapter();
-			this.lblNameGot = new System.Windows.Forms.Label();
-			this.lblSurnameGot = new System.Windows.Forms.Label();
+			this.lblName = new System.Windows.Forms.Label();
+			this.lblSurname = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userSearchViewBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userSearchDataSet)).BeginInit();
@@ -91,8 +91,8 @@ namespace LibraryManagementSystem
 			// dgvSearch
 			// 
 			this.dgvSearch.AllowUserToOrderColumns = true;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
 			this.dgvSearch.AutoGenerateColumns = false;
 			this.dgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
@@ -364,23 +364,29 @@ namespace LibraryManagementSystem
 			// 
 			this.userSearchViewTableAdapter.ClearBeforeFill = true;
 			// 
-			// lblNameGot
+			// lblName
 			// 
-			this.lblNameGot.AutoSize = true;
-			this.lblNameGot.Location = new System.Drawing.Point(624, 12);
-			this.lblNameGot.Name = "lblNameGot";
-			this.lblNameGot.Size = new System.Drawing.Size(35, 13);
-			this.lblNameGot.TabIndex = 24;
-			this.lblNameGot.Text = "label1";
+			this.lblName.AutoSize = true;
+			this.lblName.BackColor = System.Drawing.Color.Transparent;
+			this.lblName.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
+			this.lblName.Location = new System.Drawing.Point(595, 12);
+			this.lblName.Name = "lblName";
+			this.lblName.Size = new System.Drawing.Size(59, 27);
+			this.lblName.TabIndex = 25;
+			this.lblName.Text = "name";
 			// 
-			// lblSurnameGot
+			// lblSurname
 			// 
-			this.lblSurnameGot.AutoSize = true;
-			this.lblSurnameGot.Location = new System.Drawing.Point(624, 37);
-			this.lblSurnameGot.Name = "lblSurnameGot";
-			this.lblSurnameGot.Size = new System.Drawing.Size(35, 13);
-			this.lblSurnameGot.TabIndex = 24;
-			this.lblSurnameGot.Text = "label1";
+			this.lblSurname.AutoSize = true;
+			this.lblSurname.BackColor = System.Drawing.Color.Transparent;
+			this.lblSurname.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
+			this.lblSurname.Location = new System.Drawing.Point(595, 49);
+			this.lblSurname.Name = "lblSurname";
+			this.lblSurname.Size = new System.Drawing.Size(87, 27);
+			this.lblSurname.TabIndex = 26;
+			this.lblSurname.Text = "surname";
 			// 
 			// searchBook
 			// 
@@ -390,8 +396,8 @@ namespace LibraryManagementSystem
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(780, 500);
-			this.Controls.Add(this.lblSurnameGot);
-			this.Controls.Add(this.lblNameGot);
+			this.Controls.Add(this.lblSurname);
+			this.Controls.Add(this.lblName);
 			this.Controls.Add(this.dgvSearch);
 			this.Controls.Add(this.dgvBookForBorrow);
 			this.Controls.Add(this.btnBorrow);
@@ -462,7 +468,7 @@ namespace LibraryManagementSystem
 		private System.Windows.Forms.DataGridViewTextBoxColumn bookNameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.ToolStripButton searchAuthorNameToolStripButton;
-		public System.Windows.Forms.Label lblNameGot;
-		public System.Windows.Forms.Label lblSurnameGot;
+		public System.Windows.Forms.Label lblName;
+		public System.Windows.Forms.Label lblSurname;
 	}
 }

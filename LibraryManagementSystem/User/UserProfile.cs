@@ -10,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace LibraryManagementSystem.User
 {
 	public partial class UserProfile : Form
@@ -28,13 +27,17 @@ namespace LibraryManagementSystem.User
 
 		private void UserProfile_Load(object sender, EventArgs e)
 		{
+			UserForm uf = new UserForm();
+			string gotname = uf.GetName();
+			string gotsurname = uf.GetSurname();
 			// TODO: This line of code loads data into the 'userBorrowDataSet.userBorrowView' table. You can move, or remove it, as needed.
-			userBorrowViewTableAdapter.Fill(userBorrowDataSet.userBorrowView);
+			userBorrowViewTableAdapter.FillWithNameInput(userBorrowDataSet.userBorrowView, gotname, gotsurname);
 		}
 
 		private void BtnBack_Click(object sender, EventArgs e)
 		{
 			Hide();
 		}
+
 	}
 }

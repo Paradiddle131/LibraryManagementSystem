@@ -69,6 +69,7 @@
     <Reference Include="May, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Strilanc.Value.May.1.0.2\lib\portable-net4+sl4+wp7+win8\May.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -287,6 +288,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>typesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="userBorrowDataSet.cs">
+      <DependentUpon>userBorrowDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="userBorrowDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

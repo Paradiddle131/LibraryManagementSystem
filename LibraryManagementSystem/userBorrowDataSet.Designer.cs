@@ -1001,17 +1001,37 @@ namespace LibraryManagementSystem.userBorrowDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT studentName, studentSurname, bookName, authorName, authorSurname, takenDat" +
-                "e, broughtDate FROM dbo.userBorrowView";
+            this._commandCollection[0].CommandText = @"SELECT        students.studentName, students.studentSurname, books.bookName, authors.authorName, authors.authorSurname, borrows.takenDate, borrows.broughtDate
+FROM            authors FULL OUTER JOIN
+                         books ON authors.authorId = books.authorId FULL OUTER JOIN
+                         borrows ON books.bookId = borrows.bookId FULL OUTER JOIN
+                         students ON borrows.studentId = students.studentId FULL OUTER JOIN
+                         types ON books.typeId = types.typeId
+WHERE        (students.studentName LIKE '%' + @nameInput) AND (students.studentSurname LIKE '%' + @surnameInput)
+ORDER BY borrows.takenDate DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nameInput", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "studentName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@surnameInput", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "studentSurname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(userBorrowDataSet.userBorrowViewDataTable dataTable) {
+        public virtual int FillWithNameInput(userBorrowDataSet.userBorrowViewDataTable dataTable, string nameInput, string surnameInput) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((nameInput == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nameInput));
+            }
+            if ((surnameInput == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(surnameInput));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1023,8 +1043,20 @@ namespace LibraryManagementSystem.userBorrowDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual userBorrowDataSet.userBorrowViewDataTable GetData() {
+        public virtual userBorrowDataSet.userBorrowViewDataTable GetData(string nameInput, string surnameInput) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((nameInput == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nameInput));
+            }
+            if ((surnameInput == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(surnameInput));
+            }
             userBorrowDataSet.userBorrowViewDataTable dataTable = new userBorrowDataSet.userBorrowViewDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
