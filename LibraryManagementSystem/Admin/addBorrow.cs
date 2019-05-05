@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace LibraryManagementSystem
@@ -115,7 +117,7 @@ namespace LibraryManagementSystem
 			}
 		}
 
-		private void addBorrow_Load(object sender, EventArgs e)
+		public void addBorrow_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'borrowsDataSet.borrows' table. You can move, or remove it, as needed.
 			borrowsTableAdapter.Fill(borrowsDataSet.borrows);
@@ -151,5 +153,86 @@ namespace LibraryManagementSystem
 			//}
 
 		}
+
+
+		public int GetBorrowId(int bookid, int studentid)
+		{
+			listing();
+			foreach (DataGridViewRow row in dgvBorrow.Rows)
+			{
+				if (int.Parse(row.Cells[1].Value.ToString()).Equals(studentid) &&
+				int.Parse(row.Cells[2].Value.ToString()).Equals(bookid))
+				{
+					return int.Parse(row.Cells[0].Value.ToString());
+				}
+			}
+			return -1;
+		}
+
+		public int GetStudentId(int bookid)
+		{
+			listing();
+			foreach (DataGridViewRow row in dgvBorrow.Rows)
+			{
+				if (int.Parse(row.Cells[2].Value.ToString()).Equals(bookid))
+				{
+					return int.Parse(row.Cells[1].Value.ToString());
+				}
+			}
+			return -1;
+		}
+
+		public DateTime GetTakenDate(int bookid)
+		{
+			CultureInfo zhHans = new CultureInfo("zh-Hans");
+			CultureInfo enUS = new CultureInfo("en-US");
+			listing();
+			foreach (DataGridViewRow row in dgvBorrow.Rows)
+			{
+				if (int.Parse(row.Cells[2].Value.ToString()).Equals(bookid))
+				{
+					string returnDate = row.Cells[3].Value.ToString();
+					string[] date = row.Cells[3].Value.ToString().Split('/');
+					int year = int.Parse(date[2].Substring(0, 4));
+					int month = int.Parse(date[1]);
+					int day = int.Parse(date[0]);
+					string test3 = DateTime.Now.ToString("yyyy/MM/dd");
+					string test4 = DateTime.Parse(returnDate).ToString("yyyy/MM/dd");
+					DateTime test5 = DateTime.Parse(DateTime.Parse(returnDate).ToString("yyyy/MM/dd"));
+					//int[] test3Array = new int[3];
+					//test3Array[0] = int.Parse(test3.Substring(0, 4));
+					//test3Array[1] = int.Parse(test3.Substring(5, 2));
+					//test3Array[2] = int.Parse(test3.Substring(8, 2));
+					string[] test3Array = new string[3]; // "2019/05/05" 
+					test3Array[0] = test3.Substring(0, 4); // "2019"
+					test3Array[1] = test3.Substring(5, 2); // "05"
+					test3Array[2] = test3.Substring(8, 2); // "05"
+					string total = test3Array[0] + "/" + test3Array[1] + "/" + test3Array[2];
+					DateTime formattedDate = new DateTime(int.Parse(test3Array[0]), int.Parse(test3Array[1]), int.Parse(test3Array[2]));
+					//DateTime test = DateTime.ParseExact(returnDate, "yyyy/MM/dd hh:mm:ss", zhHans, DateTimeStyles.None);
+					DateTime test2 = DateTime.Parse(formattedDate.ToString("yyyy/MM/dd"));
+					DateTime datetest = DateTime.Parse(total, zhHans);
+					DateTime datatest2 = DateTime.ParseExact(total, "yyyy/MM/dd", enUS, DateTimeStyles.None);
+					DateTime datatest3 = DateTime.ParseExact(total, "yyyy/MM/dd", enUS);
+					return datatest2;
+				}
+			}
+			return DateTime.MinValue;
+		}
+		public DateTime GetBroughtDate(int bookid)
+		{
+			listing();
+			foreach (DataGridViewRow row in dgvBorrow.Rows)
+			{
+				if (int.Parse(row.Cells[2].Value.ToString()).Equals(bookid))
+				{
+					DateTime returnDate = DateTime.Parse(row.Cells[4].Value.ToString());
+					return DateTime.Parse(returnDate.ToString("yyyy/MM/dd"));
+				}
+			}
+			return DateTime.MinValue;
+		}
+
+
 	}
 }

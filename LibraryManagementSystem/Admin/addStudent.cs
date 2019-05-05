@@ -229,5 +229,19 @@ namespace LibraryManagementSystem
 			}
 		}
 		#endregion
+
+		public int GetStudentId(string studentname, string studentsurname)
+		{
+			listing();
+			foreach (DataGridViewRow row in dgvStudent.Rows)
+			{
+				if (row.Cells[1].Value.ToString().Equals(studentname) &&
+					row.Cells[2].Value.ToString().Equals(studentsurname))
+				{
+					return int.Parse(row.Cells[0].Value.ToString());
+				}
+			}
+			return -1;
+		}
 	}
 }

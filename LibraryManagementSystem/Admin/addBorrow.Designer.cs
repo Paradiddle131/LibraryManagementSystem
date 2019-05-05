@@ -43,23 +43,23 @@ namespace LibraryManagementSystem
 			this.lollipopLabel2 = new LollipopLabel();
 			this.lollipopLabel1 = new LollipopLabel();
 			this.dgvBorrow = new System.Windows.Forms.DataGridView();
-			this.dtpTakenDate = new System.Windows.Forms.DateTimePicker();
-			this.dtpBroughtDate = new System.Windows.Forms.DateTimePicker();
-			this.nudStudentID = new System.Windows.Forms.NumericUpDown();
-			this.nudBookID = new System.Windows.Forms.NumericUpDown();
-			this.borrowsDataSet = new LibraryManagementSystem.Data.Datasets.borrowsDataSet();
-			this.borrowsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.borrowsTableAdapter = new LibraryManagementSystem.Data.Datasets.borrowsDataSetTableAdapters.borrowsTableAdapter();
 			this.borrowIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.takenDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.broughtDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.borrowsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.borrowsDataSet = new LibraryManagementSystem.Data.Datasets.borrowsDataSet();
+			this.dtpTakenDate = new System.Windows.Forms.DateTimePicker();
+			this.dtpBroughtDate = new System.Windows.Forms.DateTimePicker();
+			this.nudStudentID = new System.Windows.Forms.NumericUpDown();
+			this.nudBookID = new System.Windows.Forms.NumericUpDown();
+			this.borrowsTableAdapter = new LibraryManagementSystem.Data.Datasets.borrowsDataSetTableAdapters.borrowsTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBorrow)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudStudentID)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudBookID)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lollipopLabel4
@@ -172,51 +172,6 @@ namespace LibraryManagementSystem
 			this.dgvBorrow.TabIndex = 19;
 			this.dgvBorrow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrow_CellClick);
 			// 
-			// dtpTakenDate
-			// 
-			this.dtpTakenDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
-			this.dtpTakenDate.Location = new System.Drawing.Point(181, 126);
-			this.dtpTakenDate.Name = "dtpTakenDate";
-			this.dtpTakenDate.Size = new System.Drawing.Size(200, 20);
-			this.dtpTakenDate.TabIndex = 25;
-			// 
-			// dtpBroughtDate
-			// 
-			this.dtpBroughtDate.Location = new System.Drawing.Point(181, 157);
-			this.dtpBroughtDate.Name = "dtpBroughtDate";
-			this.dtpBroughtDate.Size = new System.Drawing.Size(200, 20);
-			this.dtpBroughtDate.TabIndex = 25;
-			// 
-			// nudStudentID
-			// 
-			this.nudStudentID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
-			this.nudStudentID.Location = new System.Drawing.Point(181, 63);
-			this.nudStudentID.Name = "nudStudentID";
-			this.nudStudentID.Size = new System.Drawing.Size(120, 20);
-			this.nudStudentID.TabIndex = 26;
-			// 
-			// nudBookID
-			// 
-			this.nudBookID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
-			this.nudBookID.Location = new System.Drawing.Point(181, 95);
-			this.nudBookID.Name = "nudBookID";
-			this.nudBookID.Size = new System.Drawing.Size(120, 20);
-			this.nudBookID.TabIndex = 26;
-			// 
-			// borrowsDataSet
-			// 
-			this.borrowsDataSet.DataSetName = "borrowsDataSet";
-			this.borrowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// borrowsBindingSource
-			// 
-			this.borrowsBindingSource.DataMember = "borrows";
-			this.borrowsBindingSource.DataSource = this.borrowsDataSet;
-			// 
-			// borrowsTableAdapter
-			// 
-			this.borrowsTableAdapter.ClearBeforeFill = true;
-			// 
 			// borrowIdDataGridViewTextBoxColumn
 			// 
 			this.borrowIdDataGridViewTextBoxColumn.DataPropertyName = "borrowId";
@@ -248,6 +203,51 @@ namespace LibraryManagementSystem
 			this.broughtDateDataGridViewTextBoxColumn.HeaderText = "broughtDate";
 			this.broughtDateDataGridViewTextBoxColumn.Name = "broughtDateDataGridViewTextBoxColumn";
 			// 
+			// borrowsBindingSource
+			// 
+			this.borrowsBindingSource.DataMember = "borrows";
+			this.borrowsBindingSource.DataSource = this.borrowsDataSet;
+			// 
+			// borrowsDataSet
+			// 
+			this.borrowsDataSet.DataSetName = "borrowsDataSet";
+			this.borrowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// dtpTakenDate
+			// 
+			this.dtpTakenDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+			this.dtpTakenDate.Location = new System.Drawing.Point(181, 126);
+			this.dtpTakenDate.Name = "dtpTakenDate";
+			this.dtpTakenDate.Size = new System.Drawing.Size(200, 20);
+			this.dtpTakenDate.TabIndex = 25;
+			// 
+			// dtpBroughtDate
+			// 
+			this.dtpBroughtDate.Location = new System.Drawing.Point(181, 157);
+			this.dtpBroughtDate.Name = "dtpBroughtDate";
+			this.dtpBroughtDate.Size = new System.Drawing.Size(200, 20);
+			this.dtpBroughtDate.TabIndex = 25;
+			// 
+			// nudStudentID
+			// 
+			this.nudStudentID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+			this.nudStudentID.Location = new System.Drawing.Point(181, 63);
+			this.nudStudentID.Name = "nudStudentID";
+			this.nudStudentID.Size = new System.Drawing.Size(120, 20);
+			this.nudStudentID.TabIndex = 26;
+			// 
+			// nudBookID
+			// 
+			this.nudBookID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+			this.nudBookID.Location = new System.Drawing.Point(181, 95);
+			this.nudBookID.Name = "nudBookID";
+			this.nudBookID.Size = new System.Drawing.Size(120, 20);
+			this.nudBookID.TabIndex = 26;
+			// 
+			// borrowsTableAdapter
+			// 
+			this.borrowsTableAdapter.ClearBeforeFill = true;
+			// 
 			// addBorrow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,10 +274,10 @@ namespace LibraryManagementSystem
 			this.Text = "addBorrow";
 			this.Load += new System.EventHandler(this.addBorrow_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvBorrow)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudStudentID)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudBookID)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsDataSet)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.borrowsBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -292,7 +292,6 @@ namespace LibraryManagementSystem
 		private System.Windows.Forms.Button btnAdd;
 		private LollipopLabel lollipopLabel2;
 		private LollipopLabel lollipopLabel1;
-		private System.Windows.Forms.DataGridView dgvBorrow;
 		private System.Windows.Forms.DateTimePicker dtpTakenDate;
 		private System.Windows.Forms.DateTimePicker dtpBroughtDate;
 		private System.Windows.Forms.NumericUpDown nudStudentID;
@@ -305,5 +304,6 @@ namespace LibraryManagementSystem
 		private System.Windows.Forms.DataGridViewTextBoxColumn bookIdDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn takenDateDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn broughtDateDataGridViewTextBoxColumn;
+		public System.Windows.Forms.DataGridView dgvBorrow;
 	}
 }

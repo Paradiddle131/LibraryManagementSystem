@@ -26,7 +26,7 @@ namespace LibraryManagementSystem
 		public void addBook_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'booksDataSet.books' table. You can move, or remove it, as needed.
-			booksTableAdapter.Fill(booksDataSet.books);
+			//booksTableAdapter.Fill(booksDataSet.books);
 			// TODO: This line of code loads data into the 'booksDataSet.books' table. You can move, or remove it, as needed.
 			booksTableAdapter.Fill(booksDataSet.books);
 			listing();
@@ -123,7 +123,7 @@ namespace LibraryManagementSystem
 			}
 		}
 
-		public int getBookId(string bookname)
+		public int GetBookId(string bookname)
 		{// if the method declared AFTER the listing() method, call listing();
 			int rowIndex = -1;
 			foreach (DataGridViewRow row in dgvBook.Rows)
@@ -151,6 +151,18 @@ namespace LibraryManagementSystem
 			//	MessageBox.Show("Couldn't return the authorname correctly.", "Error");
 			//	return -1;
 			//}
+		}
+
+		public int GetQuantity(string bookname)
+		{
+			foreach (DataGridViewRow row in dgvBook.Rows)
+			{
+				if (row.Cells[1].Value.ToString() == bookname)
+				{
+					return int.Parse(row.Cells[6].Value.ToString());
+				}
+			}
+			return -1;
 		}
 
 		private void dgvBook_CellClick(object sender, DataGridViewCellEventArgs e)

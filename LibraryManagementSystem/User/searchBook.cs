@@ -194,8 +194,8 @@ namespace LibraryManagementSystem
 			string thisAuthorSurname = dgvSearch.CurrentRow.Cells[1].Value.ToString();
 			string thisBookName = dgvSearch.CurrentRow.Cells[2].Value.ToString();
 			string thisCategory = dgvSearch.CurrentRow.Cells[3].Value.ToString();
-
-			int bookId = abook.getBookId(thisBookName);
+			int currentQuantity = abook.GetQuantity(thisBookName);
+			int bookId = abook.GetBookId(thisBookName);
 			int studentId = astudent.getStudentId(firstname, lastname);
 			MessageBox.Show("book id:" + bookId.ToString(), "student id:" + studentId.ToString());
 			UserProfile up = new UserProfile();
@@ -216,38 +216,45 @@ namespace LibraryManagementSystem
 
 			if (connection.State == ConnectionState.Closed)
 			{
-				int count = 0; // Trigger should be created only once.
-				connection.Open();
-				SqlCommand cmd = new SqlCommand
+				if (currentQuantity < 1)
 				{
-					Connection = connection,
-					CommandText =
-					"INSERT INTO borrows(" +
-					"studentId, bookId, takenDate, broughtDate)" +
-					"VALUES('" +
-					studentId + "','" + bookId + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.AddDays(21).ToString("yyyy/MM/dd") +
-					"') " +
-					"OPTION (QUERYTRACEON 460); " +
-					"DBCC TRACEOFF(460, -1); "
-					/*
-					Connection = connection,
-					CommandText =
-					"Insert Into userBorrowView(" +
-					"studentName, studentSurname, bookName, authorName, authorSurname, " +
-					"takenDate, broughtDate" +
-					") " +
-					"values('" + firstname + "','" + lastname + "','" + thisBookName + "','" +
-					thisAuthorName + "','" + thisAuthorSurname + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.AddDays(21).ToString("yyyy/MM/dd") +
-					"') " +
-					"OPTION (QUERYTRACEON 460); " +
-					"DBCC TRACEOFF(460, -1); "*/
-				};
-				count++;
-				cmd.ExecuteNonQuery();
-				cmd.Dispose();
-				connection.Close();
-				//MessageBox.Show("Borrowed", "Borrow Successful");
-				listing(); // must be called after the connection closed
+					MessageBox.Show("Out of stock!", "Too Late!");
+				}
+				else
+				{
+					int count = 0; // Trigger should be created only once.
+					connection.Open();
+					SqlCommand cmd = new SqlCommand
+					{
+						Connection = connection,
+						CommandText =
+						"INSERT INTO borrows(" +
+						"studentId, bookId, takenDate, broughtDate)" +
+						"VALUES('" +
+						studentId + "','" + bookId + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.AddDays(21).ToString("yyyy/MM/dd") +
+						"') " +
+						"OPTION (QUERYTRACEON 460); " +
+						"DBCC TRACEOFF(460, -1); "
+						/*
+						Connection = connection,
+						CommandText =
+						"Insert Into userBorrowView(" +
+						"studentName, studentSurname, bookName, authorName, authorSurname, " +
+						"takenDate, broughtDate" +
+						") " +
+						"values('" + firstname + "','" + lastname + "','" + thisBookName + "','" +
+						thisAuthorName + "','" + thisAuthorSurname + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.AddDays(21).ToString("yyyy/MM/dd") +
+						"') " +
+						"OPTION (QUERYTRACEON 460); " +
+						"DBCC TRACEOFF(460, -1); "*/
+					};
+					count++;
+					cmd.ExecuteNonQuery();
+					cmd.Dispose();
+					connection.Close();
+					//MessageBox.Show("Borrowed", "Borrow Successful");
+					listing(); // must be called after the connection closed
+				}
 			}
 		}
 	}

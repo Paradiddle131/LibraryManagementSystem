@@ -291,6 +291,8 @@ namespace LibraryManagementSystem {
             
             private global::System.Data.DataColumn columntypeId;
             
+            private global::System.Data.DataColumn columnquantity;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public booksDataTable() {
@@ -374,6 +376,14 @@ namespace LibraryManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn quantityColumn {
+                get {
+                    return this.columnquantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +419,7 @@ namespace LibraryManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public booksRow AddbooksRow(string bookName, int pagecount, int point, int authorId, int typeId) {
+            public booksRow AddbooksRow(string bookName, int pagecount, int point, int authorId, int typeId, int quantity) {
                 booksRow rowbooksRow = ((booksRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -417,7 +427,8 @@ namespace LibraryManagementSystem {
                         pagecount,
                         point,
                         authorId,
-                        typeId};
+                        typeId,
+                        quantity};
                 rowbooksRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowbooksRow);
                 return rowbooksRow;
@@ -453,6 +464,7 @@ namespace LibraryManagementSystem {
                 this.columnpoint = base.Columns["point"];
                 this.columnauthorId = base.Columns["authorId"];
                 this.columntypeId = base.Columns["typeId"];
+                this.columnquantity = base.Columns["quantity"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -470,6 +482,8 @@ namespace LibraryManagementSystem {
                 base.Columns.Add(this.columnauthorId);
                 this.columntypeId = new global::System.Data.DataColumn("typeId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntypeId);
+                this.columnquantity = new global::System.Data.DataColumn("quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnquantity);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnbookId}, true));
                 this.columnbookId.AutoIncrement = true;
@@ -712,6 +726,22 @@ namespace LibraryManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int quantity {
+                get {
+                    try {
+                        return ((int)(this[this.tablebooks.quantityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'quantity\' in table \'books\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebooks.quantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsbookNameNull() {
                 return this.IsNull(this.tablebooks.bookNameColumn);
             }
@@ -768,6 +798,18 @@ namespace LibraryManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SettypeIdNull() {
                 this[this.tablebooks.typeIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsquantityNull() {
+                return this.IsNull(this.tablebooks.quantityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetquantityNull() {
+                this[this.tablebooks.quantityColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -936,10 +978,11 @@ namespace LibraryManagementSystem.booksDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("point", "point");
             tableMapping.ColumnMappings.Add("authorId", "authorId");
             tableMapping.ColumnMappings.Add("typeId", "typeId");
+            tableMapping.ColumnMappings.Add("quantity", "quantity");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[books] WHERE (([bookId] = @Original_bookId) AND ((@IsNull_bookName = 1 AND [bookName] IS NULL) OR ([bookName] = @Original_bookName)) AND ((@IsNull_pagecount = 1 AND [pagecount] IS NULL) OR ([pagecount] = @Original_pagecount)) AND ((@IsNull_point = 1 AND [point] IS NULL) OR ([point] = @Original_point)) AND ((@IsNull_authorId = 1 AND [authorId] IS NULL) OR ([authorId] = @Original_authorId)) AND ((@IsNull_typeId = 1 AND [typeId] IS NULL) OR ([typeId] = @Original_typeId)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[books] WHERE (([bookId] = @Original_bookId) AND ((@IsNull_bookName = 1 AND [bookName] IS NULL) OR ([bookName] = @Original_bookName)) AND ((@IsNull_pagecount = 1 AND [pagecount] IS NULL) OR ([pagecount] = @Original_pagecount)) AND ((@IsNull_point = 1 AND [point] IS NULL) OR ([point] = @Original_point)) AND ((@IsNull_authorId = 1 AND [authorId] IS NULL) OR ([authorId] = @Original_authorId)) AND ((@IsNull_typeId = 1 AND [typeId] IS NULL) OR ([typeId] = @Original_typeId)) AND ((@IsNull_quantity = 1 AND [quantity] IS NULL) OR ([quantity] = @Original_quantity)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bookId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bookName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -952,28 +995,30 @@ namespace LibraryManagementSystem.booksDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_authorId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "authorId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_typeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "typeId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_typeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "typeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantity", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[books] ([bookName], [pagecount], [point], [authorId], [typeId]" +
-                ") VALUES (@bookName, @pagecount, @point, @authorId, @typeId);\r\nSELECT bookId, bo" +
-                "okName, pagecount, point, authorId, typeId FROM books WHERE (bookId = SCOPE_IDEN" +
-                "TITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[books] ([bookName], [pagecount], [point], [authorId], [typeId], [quantity]) VALUES (@bookName, @pagecount, @point, @authorId, @typeId, @quantity);
+SELECT bookId, bookName, pagecount, point, authorId, typeId, quantity FROM books WHERE (bookId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bookName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pagecount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagecount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@point", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "point", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@authorId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "authorId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@typeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "typeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[books] SET [bookName] = @bookName, [pagecount] = @pagecount, [point] = @point, [authorId] = @authorId, [typeId] = @typeId WHERE (([bookId] = @Original_bookId) AND ((@IsNull_bookName = 1 AND [bookName] IS NULL) OR ([bookName] = @Original_bookName)) AND ((@IsNull_pagecount = 1 AND [pagecount] IS NULL) OR ([pagecount] = @Original_pagecount)) AND ((@IsNull_point = 1 AND [point] IS NULL) OR ([point] = @Original_point)) AND ((@IsNull_authorId = 1 AND [authorId] IS NULL) OR ([authorId] = @Original_authorId)) AND ((@IsNull_typeId = 1 AND [typeId] IS NULL) OR ([typeId] = @Original_typeId)));
-SELECT bookId, bookName, pagecount, point, authorId, typeId FROM books WHERE (bookId = @bookId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[books] SET [bookName] = @bookName, [pagecount] = @pagecount, [point] = @point, [authorId] = @authorId, [typeId] = @typeId, [quantity] = @quantity WHERE (([bookId] = @Original_bookId) AND ((@IsNull_bookName = 1 AND [bookName] IS NULL) OR ([bookName] = @Original_bookName)) AND ((@IsNull_pagecount = 1 AND [pagecount] IS NULL) OR ([pagecount] = @Original_pagecount)) AND ((@IsNull_point = 1 AND [point] IS NULL) OR ([point] = @Original_point)) AND ((@IsNull_authorId = 1 AND [authorId] IS NULL) OR ([authorId] = @Original_authorId)) AND ((@IsNull_typeId = 1 AND [typeId] IS NULL) OR ([typeId] = @Original_typeId)) AND ((@IsNull_quantity = 1 AND [quantity] IS NULL) OR ([quantity] = @Original_quantity)));
+SELECT bookId, bookName, pagecount, point, authorId, typeId, quantity FROM books WHERE (bookId = @bookId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bookName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pagecount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagecount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@point", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "point", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@authorId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "authorId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@typeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "typeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bookId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bookName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bookName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -985,6 +1030,8 @@ SELECT bookId, bookName, pagecount, point, authorId, typeId FROM books WHERE (bo
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_authorId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "authorId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_typeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "typeId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_typeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "typeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantity", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bookId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "bookId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1001,7 +1048,8 @@ SELECT bookId, bookName, pagecount, point, authorId, typeId FROM books WHERE (bo
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT bookId, bookName, pagecount, point, authorId, typeId FROM dbo.books";
+            this._commandCollection[0].CommandText = "SELECT bookId, bookName, pagecount, point, authorId, typeId, quantity FROM dbo.bo" +
+                "oks";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1062,7 +1110,7 @@ SELECT bookId, bookName, pagecount, point, authorId, typeId FROM books WHERE (bo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_bookId, string Original_bookName, global::System.Nullable<int> Original_pagecount, global::System.Nullable<int> Original_point, global::System.Nullable<int> Original_authorId, global::System.Nullable<int> Original_typeId) {
+        public virtual int Delete(int Original_bookId, string Original_bookName, global::System.Nullable<int> Original_pagecount, global::System.Nullable<int> Original_point, global::System.Nullable<int> Original_authorId, global::System.Nullable<int> Original_typeId, global::System.Nullable<int> Original_quantity) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_bookId));
             if ((Original_bookName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1104,6 +1152,14 @@ SELECT bookId, bookName, pagecount, point, authorId, typeId FROM books WHERE (bo
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
+            if ((Original_quantity.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_quantity.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1124,7 +1180,7 @@ SELECT bookId, bookName, pagecount, point, authorId, typeId FROM books WHERE (bo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string bookName, global::System.Nullable<int> pagecount, global::System.Nullable<int> point, global::System.Nullable<int> authorId, global::System.Nullable<int> typeId) {
+        public virtual int Insert(string bookName, global::System.Nullable<int> pagecount, global::System.Nullable<int> point, global::System.Nullable<int> authorId, global::System.Nullable<int> typeId, global::System.Nullable<int> quantity) {
             if ((bookName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1155,6 +1211,12 @@ SELECT bookId, bookName, pagecount, point, authorId, typeId FROM books WHERE (bo
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            if ((quantity.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(quantity.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1175,7 +1237,7 @@ SELECT bookId, bookName, pagecount, point, authorId, typeId FROM books WHERE (bo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string bookName, global::System.Nullable<int> pagecount, global::System.Nullable<int> point, global::System.Nullable<int> authorId, global::System.Nullable<int> typeId, int Original_bookId, string Original_bookName, global::System.Nullable<int> Original_pagecount, global::System.Nullable<int> Original_point, global::System.Nullable<int> Original_authorId, global::System.Nullable<int> Original_typeId, int bookId) {
+        public virtual int Update(string bookName, global::System.Nullable<int> pagecount, global::System.Nullable<int> point, global::System.Nullable<int> authorId, global::System.Nullable<int> typeId, global::System.Nullable<int> quantity, int Original_bookId, string Original_bookName, global::System.Nullable<int> Original_pagecount, global::System.Nullable<int> Original_point, global::System.Nullable<int> Original_authorId, global::System.Nullable<int> Original_typeId, global::System.Nullable<int> Original_quantity, int bookId) {
             if ((bookName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1206,48 +1268,62 @@ SELECT bookId, bookName, pagecount, point, authorId, typeId FROM books WHERE (bo
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_bookId));
-            if ((Original_bookName == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            if ((quantity.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(quantity.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_bookName));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_bookId));
+            if ((Original_bookName == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_bookName));
             }
             if ((Original_pagecount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_pagecount.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_pagecount.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_point.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_point.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_point.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_authorId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_authorId.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_authorId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_typeId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_typeId.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_typeId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(bookId));
+            if ((Original_quantity.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_quantity.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(bookId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1268,8 +1344,8 @@ SELECT bookId, bookName, pagecount, point, authorId, typeId FROM books WHERE (bo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string bookName, global::System.Nullable<int> pagecount, global::System.Nullable<int> point, global::System.Nullable<int> authorId, global::System.Nullable<int> typeId, int Original_bookId, string Original_bookName, global::System.Nullable<int> Original_pagecount, global::System.Nullable<int> Original_point, global::System.Nullable<int> Original_authorId, global::System.Nullable<int> Original_typeId) {
-            return this.Update(bookName, pagecount, point, authorId, typeId, Original_bookId, Original_bookName, Original_pagecount, Original_point, Original_authorId, Original_typeId, Original_bookId);
+        public virtual int Update(string bookName, global::System.Nullable<int> pagecount, global::System.Nullable<int> point, global::System.Nullable<int> authorId, global::System.Nullable<int> typeId, global::System.Nullable<int> quantity, int Original_bookId, string Original_bookName, global::System.Nullable<int> Original_pagecount, global::System.Nullable<int> Original_point, global::System.Nullable<int> Original_authorId, global::System.Nullable<int> Original_typeId, global::System.Nullable<int> Original_quantity) {
+            return this.Update(bookName, pagecount, point, authorId, typeId, quantity, Original_bookId, Original_bookName, Original_pagecount, Original_point, Original_authorId, Original_typeId, Original_quantity, Original_bookId);
         }
     }
     
