@@ -19,8 +19,6 @@ namespace LibraryManagementSystem.User
 		{
 			InitializeComponent();
 			login = new Login();
-			lblName.Text = login.txtName.Text;
-			lblSurname.Text = login.txtSurname.Text;
 		}
 
 		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
@@ -121,6 +119,47 @@ namespace LibraryManagementSystem.User
 				//MessageBox.Show("Borrowed", "Borrow Successful");
 				listing(); // must be called after the connection closed
 			}
+			string message = thisStudentName + " " + thisStudentSurname + " returned " + bookname;
+			MessageBox.Show(message, "Returned Successfully!");
+
+		}
+
+		private void DgvBorrowDisplay_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			string[] borrowDateArray = dgvBorrowDisplay.CurrentRow.Cells[5].Value.ToString().Split('/');
+			int borrowYear = int.Parse(borrowDateArray[2].Substring(0, 4));
+			int borrowMonth = int.Parse(borrowDateArray[1]);
+			int borrowDay = int.Parse(borrowDateArray[0]);
+
+			string[] returnDateArray = dgvBorrowDisplay.CurrentRow.Cells[6].Value.ToString().Split('/');
+			int returnYear = int.Parse(returnDateArray[2].Substring(0, 4));
+			int returnMonth = int.Parse(returnDateArray[1]);
+			int returnDay = int.Parse(returnDateArray[0]);
+
+			string[] todayDateArray = DateTime.Now.ToString().Split('/');
+			int todayYear = int.Parse(todayDateArray[2].Substring(0, 4));
+			int todayMonth = int.Parse(todayDateArray[1]);
+			int todayDay = int.Parse(todayDateArray[0]);
+
+			DateTime borrowDate = new DateTime(borrowYear, borrowDay, borrowMonth);
+			DateTime returnDate = new DateTime(returnYear, returnDay, returnMonth);
+			DateTime todayDate = new DateTime(todayYear, todayMonth, todayDay);
+			int dayDiff = (returnDate - borrowDate).Days;
+			int todayDiff = (returnDate - todayDate).Days;
+
+			lblDue.Text = "Borrowed for " + dayDiff.ToString() + " days";
+
+			if (todayDiff > 0)
+			{
+				lblRemaining.Text = todayDiff.ToString() + " days before return date";
+			}
+			else
+			{
+				lblRemaining.Text = Math.Abs(todayDiff).ToString() + " days passed";
+			}
+
+			//lblDue.Text = (int.Parse(dgvBorrowDisplay.CurrentRow.Cells[6].Value.ToString()) -
+			//	int.Parse(dgvBorrowDisplay.CurrentRow.Cells[5].Value.ToString())).ToString();
 		}
 	}
 }

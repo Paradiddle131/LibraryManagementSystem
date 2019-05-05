@@ -197,7 +197,7 @@ namespace LibraryManagementSystem
 			int currentQuantity = abook.GetQuantity(thisBookName);
 			int bookId = abook.GetBookId(thisBookName);
 			int studentId = astudent.getStudentId(firstname, lastname);
-			MessageBox.Show("book id:" + bookId.ToString(), "student id:" + studentId.ToString());
+			//MessageBox.Show("book id:" + bookId.ToString(), "student id:" + studentId.ToString());
 			UserProfile up = new UserProfile();
 			/*
 			foreach (DataGridViewRow searchRow in dgvSearch.Rows)
@@ -258,6 +258,8 @@ namespace LibraryManagementSystem
 					listing(); // must be called after the connection closed
 				}
 			}
+			string message = firstname + " " + lastname + " borrowed " + thisBookName + " by " + thisAuthorName + " " + thisAuthorSurname;
+			MessageBox.Show(message, "Borrow Successful!");
 		}
 	}
 }

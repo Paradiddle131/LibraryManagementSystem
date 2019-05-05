@@ -41,10 +41,10 @@
 			this.userBorrowViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.userBorrowDataSet = new LibraryManagementSystem.userBorrowDataSet();
 			this.btnBack = new System.Windows.Forms.Button();
-			this.lblSurname = new System.Windows.Forms.Label();
-			this.lblName = new System.Windows.Forms.Label();
 			this.userBorrowViewTableAdapter = new LibraryManagementSystem.userBorrowDataSetTableAdapters.userBorrowViewTableAdapter();
 			this.btnReturn = new LollipopButton();
+			this.lblDue = new System.Windows.Forms.Label();
+			this.lblRemaining = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBorrowDisplay)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userBorrowViewBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userBorrowDataSet)).BeginInit();
@@ -69,6 +69,7 @@
 			this.dgvBorrowDisplay.Name = "dgvBorrowDisplay";
 			this.dgvBorrowDisplay.Size = new System.Drawing.Size(756, 292);
 			this.dgvBorrowDisplay.TabIndex = 1;
+			this.dgvBorrowDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvBorrowDisplay_CellClick);
 			// 
 			// studentNameDataGridViewTextBoxColumn
 			// 
@@ -133,30 +134,6 @@
 			this.btnBack.UseVisualStyleBackColor = false;
 			this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
 			// 
-			// lblSurname
-			// 
-			this.lblSurname.AutoSize = true;
-			this.lblSurname.BackColor = System.Drawing.Color.Transparent;
-			this.lblSurname.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
-			this.lblSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
-			this.lblSurname.Location = new System.Drawing.Point(98, 51);
-			this.lblSurname.Name = "lblSurname";
-			this.lblSurname.Size = new System.Drawing.Size(87, 27);
-			this.lblSurname.TabIndex = 15;
-			this.lblSurname.Text = "surname";
-			// 
-			// lblName
-			// 
-			this.lblName.AutoSize = true;
-			this.lblName.BackColor = System.Drawing.Color.Transparent;
-			this.lblName.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
-			this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
-			this.lblName.Location = new System.Drawing.Point(98, 15);
-			this.lblName.Name = "lblName";
-			this.lblName.Size = new System.Drawing.Size(59, 27);
-			this.lblName.TabIndex = 16;
-			this.lblName.Text = "name";
-			// 
 			// userBorrowViewTableAdapter
 			// 
 			this.userBorrowViewTableAdapter.ClearBeforeFill = true;
@@ -173,6 +150,30 @@
 			this.btnReturn.Text = "RETURN";
 			this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
 			// 
+			// lblDue
+			// 
+			this.lblDue.AutoSize = true;
+			this.lblDue.BackColor = System.Drawing.Color.Transparent;
+			this.lblDue.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblDue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
+			this.lblDue.Location = new System.Drawing.Point(304, 15);
+			this.lblDue.Name = "lblDue";
+			this.lblDue.Size = new System.Drawing.Size(44, 27);
+			this.lblDue.TabIndex = 16;
+			this.lblDue.Text = "due";
+			// 
+			// lblRemaining
+			// 
+			this.lblRemaining.AutoSize = true;
+			this.lblRemaining.BackColor = System.Drawing.Color.Transparent;
+			this.lblRemaining.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblRemaining.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
+			this.lblRemaining.Location = new System.Drawing.Point(304, 51);
+			this.lblRemaining.Name = "lblRemaining";
+			this.lblRemaining.Size = new System.Drawing.Size(145, 27);
+			this.lblRemaining.TabIndex = 16;
+			this.lblRemaining.Text = "Remaining Day";
+			// 
 			// UserProfile
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,8 +183,8 @@
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(780, 400);
 			this.Controls.Add(this.btnReturn);
-			this.Controls.Add(this.lblSurname);
-			this.Controls.Add(this.lblName);
+			this.Controls.Add(this.lblRemaining);
+			this.Controls.Add(this.lblDue);
 			this.Controls.Add(this.btnBack);
 			this.Controls.Add(this.dgvBorrowDisplay);
 			this.DoubleBuffered = true;
@@ -216,8 +217,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn authorSurnameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn takenDateDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn broughtDateDataGridViewTextBoxColumn;
-		public System.Windows.Forms.Label lblSurname;
-		public System.Windows.Forms.Label lblName;
 		public LollipopButton btnReturn;
+		public System.Windows.Forms.Label lblDue;
+		public System.Windows.Forms.Label lblRemaining;
 	}
 }
