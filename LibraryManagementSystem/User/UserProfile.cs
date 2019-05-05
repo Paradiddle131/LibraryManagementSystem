@@ -77,8 +77,8 @@ namespace LibraryManagementSystem.User
 			int bookid = abook.GetBookId(bookname);
 			int borrowid = aborrow.GetBorrowId(bookid, studentId);
 			int studentid = aborrow.GetStudentId(bookid);
-			DateTime takendate = aborrow.GetTakenDate(bookid);
-			DateTime broughtdate = aborrow.GetBroughtDate(bookid);
+			string takendate = aborrow.GetTakenDate(bookid);
+			string broughtdate = aborrow.GetBroughtDate(bookid);
 
 			if (connection.State == ConnectionState.Closed)
 			{
@@ -88,7 +88,7 @@ namespace LibraryManagementSystem.User
 				{
 					Connection = connection,
 					CommandText =
-					"UPDATE books SET quantity = " + (currentQuantity - 1) + " WHERE bookId = " + bookid +
+					"UPDATE books SET quantity = " + (currentQuantity + 1) + " WHERE bookId = " + bookid +
 					" " +
 					"DELETE FROM borrows WHERE " +
 					" borrowId = '" + borrowid + "' AND " +

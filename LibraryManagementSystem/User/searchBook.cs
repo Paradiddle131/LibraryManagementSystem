@@ -234,7 +234,9 @@ namespace LibraryManagementSystem
 						studentId + "','" + bookId + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.AddDays(21).ToString("yyyy/MM/dd") +
 						"') " +
 						"OPTION (QUERYTRACEON 460); " +
-						"DBCC TRACEOFF(460, -1); "
+						"DBCC TRACEOFF(460, -1); " +
+						"UPDATE books SET quantity = " + (currentQuantity - 1) + " WHERE bookId = " + bookId +
+						" "
 						/*
 						Connection = connection,
 						CommandText =

@@ -160,10 +160,14 @@ namespace LibraryManagementSystem
 			listing();
 			foreach (DataGridViewRow row in dgvBorrow.Rows)
 			{
-				if (int.Parse(row.Cells[1].Value.ToString()).Equals(studentid) &&
-				int.Parse(row.Cells[2].Value.ToString()).Equals(bookid))
+				if (row.Cells[1].Value.ToString() != DBNull.Value.ToString() &&
+					row.Cells[2].Value.ToString() != DBNull.Value.ToString())
 				{
-					return int.Parse(row.Cells[0].Value.ToString());
+					if (int.Parse(row.Cells[1].Value.ToString()).Equals(studentid) &&
+						int.Parse(row.Cells[2].Value.ToString()).Equals(bookid))
+					{
+						return int.Parse(row.Cells[0].Value.ToString());
+					}
 				}
 			}
 			return -1;
@@ -182,7 +186,7 @@ namespace LibraryManagementSystem
 			return -1;
 		}
 
-		public DateTime GetTakenDate(int bookid)
+		public string GetTakenDate(int bookid)
 		{
 			CultureInfo zhHans = new CultureInfo("zh-Hans");
 			CultureInfo enUS = new CultureInfo("en-US");
@@ -192,6 +196,27 @@ namespace LibraryManagementSystem
 				if (int.Parse(row.Cells[2].Value.ToString()).Equals(bookid))
 				{
 					string returnDate = row.Cells[3].Value.ToString();
+					string[] fulldate = row.Cells[3].Value.ToString().Split('/');
+					string[] splitIntoTwo = row.Cells[3].Value.ToString().Split(' ');
+					int year2 = int.Parse(fulldate[2].Substring(0, 4));
+					int month2 = int.Parse(fulldate[1]);
+					int day2 = int.Parse(fulldate[0]);
+					int hour = int.Parse(splitIntoTwo[1].Substring(0, 1));
+					int minute = int.Parse(splitIntoTwo[1].Substring(2, 2));
+					int second = int.Parse(splitIntoTwo[1].Substring(5, 2));
+					string total2 = "";
+					if (returnDate.Substring(17) == "AM" ||
+						returnDate.Substring(18) == "AM" ||
+						returnDate.Substring(19) == "AM")
+					{
+						total2 = year2 + "/" + month2 + "/" + day2 + " " + hour + ":" + minute + ":" + second + " " + "AM";
+					}
+					else
+					{
+						total2 = year2 + "/" + month2 + "/" + day2 + " " + hour + ":" + minute + ":" + second + " " + "PM";
+					}
+
+
 					string[] date = row.Cells[3].Value.ToString().Split('/');
 					int year = int.Parse(date[2].Substring(0, 4));
 					int month = int.Parse(date[1]);
@@ -214,23 +239,26 @@ namespace LibraryManagementSystem
 					DateTime datetest = DateTime.Parse(total, zhHans);
 					DateTime datatest2 = DateTime.ParseExact(total, "yyyy/MM/dd", enUS, DateTimeStyles.None);
 					DateTime datatest3 = DateTime.ParseExact(total, "yyyy/MM/dd", enUS);
-					return datatest2;
+					return total2;
 				}
 			}
-			return DateTime.MinValue;
+			return "";
 		}
-		public DateTime GetBroughtDate(int bookid)
+		public string GetBroughtDate(int bookid)
 		{
 			listing();
 			foreach (DataGridViewRow row in dgvBorrow.Rows)
 			{
 				if (int.Parse(row.Cells[2].Value.ToString()).Equals(bookid))
 				{
-					DateTime returnDate = DateTime.Parse(row.Cells[4].Value.ToString());
-					return DateTime.Parse(returnDate.ToString("yyyy/MM/dd"));
+					string returnDate = row.Cells[3].Value.ToString();
+					string test4 = DateTime.Parse(returnDate).ToString("yyyy/MM/dd");
+					return test4;
+					//DateTime returnDate = DateTime.Parse(row.Cells[4].Value.ToString());
+					//return DateTime.Parse(returnDate.ToString("yyyy/MM/dd"));
 				}
 			}
-			return DateTime.MinValue;
+			return "";
 		}
 
 
