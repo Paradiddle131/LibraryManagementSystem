@@ -195,26 +195,70 @@ namespace LibraryManagementSystem
 			{
 				if (int.Parse(row.Cells[2].Value.ToString()).Equals(bookid))
 				{
-					string returnDate = row.Cells[3].Value.ToString();
-					string[] fulldate = row.Cells[3].Value.ToString().Split('/');
-					string[] splitIntoTwo = row.Cells[3].Value.ToString().Split(' ');
-					int year2 = int.Parse(fulldate[2].Substring(0, 4));
-					int month2 = int.Parse(fulldate[1]);
-					int day2 = int.Parse(fulldate[0]);
-					int hour = int.Parse(splitIntoTwo[1].Substring(0, 1));
-					int minute = int.Parse(splitIntoTwo[1].Substring(2, 2));
-					int second = int.Parse(splitIntoTwo[1].Substring(5, 2));
+					string hour = "";
+					string minute = "";
+					string second = "";
+					string milisecond = "";
 					string total2 = "";
-					if (returnDate.Substring(17) == "AM" ||
-						returnDate.Substring(18) == "AM" ||
-						returnDate.Substring(19) == "AM")
+					string month2 = "";
+					string year2 = "";
+					string day2 = "";
+					string returnDate = row.Cells[3].Value.ToString(); // mm/dd/yyyy
+					string[] fulldate = row.Cells[3].Value.ToString().Split('/');
+					string[] splitIntoThree = fulldate[2].ToString().Split(' ');
+					year2 = fulldate[2].Substring(0, 4);
+					if (fulldate[0].Length == 1) // < 10
 					{
-						total2 = year2 + "/" + month2 + "/" + day2 + " " + hour + ":" + minute + ":" + second + " " + "AM";
+						month2 = "0" + fulldate[0];
 					}
 					else
 					{
-						total2 = year2 + "/" + month2 + "/" + day2 + " " + hour + ":" + minute + ":" + second + " " + "PM";
+						month2 = fulldate[0];
 					}
+
+					if (fulldate[1].Length == 1) // < 10
+					{
+						day2 = "0" + fulldate[1];
+					}
+					else
+					{
+						day2 = fulldate[1];
+					}
+					if ((returnDate.Substring(17) == "PM" ||
+						returnDate.Substring(18) == "PM" ||
+						returnDate.Substring(19) == "PM") &&
+						(returnDate.Substring(17) != "12" ||
+						returnDate.Substring(18) != "12" ||
+						returnDate.Substring(19) != "12"))
+					{
+						string hi = splitIntoThree[1].Substring(0, 2);
+						bool col = splitIntoThree[1].Substring(0, 2).Contains(":");
+						if (splitIntoThree[1].Substring(0, 2).Contains(":")) // < 10
+						{
+							hour = (int.Parse(splitIntoThree[1].Substring(0, 1)) + 12).ToString();
+						}
+						else
+						{
+							hour = (int.Parse(splitIntoThree[1].Substring(0, 2)) + 12).ToString();
+						}
+					}
+					else
+					{
+						hour = splitIntoThree[1].Substring(0, 2);
+					}
+					if (splitIntoThree[1].Substring(3, 2).Contains(":")) // <10
+					{
+						minute = "0" + splitIntoThree[1].Substring(3, 2);
+					}
+					else
+					{
+						minute = splitIntoThree[1].Substring(3, 2);
+					}
+					//second = splitIntoThree[1].Substring(6, 2);
+					second = "00";
+					milisecond = "000";
+
+					total2 = year2 + "-" + month2 + "-" + day2 + " " + hour + ":" + minute + ":" + second + " " + milisecond;
 
 
 					string[] date = row.Cells[3].Value.ToString().Split('/');
@@ -246,21 +290,98 @@ namespace LibraryManagementSystem
 		}
 		public string GetBroughtDate(int bookid)
 		{
+			CultureInfo zhHans = new CultureInfo("zh-Hans");
+			CultureInfo enUS = new CultureInfo("en-US");
 			listing();
 			foreach (DataGridViewRow row in dgvBorrow.Rows)
 			{
 				if (int.Parse(row.Cells[2].Value.ToString()).Equals(bookid))
 				{
-					string returnDate = row.Cells[3].Value.ToString();
-					string test4 = DateTime.Parse(returnDate).ToString("yyyy/MM/dd");
-					return test4;
-					//DateTime returnDate = DateTime.Parse(row.Cells[4].Value.ToString());
-					//return DateTime.Parse(returnDate.ToString("yyyy/MM/dd"));
+					string hour = "";
+					string minute = "";
+					string second = "";
+					string milisecond = "";
+					string total2 = "";
+					string month2 = "";
+					string year2 = "";
+					string day2 = "";
+					string returnDate = row.Cells[4].Value.ToString(); // mm/dd/yyyy
+					string[] fulldate = row.Cells[4].Value.ToString().Split('/');
+					string[] splitIntoThree = fulldate[2].ToString().Split(' ');
+					year2 = fulldate[2].Substring(0, 4);
+					if (fulldate[0].Length == 1) // < 10
+					{
+						month2 = "0" + fulldate[0];
+					}
+					else
+					{
+						month2 = fulldate[0];
+					}
+
+					if (fulldate[1].Length == 1) // < 10
+					{
+						day2 = "0" + fulldate[1];
+					}
+					else
+					{
+						day2 = fulldate[1];
+					}
+					if ((returnDate.Substring(17) == "PM" ||
+						returnDate.Substring(18) == "PM" ||
+						returnDate.Substring(19) == "PM") &&
+						(returnDate.Substring(17) != "12" ||
+						returnDate.Substring(18) != "12" ||
+						returnDate.Substring(19) != "12"))
+					{
+						string hi = splitIntoThree[1].Substring(0, 2);
+						bool col = splitIntoThree[1].Substring(0, 2).Contains(":");
+						if (splitIntoThree[1].Substring(0, 2).Contains(":")) // < 10
+						{
+							hour = (int.Parse(splitIntoThree[1].Substring(0, 1)) + 12).ToString();
+						}
+						else
+						{
+							hour = (int.Parse(splitIntoThree[1].Substring(0, 2)) + 12).ToString();
+						}
+					}
+					else
+					{
+						hour = splitIntoThree[1].Substring(0, 2);
+					}
+					if (splitIntoThree[1].Substring(3, 2).Contains(":")) // <10
+					{
+						minute = "0" + splitIntoThree[1].Substring(3, 2);
+					}
+					else
+					{
+						minute = splitIntoThree[1].Substring(3, 2);
+					}
+					//second = splitIntoThree[1].Substring(6, 2);
+					second = "00";
+					milisecond = "000";
+
+					total2 = year2 + "-" + month2 + "-" + day2 + " " + hour + ":" + minute + ":" + second + " " + milisecond;
+
+					return total2;
 				}
+				//public string GetBroughtDate(int bookid)
+				//{
+				//	listing();
+				//	foreach (DataGridViewRow row in dgvBorrow.Rows)
+				//	{
+				//		if (int.Parse(row.Cells[2].Value.ToString()).Equals(bookid))
+				//		{
+				//			string returnDate = row.Cells[3].Value.ToString();
+				//			string test4 = DateTime.Parse(returnDate).ToString("yyyy/MM/dd");
+				//			return test4;
+				//			//DateTime returnDate = DateTime.Parse(row.Cells[4].Value.ToString());
+				//			//return DateTime.Parse(returnDate.ToString("yyyy/MM/dd"));
+				//		}
+				//	}
+				//	return "";
+				//}
 			}
 			return "";
 		}
-
-
 	}
 }

@@ -43,6 +43,47 @@ namespace LibraryManagementSystem
 			lblSurname.BringToFront();
 		}
 
+		internal string GetFullName()
+		{
+			UserProfile up = new UserProfile();
+			string firstname = "";
+			string lastname = "";
+			string fullNameInput = "";
+			fullNameInput = Interaction.InputBox("Enter your full name please:", "Your Full Name.", "");
+			StartPosition = FormStartPosition.CenterScreen;
+			string[] splitted = fullNameInput.Split(' ');
+			bool singleName = true;
+			for (int i = 0; i < splitted.Length; i++)
+			{
+				if (splitted.Length == 2 && firstname == "")
+				{
+					firstname = splitted[i];
+				}
+				else if (splitted.Length > 2 && i != splitted.Length - 1)
+				{
+					singleName = false;
+					if (i == splitted.Length - 1)
+					{
+						firstname += splitted[i];
+					}
+					else
+					{
+						firstname += splitted[i] + " ";
+						//firstnameL.Add(splitted[i]);
+					}
+				}
+			}
+			lastname = splitted[splitted.Length - 1];
+			if (singleName)
+			{
+				return firstname + " " + lastname;
+			}
+			else
+			{
+				return firstname + lastname;
+			}
+		}
+
 		public string GetName()
 		{
 			UserProfile up = new UserProfile();
@@ -72,7 +113,7 @@ namespace LibraryManagementSystem
 		public string GetSurname()
 		{
 			UserProfile up = new UserProfile();
-			string surname = "";
+			string lastname = "";
 			string fullNameInput = "";
 			if (fullNameInput == "")
 			{
@@ -81,22 +122,23 @@ namespace LibraryManagementSystem
 			}
 
 			string[] splitted = fullNameInput.Split(' ');
-			surname = splitted[splitted.Length - 1];
-			return surname;
+			lastname = splitted[splitted.Length - 1];
+			return lastname;
 		}
 
 		public void btnUser_Click(object sender, EventArgs e)
 		{
 			UserProfile up = new UserProfile();
-			if (GetName() == "TERMINATE")
-			{
-				MessageBox.Show("Please enter your full name", "Cannot Be Empty");
-				up.Hide();
-			}
-			else
-			{
-				up.Show();
-			}
+			//if (GetName() == "TERMINATE")
+			//{
+			//	MessageBox.Show("Please enter your full name", "Cannot Be Empty");
+			//	up.Hide();
+			//}
+			//else
+			//{
+			//	up.Show();
+			//}
+			up.Show();
 		}
 
 		private void btnLogout_Click(object sender, EventArgs e)

@@ -45,6 +45,7 @@
 			this.btnReturn = new LollipopButton();
 			this.lblDue = new System.Windows.Forms.Label();
 			this.lblRemaining = new System.Windows.Forms.Label();
+			this.lblCharge = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBorrowDisplay)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userBorrowViewBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userBorrowDataSet)).BeginInit();
@@ -156,7 +157,7 @@
 			this.lblDue.BackColor = System.Drawing.Color.Transparent;
 			this.lblDue.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.lblDue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
-			this.lblDue.Location = new System.Drawing.Point(304, 15);
+			this.lblDue.Location = new System.Drawing.Point(139, 15);
 			this.lblDue.Name = "lblDue";
 			this.lblDue.Size = new System.Drawing.Size(44, 27);
 			this.lblDue.TabIndex = 16;
@@ -168,11 +169,23 @@
 			this.lblRemaining.BackColor = System.Drawing.Color.Transparent;
 			this.lblRemaining.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
 			this.lblRemaining.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
-			this.lblRemaining.Location = new System.Drawing.Point(304, 51);
+			this.lblRemaining.Location = new System.Drawing.Point(139, 56);
 			this.lblRemaining.Name = "lblRemaining";
 			this.lblRemaining.Size = new System.Drawing.Size(145, 27);
 			this.lblRemaining.TabIndex = 16;
 			this.lblRemaining.Text = "Remaining Day";
+			// 
+			// lblCharge
+			// 
+			this.lblCharge.AutoSize = true;
+			this.lblCharge.BackColor = System.Drawing.Color.Transparent;
+			this.lblCharge.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblCharge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(102)))), ((int)(((byte)(225)))));
+			this.lblCharge.Location = new System.Drawing.Point(463, 33);
+			this.lblCharge.Name = "lblCharge";
+			this.lblCharge.Size = new System.Drawing.Size(107, 27);
+			this.lblCharge.TabIndex = 16;
+			this.lblCharge.Text = "No charge";
 			// 
 			// UserProfile
 			// 
@@ -184,6 +197,7 @@
 			this.ClientSize = new System.Drawing.Size(780, 400);
 			this.Controls.Add(this.btnReturn);
 			this.Controls.Add(this.lblRemaining);
+			this.Controls.Add(this.lblCharge);
 			this.Controls.Add(this.lblDue);
 			this.Controls.Add(this.btnBack);
 			this.Controls.Add(this.dgvBorrowDisplay);
@@ -220,5 +234,6 @@
 		public LollipopButton btnReturn;
 		public System.Windows.Forms.Label lblDue;
 		public System.Windows.Forms.Label lblRemaining;
+		public System.Windows.Forms.Label lblCharge;
 	}
 }
