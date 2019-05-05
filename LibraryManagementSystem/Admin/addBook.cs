@@ -124,19 +124,19 @@ namespace LibraryManagementSystem
 		}
 
 		public int getBookId(string bookname)
-		{
+		{// if the method declared AFTER the listing() method, call listing();
 			int rowIndex = -1;
 			foreach (DataGridViewRow row in dgvBook.Rows)
-			{
+			{// if the Rows has 0 item, dgv may not be public
 				if (row.Cells[1].Value.ToString().Equals(bookname))
 				{
 					rowIndex = row.Index;
 					//MessageBox.Show(int.Parse(row.Cells[0].Value.ToString()).ToString());
-					return int.Parse(dgvBook.Rows[rowIndex].Cells[2].Value.ToString());
+					return int.Parse(dgvBook.Rows[rowIndex].Cells[0].Value.ToString());
 				}
 			}
 
-			MessageBox.Show("Couldn't return the authorname correctly.", "Error");
+			MessageBox.Show("Couldn't return the book id correctly.", "Error");
 			return -1;
 
 			//searchBook sb = new searchBook();

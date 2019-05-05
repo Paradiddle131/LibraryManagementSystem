@@ -24,6 +24,7 @@ namespace LibraryManagementSystem
 				cmbLetter.Items.Add(c);
 			}
 			//sb = new searchBook(dgvStudent);
+			sb = new searchBook();
 		}
 
 		private readonly SqlConnection connection = new SqlConnection(AdminForm.ConnectionString);
@@ -33,6 +34,38 @@ namespace LibraryManagementSystem
 			Hide();
 			//AdminForm af = new AdminForm();
 			//af.Show();
+		}
+
+		public bool isStudentRegistered(string firstname, string surname)
+		{
+			foreach (DataGridViewRow row in dgvStudent.Rows)
+			{
+				if (row.Cells[1].Value.ToString().Equals(firstname) &&
+					row.Cells[2].Value.ToString().Equals(surname))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		public int getStudentId(string firstname, string surname)
+		{
+			listing(); // if the method declared AFTER the listing() method, use this one
+			int rowIndex = -1;
+			foreach (DataGridViewRow row in dgvStudent.Rows)
+			{// if the Rows has 0 item, dgv may not be public
+				if (row.Cells[1].Value.ToString().Equals(firstname) &&
+					row.Cells[2].Value.ToString().Equals(surname))
+				{
+					rowIndex = row.Index;
+					//MessageBox.Show(int.Parse(row.Cells[0].Value.ToString()).ToString());
+					return int.Parse(dgvStudent.Rows[rowIndex].Cells[0].Value.ToString());
+				}
+			}
+
+			MessageBox.Show("Couldn't return the student id correctly.", "Error");
+			return -1;
 		}
 
 		public void listing()
@@ -64,7 +97,7 @@ namespace LibraryManagementSystem
 			nudPoint.Value = 0;
 		}
 
-		private void addStudent_Load(object sender, EventArgs e)
+		public void addStudent_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'studentsDataSet.students' table. You can move, or remove it, as needed.
 			studentsTableAdapter.Fill(studentsDataSet.students);
